@@ -21,7 +21,8 @@ Training materials for OMICSS-25 Bioinformatics Summer School
  
 # SOP
 1. Each topic should have its folder.
-2. Each folder should have a README with:
+2. When creating a folder, first create it's README.md
+3. Each folder should have a README with:
   - The author name and email
   - The description of its content
 4. Commit messages should either be:
