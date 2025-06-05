@@ -35,6 +35,10 @@ Training materials for OMICSS-25 Bioinformatics Summer School
   # TODO
     Primary contributor assigns tasks to contributing authors with deadlines
 ```
-4. Commit messages should either be:
+4. The following materials should be uploaded:
+  - Lecture slides & notes
+  - Exercises & tasks for practicals AND/OR notes describing the location of respective files on the server
+5. Each folder can have a subfolder for separate topics. Subfolders inherit all the rules applicable to folders. 
+6. Commit messages should either be:
   - "Complete"
-  - "In progress: xx%" (indicate the percentage of completeness)
+  - "In progress: xx%" (indicate the percentage of completeness of the overall folder or a subfolder)
