@@ -23,8 +23,16 @@ Training materials for OMICSS-25 Bioinformatics Summer School
 1. Each topic should have its folder.
 2. When creating a folder, first create it's README.md
 3. Each folder should have a README with:
-  - The author name and email
+  - The primary contributor/manager
+  - The contributing authors
   - The description of its content
+  - README template:
+  # Contributors
+    Primary contributor: [NAME SURNAME]
+    Contributing authors: [NAME SURNAME] [NAME SURNAME] [NAME SURNAME]
+  # Content  
+  # TODO
+    Primary contributor assigns tasks to contributing authors with deadlines
 4. Commit messages should either be:
   - "Complete"
   - "In progress: xx%" (indicate the percentage of completeness)
