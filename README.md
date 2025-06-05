@@ -27,12 +27,14 @@ Training materials for OMICSS-25 Bioinformatics Summer School
   - The contributing authors
   - The description of its content
   - README template:
+```
   # Contributors
     Primary contributor: [NAME SURNAME]
     Contributing authors: [NAME SURNAME] [NAME SURNAME] [NAME SURNAME]
   # Content  
   # TODO
     Primary contributor assigns tasks to contributing authors with deadlines
+```
 4. Commit messages should either be:
   - "Complete"
   - "In progress: xx%" (indicate the percentage of completeness)
