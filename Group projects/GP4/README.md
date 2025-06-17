@@ -1,10 +1,10 @@
 To do list
 
-Sveta: Find a good intradactory paper/article/video about cancer
+Sveta: Find a good intraductory paper/article/video about cancer
 
 Deadline -  11:00 AM 20.06.2025
 
-Sveta: Find a paper about lung cancer and it's specificities 
+Sveta: Find a paper about lung cancer and its specificities 
 
 Deadline -  11:00 AM 20.06.2025
 
