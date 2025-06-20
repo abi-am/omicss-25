@@ -25,14 +25,30 @@ Link to the paper [Arpine] \
 Path in the server [Arpine]
 
 ### Processing, Dimensionality Reduction, Clustering
-Link for data transformation tutorial [Melina]
+We will follow
+[Seurat Tutorial 1](https://satijalab.org/seurat/articles/pbmc3k_tutorial.html) 
+to 
+- Create a Seurat object
+- Do quality control
+- Filter cells
+- Perform dimensionality reduction
+- Perform cell clustering 
+
+BUT for data processing, we will follow
+[Seurat Tutorial 2](https://satijalab.org/seurat/articles/sctransform_vignette.html)
+as we are going to use SCTransform()
 
 ### Cell Type Identification
-Seurat label transfer, scType, scSort [Arpine] \
-Human protein atlas [Arpine]
+There are a lot of methods and tools for cell type identification. In our analysis
+we will have multi-step cell type identification. 
+* Construct a celltype-marker based on the literature ([Human Protein Atlas](https://www.proteinatlas.org) or papers)
+* Compare outputs from multiple tools ([Seurat Label Transfer](https://satijalab.org/seurat/articles/integration_mapping.html),
+[sc-type](https://www.nature.com/articles/s41467-022-28803-w), [scSorter](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02281-7))
+* Validate cell types based on cluster marker genes
 
 ### Differential Gene Expression 
-Paper or short-read [Luiza]
+[Reminder on differential gene expression](https://www.cd-genomics.com/resource-differential-gene-expression-analysis.html)
+For identifying differentially expressed genes, we will use the FindMarkers() function implemented in Seurat \
 
 ### Gene Set Enrichment
 Go enrichment, fGSEA [Arpine]
