@@ -1,8 +1,9 @@
 ### Dissecting Lung Cancer Heterogeneity via Single-Cell Transcriptomic Profiling
- This project explores the cellular diversity of lung cancer using scRNA-seq data. The goal is to identify key cell types, genes, and pathways in the tumor
+This 
+[project](https://docs.google.com/presentation/d/1RhBNvitkHGf0XaU5YJIngZHS3ZJ6dw9B/edit?usp=sharing&ouid=108169334741774870734&rtpof=true&sd=true)
+explores the cellular diversity of lung cancer using scRNA-seq data. The goal is to identify key cell types, genes, and pathways in the tumor
   ___
   
- 
 ### Biological Background
 [What is cancer](https://www.cancer.gov/about-cancer/understanding/what-is-cancer) \
 [Lung cancer](https://my.clevelandclinic.org/health/diseases/4375-lung-cancer) \
