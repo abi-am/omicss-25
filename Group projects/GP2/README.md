@@ -10,6 +10,7 @@
 - Transcript isoforms
 - Gene regulatory elements (e.g. promoters)
 - DNA packaging (nucleosomes and chromatin)
+  https://www.nature.com/scitable/topicpage/dna-packaging-nucleosomes-and-chromatin-310/
   
 ### Review Papers [Mher]
 - Telomere biology and cancer (e.g. telomere structure, maintenance, dysfunction in cancer)
