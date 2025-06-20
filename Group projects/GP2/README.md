@@ -6,7 +6,7 @@ Telomeres
 https://www.ncbi.nlm.nih.gov/books/NBK576429/
 https://www.mdpi.com/2073-4425/10/2/118 section 1.1 
 TRVs
-https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-024-05807-5#:~:text=Telomeres%20are%20regions%20of%20repetitive%20DNA%20at,system%20for%20protecting%20chromosome%20ends%20from%20degradation.&text=From%20targeted%20studies%20of%20telomeres%2012q%20and,arms%2C%20but%20also%20subject%20to%20Mendelian%20inheritance.
+https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-024-05807-5#:~:text=Telomeres%20are%20regions%20of%20repetitive%20DNA%20at,system%20for%20protecting%20chromosome%20ends%20from%20degradation.&text=From%20targeted%20studies%20of%20telomeres%2012q%20and,arms%2C%20but%20also%20subject%20to%20Mendelian%20inheritance. (Background section partially)
   
 - Transcript isoforms
 - Gene regulatory elements (e.g. promoters)
