@@ -45,9 +45,9 @@ https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-024-05807-5#
     * [scikit-learn Documentation on Clustering](https://scikit-learn.org/stable/modules/clustering.html)
     * [Cluster analysis (hardcore math)](https://en.wikipedia.org/wiki/Cluster_analysis)
     * [blogpost on the Math of clustering](https://medium.com/@rohit_batra/the-math-behind-the-k-means-and-hierarchical-clustering-algorithm-1d9a36a56c08)
-  - Dimensionality Reduction (PCA)
-      * [What is Dim. Reduction, why we care about it. INTRO](https://www.ibm.com/think/topics/dimensionality-reduction)
-      * [PCA step by step](https://www.youtube.com/watch?v=FgakZw6K1QQ&t=5s)
+- Dimensionality Reduction (PCA)
+  * [What is Dim. Reduction, why we care about it. INTRO](https://www.ibm.com/think/topics/dimensionality-reduction)
+  * [PCA step by step](https://www.youtube.com/watch?v=FgakZw6K1QQ&t=5s)
 
 ### Tutorials [Mher]
 - Cytoscape  
