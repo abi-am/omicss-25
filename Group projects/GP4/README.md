@@ -6,24 +6,27 @@ explores the cellular diversity of lung cancer using scRNA-seq data. The goal is
   
 ### Biological Background
 [What is cancer](https://www.cancer.gov/about-cancer/understanding/what-is-cancer) \
-[Lung cancer](https://my.clevelandclinic.org/health/diseases/4375-lung-cancer) \
-Molecular biology of cancer [Arpine] \
+[About lung cancer](https://my.clevelandclinic.org/health/diseases/4375-lung-cancer) \
 Cancer microenvironment [Sveta] \
 Current understanding of lung cancer [Luiza]
 
 ___
 
 ### Data 
-Link to the paper \
-Path in the server
+Link to the paper [Arpine] \
+Path in the server [Arpine]
 
-### Processing
-Github link [Melina]
+### Processing, Dimensionality Reduction, Clustering
+Link for data transformation tutorial [Melina]
 
 ### Cell Type Identification
+Seurat label transfer, scType, scSort [Arpine] \
+Human protein atlas [Arpine]
 
 ### Differential Gene Expression 
+Paper or short-read [Luiza]
 
-### Gene Set Enrichment 
+### Gene Set Enrichment
+Go enrichment, fGSEA [Arpine]
 
 ### Hypothesis testing
