@@ -56,10 +56,8 @@ https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-024-05807-5#
 
 ### Practice / Toy Examples [Tatevik]
 - Run PSF with an example gene count matrix for Telomere Maintenance Mechanism (TMM) pathways
-- R plotting practice on synthetic TRV data:
-  - Boxplot
-  - Heatmap
-  - Scatter plot
+- R plotting practice on synthetic TRV data
+  - See Practive/R_plotting.docx file for instructions
 
 ## Week 2 – Data Preprocessing
 
