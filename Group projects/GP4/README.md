@@ -1,21 +1,21 @@
-To do list
+Biological Background
+What is cancer
+Lung cancer 
+Molecular biology of cancer [Arpine]
+Cancer microenvironment [Sveta]
+Current understanding of lung cancer [Luiza]
+Data 
+Link to the paper
+R packages we’ll use and functionalities []
+Gene expression matrix [Luiza]
+Data transformations in scRNA-seq [Melina]
+Data processing [Melina]
+Clustering and Dimensionality Reduction
 
-Sveta: Find a good intraductory paper/article/video about cancer
+Cell Type Identification
 
-Deadline -  11:00 AM 20.06.2025
+Differential Gene Expression 
 
-Sveta: Find a paper about lung cancer and its specificities 
+Gene Set Enrichment 
 
-Deadline -  11:00 AM 20.06.2025
-
-Sveta + Luiza: Start making the project presentation describing the following pipeline - we take the data, process, identify cell types, perform diff gene exp, gene set enrichment. Clearly mention the aim of the project. 
-
-Deadline -  11:00 AM 20.06.2025
-
-Melina: Upload Seurat tutorials to github
-
-Deadline -  11:00 AM 20.06.2025
-
-Arpine: Select a dataset and put the path in the github readme
-
-Deadline -  
+Hypothesis testing
