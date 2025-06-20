@@ -1,7 +1,15 @@
-### Dissecting Lung Cancer Heterogeneity via Single-Cell Transcriptomic Profiling
+# Dissecting Lung Cancer Heterogeneity via Single-Cell Transcriptomic Profiling
+Lung cancer is one of the most common and deadly cancers worldwide, yet its complexity at the cellular level remains poorly understood. Single-cell transcriptomics provides a powerful approach to uncover rare cell populations, tumor heterogeneity, and interactions within the tumor microenvironment, insights that are essential for improving diagnosis and treatment strategies. 
 This 
 [project](https://docs.google.com/presentation/d/1RhBNvitkHGf0XaU5YJIngZHS3ZJ6dw9B/edit?usp=sharing&ouid=108169334741774870734&rtpof=true&sd=true)
-explores the cellular diversity of lung cancer using scRNA-seq data. The goal is to identify key cell types, genes, and pathways in the tumor
+explores the cellular diversity of lung cancer using scRNA-seq data. 
+By analyzing gene expression at the single-cell level, we aim to identify key cell types, genes, and molecular pathways involved in tumor development and progression. 
+
+ ### Contributors
+```
+Project lead: Arpine Grigoryan
+Contributors: Melina Tamazyan, Sveta Mnatsakanyan, Luiza Stepanyan
+```
   ___
   
 ### Biological Background
