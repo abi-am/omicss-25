@@ -1,11 +1,11 @@
 ## Week 1 – Background
 
 ### Molecular Biology Recap [Anahit]
-- Telomeres and telomeric repeat variants: \n
-  Telomeres \n
-  https://www.ncbi.nlm.nih.gov/books/NBK576429/ \n
-  https://www.mdpi.com/2073-4425/10/2/118 section 1.1 \n
-  TRVs \n
+- Telomeres and telomeric repeat variants: 
+  Telomeres
+  https://www.ncbi.nlm.nih.gov/books/NBK576429/
+  https://www.mdpi.com/2073-4425/10/2/118 section 1.1 
+  TRVs 
   
 - Transcript isoforms
 - Gene regulatory elements (e.g. promoters)
