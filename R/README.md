@@ -3,7 +3,7 @@
     Primary contributor: Arpine Grigoryan
     Contributing authors: Luiza Stepanyan
   # Content  
-  [Guide for installing R and RStudio](https://rstudio-education.github.io/hopr/starting.html)
+  [Guide for installing R and RStudio](https://rstudio-education.github.io/hopr/starting.html) \
   Addressing R package installation problems [Luiza]
 
   # TODO
