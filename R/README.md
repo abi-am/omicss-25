@@ -3,6 +3,11 @@
     Primary contributor: Arpine Grigoryan
     Contributing authors: Luiza Stepanyan
   # Content  
+
+  ### Lecture 
+  [Introduction to R Lecture](https://docs.google.com/presentation/d/123DruZEKS_vYKDugWMUHxxNWizO96gn6/edit?usp=share_link&ouid=108169334741774870734&rtpof=true&sd=true) \
+
+  ### Practice
   [Guide for installing R and RStudio](https://rstudio-education.github.io/hopr/starting.html) \
   Addressing R package installation problems [Luiza]
 
