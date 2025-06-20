@@ -47,8 +47,8 @@ we will have multi-step cell type identification.
 * Validate cell types based on cluster marker genes
 
 ### Differential Gene Expression 
-[Reminder on differential gene expression](https://www.cd-genomics.com/resource-differential-gene-expression-analysis.html)
-For identifying differentially expressed genes, we will use the FindMarkers() function implemented in Seurat \
+[Reminder on differential gene expression](https://www.cd-genomics.com/resource-differential-gene-expression-analysis.html) \
+For identifying differentially expressed genes, we will use the FindMarkers() function implemented in Seurat 
 
 ### Gene Set Enrichment
 Go enrichment, fGSEA [Arpine]
