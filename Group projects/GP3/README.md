@@ -7,23 +7,39 @@
 This project aims to explore the population structure of Caucasian varieties of grapevine using whole-genome sequencing data. The participants will become familiar with the VCF file format, the standard data preprocessing pipeline (variant calling, filtering) and the downstream population genomics analyses (ADMIXTURE, phylogenetic tree construction).
 
 ### Data
-What is vcf file, why is it used \
-The datapath to the vcf file:
+
+The data for this project comes from [this publication](). We will reanalyse a subset of Caucasian grapevine samples, both cultivated (*V. vinifera*) and wild (*V. sylvestris*), and attempt to uncover patterns of genetic diversity from populations of different geographic origin.   
+
+You can familiarise yourself with the samples, their regions of origin, genetic background and phenotypes by studying the metadata table here:   
+
 ```
-/mnt/....
+/mnt/proj/vine/shared_files/data/metadata/cauc_arm_grape.metadata.tsv
 ```
+
+> NOTE: the actual dataset is large, so we need to select a few well-behaving samples.  
+
+The data is provided to you as VCF files. These files were created from sequencing reads which were controlled for quality, aligned to the reference, and subjected to variant calling using the GATK toolkit.  
+
+```
+# path to the data
+```
+
+Learn more about the VCF file format and what each field represents [here](https://samtools.github.io/hts-specs/VCFv4.2.pdf).  
+
 ## Data preprocessing
 
 ### Merging gVCFs
 
-Path to GATK:
+For any scripts engaging the GATK tooks, refer to the path here:
 ```
 /mnt/proj/vine/user_projects/shengchang/soft/gatk-4.1.8.1/gatk
 ```
 
 We started with sequencing data for individual samples and used GATK’s [HaplotypeCaller](https://gatk.broadinstitute.org/hc/en-us/articles/360037225632-HaplotypeCaller) to perform variant calling and identify reference and alternative alleles. The files it outputs are gVCF files (genomic VCF). This format includes not only the variant sites but contains information about non-variant regions as well, so the entire genome is covered. 
 
-This later allows us to combine the individual samples and perform joint genotyping. We employ another GATK tool, [CombineGVCFs](https://gatk.broadinstitute.org/hc/en-us/articles/360037053272-CombineGVCFs), to create a multi-sample VCF file prepared for variant calling. [GenotypeGVCFs](https://gatk.broadinstitute.org/hc/en-us/articles/360037057852-GenotypeGVCFs) then performs the joint calling by comparing evidence across every position in the genome and across all samples to decide which variants (SNPs or INDELs) are present, and at what individuals.   Since we have a high number of samples and the genomes themselves are quite large, combining and joing calling is performed on chromosome-by-chromosome basis, and the chromosomes will later be merged together (this helps us save project memory).
+This later allows us to combine the individual samples and perform joint genotyping. We employ another GATK tool, [CombineGVCFs](https://gatk.broadinstitute.org/hc/en-us/articles/360037053272-CombineGVCFs), to create a multi-sample VCF file prepared for variant calling. [GenotypeGVCFs](https://gatk.broadinstitute.org/hc/en-us/articles/360037057852-GenotypeGVCFs) then performs the joint calling by comparing evidence across every position in the genome and across all samples to decide which variants (SNPs or INDELs) are present, and at what individuals.   
+
+Since we have a high number of samples and the genomes themselves are quite large, combining and joing calling is performed on chromosome-by-chromosome basis, and the chromosomes will later be merged together (this helps us save project memory).  
 
 Finally, we separate different types of variants into their own files. SNPs and INDELs have distinct filtering criteria, so they're usually analysed separately. The output of this sequence of steps is two raw VCF files.
 
@@ -47,7 +63,7 @@ After filtering is complete, the resulting VCF file needs to be indexed. 
 
 ## Population Genomics
 
-### ADMIXTURE 
+### ADMIXTURE [in progress: Nane]
 as a way to explore population genetic structure and clustering tool
 Files preparation for ADMIXTURE: VCF annotation, PLINK filtration, Linkage Disequilibrium pruning with PLINK <br>
 k-fold cross validation,cv error graphs, ADMIXTURE .Q, .P files <br>
@@ -61,7 +77,7 @@ path to ADMIXTURE:
    - Grouping samples in clusters by countries
    - Rscript in bash
 
-### Phylogenetic analysis
+### Phylogenetic analysis [in progress: Maria]
 Exploring the evolutionary relationships among different grape accessions based on SNPs variants <br>
 Presumably SNPhylo tool
 
