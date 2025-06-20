@@ -27,9 +27,27 @@ https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-024-05807-5#
 
 ### Statistics Recap [Davit T.]
 - Non-parametric tests (e.g. Mann–Whitney U)
+    * [what are non-parametric tests](https://corporatefinanceinstitute.com/resources/data-science/nonparametric-tests/)
+    * [Mann–Whitney U test, with medical data example](https://datatab.net/tutorial/mann-whitney-u-test)
+    * [Youtube video on non-parametric tests - Sign test, Wilcoxon signed rank, Mann-Whitney](https://www.youtube.com/watch?v=IcLSKko2tsg)
 - Multiple testing correction (e.g. FDR)
+    * [Intro on what is Multiple testing correction](https://geneviatechnologies.com/blog/what-is-multiple-testing-correction/)
+    * [FDR](https://www.publichealth.columbia.edu/research/population-health-methods/false-discovery-rate)
 - Correlation (e.g. Pearson, Spearman)
-- Clustering methods (e.g. hierarchical, PCA)
+    * [Correlation (Hardcore math)](https://en.wikipedia.org/wiki/Correlation)
+    * [Explainer Video](https://www.youtube.com/watch?v=GtV-VYdNt_g)
+    * [Person correlation vs Spearman correlation](https://www.surveymonkey.com/market-research/resources/pearson-correlation-vs-spearman-correlation/)
+- Clustering methods (e.g. hierarchical)
+    * [Youtube video: Intuitive intro to unsupervised ML and clustering](https://www.youtube.com/watch?v=IUn8k5zSI6g)
+    * [Youtube video: K-means](https://www.youtube.com/watch?v=4b5d3muPQmA&t=304s)
+    * [Youtube video: Hierarchy](https://www.youtube.com/watch?v=7xHsRkOdVwo)
+    * [Youtube video: DBSCAN (advanced)](https://www.youtube.com/watch?v=RDZUdRSDOok)
+    * [scikit-learn Documentation on Clustering](https://scikit-learn.org/stable/modules/clustering.html)
+    * [Cluster analysis (hardcore math)](https://en.wikipedia.org/wiki/Cluster_analysis)
+    * [blogpost on the Math of clustering](https://medium.com/@rohit_batra/the-math-behind-the-k-means-and-hierarchical-clustering-algorithm-1d9a36a56c08)
+  - Dimensionality Reduction (PCA)
+      * [What is Dim. Reduction, why we care about it. INTRO](https://www.ibm.com/think/topics/dimensionality-reduction)
+      * [PCA step by step](https://www.youtube.com/watch?v=FgakZw6K1QQ&t=5s)
 
 ### Tutorials [Mher]
 - Cytoscape  
