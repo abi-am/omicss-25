@@ -69,9 +69,69 @@ Files preparation for ADMIXTURE: VCF annotation, PLINK filtration, Linkage Diseq
 k-fold cross validation,cv error graphs, ADMIXTURE .Q, .P files <br>
 ADMIXTURE documentation - https://speciationgenomics.github.io/ADMIXTURE/ <br>
 path to ADMIXTURE:
+
+  The **ADMIXTURE** is a computational program used in population genetics to estimate the ancestry composition of individuals based on their genetic data. Given genotype data from multiple individuals, the tool models each individual's genome as having originated from a predefined number of ancestral populations (often denoted as K). The program uses a statistical algorithm to estimate, for each individual, the proportion of their genome that comes from each of these ancestral populations. For example, if K = 3, an individual might have 70% ancestry from population 1, 25% from population 2, and 5% from population 3. This shows that their genetic background is mostly from the first population but also includes contributions from the others.
+
+For any scripts engaging the ADMIXTURE tool, refer to the path here:
 ```
-/mnt/proj/soft/...
+/mnt/proj/vine/shared_files/soft/admixture_linux-1.3.0/admixture
 ```
+  ## Step 1 (Filtering)
+  
+   As an input we need to give filtered plink binary format files (.bed, .bim. fam). Filtering should include the following steps
+
+   - **Anotation** - samples should have individual, unique ID's. So if the VCF file is not annotated firstly we need to annotate it usinf bcftools
+
+**Then we can proceed with Filtering using [PLINK](https://www.cog-genomics.org/plink/1.9/filter) tool**
+
+```
+/mnt/proj/vine/user_projects/shengchang/soft/plink/plink
+```
+   - take only 1-19 autosomal chromosomes
+   - **Biallelic SNPs** - we keep the SNPs that are either reference or alternative variant.
+    
+   - **Minor allele frequency (MAF)** - we will remove the rarest SNPs by keeping only those that are encountered with the frequency of >0.5%. MAF is the frequency of the second most common allele in the population. Extremely low MAF might be pointing to genotyping effors. More common SNPs are considered more reliable and are more likely to be true features of our populations.
+     
+   - **[LD pruning](https://www.cog-genomics.org/plink/1.9/ld)** - LD pruning is the process of removing genetic variants (SNPs) that are highly correlated (in linkage disequilibrium, LD) to keep only independent markers. This is done to reduce redundancy and avoid bias in the analysis. Paramets for LD pruning are **windiw size** (The genomic region size scanned), **Step size** (How much the window moves each step), **r² threshold** (Correlation cutoff above which SNPs are pruned). The comonly used parameters are (50, 5, 0.5).
+
+As an output we will have plink finary format files (.bed, .bim, .fam)
+
+- **.bim — Variant information file** : Contains SNP IDs, chromosome, genetic position, physical position, and alleles for each variant (one line per SNP).
+
+- **.fam — Sample information file** : Contains family and individual IDs, paternal/maternal IDs, sex, and phenotype for each sample (one line per individual).
+
+- **.bed — Binary genotype data file** : Contains the actual genotype calls in a compact binary format for all samples and SNP
+
+ ## Step 2 (ADMIXTURE analysis)
+ 
+Now that we have filtered plink binary format files, we can proceed with the ADMIXTURE analysis. The documentation can be found [here](https://speciationgenomics.github.io/ADMIXTURE/)
+
+Input for the admixture should be filtered plink binary format files. ADMIXTURE scripts should look like thi, where --cv stands for cross validation.
+```
+admixture --cv=5 input.bed K
+```
+
+We do the admixture by **K-fold cross validation**. K-fold cross-validation is used to estimate how well the model fits the data for a given number of ancestral populations (K). Here is how it works
+
+1. The program splits the data (SNPs) into K equal parts (folds). The defoult parameter is 5.
+2. The the program randomely "hides" part of the data and treats it as missing data (if data is devided into K equal parts, 1 part will be "hidden").
+3. The model is trained on the remaining data.
+4. The model tries to predict the hidden part of the data.
+5. The program calculates cv error by comparing the predicted data to the actual one that was hidden.
+
+> NOTE: In general lower cv error means that the program works better but it is not always the case. In case of high K we might have lower cv error but it can lead to overfitting of the model. So when deciding an appropirate K to chose we must not consider only cv error rate but also the biological meaning and interpretation.
+
+ADMIXTURE is usually run for some range of Ks, typically from K=2, to K = 10. This is done to compare different models with each other and chose the one that fits the most to our project.
+
+ > NOTE: ADMIXTURE involves randomization (in cross-validation), so to ensure results are reproducible, you can set a random seed with the --seed option:
+
+# STEP 3 (Visualization and interpretation) 
+
+As an output of the ADMIXTURE we will get 3 types of files (/.log, /.Q, /.P)
+- **/.log** file contains run infromation and cv error
+- **/.Q** contains a matrix that contains information about ancestry proportions. Each row here is a sample (individual) and each column coressponts to one of the K ancestral populations (K=1, K=2....). Values of the matrix tell what proportion of the certain sample's ancestry comes from the population of coressponing column. 
+- **/.P** file contains a matrix that contains information about allele frequencies. Each row eas a SNP, each column is ancestral population. It tells us what each ancestral population looks like genetically.
+
    #### &emsp;ADMIXTURE results ploting in R:
    - Cultivated, admixed, wild clusters distinction
    - Grouping samples in clusters by countries
