@@ -32,7 +32,8 @@ https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-024-05807-5#
 - Clustering methods (e.g. hierarchical, PCA)
 
 ### Tutorials [Mher]
-- Cytoscape 
+- Cytoscape  
+  [Cytoscape tutorial for networks](https://cytoscape.org/cytoscape-tutorials/presentations/network-analysis-ebi-2021.html#/)
 - Pathway Signal Flow (PSF) basic usage
 
 ### Practice / Toy Examples [Tatevik]
