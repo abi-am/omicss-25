@@ -9,6 +9,7 @@
   
 - Transcript isoforms
 - Gene regulatory elements (e.g. promoters)
+  https://www.researchgate.net/publication/286551059_Gene_Regulatory_Elements
 - DNA packaging (nucleosomes and chromatin)
   https://www.nature.com/scitable/topicpage/dna-packaging-nucleosomes-and-chromatin-310/
   https://www.ncbi.nlm.nih.gov/books/NBK534207/
