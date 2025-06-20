@@ -11,6 +11,7 @@
 - Gene regulatory elements (e.g. promoters)
 - DNA packaging (nucleosomes and chromatin)
   https://www.nature.com/scitable/topicpage/dna-packaging-nucleosomes-and-chromatin-310/
+  https://www.ncbi.nlm.nih.gov/books/NBK534207/
   
 ### Review Papers [Mher]
 - Telomere biology and cancer (e.g. telomere structure, maintenance, dysfunction in cancer)
