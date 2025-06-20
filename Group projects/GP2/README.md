@@ -1,7 +1,7 @@
 ## Week 1 – Background
 
 ### Molecular Biology Recap [Anahit]
-- Telomeres and telomeric repeat variants
+- Telomeres and telomeric repeat variants: https://www.ncbi.nlm.nih.gov/books/NBK576429/
 - Transcript isoforms
 - Gene regulatory elements (e.g. promoters)
 - DNA packaging (nucleosomes and chromatin)
