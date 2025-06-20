@@ -17,9 +17,13 @@ https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-024-05807-5#
   https://www.ncbi.nlm.nih.gov/books/NBK534207/
   
 ### Review Papers [Mher]
-- Telomere biology and cancer (e.g. telomere structure, maintenance, dysfunction in cancer)
-- Cell-free DNA (cfDNA) (e.g. origins, fragmentation patterns, clinical applications)
-- Nucleosome depleted regions (NDRs) and usage for gene expression inference (not review)
+- Telomere biology and cancer (e.g. telomere structure, maintenance, dysfunction in cancer)  
+  [Telomeres: history, health, and hallmarks of aging](https://www.sciencedirect.com/science/article/pii/S0092867420317505)  
+- Cell-free DNA (cfDNA) (e.g. origins, fragmentation patterns, clinical applications)  
+  [A hitchhiker’s guide to cell-free DNA biology](https://pmc.ncbi.nlm.nih.gov/articles/PMC9650475/)  
+- Nucleosome depleted regions (NDRs) and usage for gene expression inference (not review)  
+  [Inferring gene expression from cell-free DNA fragmentation profiles](https://www.nature.com/articles/s41587-022-01222-4)  
+  [Tissue-specific cell-free DNA degradation quantifies circulating tumor DNA burden](https://www.nature.com/articles/s41467-021-22463-y)
 
 ### Statistics Recap [Davit T.]
 - Non-parametric tests (e.g. Mann–Whitney U)
