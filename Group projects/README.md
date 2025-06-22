@@ -9,9 +9,9 @@
  - Short description: 
  
 ## GP3: Genomic Characterization of Population Structure in Caucasian Grape Varieties Using Whole-Genome Sequencing
- - Mentors
+ - Mentors: Nate Zadirako, Mariia Arakelian, Nane Pivazyan
  - Students (will be added)
- - Short description
+ - Short description: This project aims to explore the population structure and ancestry of the Caucasian varieties of grapevine using WGS data. The participants will become familiar with the VCF file format, the standard data preprocessing pipeline (variant calling, filtering) and the downstream population genomics analyses (ADMIXTURE, phylogenetic tree construction).
  
 ## GP4: Dissecting Lung Cancer Heterogeneity via Single-Cell Transcriptomic Profiling
 
