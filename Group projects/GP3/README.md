@@ -109,6 +109,7 @@ We do the ADMIXTURE by **K-fold cross validation**. K-fold cross-validation is u
 4. The model tries to predict the hidden part of the data.
 5. The program calculates cv error by comparing the predicted data to the actual one that was hidden.
 
+
 > NOTE: In general lower cv error means that the model fits better better but it is not always the case. In case of high K we might have lower cv error but it can lead to overfitting of the model. So when deciding an appropirate K to chose we must not consider only cv error rate but also the biological meaning and interpretation.
 
 ADMIXTURE is usually run for some range of Ks, typically from K=2, to K = 10. This is done to compare different models with each other and chose the one that fits the most to our project.
@@ -140,7 +141,8 @@ At K = 2, the Q matrix plot typically reveals the broadest split in the dataset,
 **3rd category - admixed**
    - The rest
    - These are individuals whose genomes are a mix of cultivated and wild lineages.
-   - 
+
+   
 > Note: In  the analysis it does not neceserly mean that K=1 represents cultivated grapevine and K=2 wild grapevine. It can be visa versa. To understant which K rersednts what cluster, check the metadata.
 
 For the visualizaton, group samples by their countries of origin. Then in each country, organize by major one of the Ks e.g. 4,5, or 6 component and list in increasing or decreasing order.
