@@ -63,12 +63,7 @@ After filtering is complete, the resulting VCF file needs to be indexed. 
 
 ## Population Genomics
 
-### ADMIXTURE [in progress: Nane]
-as a way to explore population genetic structure and clustering tool
-Files preparation for ADMIXTURE: VCF annotation, PLINK filtration, Linkage Disequilibrium pruning with PLINK <br>
-k-fold cross validation,cv error graphs, ADMIXTURE .Q, .P files <br>
-ADMIXTURE documentation - https://speciationgenomics.github.io/ADMIXTURE/ <br>
-path to ADMIXTURE:
+### ADMIXTURE 
 
   The **ADMIXTURE** is a computational program used in population genetics to estimate the ancestry composition of individuals based on their genetic data. Given genotype data from multiple individuals, the tool models each individual's genome as having originated from a predefined number of ancestral populations (often denoted as K). The program uses a statistical algorithm to estimate, for each individual, the proportion of their genome that comes from each of these ancestral populations. For example, if K = 3, an individual might have 70% ancestry from population 1, 25% from population 2, and 5% from population 3. This shows that their genetic background is mostly from the first population but also includes contributions from the others.
 
@@ -146,11 +141,11 @@ At K = 2, the Q matrix plot typically reveals the broadest split in the dataset,
    - The rest
    - These are individuals whose genomes are a mix of cultivated and wild lineages.
    - 
-> Note: In  the analysis it does not neceserly mean that K=1 represents cultivated grapevin and K=2 wild grapevine. It can be visa versa. To understant which K rersednts what cluster, check the metadata.
+> Note: In  the analysis it does not neceserly mean that K=1 represents cultivated grapevine and K=2 wild grapevine. It can be visa versa. To understant which K rersednts what cluster, check the metadata.
 
-For the visualizaton, group samples by their countries of origin. Then in each country, organize by major of one of the Ks e.g. 4,5, or 6 component and list in increasing or decreasing order.
+For the visualizaton, group samples by their countries of origin. Then in each country, organize by major one of the Ks e.g. 4,5, or 6 component and list in increasing or decreasing order.
 
-> Note: For all Q matrices, the order of the Samples must be the same!
+> Note: For all Q matrices, the order of the samples must be the same!
 
    #### &emsp;ADMIXTURE results ploting in R:
    - Cultivated, admixed, wild clusters distinction
