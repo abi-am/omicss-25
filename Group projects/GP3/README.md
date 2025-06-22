@@ -80,7 +80,7 @@ For any scripts engaging the ADMIXTURE tool, refer to the path here:
   
    As an input we need to give filtered plink binary format files (.bed, .bim. fam). Filtering should include the following steps
 
-   - **Anotation** - samples should have individual, unique ID's. So if the VCF file is not annotated firstly we need to annotate it usinf bcftools
+   - **Anotation** - samples should have individual, unique ID's. So if the VCF file that we need to analyze is not annotated, firstly we need to annotate it using bcftools. 
 
 **Then we can proceed with Filtering using [PLINK](https://www.cog-genomics.org/plink/1.9/filter) tool**
 
@@ -94,24 +94,19 @@ For any scripts engaging the ADMIXTURE tool, refer to the path here:
      
    - **[LD pruning](https://www.cog-genomics.org/plink/1.9/ld)** - LD pruning is the process of removing genetic variants (SNPs) that are highly correlated (in linkage disequilibrium, LD) to keep only independent markers. This is done to reduce redundancy and avoid bias in the analysis. Paramets for LD pruning are **windiw size** (The genomic region size scanned), **Step size** (How much the window moves each step), **r² threshold** (Correlation cutoff above which SNPs are pruned). The comonly used parameters are (50, 5, 0.5).
 
-As an output we will have plink finary format files (.bed, .bim, .fam)
+As an output we will have plink finary format files (/.bed, /.bim, /.fam)
 
-- **.bim — Variant information file** : Contains SNP IDs, chromosome, genetic position, physical position, and alleles for each variant (one line per SNP).
+- **/.bed — Binary genotype data file** : Contains the actual genotype calls in a compact binary format for all samples and SNP
 
-- **.fam — Sample information file** : Contains family and individual IDs, paternal/maternal IDs, sex, and phenotype for each sample (one line per individual).
+- **/.bim — Variant information file** : Contains SNP IDs, chromosome, genetic position, physical position, and alleles for each variant (one line per SNP).
 
-- **.bed — Binary genotype data file** : Contains the actual genotype calls in a compact binary format for all samples and SNP
+- **/.fam — Sample information file** : Contains family and individual IDs, paternal/maternal IDs, sex, and phenotype for each sample (one line per individual).
 
  ## Step 2 (ADMIXTURE analysis)
  
 Now that we have filtered plink binary format files, we can proceed with the ADMIXTURE analysis. The documentation can be found [here](https://speciationgenomics.github.io/ADMIXTURE/)
 
-Input for the admixture should be filtered plink binary format files. ADMIXTURE scripts should look like thi, where --cv stands for cross validation.
-```
-admixture --cv=5 input.bed K
-```
-
-We do the admixture by **K-fold cross validation**. K-fold cross-validation is used to estimate how well the model fits the data for a given number of ancestral populations (K). Here is how it works
+We do the ADMIXTURE by **K-fold cross validation**. K-fold cross-validation is used to estimate how well the model fits the data for a given number of ancestral populations (K). Here is how it works
 
 1. The program splits the data (SNPs) into K equal parts (folds). The defoult parameter is 5.
 2. The the program randomely "hides" part of the data and treats it as missing data (if data is devided into K equal parts, 1 part will be "hidden").
@@ -119,18 +114,43 @@ We do the admixture by **K-fold cross validation**. K-fold cross-validation is u
 4. The model tries to predict the hidden part of the data.
 5. The program calculates cv error by comparing the predicted data to the actual one that was hidden.
 
-> NOTE: In general lower cv error means that the program works better but it is not always the case. In case of high K we might have lower cv error but it can lead to overfitting of the model. So when deciding an appropirate K to chose we must not consider only cv error rate but also the biological meaning and interpretation.
+> NOTE: In general lower cv error means that the model fits better better but it is not always the case. In case of high K we might have lower cv error but it can lead to overfitting of the model. So when deciding an appropirate K to chose we must not consider only cv error rate but also the biological meaning and interpretation.
 
 ADMIXTURE is usually run for some range of Ks, typically from K=2, to K = 10. This is done to compare different models with each other and chose the one that fits the most to our project.
 
- > NOTE: ADMIXTURE involves randomization (in cross-validation), so to ensure results are reproducible, you can set a random seed with the --seed option:
+ > NOTE: ADMIXTURE involves randomization (in cross-validation), so to ensure results are reproducible, you can set a random seed with the *--seed* option:
 
 # STEP 3 (Visualization and interpretation) 
 
 As an output of the ADMIXTURE we will get 3 types of files (/.log, /.Q, /.P)
-- **/.log** file contains run infromation and cv error
+
+- **/.log** file contains run infromation and cv errors.
 - **/.Q** contains a matrix that contains information about ancestry proportions. Each row here is a sample (individual) and each column coressponts to one of the K ancestral populations (K=1, K=2....). Values of the matrix tell what proportion of the certain sample's ancestry comes from the population of coressponing column. 
 - **/.P** file contains a matrix that contains information about allele frequencies. Each row eas a SNP, each column is ancestral population. It tells us what each ancestral population looks like genetically.
+
+Now we can proceed with the visualization in R.
+
+As the aim of this project is to understand population genetics of grapevine, we are going to analyze Q matrices. For that, we need to visualize them by constructiog  a barplot. In Q matrix is row is an indivisual each column is an estimated population. The valuse of the matrix represents the proportion of one population. We need to represent this by barplot, where each bar is an individual, colored by the ancestral population proportions. 
+
+> NOTE: Make a .txt file with sample names, that are ordered in the same way as in Q matrices, to use them in the graphs. You can take them from /.fam file. 
+
+At K = 2, the Q matrix plot typically reveals the broadest split in the dataset, usually it splits the samples into three categories. 
+
+ **1st category - cultivated**
+  - Samples with K = 1 component >= 0.75
+  - Represent domesticated populations that have undergone selection.
+ **2nd category - wild**
+  - Samples with K = 2 component >= 0.75
+  - Represent natural, undomesticated populations — often genetically distinct.
+**3rd category - admixed**
+   - The rest
+   - These are individuals whose genomes are a mix of cultivated and wild lineages.
+   - 
+> Note: In  the analysis it does not neceserly mean that K=1 represents cultivated grapevin and K=2 wild grapevine. It can be visa versa. To understant which K rersednts what cluster, check the metadata.
+
+For the visualizaton, group samples by their countries of origin. Then in each country, organize by major of one of the Ks e.g. 4,5, or 6 component and list in increasing or decreasing order.
+
+> Note: For all Q matrices, the order of the Samples must be the same!
 
    #### &emsp;ADMIXTURE results ploting in R:
    - Cultivated, admixed, wild clusters distinction
