@@ -31,7 +31,7 @@ Training materials for OMICSS-25 Bioinformatics Summer School
   # Contributors
     Primary contributor: [NAME SURNAME]
     Contributing authors: [NAME SURNAME] [NAME SURNAME] [NAME SURNAME]
-  # Content  
+  # Contents  
   # TODO
     Primary contributor assigns tasks to contributing authors with deadlines
 ```
