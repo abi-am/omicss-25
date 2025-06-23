@@ -1,6 +1,11 @@
   # Contributors
     Primary contributor: Lilit Nersisyan
     Contributing authors: Maria Nikoghosyan
-  # Content  
+  # Contents
+  ## Introduction to Next-Generation Sequencing Technologies [Lilit Nersisyan: 1h]
+  ## Introduction to Long-read Sequencing Technologies [Maria Nikoghosyan: 1h]
+  
   # TODO
-    Primary contributor assigns tasks to contributing authors with deadlines
+    LN: Lecture: Intro to NGS (1 hour): 24/06
+    MN: Lecture: Intro to long-read sequencing (1 hour): 26/06
+    
