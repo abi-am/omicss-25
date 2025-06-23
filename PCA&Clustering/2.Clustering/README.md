@@ -1,6 +1,6 @@
-# Bioinformatics Clustering Summer School — Self-Study Guide
+# Bioinformatics Clustering Summer School — Study Guide
 
-Welcome to the Bioinformatics Clustering Summer School! This self-study guide will walk you through the fundamentals of clustering algorithms, provide hands-on Python examples, and point you to further resources. Before diving into the tutorials, **please review the following resources** in order to build the necessary intuition.
+Welcome to the Clustering section! This self-study guide will walk you through the fundamentals of clustering algorithms, provide hands-on Python examples, and point you to further resources. Before you dive into the tutorials, **please review the following resources** in order to build the necessary intuition.
 
 ---
 
