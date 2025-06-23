@@ -61,4 +61,12 @@
   - Short written summary of results  
 
 # TODO
-Primary contributor assigns tasks to contributing authors with deadlines
+- **Davit Hakobyan (primary contributor):**  
+  - Prepare *Group Project Intro Presentation* – **Deadline: Monday, June 24, 10:00 AM**  
+  - Finalize & upload Week 1 readings on background and conceptual foundations
+
+- **Razmik Sargsyan:**  
+  - Upload Kraken2 and Bracken tutorial scripts for Week 2 – **Deadline: Monday, June 24, 10:00 AM**
+
+- **Nelli Vardazaryan:**  
+  - Upload "Intro to Phyloseq" slides for Week 2 – **Deadline: Monday, June 24, 10:00 AM**
