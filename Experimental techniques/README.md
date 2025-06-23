@@ -8,5 +8,5 @@
       ●Gel electrophoresis (history and application)
       
   # TODO
-    Nelli Varazaryan - Add slides about DNA extraction techniques and principles - 
-    Razmik Sargsyan - Add slides about PCR and Gel electrophoresis - 01.07.25
+    Nelli Varazaryan - Add slides about DNA extraction techniques and principles - 04.07.25
+    Razmik Sargsyan - Add slides about PCR and Gel electrophoresis - 04.07.25
