@@ -1,1 +1,7 @@
-
+    * [Youtube video: Intuitive intro to unsupervised ML and clustering](https://www.youtube.com/watch?v=IUn8k5zSI6g)
+    * [Youtube video: K-means](https://www.youtube.com/watch?v=4b5d3muPQmA&t=304s)
+    * [Youtube video: Hierarchy](https://www.youtube.com/watch?v=7xHsRkOdVwo)
+    * [Youtube video: DBSCAN (advanced)](https://www.youtube.com/watch?v=RDZUdRSDOok)
+    * [scikit-learn Documentation on Clustering](https://scikit-learn.org/stable/modules/clustering.html)
+    * [Cluster analysis (hardcore math)](https://en.wikipedia.org/wiki/Cluster_analysis)
+    * [blogpost on the Math of clustering](https://medium.com/@rohit_batra/the-math-behind-the-k-means-and-hierarchical-clustering-algorithm-1d9a36a56c08)
