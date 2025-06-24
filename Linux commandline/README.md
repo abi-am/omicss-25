@@ -40,38 +40,42 @@ Follow this setup guide:
 You can connect directly using your terminal. Use the following command:
 
 ```bash
-ssh -l yourusername nameofserver.abi.am
+ssh -l yourusername@comp1.abi.am
 
+⚠️ **Note:** Replace `yourusername` with the username you received via email.
 
-Replace yourusername with the actual username you received.
+---
 
-🧪 Introductory Materials for Command Line Practice
-Once you're logged in to the server, it's a good time to start practicing basic command-line skills.
+## 🧪 Command Line: Introductory Materials
 
-The following resources will help you become familiar with the terminal environment and foundational Linux commands:
+Once you're logged into the server, it's a great time to start practicing basic command-line usage.
 
-📖 Reading Material:
-Command Line for Beginners (Ubuntu)
+The following resources will help you become familiar with the Linux terminal environment:
 
-🎥 Video Tutorial:
-Linux Command Line Crash Course
+- 📖 **Reading Material:**  
+  [Command Line for Beginners (Ubuntu)](https://ubuntu.com/tutorials/command-line-for-beginners#1-overview)
 
-🧰 Tmux: Terminal Multiplexer
-When working on multiple tasks or running long processes on a server, it’s helpful to keep sessions persistent even after disconnection. This is where tmux becomes very useful.
+- 🎥 **Video Tutorial:**  
+  [Linux Command Line Crash Course – by Traversy Media](https://youtu.be/oxuRxtrO2Ag?si=Kdp28s4ho4GYLCnI)
 
-Tmux allows you to:
+---
 
-Manage multiple terminal windows and panes within a single session
+## 🧰 Tmux: Terminal Multiplexer
 
-Detach and reattach sessions at any time
+When working on multiple projects or running long jobs on a server, it's important to keep your sessions active even if you disconnect. **Tmux** helps you do exactly that.
 
-Avoid losing progress when the SSH connection drops
+### Benefits of Tmux
 
-🎥 Introductory Video:
-Watch here
-(Skip the installation part—Tmux is already installed on the server.)
+- Split your terminal into multiple panes  
+- Run and resume sessions remotely  
+- Keep your work persistent across logins
 
-🧮 AWK Tutorial
-AWK is a powerful command-line tool for text processing and data extraction. It’s commonly used for working with structured data such as CSV and TSV files.
+🎥 **Tmux Introductory Video:**  
+[Watch here](https://youtu.be/BHhA_ZKjyxo?si=NkWWDbREiCCncdOQ)  
+*Skip the installation part—Tmux is already installed on our server.*
 
-More details and practical examples will be added soon.
+---
+
+## 🧮 AWK Tutorial
+
+*Content coming soon...*
