@@ -83,7 +83,7 @@ https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-024-05807-5#
 ## Week 3: ...
 
 ### Journal Club [Tatevik]
-- Read and discuss this paper:
+- Read and discuss this paper:  
   [Telomere Maintenance Pathway Activity Analysis Enables Tissue- and Gene-Level Inferences (Nersisyan et al., 2021)](https://doi.org/10.3389/fgene.2021.662464)
      
 ## Week 4 (Bootcamp): ...
