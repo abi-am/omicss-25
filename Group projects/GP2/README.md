@@ -1,16 +1,16 @@
 # Contributors
-Primary contributor: Tatevik Jalatyan
-Contributing authors: Anahit Yeghiazaryan, Davit Tareverdyan, Mher Kurghinyan
+Primary contributor: Tatevik Jalatyan  
+Contributing authors: Anahit Yeghiazaryan, Davit Tareverdyan, Mher Kurghinyan  
 
-# Table of Contents
+# Table of Contents  
 
-# Contents
+# Contents  
 
-## Project description
+## Project description  
 
 This project explores telomeric sequences in plasma cell-free DNA (cfDNA) to discover novel biomarkers for early cancer detection and monitoring. Students will process raw cfDNA sequencing data, identify telomeric repeat variants, derive gene expression signals from cfDNA, and analyze telomere maintenance mechanism pathway activity. Statistical tests will be used to compare cancer and healthy samples across public datasets.
 
-## Week 1: Background
+## Week 1: Background  
 
 ### Molecular Biology Recap [Anahit]
 - Telomeres and telomeric repeat variants: 
