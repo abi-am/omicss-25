@@ -45,14 +45,6 @@ To introduce amplicon sequencing and demonstrate how to analyze sequencing data 
 **Objective:**  
 To cover metagenomic sequencing techniques and introduce the **Kraken/Bracken** analysis pipeline. Participants will understand the principles of metagenomic data analysis.
 
-**Practice Topics:**  
-- **Phyloseq** basics  
-- Creating a Phyloseq object  
-- **Diversity Analyses:**  
-  - Bar plots (composition plots)  
-  - Alpha diversity (Shannon, Observed OTUs)  
-  - Beta diversity (Bray–Curtis)
-
 ---
 
 #### ⏰ 4:00 PM – 5:00 PM  
