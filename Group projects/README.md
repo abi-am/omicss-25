@@ -6,7 +6,7 @@
 ## GP2: Discovery of Telomeric Biomarkers for Cancer Detection in Cell-Free DNA
  - Mentors: Tatevik Jalatyan,	Anahit Yeghiazaryan, Davit Tareverdyan, Mher Kurghinyan
  - Students (will be added)
- - Short description: 
+ - Short description: This project explores telomeric sequences in plasma cell-free DNA (cfDNA) to discover novel biomarkers for early cancer detection and monitoring. Students will process raw cfDNA sequencing data, identify telomeric repeat variants, derive gene expression signals from cfDNA, and analyze telomere maintenance mechanism pathway activity. Statistical tests will be used to compare cancer and healthy samples across public datasets.
  
 ## GP3: Genomic Characterization of Population Structure in Caucasian Grape Varieties Using Whole-Genome Sequencing
  - Mentors: Nate Zadirako, Mariia Arakelian, Nane Pivazyan
