@@ -116,7 +116,7 @@ ADMIXTURE is usually run for some range of Ks, typically from K=2, to K = 10. Th
 
  > NOTE: ADMIXTURE involves randomization (in cross-validation), so to ensure results are reproducible, you can set a random seed with the *--seed* option:
 
-# STEP 3 (Visualization and interpretation) 
+## STEP 3 (Visualization and interpretation) 
 
 As an output of the ADMIXTURE we will get 3 types of files (/.log, /.Q, /.P)
 
