@@ -67,7 +67,9 @@ https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-024-05807-5#
 - Pathway Signal Flow (PSF) basic usage
 
 ### Practice / Toy Examples [Tatevik]
-- Run PSF with an example gene count matrix for Telomere Maintenance Mechanism (TMM) pathways
+- Run PSF with an example gene count matrix for Telomere Maintenance Mechanism (TMM) pathways  
+  - Follow the steps of [TMM package user guide](https://big.sci.am/software/tmm/#userguide)    
+    Data: [TMM pathway (Data Sheet 4.ZIP)](https://www.frontiersin.org/journals/genetics/articles/10.3389/fgene.2021.662464/full#supplementary-material)  
 - R plotting practice on synthetic TRV data
   - See Practive/R_plotting.docx file for instructions
 
@@ -81,8 +83,8 @@ https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-024-05807-5#
 ## Week 3: ...
 
 ### Journal Club [Tatevik]
-- Read and discuss a paper focused on:
-  - TRVs and mean telomeric length in cancer
+- Read and discuss this paper:
+  [Telomere Maintenance Pathway Activity Analysis Enables Tissue- and Gene-Level Inferences (Nersisyan et al., 2021)](https://doi.org/10.3389/fgene.2021.662464)
      
 ## Week 4 (Bootcamp): ...
 
