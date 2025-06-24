@@ -1,4 +1,16 @@
-## Week 1 – Background
+# Contributors
+Primary contributor: Tatevik Jalatyan
+Contributing authors: Anahit Yeghiazaryan, Davit Tareverdyan, Mher Kurghinyan
+
+# Table of Contents
+
+# Contents
+
+## Project description
+
+This project explores telomeric sequences in plasma cell-free DNA (cfDNA) to discover novel biomarkers for early cancer detection and monitoring. Students will process raw cfDNA sequencing data, identify telomeric repeat variants, derive gene expression signals from cfDNA, and analyze telomere maintenance mechanism pathway activity. Statistical tests will be used to compare cancer and healthy samples across public datasets.
+
+## Week 1: Background
 
 ### Molecular Biology Recap [Anahit]
 - Telomeres and telomeric repeat variants: 
@@ -59,19 +71,19 @@ https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-024-05807-5#
 - R plotting practice on synthetic TRV data
   - See Practive/R_plotting.docx file for instructions
 
-## Week 2 – Data Preprocessing
+## Week 2: Data Preprocessing
 
 ### Dataset Description [Everyone]
 - *need to choose data and samples*
 
 ### Project Presentation (Thu)
 
-## Week 3 – ...
+## Week 3: ...
 
 ### Journal Club [Tatevik]
 - Read and discuss a paper focused on:
   - TRVs and mean telomeric length in cancer
      
-## Week 4 (Bootcamp) – ...
+## Week 4 (Bootcamp): ...
 
 
