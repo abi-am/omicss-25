@@ -71,7 +71,7 @@ Vizualization will include:
 
 ---
 
-## ✅ Workshop Progress Tracker
+## ✅ Progress Tracker
 
 ### 🗓️ Session Status
 
