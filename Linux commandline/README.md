@@ -49,7 +49,8 @@ ssh -l yourusername@comp1.abi.am
 
 ---
 
-## 🧪 Command Line: Introductory Materials
+## ![command-line](https://github.com/user-attachments/assets/0a857434-c06d-4488-ab58-2fcb6256fad9)
+ Command Line: Introductory Materials
 
 Once you're logged into the server, it's a great time to start practicing basic command-line usage.
 
