@@ -67,7 +67,7 @@ Vizualization will include:
 - Composition plots (bar plots, relative abundance heatmaps)  
 - **Diversity Analyses:**  
   - Alpha diversity (Shannon, Observed OTUs)  
-  - Beta diversity (Bray–Curtis, UniFrac)
+  - Beta diversity (Bray–Curtis)
 
 ---
 
