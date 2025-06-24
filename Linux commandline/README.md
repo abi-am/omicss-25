@@ -17,7 +17,10 @@ Before starting the course, we will have an introductory lecture covering the ba
 
 ## 🔐 Generating an SSH Key Pair
 
-Please follow the provided instructions to generate your SSH key pair (public and private).  
+Please follow the provided instructions to generate your SSH key pair (public and private).
+
+🔗 [How to Generate an SSH Key Pair](https://github.com/abi-am/it-resources/blob/main/access-to-server/howto.md)
+
 After generating the keys, email your **public key** to:
 
 📧 **antranigv@abi.am**
