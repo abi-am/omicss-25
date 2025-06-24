@@ -71,6 +71,19 @@ Vizualization will include:
 
 ---
 
+## ✅ Workshop Progress Tracker
+
+### 🗓️ Session Status
+
+| **Date**       | **Topic**                                  | **Presenter**        | **Status**       |
+|----------------|--------------------------------------------|----------------------|------------------|
+| Aug 13, 2025   | Introduction to the Microbiome              | Raz Sargsyan         | ⬜ Not Yet Started |
+| Aug 13, 2025   | Amplicon Sequencing and Data Analysis       | Nelli Vardazaryan    | ⬜ Not Yet Started |
+| Aug 14, 2025   | Metagenomic Sequencing and Data Analysis    | Lilit Nersisyan      | ⬜ Not Yet Started |
+| Aug 14, 2025   | Data Visualization with Phyloseq            | Davit Hakobyan       | ⬜ Not Yet Started |
+
+---
+
 ## ✅ TODOs & Deadlines
 
 | Contributor        | Task Deadline   |
