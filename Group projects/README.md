@@ -15,6 +15,7 @@
  
 ## GP4: Dissecting Lung Cancer Heterogeneity via Single-Cell Transcriptomic Profiling
 
- - Mentors
+ - Mentors: Arpine Grigoryan, Melina Tamazyan, Sveta Mnatsakanyan, Luiza Stepanyan
  - Students (will be added)
- - Short description
+ - Short description: Investigate the cellular heterogeneity of lung cancer by analyzing single-cell RNA sequencing data, identify the key genes, cell populations, and molecular pathways that contribute to the development and progression of lung cancer.
+
