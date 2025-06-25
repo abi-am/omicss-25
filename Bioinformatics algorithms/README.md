@@ -36,9 +36,18 @@
   - [ ] Day 5 slides — **due 09.07**
   - [ ] Final touch  — **due 11.07**
 
-  ### Tatev Jalatyan & Davit Hakobyan
+  ### Tatev Jalatyan
   - [ ] Day 1 practice problems — **due 26.06**
-  - [ ] Day 2 practice problems — **due 30.06**
+    - Implement pattern matching using the **naive approach**
+    - Implement pattern matching using the **Boyer–Moore algorithm**
+    - Create conceptual questions to **differentiate types of sequence alignment**
+    - Design a step-by-step global alignment task using **Needleman–Wunsch**, including:
+      - Initialization
+      - Matrix filling
+      - Traceback
   - [ ] Day 3 practice problems — **due 04.07**
-  - [ ] Day 4 practice problems — **due 08.07**
   - [ ] Day 5 practice problems — **due 11.07**
+
+  ### Davit Hakobyan
+  - [ ] Day 2 practice problems — **due 30.06**
+  - [ ] Day 4 practice problems — **due 08.07**
