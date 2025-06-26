@@ -10,6 +10,7 @@
 | [🧪 Command Line: Introductory Materials](#-command-line-introductory-materials) | 180 minutes  |
 | [🧰 Tmux: Terminal Multiplexer](#-tmux-terminal-multiplexer) | 30 minutes   |
 | [🧮 AWK Tutorial](#-awk-tutorial)      | — Coming soon |
+| **🧮 Total Time**                      | **310 minutes (~5h 10m)** |
 
 
 # Welcome to the Linux Command Line Course (omics-25)
