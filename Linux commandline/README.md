@@ -1,9 +1,16 @@
   # Contributors
     Primary contributor: Siras Hakobyan
     Contributing authors: Antranig Vardanian, Anahit Yeghiazaryan
-  # Content  
-  # TODO
-    Primary contributor assigns tasks to contributing authors with deadlines
+# Content
+| Section                                | Duration     |
+|----------------------------------------|--------------|
+| [📚 Lecture](#-lecture)                | 60 minutes   |
+| [🔐 Generating SSH Keys](#-generating-an-ssh-key-pair) | 10 minutes   |
+| [🌐 Connecting to the Server](#-connecting-to-the-server) | 30 minutes   |
+| [🧪 Command Line: Introductory Materials](#-command-line-introductory-materials) | 180 minutes  |
+| [🧰 Tmux: Terminal Multiplexer](#-tmux-terminal-multiplexer) | 30 minutes   |
+| [🧮 AWK Tutorial](#-awk-tutorial)      | — Coming soon |
+
 
 # Welcome to the Linux Command Line Course (omics-25)
 
