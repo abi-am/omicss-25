@@ -14,13 +14,13 @@
     Deadline - 15:00 AM 24.06.2025
 
     Luiza: make exercises on K-means clustering
-    Deadline - 22:00 AM 27.06.2025
+    Deadline - 22:00 AM 28.06.2025
     Luiza: Create slides on Clustering
-    Deadline - 22:00 AM 27.06.2025
+    Deadline - 22:00 AM 28.06.2025
     
     Davit: make exercises on PCA
-    Deadline - 22:00 AM 27.06.2025
+    Deadline - 22:00 AM 28.06.2025
     Davit: create slides on PCA
-    Deadline - 22:00 AM 27.06.2025
+    Deadline - 22:00 AM 28.06.2025
  
   
