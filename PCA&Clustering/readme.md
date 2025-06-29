@@ -23,3 +23,5 @@
     Deadline - 22:00 AM 2.07.2025
     Davit: make exercises on PCA
     Deadline - 22:00 AM 2.07.2025
+
+    
