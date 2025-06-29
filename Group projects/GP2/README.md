@@ -12,16 +12,16 @@ This project explores telomeric sequences in plasma cell-free DNA (cfDNA) to dis
 
 ## Week 1: Background  
 ### 7/29/2025 - 5PM-6PM  
-#### Molecular Biology Recap [Anahit]
-- Telomeres and telomeric repeat variants (TRVs): 
-[Telomeres](https://www.ncbi.nlm.nih.gov/books/NBK576429/)
-[TRVs (only Background section up to Fig. 1)](https://doi.org/10.1186/s12859-024-05807-5)
-- [Gene isoforms](https://rna.cd-genomics.com/resource/gene-isoforms.html)
-- Gene regulatory elements (e.g. promoters)
-_ Select a section from Alberts or Campbell. You can also just give a short text excerpt._
-- [DNA Packaging: Nucleosomes and Chromatin](https://www.nature.com/scitable/topicpage/dna-packaging-nucleosomes-and-chromatin-310/)
-- Cell-free DNA (cfDNA) (e.g. origins, fragmentation patterns, clinical applications)  
-  [A hitchhiker’s guide to cell-free DNA biology](https://pmc.ncbi.nlm.nih.gov/articles/PMC9650475/)
+#### Molecular Biology Recap [Anahit]  
+- Telomeres and telomeric repeat variants (TRVs):   
+[Telomeres](https://www.ncbi.nlm.nih.gov/books/NBK576429/)  
+[TRVs (only Background section up to Fig. 1)](https://doi.org/10.1186/s12859-024-05807-5)  
+- [Gene isoforms](https://rna.cd-genomics.com/resource/gene-isoforms.html)  
+- Gene regulatory elements (e.g. promoters)  
+_ Select a section from Alberts or Campbell. You can also just give a short text excerpt._  
+- [DNA Packaging: Nucleosomes and Chromatin](https://www.nature.com/scitable/topicpage/dna-packaging-nucleosomes-and-chromatin-310/)  
+- Cell-free DNA (cfDNA) (e.g. origins, fragmentation patterns, clinical applications)    
+  [A hitchhiker’s guide to cell-free DNA biology](https://pmc.ncbi.nlm.nih.gov/articles/PMC9650475/)  
   
 ### 7/30/2025 - 5PM-6PM  
 ### Statistics Recap [Davit T.]  
