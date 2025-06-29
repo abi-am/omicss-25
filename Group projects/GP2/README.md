@@ -9,8 +9,8 @@ Contributing authors: Anahit Yeghiazaryan, Davit Tareverdyan, Mher Kurghinyan
 This project explores telomeric sequences in plasma cell-free DNA (cfDNA) to discover novel biomarkers for early cancer detection and monitoring. Students will process raw cfDNA sequencing data, identify telomeric repeat variants, derive gene expression signals from cfDNA, and analyze telomere maintenance mechanism pathway activity. Statistical tests will be used to compare cancer and healthy samples across public datasets.
 
 ## Week 1
-### 7/29/2025 - 5PM-6PM  
-#### Molecular Biology Recap [Anahit]  
+## 7/29/2025 - 5PM-6PM  
+### Molecular Biology Recap [Anahit]  
 - Telomeres and telomeric repeat variants (TRVs):   
 [Telomeres](https://www.ncbi.nlm.nih.gov/books/NBK576429/)  
 [TRVs (only Background section up to Fig. 1)](https://doi.org/10.1186/s12859-024-05807-5)  
@@ -21,7 +21,7 @@ This project explores telomeric sequences in plasma cell-free DNA (cfDNA) to dis
 - Cell-free DNA (cfDNA) (e.g. origins, fragmentation patterns, clinical applications)    
   [A hitchhiker’s guide to cell-free DNA biology](https://pmc.ncbi.nlm.nih.gov/articles/PMC9650475/)  
   
-### 7/30/2025 - 5PM-6PM  
+## 7/30/2025 - 5PM-6PM  
 ### Statistics Recap [Davit T.]  
 - Non-parametric tests (e.g. Mann–Whitney U)
     * [what are non-parametric tests](https://corporatefinanceinstitute.com/resources/data-science/nonparametric-tests/)
