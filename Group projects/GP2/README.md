@@ -61,13 +61,13 @@ _ Select a section from Alberts or Campbell. You can also just give a short text
     Data: [TMM pathway (Data Sheet 4.ZIP)](https://www.frontiersin.org/journals/genetics/articles/10.3389/fgene.2021.662464/full#supplementary-material)  
 
 ### Extra Reading
-- Telomere biology and cancer (e.g. telomere structure, maintenance, dysfunction in cancer) 
+- Telomere biology and cancer (e.g. telomere structure, maintenance, dysfunction in cancer)  
   [Telomeres: history, health, and hallmarks of aging](https://www.sciencedirect.com/science/article/pii/S0092867420317505)  
 - [Genetics, DNA Packaging](https://www.ncbi.nlm.nih.gov/books/NBK534207/)  
-- [Composition and Diversity of Telomeric Repeats (Section 1.1)](https://www.mdpi.com/2073-4425/10/2/118)
+- [Composition and Diversity of Telomeric Repeats (Section 1.1)](https://www.mdpi.com/2073-4425/10/2/118)  
 - Nucleosome depleted regions (NDRs) and usage for gene expression inference  
   [Inferring gene expression from cell-free DNA fragmentation profiles](https://www.nature.com/articles/s41587-022-01222-4)  
-  [Tissue-specific cell-free DNA degradation quantifies circulating tumor DNA burden](https://www.nature.com/articles/s41467-021-22463-y)
+  [Tissue-specific cell-free DNA degradation quantifies circulating tumor DNA burden](https://www.nature.com/articles/s41467-021-22463-y)  
 
 ## Week 2: Data Preprocessing
 ### 8/4/2025 - 4PM-5PM  
