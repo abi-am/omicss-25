@@ -18,7 +18,7 @@ This project explores telomeric sequences in plasma cell-free DNA (cfDNA) to dis
 [TRVs (only Background section up to Fig. 1)](https://doi.org/10.1186/s12859-024-05807-5)  
 - [Gene isoforms](https://rna.cd-genomics.com/resource/gene-isoforms.html)  
 - Gene regulatory elements (e.g. promoters)  
-_ Select a section from Alberts or Campbell. You can also just give a short text excerpt._  
+  *Select a section from Alberts or Campbell. You can also just give a short text excerpt.*  
 - [DNA Packaging: Nucleosomes and Chromatin](https://www.nature.com/scitable/topicpage/dna-packaging-nucleosomes-and-chromatin-310/)  
 - Cell-free DNA (cfDNA) (e.g. origins, fragmentation patterns, clinical applications)    
   [A hitchhiker’s guide to cell-free DNA biology](https://pmc.ncbi.nlm.nih.gov/articles/PMC9650475/)  
