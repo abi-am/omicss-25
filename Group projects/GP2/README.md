@@ -2,8 +2,6 @@
 Primary contributor: Tatevik Jalatyan  
 Contributing authors: Anahit Yeghiazaryan, Davit Tareverdyan, Mher Kurghinyan  
 
-# Table of Contents  
-
 # Contents  
 
 ## Project description  
@@ -75,15 +73,15 @@ This project explores telomeric sequences in plasma cell-free DNA (cfDNA) to dis
 
 ### 8/6/2025 - 5PM-6PM  
 #### Practice / Toy Examples (Part 2) [Tatevik]
-- R plotting practice on synthetic TRV data
-  - See Practive/R_plotting.docx file for instructions
+R plotting practice on synthetic TRV data
+ - See Practive/R_plotting.docx file for instructions
 
 ### 8/7/2025 - 5PM-6PM  
 Prepare project presentation. 
 
 ## Week 3
 ### 8/11/2025 - 4PM-6PM  
-- Project presentation by students
+Project presentation by students
 
 ### 8/12/2025 - 4PM-5PM
 #### Dataset Description 
@@ -106,17 +104,15 @@ Create script `src/trim.sh` to remove adapters and low quality bases from files 
 
 ##### What to trim  
 - Adapters  
- If your FASTQC report shows adapter contamination, remove adapters. There are three common adapters, frequently used in NGS:  
- 
+ If your FASTQC report shows adapter contamination, remove adapters. There are three common adapters, frequently used in NGS:
  Illumina universal adapter (most common): AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC  
  Illumina Nextera adapter: CTGTCTCTTATACACATCT  
  TruSeq adapter: AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT  
  Adapters are usually found at the 3' end of your reads. In rare cases, you'll also need to remove barcodes or adapters from the 5' end.  
 
-- Low quality bases  
- The 3' ends of the reads usually have lower quality (FASTQC Report section: “Per base sequence quality”). If those are too low, you may want to trim all the reads by a certain number of bases from the 3' end.  
- 
- The 5' end may also have issues. You can check the “Per base sequence content” section of FASTQC. If the bases are not uniformly distributed at the 5' end (should be close to a straight line for each base), then there may be barcodes or quality issues. You can choose to remove the first few bases until the distribution becomes uniform.  
+- Low quality bases
+  The 3' ends of the reads usually have lower quality (FASTQC Report section: “Per base sequence quality”). If those are too low, you may want to trim all the reads by a certain number of bases from the 3' end.
+  The 5' end may also have issues. You can check the “Per base sequence content” section of FASTQC. If the bases are not uniformly distributed at the 5' end (should be close to a straight line for each base), then there may be barcodes or quality issues. You can choose to remove the first few bases until the distribution becomes uniform.  
 
 - Short reads  
  After adapter and quality trimming, some reads may end up being too short. You can remove short reads entirely from the FASTQ file. As a rule of thumb, reads shorter than 20 bp should be removed.  
