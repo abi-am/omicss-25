@@ -7,7 +7,7 @@ Main contributor: Razmik Sargsyan
 
 
 ### ToDo: 
-- [ ] Main outline of the presentation
+- [x] Main outline of the presentation
 - [ ] Final Draft
 - [ ] Quizzes
 - [ ] Final version
