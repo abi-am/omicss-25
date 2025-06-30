@@ -1,4 +1,4 @@
-  # Contributors
+  # Contributors 
     Primary contributor: Maria Nikoghosyan
     Contributing authors: Nate Zadirako, Emma Hovhannisyan
   # Description 
