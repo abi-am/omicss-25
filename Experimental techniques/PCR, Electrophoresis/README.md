@@ -6,7 +6,7 @@ Main contributor: Razmik Sargsyan
 
 
 
-###ToDo: 
+### ToDo: 
 - [ ] Main outline of the presentation
 - [ ] Final Draft
 - [ ] Quizzes
