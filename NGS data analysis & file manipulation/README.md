@@ -9,7 +9,7 @@
   
   # TODO
 -   Prepare slides and materials on FASTA/FASTQ files formats [Davit T., Tatevik J.]
-     1. Slides - Difference between FASTA and FASTQ file structure (header, quality score, difference between reference and reads). Include common Linux commands for viewing (head, less), counting sequences/reads (grep), etc.  [June 23rd, 11AM] 
+     1. [Slides](https://docs.google.com/presentation/d/147S8KHfASleNNnflGcAHNm_17RivY0Ik3SBDx_QqfxA/edit?slide=id.g33d5a1ad07d_0_177#slide=id.g33d5a1ad07d_0_177) - Difference between FASTA and FASTQ file structure (header, quality score, difference between reference and reads). Include common Linux commands for viewing (head, less), counting sequences/reads (grep), etc.  [June 23rd, 11AM] 
      2. Other Materials - Prepare small sample data and exercises for practice (e.g. view first 10 lines of the file, extract specific sequences, get chromosome names and respective lengths)
 
 -   Prepare slides and materials on Quality Control (FastQC & MultiQC) [Mher K., Anahit Y.]
