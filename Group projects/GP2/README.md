@@ -3,7 +3,6 @@ Primary contributor: Tatevik Jalatyan
 Contributing authors: Anahit Yeghiazaryan, Davit Tareverdyan, Mher Kurghinyan  
 
 # Contents  
-
 - [Project description](#project-description)
 - [Week 1](#week-1)
   - [7/29/2025 - 5PM-6PM](#7292025---5pm-6pm)
@@ -13,7 +12,7 @@ Contributing authors: Anahit Yeghiazaryan, Davit Tareverdyan, Mher Kurghinyan
   - [7/31/2025 - 5PM-6PM](#7312025---5pm-6pm)
     - [Tutorials](#tutorials)
     - [Practice / Toy Examples (Part 1)](#practice--toy-examples-part-1)
-    - [Extra Reading](#extra-reading)
+  - [Extra Reading](#extra-reading)
 - [Week 2](#week-2)
   - [8/4/2025 - 4PM-5PM](#842025---4pm-5pm)
   - [8/6/2025 - 5PM-6PM](#862025---5pm-6pm)
