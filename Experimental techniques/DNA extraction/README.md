@@ -9,3 +9,4 @@ Nelli Vardazaryan
 - [ ] Main outline of the presentation
 - [ ] Finalized draft
 - [ ] Create quizzes
+- [ ] Final Version
