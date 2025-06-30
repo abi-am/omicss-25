@@ -5,7 +5,6 @@ Contributing authors: Anahit Yeghiazaryan, Davit Tareverdyan, Mher Kurghinyan
 # Contents  
 
 - [Project description](#project-description)
-
 - [Week 1](#week-1)
   - [7/29/2025 - 5PM-6PM](#7292025---5pm-6pm)
     - [Molecular Biology Recap](#molecular-biology-recap)
@@ -15,14 +14,12 @@ Contributing authors: Anahit Yeghiazaryan, Davit Tareverdyan, Mher Kurghinyan
     - [Tutorials](#tutorials)
     - [Practice / Toy Examples (Part 1)](#practice--toy-examples-part-1)
     - [Extra Reading](#extra-reading)
-
 - [Week 2](#week-2)
   - [8/4/2025 - 4PM-5PM](#842025---4pm-5pm)
   - [8/6/2025 - 5PM-6PM](#862025---5pm-6pm)
     - [Practice / Toy Examples (Part 2)](#practice--toy-examples-part-2)
   - [8/7/2025 - 5PM-6PM](#872025---5pm-6pm)
     - [Prepare project presentation](#prepare-project-presentation)
-
 - [Week 3](#week-3)
   - [8/11/2025 - 4PM-6PM](#8112025---4pm-6pm)
     - [Project presentation by students](#project-presentation-by-students)
@@ -38,7 +35,6 @@ Contributing authors: Anahit Yeghiazaryan, Davit Tareverdyan, Mher Kurghinyan
     - [Alignment to reference genome](#alignment-to-reference-genome)
     - [Reference genome index](#reference-genome-index)
     - [Journal Club [Tatevik] (*WHEN?*)](#journal-club-tatevik-when)
-
 - [Week 4](#week-4)
   - [8/18/2025 - 11AM-12PM](#8182025---11am-12pm)
     - [Remove duplicated reads from bam (*INCLUDE?*)](#remove-duplicated-reads-from-bam-include)
@@ -58,7 +54,6 @@ Contributing authors: Anahit Yeghiazaryan, Davit Tareverdyan, Mher Kurghinyan
   - [8/20/2025 - 12PM-1PM](#8202025---12pm-1pm)
   - [8/20/2025 - 2PM-3PM](#8202025---2pm-3pm)
   - [8/20/2025 - 4PM-5PM](#8202025---4pm-5pm)
-
 - [Bootcamp](#bootcamp)
   - [8/21/2025](#8212025)
   - [8/22/2025](#8222025)
@@ -120,7 +115,7 @@ This project explores telomeric sequences in plasma cell-free DNA (cfDNA) to dis
   - Follow the steps of [TMM package user guide](https://big.sci.am/software/tmm/#userguide)    
     Data: [TMM pathway (Data Sheet 4.ZIP)](https://www.frontiersin.org/journals/genetics/articles/10.3389/fgene.2021.662464/full#supplementary-material)  
 
-### Extra Reading
+## Extra Reading
 - Telomere biology and cancer (e.g. telomere structure, maintenance, dysfunction in cancer)  
   [Telomeres: history, health, and hallmarks of aging](https://www.sciencedirect.com/science/article/pii/S0092867420317505)  
 - [Genetics, DNA Packaging](https://www.ncbi.nlm.nih.gov/books/NBK534207/)  
