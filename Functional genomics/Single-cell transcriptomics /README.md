@@ -1,11 +1,11 @@
   # Contributors
     Primary contributor: Arpine Grigoryan
     Contributing authors: Melina Tamazyan
-  # Content  
-  ### Lecture
+  # Contents  
+  ### Lecture 11:00am – 12:00pm
   [scRNA-seq Lecture for _insert date_](https://docs.google.com/presentation/d/1y9dZdsu_vii38DSJbjHd1iSOuKEdmrO-/edit?usp=share_link&ouid=108169334741774870734&rtpof=true&sd=true)
 
-### Practice 
+### Practice 12:00 – 4:00pm
 Homework 1 - to read the paper about the general guidelines for scRNA-seq analysis \
  ``` Practice/hw1.pdf  ``` \
 Homework 2 - to read the paper about best practices in scRNA-seq analysis \
