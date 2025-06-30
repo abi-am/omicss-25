@@ -4,13 +4,75 @@ Contributing authors: Anahit Yeghiazaryan, Davit Tareverdyan, Mher Kurghinyan
 
 # Contents  
 
+- [Project description](#project-description)
+
+- [Week 1](#week-1)
+  - [7/29/2025 - 5PM-6PM](#7292025---5pm-6pm)
+    - [Molecular Biology Recap](#molecular-biology-recap)
+  - [7/30/2025 - 5PM-6PM](#7302025---5pm-6pm)
+    - [Statistics Recap](#statistics-recap)
+  - [7/31/2025 - 5PM-6PM](#7312025---5pm-6pm)
+    - [Tutorials](#tutorials)
+    - [Practice / Toy Examples (Part 1)](#practice--toy-examples-part-1)
+    - [Extra Reading](#extra-reading)
+
+- [Week 2](#week-2)
+  - [8/4/2025 - 4PM-5PM](#842025---4pm-5pm)
+  - [8/6/2025 - 5PM-6PM](#862025---5pm-6pm)
+    - [Practice / Toy Examples (Part 2)](#practice--toy-examples-part-2)
+  - [8/7/2025 - 5PM-6PM](#872025---5pm-6pm)
+    - [Prepare project presentation](#prepare-project-presentation)
+
+- [Week 3](#week-3)
+  - [8/11/2025 - 4PM-6PM](#8112025---4pm-6pm)
+    - [Project presentation by students](#project-presentation-by-students)
+  - [8/12/2025 - 4PM-5PM](#8122025---4pm-5pm)
+    - [Dataset Description](#dataset-description)
+    - [Initial quality check](#initial-quality-check)
+  - [8/13/2025 - 5PM-6PM](#8132025---5pm-6pm)
+    - [Quality and adapter trimming](#quality-and-adapter-trimming)
+    - [What to trim](#what-to-trim)
+  - [8/14/2025 - 4PM-5PM](#8142025---4pm-5pm)
+    - [Post-trimming quality check](#post-trimming-quality-check)
+  - [8/15/2025 - 4PM-5PM](#8152025---4pm-5pm)
+    - [Alignment to reference genome](#alignment-to-reference-genome)
+    - [Reference genome index](#reference-genome-index)
+    - [Journal Club [Tatevik] (*WHEN?*)](#journal-club-tatevik-when)
+
+- [Week 4](#week-4)
+  - [8/18/2025 - 11AM-12PM](#8182025---11am-12pm)
+    - [Remove duplicated reads from bam (*INCLUDE?*)](#remove-duplicated-reads-from-bam-include)
+  - [8/18/2025 - 12PM-1PM](#8182025---12pm-1pm)
+    - [Gene expression estimation using NDR](#gene-expression-estimation-using-ndr)
+  - [8/18/2025 - 4PM-5PM](#8182025---4pm-5pm)
+    - [Correlation with values from matched RNA-seq (*INCLUDE?*)](#correlation-with-values-from-matched-rna-seq-include)
+  - [8/19/2025 - 12PM-1PM](#8192025---12pm-1pm)
+    - [Run PSF using gene expression estimates for TMM genes](#run-psf-using-gene-expression-estimates-for-tmm-genes)
+  - [8/19/2025 - 2PM-3PM](#8192025---2pm-3pm)
+    - [Run Computel for TRVs (*INCLUDE?*)](#run-computel-for-trvs-include)
+    - [TRV analysis on pre-generated table: within dataset comparisons](#trv-analysis-on-pre-generated-table-within-dataset-comparisons)
+  - [8/19/2025 - 3PM-4PM](#8192025---3pm-4pm)
+    - [TRV analysis on pre-generated table: check for dataset batch effects (*INCLUDE?*)](#trv-analysis-on-pre-generated-table-check-for-dataset-batch-effects-include)
+  - [8/19/2025 - 4PM-5PM](#8192025---4pm-5pm)
+    - [TRV analysis on pre-generated table: between dataset comparisons](#trv-analysis-on-pre-generated-table-between-dataset-comparisons)
+  - [8/20/2025 - 12PM-1PM](#8202025---12pm-1pm)
+  - [8/20/2025 - 2PM-3PM](#8202025---2pm-3pm)
+  - [8/20/2025 - 4PM-5PM](#8202025---4pm-5pm)
+
+- [Bootcamp](#bootcamp)
+  - [8/21/2025](#8212025)
+  - [8/22/2025](#8222025)
+  - [8/23/2025](#8232025)
+  - [8/24/2025](#8242025)
+
+
 ## Project description  
 
 This project explores telomeric sequences in plasma cell-free DNA (cfDNA) to discover novel biomarkers for early cancer detection and monitoring. Students will process raw cfDNA sequencing data, identify telomeric repeat variants, derive gene expression signals from cfDNA, and analyze telomere maintenance mechanism pathway activity. Statistical tests will be used to compare cancer and healthy samples across public datasets.
 
 ## Week 1
 ## 7/29/2025 - 5PM-6PM  
-### Molecular Biology Recap [Anahit]  
+### Molecular Biology Recap  
 - Telomeres and telomeric repeat variants (TRVs):   
 [Telomeres](https://www.ncbi.nlm.nih.gov/books/NBK576429/)  
 [TRVs (only Background section up to Fig. 1)](https://doi.org/10.1186/s12859-024-05807-5)  
@@ -22,7 +84,7 @@ This project explores telomeric sequences in plasma cell-free DNA (cfDNA) to dis
   [A hitchhiker’s guide to cell-free DNA biology](https://pmc.ncbi.nlm.nih.gov/articles/PMC9650475/)  
   
 ## 7/30/2025 - 5PM-6PM  
-### Statistics Recap [Davit T.]  
+### Statistics Recap  
 - Non-parametric tests (e.g. Mann–Whitney U)
     * [what are non-parametric tests](https://corporatefinanceinstitute.com/resources/data-science/nonparametric-tests/)
     * [Mann–Whitney U test, with medical data example](https://datatab.net/tutorial/mann-whitney-u-test)
@@ -48,12 +110,12 @@ This project explores telomeric sequences in plasma cell-free DNA (cfDNA) to dis
 
 ## 7/31/2025 - 5PM-6PM  
 
-### Tutorials [Mher]
+### Tutorials  
 - Cytoscape  
   [Cytoscape tutorial for networks](https://cytoscape.org/cytoscape-tutorials/presentations/network-analysis-ebi-2021.html#/)
 - Pathway Signal Flow (PSF) basic usage
 
-### Practice / Toy Examples (Part 1) [Tatevik]
+### Practice / Toy Examples (Part 1)  
 - Run PSF with an example gene count matrix for Telomere Maintenance Mechanism (TMM) pathways  
   - Follow the steps of [TMM package user guide](https://big.sci.am/software/tmm/#userguide)    
     Data: [TMM pathway (Data Sheet 4.ZIP)](https://www.frontiersin.org/journals/genetics/articles/10.3389/fgene.2021.662464/full#supplementary-material)  
@@ -72,12 +134,12 @@ This project explores telomeric sequences in plasma cell-free DNA (cfDNA) to dis
 
 
 ## 8/6/2025 - 5PM-6PM  
-### Practice / Toy Examples (Part 2) [Tatevik]
+### Practice / Toy Examples (Part 2) 
 R plotting practice on synthetic TRV data
  - See Practive/R_plotting.docx file for instructions
 
 ## 8/7/2025 - 5PM-6PM  
-Prepare project presentation. 
+Prepare project presentation  
 
 ## Week 3
 ## 8/11/2025 - 4PM-6PM  
@@ -100,7 +162,7 @@ Check the results of quality check. If you identify any quality issues proceed t
 
 ## 8/13/2025 - 5PM-6PM  
 ### Quality and adapter trimming 
-Create script `src/trim.sh` to remove adapters and low quality bases from files in `fq_renamed` directory if needed storing outputs in `fq_trimmed` directory. Use [cutadapt](https://cutadapt.readthedocs.io/en/stable/guide.html) or (fastp)[https://github.com/OpenGene/fastp?tab=readme-ov-file#adapters] tools for trimming.  
+Create script `src/trim.sh` to remove adapters and low quality bases from files in `fq_renamed` directory if needed storing outputs in `fq_trimmed` directory. Use [cutadapt](https://cutadapt.readthedocs.io/en/stable/guide.html) or [fastp](https://github.com/OpenGene/fastp?tab=readme-ov-file#adapters) tools for trimming.  
 
 #### What to trim  
 - Adapters  
@@ -128,7 +190,7 @@ Check if any quality issues persist to perform trimming again if needed.
 ## 8/15/2025 - 4PM-5PM
 
 ### Alignment to reference genome
-Create script `src/align.sh` to align trimmed FASTQ files on human reference genome. Use (bwa mem)[https://bio-bwa.sourceforge.net/bwa.shtml] program for alignment. 
+Create script `src/align.sh` to align trimmed FASTQ files on human reference genome. Use [bwa mem](https://bio-bwa.sourceforge.net/bwa.shtml) program for alignment. 
 Log to:			`log/align.log`  
 Store output to directory:	`bam`  
 
@@ -137,29 +199,50 @@ You'll need a reference genome index to align your reads in FASTQ files. Use pre
  
 Check log files for alignment status, % of reads aligned and other stats. 
 
-### Journal Club [Tatevik] (*WHEN?*)
+### Journal Club (*WHEN?*)
 - Read and discuss this paper:  
   [Telomere Maintenance Pathway Activity Analysis Enables Tissue- and Gene-Level Inferences (Nersisyan et al., 2021)](https://doi.org/10.3389/fgene.2021.662464)
      
-## Week 4: ...
+## Week 4
 ## 8/18/2025 - 11AM-12PM
+### Remove duplicated reads from bam (*INCLUDE?*)
+
 ## 8/18/2025 - 12PM-1PM
+### Gene expression estimation using NDR 
+
 ## 8/18/2025 - 4PM-5PM
+### Correlation with values from matched RNA-seq (*INCLUDE?*)
 
 ## 8/19/2025 - 12PM-1PM
+### Run PSF using gene expression estimates for TMM genes
+
 ## 8/19/2025 - 2PM-3PM
+### Run Computel for TRVs (*INCLUDE?*)
+### TRV analysis on pre-generated table: within dataset comparisons
+
 ## 8/19/2025 - 3PM-4PM
+### TRV analysis on pre-generated table: check for dataset batch effects (*INCLUDE?*)
+
 ## 8/19/2025 - 4PM-5PM
+### TRV analysis on pre-generated table: between dataset comparisons
 
 ## 8/20/2025 - 12PM-1PM
+### ...
 ## 8/20/2025 - 2PM-3PM
+### ...
 ## 8/20/2025 - 4PM-5PM
+### ...
 
 ## Bootcamp
 ## 8/21/2025
+### ...
 ## 8/22/2025
+### ...
 ## 8/23/2025
+### ...
 ## 8/24/2025
+### ...
+
 
 
 
