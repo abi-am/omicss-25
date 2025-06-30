@@ -37,7 +37,7 @@
   - [ ] Final touch  — **due 11.07**
 
   ### Tatev Jalatyan
-  - [ ] Day 1 practice problems — **due 26.06**
+  - [x] [Day 1 practice problems](https://docs.google.com/document/d/1OY9Jp6dlHxGhqBdUIKvOVGCDhKJ1DgnHnR_3piSwvwQ/edit?tab=t.0) — **due 26.06**
     - Implement pattern matching using the **naive approach**
     - Implement pattern matching using the **Boyer–Moore algorithm**
     - Create conceptual questions to **differentiate types of sequence alignment**
