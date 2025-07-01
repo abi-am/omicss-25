@@ -1,14 +1,38 @@
-  # Contributors
+# Contributors
    Primary contributor: Nate Zadirako  
    Contributing authors: Mariia Arakelian, Nane Pivazyan  
-  # Content  
+  # Contents  
+  * Overview
+  * Background
+  * Data preprocessing
+  * ADMIXTURE
+  * Phylogenetic analysis
     
 ## Project Overview
-This project aims to explore the population structure of Caucasian varieties of grapevine using whole-genome sequencing data. The participants will become familiar with the VCF file format, the standard data preprocessing pipeline (variant calling, filtering) and the downstream population genomics analyses (ADMIXTURE, phylogenetic tree construction).
+This project aims to explore the population structure of Caucasian varieties of grapevine using whole-genome sequencing data. The participants will become familiar with the VCF file format, the standard data preprocessing pipeline (variant calling, filtering) and the downstream population genomics analyses (ADMIXTURE, phylogenetic tree construction).  
+
+## Background
+Now that whole-genome sequencing (WGS) is relatively cheap and accessible, it has become possible to collect WGS data from hundreds or even thousands of individuals. This enables us to explore large-scale patterns of genetic variation across entire populations.   
+
+**Population genetics** is the study of the genetic makeup of biological populations and changes in this makeup over time. It provides insights into evolutionary processes such as natural selection, genetic drift, mutation, and migration.   
+
+**Population genomics** extends these principles to genome-wide data, allowing us to look at variation across the entire genome, rather than focusing on a few selected markers.  
+
+In practical terms, we might want to understand where a given sample came from, how it relates to others, or whether distinct groups of individuals share common ancestry. 
+
+In this project, we will apply these concepts to real WGS data and perform two downsteam analyses: **ADMIXTURE** and **phylogenetic tree construction**.  
+
+**ADMIXTURE** is a model-based clustering method that estimates the proportion of ancestry each individual inherits from a predefined number of ancestral populations. It is used to detect population structure and infer historical admixture events. For our grapevine dataset, ADMIXTURE will help us understand whether different varieties share ancestry and to what extent they may represent mixtures of multiple ancestral gene pools.  
+
+**Phylogenetic tree construction**, on the other hand, focuses on the evolutionary relationships between individuals or groups. By building a tree, we can visualize how closely related different grapevine samples are and potentially infer patterns of divergence and descent. This can reveal clades of related varieties and provide a complementary view to the ADMIXTURE results.  
+
+Together, these two analyses give us a nice interpretable overview of both shared ancestry and evolutionary relationships in our dataset.  
+
+> You might be curious what other people are doing with this kind of data and tools! [This review](https://academic.oup.com/gbe/article/15/4/evad054/7092825) describes the application of admixture to human populations, and [this report](https://www.journalofinfection.com/article/S0163-4453(20)30159-6/fulltext) describes shows how phylogenetic analysis can be used to track the infection source of a COVID-19 patient.  
 
 ### Data
 
-The data for this project comes from [this publication](). We will reanalyse a subset of Caucasian grapevine samples, both cultivated (*V. vinifera*) and wild (*V. sylvestris*), and attempt to uncover patterns of genetic diversity from populations of different geographic origin.   
+The data for this project comes from [this publication](https://www.science.org/doi/10.1126/science.add8655). We will reanalyse a subset of Caucasian grapevine samples, both cultivated (*V. vinifera*) and wild (*V. sylvestris*), and attempt to uncover patterns of genetic diversity from populations of different geographic origin.   
 
 You can familiarise yourself with the samples, their regions of origin, genetic background and phenotypes by studying the metadata table here:   
 
@@ -29,6 +53,8 @@ Learn more about the VCF file format and what each field represents [here](https
 ## Data preprocessing
 
 ### Merging gVCFs
+
+> NOTE: as this part is computationally demanding, it was pre-computed for you. From the filtering section onwards, you will be running commands yourself.
 
 For any scripts engaging the GATK tooks, refer to the path here:
 ```
@@ -73,11 +99,11 @@ For any scripts engaging the ADMIXTURE tool, refer to the path here:
 ```
   ## Step 1 (Filtering)
   
-   As an input we need to give filtered plink binary format files (.bed, .bim. fam). Filtering should include the following steps
+   As an input we need to give filtered plink binary format files (.bed, .bim. fam). Filtering should include the following steps:
 
    - **Anotation** - samples should have individual, unique ID's. So if the VCF file that we need to analyze is not annotated, firstly we need to annotate it using bcftools. 
 
-**Then we can proceed with Filtering using [PLINK](https://www.cog-genomics.org/plink/1.9/filter) tool**
+**Then we can proceed with Filtering using [PLINK](https://www.cog-genomics.org/plink/1.9/filter) tool**.
 
 ```
 /mnt/proj/vine/user_projects/shengchang/soft/plink/plink
@@ -89,7 +115,7 @@ For any scripts engaging the ADMIXTURE tool, refer to the path here:
      
    - **[LD pruning](https://www.cog-genomics.org/plink/1.9/ld)** - LD pruning is the process of removing genetic variants (SNPs) that are highly correlated (in linkage disequilibrium, LD) to keep only independent markers. This is done to reduce redundancy and avoid bias in the analysis. Paramets for LD pruning are **windiw size** (The genomic region size scanned), **Step size** (How much the window moves each step), **r² threshold** (Correlation cutoff above which SNPs are pruned). The comonly used parameters are (50, 5, 0.5).
 
-As an output we will have plink finary format files (/.bed, /.bim, /.fam)
+As an output we will have plink finary format files (/.bed, /.bim, /.fam).
 
 - **/.bed — Binary genotype data file** : Contains the actual genotype calls in a compact binary format for all samples and SNP
 
@@ -99,7 +125,7 @@ As an output we will have plink finary format files (/.bed, /.bim, /.fam)
 
  ## Step 2 (ADMIXTURE analysis)
  
-Now that we have filtered plink binary format files, we can proceed with the ADMIXTURE analysis. The documentation can be found [here](https://speciationgenomics.github.io/ADMIXTURE/)
+Now that we have filtered plink binary format files, we can proceed with the ADMIXTURE analysis. The documentation can be found [here](https://speciationgenomics.github.io/ADMIXTURE/).
 
 We do the ADMIXTURE by **K-fold cross validation**. K-fold cross-validation is used to estimate how well the model fits the data for a given number of ancestral populations (K). Here is how it works
 
@@ -109,91 +135,89 @@ We do the ADMIXTURE by **K-fold cross validation**. K-fold cross-validation is u
 4. The model tries to predict the hidden part of the data.
 5. The program calculates cv error by comparing the predicted data to the actual one that was hidden.
 
+> NOTE: In general lower cv error means that the model fits better better but it is not always the case. In case of high K we might have lower cv error but it can lead to overfitting of the model. So when deciding an appropirate K to chose we must not consider only cv error rate but also the biological meaning and interpretation.  
 
-> NOTE: In general lower cv error means that the model fits better better but it is not always the case. In case of high K we might have lower cv error but it can lead to overfitting of the model. So when deciding an appropirate K to chose we must not consider only cv error rate but also the biological meaning and interpretation.
-
-ADMIXTURE is usually run for some range of Ks, typically from K=2, to K = 10. This is done to compare different models with each other and chose the one that fits the most to our project.
+ADMIXTURE is usually run for some range of Ks, typically from K=2, to K = 10. This is done to compare different models with each other and chose the one that fits the most to our project.  
 
  > NOTE: ADMIXTURE involves randomization (in cross-validation), so to ensure results are reproducible, you can set a random seed with the *--seed* option:
 
 ## STEP 3 (Visualization and interpretation) 
 
-As an output of the ADMIXTURE we will get 3 types of files (/.log, /.Q, /.P)
+As an output of the ADMIXTURE we will get 3 types of files (/.log, /.Q, /.P).  
 
 - **/.log** file contains run infromation and cv errors.
 - **/.Q** contains a matrix that contains information about ancestry proportions. Each row here is a sample (individual) and each column coressponts to one of the K ancestral populations (K=1, K=2....). Values of the matrix tell what proportion of the certain sample's ancestry comes from the population of coressponing column. 
 - **/.P** file contains a matrix that contains information about allele frequencies. Each row eas a SNP, each column is ancestral population. It tells us what each ancestral population looks like genetically.
 
-Now we can proceed with the visualization in R.
+Now we can proceed with the visualization in R.  
 
-As the aim of this project is to understand population genetics of grapevine, we are going to analyze Q matrices. For that, we need to visualize them by constructiog  a barplot. In Q matrix is row is an indivisual each column is an estimated population. The valuse of the matrix represents the proportion of one population. We need to represent this by barplot, where each bar is an individual, colored by the ancestral population proportions. 
+As the aim of this project is to understand population genetics of grapevine, we are going to analyze Q matrices. For that, we need to visualize them by constructiog  a barplot. In Q matrix is row is an indivisual each column is an estimated population. The valuse of the matrix represents the proportion of one population. We need to represent this by barplot, where each bar is an individual, colored by the ancestral population proportions.  
 
 > NOTE: Make a .txt file with sample names, that are ordered in the same way as in Q matrices, to use them in the graphs. You can take them from /.fam file. 
 
-At K = 2, the Q matrix plot typically reveals the broadest split in the dataset, usually it splits the samples into three categories. 
+At K = 2, the Q matrix plot typically reveals the broadest split in the dataset, usually it splits the samples into three categories.  
 
- **1st category - cultivated**
+ **1st category - cultivated**     
+ 
   - Samples with K = 1 component >= 0.75
   - Represent domesticated populations that have undergone selection.
+   
  **2nd category - wild**
+    
   - Samples with K = 2 component >= 0.75
   - Represent natural, undomesticated populations — often genetically distinct.
+
 **3rd category - admixed**
+
    - The rest
    - These are individuals whose genomes are a mix of cultivated and wild lineages.
 
    
 > Note: In  the analysis it does not neceserly mean that K=1 represents cultivated grapevine and K=2 wild grapevine. It can be visa versa. To understant which K rersednts what cluster, check the metadata.
 
-For the visualizaton, group samples by their countries of origin. Then in each country, organize by major one of the Ks e.g. 4,5, or 6 component and list in increasing or decreasing order.
+For the visualizaton, group samples by their countries of origin. Then in each country, organize by major one of the Ks e.g. 4,5, or 6 component and list in increasing or decreasing order.  
 
-> Note: For all Q matrices, the order of the samples must be the same!
+> Note: For all Q matrices, the order of the samples must be the same!  
 
    #### &emsp;ADMIXTURE results ploting in R:
    - Cultivated, admixed, wild clusters distinction
    - Grouping samples in clusters by countries
    - Rscript in bash
 
-## STEP 4 Phylogenetic analysis [in progress: Maria]
+## STEP 4 Phylogenetic analysis
 
-Phylogeny is the representation of the evolutionary history and relationships between groups of organisms.
+Phylogeny is the representation of the evolutionary history and relationships between groups of organisms.  
+
+Phylogenetic analysis is employed to infer the evolutionary relationships among genes or species and to represent these relationships through a branching diagram called a phylogenetic tree. Phylogenetic analysis is essential because the entities under study—commonly referred to as taxa, whether they are genes, species, or other biological units—are not statistically independent, but are linked by shared evolutionary history. To draw meaningful statistical conclusions about patterns of biological variation among taxa, it is necessary to first estimate these historical relationships. Some introductory material you can find [here](https://www.sciencedirect.com/science/article/pii/S0960982297700708).  
 
 
-Phylogenetic analysis is employed to infer the evolutionary relationships among genes or species and to represent these relationships through a branching diagram called a phylogenetic tree. Phylogenetic analysis is essential because the entities under study—commonly referred to as taxa, whether they are genes, species, or other biological units—are not statistically independent, but are linked by shared evolutionary history. To draw meaningful statistical conclusions about patterns of biological variation among taxa, it is necessary to first estimate these historical relationships. Some introductory material you can find [here](https://www.sciencedirect.com/science/article/pii/S0960982297700708)
+One of the project trajectories is to explore the evolutionary relationships and structure among Caucasian grape accessions based on SNPs variants. To achieve this goal, the phylogenetic tree should be constructed using Maximum Likelihood phylogenetic analysis algorithm.  
 
+Preliminary SNPs data filtering is required:  
 
-One of the project trajectories is to explore the evolutionary relationships and structure among Caucasian grape accessions based on SNPs variants. To achieve this goal, the phylogenetic tree should be constructed using Maximum Likelihood phylogenetic analysis algorithm.
+- Minor allele frequency should be more than 10 % (MAF > 0.1)  
+- Missing genotype rate should be less than 10 % (geno < 0.1)  
 
-Preliminary SNPs data filtering is required:
+The essential component for tree construction is genetic SNPs data of outgroup sample. Outgroups are species that branched off from the ingroup taxa (species of interes) before those taxa diverged from one another, and they are commonly used to establish the root of a phylogenetic tree. It has been proposed that, among all outgroups with similar sequencing quality, the one most closely related to the ingroup is the most suitable choice for accurate tree rooting. It is known that the accuracy of phylogenetic reconstruction decreases when more distant outgroups are used. For our project we are going to use  Vitis rotundifolia, the muscadine grape as an outgroup sample.  
 
-- Minor allele frequency should be more than 10 % (MAF > 0.1)
-- Missing genotype rate should be less than 10 % (geno < 0.1)
-
-The essential component for tree construction is genetic SNPs data of outgroup sample. Outgroups are species that branched off from the ingroup taxa (species of interes) before those taxa diverged from one another, and they are commonly used to establish the root of a phylogenetic tree. It has been proposed that, among all outgroups with similar sequencing quality, the one most closely related to the ingroup is the most suitable choice for accurate tree rooting. It is known that the accuracy of phylogenetic reconstruction decreases when more distant outgroups are used. For our project we are going to use  Vitis rotundifolia, the muscadine grape as an outgroup sample.
-
-The construction of the ML phylogenetic tree can be cunstructed using SNPhylo tool. Official pipeline you can find [here](https://github.com/thlee/SNPhylo). Tool description is provided in this [paper](https://pubmed.ncbi.nlm.nih.gov/24571581/). Tool path is presented below:
+The construction of the ML phylogenetic tree can be cunstructed using SNPhylo tool. Official pipeline you can find [here](https://github.com/thlee/SNPhylo). Tool description is provided in this [paper](https://pubmed.ncbi.nlm.nih.gov/24571581/). Tool path is presented below:  
 
 ```
 /mnt/proj/vine/user_projects/shengchang/soft
 ```
 
-The tree should be constructed using 100 bootstrap replicates. Suppose we have m sequences, each consisting of n nucleotides (or codons or amino acids). A phylogenetic tree can be built from these sequences using a chosen tree-building method.
-To assess how reliable the structure of the tree, bootstrapping technique is applied.
+The tree should be constructed using 100 bootstrap replicates. Suppose we have m sequences, each consisting of n nucleotides (or codons or amino acids). A phylogenetic tree can be built from these sequences using a chosen tree-building method.  
+To assess how reliable the structure of the tree, bootstrapping technique is applied.  
 
-Here’s how it works:
+Here’s how it works:  
 
 - From each original sequence, n positions are randomly selected with replacement (meaning the same position can be picked more than once).
 - This creates a new set of sequences — they have the same length as the originals but contain a shuffled combination of the original sites.
 - A new phylogenetic tree is built using this resampled dataset and the same tree-building method as before.
 - The topology (structure) of this new tree is then compared to the original tree.
-- Each internal branch of the original tree (which separates groups of sequences) is evaluated.
+- Each internal branch of the original tree (which separates groups of sequences) is evaluated. If that branch is not present in the new tree, it gets a score of 0. If it matches, it gets a score of 1.
 
-  If that branch is not present in the new tree, it gets a score of 0. If it matches, it gets a score of 1.
+This process — resampling the sites, rebuilding the tree, and scoring — is repeated hundreds of times (often 100–1000).  
+For each internal branch, wpercentage of trees in which it received a score of 1 is calculated. This percentage is called the bootstrap value. As a general guideline, if a branch has a bootstrap value of **95% or higher**, it is considered reliable, and the tree structure at that point is regarded as statistically supported.  
 
-This process — resampling the sites, rebuilding the tree, and scoring — is repeated hundreds of times (often 100–1000).
-For each internal branch, wpercentage of trees in which it received a score of 1 is calculated. This percentage is called the bootstrap value. As a general guideline, if a branch has a bootstrap value of **95% or higher**, it is considered reliable, and the tree structure at that point is regarded as statistically supported.
-
-Visualization of custructed tree can be performed using [iTOL](http://itol.embl.de/). It is general advice to introduce color palette for each region, e.g. Armenian samples of different clusters should be of the red shades and so on. Later this palette should be applied for both ADMIXTURE ploting and Phylogenetic tree construction.
-
-
-
+Visualization of custructed tree can be performed using [iTOL](http://itol.embl.de/). It is general advice to introduce color palette for each region, e.g. Armenian samples of different clusters should be of the red shades and so on. Later this palette should be applied for both ADMIXTURE ploting and Phylogenetic tree construction.  
