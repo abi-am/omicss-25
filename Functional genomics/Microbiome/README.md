@@ -33,7 +33,7 @@ To explore the microbiome field, introduce key concepts, and discuss current adv
 **Presenter:** Nelli Vardazaryan  
 
 **Objective:**  
-To introduce amplicon sequencing and demonstrate how to analyze sequencing data using the **DADA2** pipeline. Participants will learn the basics of processing amplicon sequence datasets.
+To introduce amplicon sequencing and demonstrate how to analyze sequencing data using the **[DADA2](https://benjjneb.github.io/dada2/)** pipeline. Participants will learn the basics of processing amplicon sequence datasets.
 
 ---
 
@@ -54,7 +54,7 @@ To cover metagenomic sequencing techniques and introduce the **Kraken/Bracken** 
 **[Slide](https://docs.google.com/presentation/d/1O3aBSP7as3v6hlNFdcszXf3uhOxrTmblQNWg822V3-k/edit?usp=share_link)** 
 
 **Objective:**  
-To explore microbiome profiles using **Phyloseq**. Participants will learn how to construct Phyloseq object and perform basic visualizations commonly used in microbiome studies.
+To explore microbiome profiles using **[Phyloseq](https://joey711.github.io/phyloseq/)**. Participants will learn how to construct Phyloseq object and perform basic visualizations commonly used in microbiome studies.
 
 **Practice:**  
 Vizualization will include:
