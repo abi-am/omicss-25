@@ -2,7 +2,7 @@
 Primary contributor: Tatevik Jalatyan  
 Contributing authors: Anahit Yeghiazaryan, Davit Tareverdyan, Mher Kurghinyan  
 
-# Contents  
+# Contents  (update)
 - [Project description](#project-description)
 - [Week 1](#week-1)
   - [7/29/2025 - 5PM-6PM](#7292025---5pm-6pm)
@@ -100,7 +100,7 @@ Promoters are fundamental DNA sequences located just upstream of genes that serv
 
 ## 7/31/2025 - 5PM-6PM  
 
-### Tutorials  
+### Cytoscape, PSF Tutorials  
 - Cytoscape  
   * [Cytoscape tutorial for networks](https://cytoscape.org/cytoscape-tutorials/presentations/network-analysis-ebi-2021.html#/)  
     This tutotial will guide you through basic usage of cytoscape, network visualization and a hands-on experiecne. Just follow the arrows.  
@@ -109,7 +109,7 @@ Promoters are fundamental DNA sequences located just upstream of genes that serv
 - Pathway Signal Flow (PSF) basic usage  
   * [PSFC user manual](https://big.sci.am/apps/psfc/PSFC_User_Manual_1.1.3.pdf)  
 
-### Practice / Toy Examples (Part 1)  
+### PSF, TMM Practice  
 - Run PSF with an example gene count matrix for Telomere Maintenance Mechanism (TMM) pathways  
   - Follow the steps of [TMM package user guide](https://big.sci.am/software/tmm/#userguide)    
     Data: [TMM pathway (Data Sheet 4.ZIP)](https://www.frontiersin.org/journals/genetics/articles/10.3389/fgene.2021.662464/full#supplementary-material)  
@@ -136,7 +136,7 @@ Promoters are fundamental DNA sequences located just upstream of genes that serv
 
 
 ## 8/6/2025 - 5PM-6PM  
-### Practice / Toy Examples (Part 2) 
+### R Plotting Practice  
 R plotting practice on synthetic TRV data
  - See Practive/R_plotting.docx file for instructions
 
