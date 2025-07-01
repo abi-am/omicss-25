@@ -67,8 +67,6 @@ Vizualization will include:
 
 ## ✅ Progress Tracker
 
-### 🗓️ Session Status
-
 | **Topic**                                           | **Presenter**        | **Status**         |
 |-----------------------------------------------------|----------------------|--------------------|
 | [Introduction to the microbiome (slide)             | Raz Sargsyan         | ⬜ 50 %            |
