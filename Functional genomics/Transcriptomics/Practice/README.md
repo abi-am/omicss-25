@@ -43,3 +43,17 @@ To install this package, start R (version "4.5") and enter:
 ➡️ **[Link to the presentation](https://docs.google.com/presentation/d/1Q-kH2b7tVQWlsNbOMMSBRgaV5apPos2axDYLrwrFP5o/edit?usp=sharing)**
 
 ---
+
+## 🧰 Description of repository
+
+**dataset/** - Input data folder
+
+  **STAR_counts.tsv** - read counts matrix
+  
+  **gencode.v42.genes.tsv** - gene annotation
+  
+  **metadata.tsv** - sample metadata
+  
+**Diffexpression_analysis.R** - Rscript file (DESeq2 practice)
+
+---
