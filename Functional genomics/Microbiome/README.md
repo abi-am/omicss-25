@@ -21,7 +21,7 @@ From microbiomes to meaningful insights.
 #### ⏰ 3:00 PM – 4:00 PM  
 **Topic:** *Introduction to the Microbiome*  
 **Presenter:** Raz Sargsyan  
-**[Slide](https://docs.google.com/presentation/d/1O5pF04_NXHzg43szyuDRQDQN3wNtxTd8S7KzPI5LVxk/edit?slide=id.p#slide=id.p)** Raz Sargsyan  
+**[Slide](https://docs.google.com/presentation/d/1O5pF04_NXHzg43szyuDRQDQN3wNtxTd8S7KzPI5LVxk/edit?slide=id.p#slide=id.p):** Raz Sargsyan  
 
 **Objective:**  
 To explore the microbiome field, introduce key concepts, and discuss current advancements. Participants will gain a foundational understanding of microbiome analysis.
