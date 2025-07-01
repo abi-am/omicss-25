@@ -1,7 +1,7 @@
 # Contributors
     Primary contributor: Anahit Yeghiazaryan
     Contributing authors: Lilit Nersisyan, Davit Tarverdyan, Mher Kurghinyan, Tatev Jalatyan, Nate Zadirako, Siras Hakobyan
-  # Content 
+  # Contents 
   NGS data analysis & file manipulation
 -   FASTA/FASTQ file formats & manipulation on Linux [Davit T., Tatevik J.]
 -   Quality Control (FASTQC, MULTIQC) & Interpretation [Mher K., Anahit Y.]
