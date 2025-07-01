@@ -11,7 +11,7 @@
   # TODO
     Primary contributor assigns tasks to contributing authors with deadlines
 
-# Welcome to the Transcriptomics Course (omiccs-25)
+# Welcome to the Transcriptomics Course (omicss-25)
 
 ## 📚 Lecture
 
