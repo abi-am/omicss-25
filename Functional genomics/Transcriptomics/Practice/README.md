@@ -24,7 +24,21 @@
 
 A basic step in analyzing RNA-seq count data is finding genes that are expressed differently between conditions. The data usually come in a table showing, for each sample, how many sequencing reads map to each gene. Similar types of data also come from experiments like ChIP-Seq, HiC, shRNA screens, and mass spectrometry. An important question in analysis is to measure and test if there are real differences between conditions, beyond the normal variability seen within each condition. The DESeq2 package helps test for differential expression using negative binomial models. It uses data-based prior distributions to improve the estimates of variability and log fold changes.
 
-## 🧰 Package installations
+---
+
+## 🧰 Package installation
+
+Please follow the provided instructions to install _"DESeq2"_ package.
+
+To install this package, start R (version "4.5") and enter:
+
+      if (!require("BiocManager", quietly = TRUE))
+
+        install.packages("BiocManager")
+
+      BiocManager::install("DESeq2")
+
+
 
 ➡️ **[Link to the presentation](https://docs.google.com/presentation/d/1Q-kH2b7tVQWlsNbOMMSBRgaV5apPos2axDYLrwrFP5o/edit?usp=sharing)**
 
