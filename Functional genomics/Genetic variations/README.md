@@ -1,7 +1,7 @@
   # Contributors 
     Primary contributor: Maria Nikoghosyan
     Contributing authors: Nate Zadirako, Emma Hovhannisyan
-  # Description 
+  # Content 
 Genomic variations are the differences in DNA sequence—such as single-nucleotide polymorphisms (SNPs), insertions, deletions, and structural rearrangements—that distinguish individuals or populations and underlie traits, evolution, and disease. Variant calling is the computational process of comparing high-throughput sequencing reads to a reference genome to detect and catalog these variations with quality metrics. Accurate variant calling transforms raw sequencing data into actionable biological insights for research and clinical applications.
 
 ### Lecture
