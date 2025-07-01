@@ -21,7 +21,7 @@ In the **FASTQ** section, you will practice:		- **Motif:** A short, biologically
 ---		---
 
 
-## FASTA Practice Exercises		## FASTA Practice Exercises
+## FASTA Practice Exercises	
 
 
 **EXERCISE 1: Display the first 10 reads of the FASTA file**  		**EXERCISE 1: Display the first 10 reads of the FASTA file**  
