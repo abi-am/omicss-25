@@ -71,10 +71,10 @@ Vizualization will include:
 
 | **Topic**                                           | **Presenter**        | **Status**         |
 |-----------------------------------------------------|----------------------|--------------------|
-| [Introduction to the microbiome (slide)             | Raz Sargsyan         | ⬜ 50 %            |
-| Amplicon sequencing and analysis (slide)            | Nelli Vardazaryan    | ⬜ Not yet started |
+| [Introduction to the microbiome (slide)             | Raz Sargsyan         | ⬜ 10 %            |
+| Amplicon sequencing and analysis (slide)            | Nelli Vardazaryan    | ⬜ 15 %            |
 | Metagenomic sequencing and  analysis (slide)        | Lilit Nersisyan      | ⬜ Not yet started |
-| Data visualization with Phyloseq (slide & practice) | Davit Hakobyan       | ⬜ 50 %            |
+| Data visualization with Phyloseq (slide & practice) | Davit Hakobyan       | ⬜ 25 %            |
 
 ---
 
