@@ -3,16 +3,18 @@
 
 **Contributing authors:** Nelli Vardazaryan, Razmik Sargsyan, Lusine Adunts
 
-# Content
+# Contents
 
 ## Week 1: Background & Conceptual Foundations
 - **Time Slots:** 3 1-hour long slots (Tuesday, Wednesday, Thursday)
-- **Readings (assign 1–3 articles):**
-  - Overview of the power of oral microbiome for disease classification: (**TBD**)
-    - [Unlocking the Potential of the Human Microbiome for Identifying Disease Diagnostic Biomarkers](https://www.mdpi.com/2075-4418/12/7/1742). *A bit long and biology heavy.* Does not only talk about Microbiome Signatures as Disease Biomarker but also Metagenomics-Derived Genes as Potential Disease Biomarkers, Microbiota-Derived Metabolites as Potential Disease Biomarkers and Microbiome Multi-omicss.
-    - [Oral Microbiome: A Review of Its Impact on Oral and Systemic Health](https://www.mdpi.com/2076-2607/12/9/1797). *Bare but Concise Biolgy with high Altmetric score ~260.* Talks about the composition, disbiosis, and generally the importance of oral microbiome.
-    - [The diagnostic potential and barriers of microbiome based therapeutics](https://www.degruyterbrill.com/document/doi/10.1515/dx-2022-0052/html). *Basically walks through every necessary background info very quickly + feature selection state of the art.* tells about the Emergent problems in microbiome datasets (compositionality, multilinearity etc.) and touches ML state of the art.
-  - State of the art review: (**TBD**)
+- **Readings:**
+  - Intro to Microbiome and Term Glossary
+    - [Google doc](https://docs.google.com/document/d/1ZtNl5lPHTRIUPUAoNY7RFSjA7JTCTko8gS1dTk8QU1Y/edit?usp=sharing) Note: There are two tabs in the doc for the introductory reading and for the term glossary respectively_ 
+  - Overview of the power of oral microbiome for disease classification:
+    - [Oral Microbiome: A Review of Its Impact on Oral and Systemic Health](https://www.mdpi.com/2076-2607/12/9/1797). [Reader Guide](link)
+  - State of the art review:
+    - [The diagnostic potential and barriers of microbiome based therapeutics](https://www.degruyterbrill.com/document/doi/10.1515/dx-2022-0052/html). [Reader Guide](link)
+  - _BONUS READING | on technologies in the context of oral microbiome research_
     - [Illuminating the oral microbiome and its host interactions: recent advancements in omics and bioinformatics technologies in the context of oral microbiome research](https://academic.oup.com/femsre/article/47/5/fuad051/7259894)
 - **Activities:**  
   - Group discussion sessions for each paper
@@ -21,23 +23,24 @@
 ## Week 2: Taxonomic Processing & Intro to Phyloseq
 **Time Slots:** 3 1-hour long slots (Monday, Wednesday, Thursday)
 - **Tools & Methods:**  
-  - Kraken2 for taxonomic classification  
-  - Bracken for abundance estimation  
+  - **Kraken2** for taxonomic classification | [Slides](link)
+  - **Bracken** for abundance estimation | [Slides](link)
+  - Introduction to the **phyloseq** R package [Slides](https://docs.google.com/presentation/d/1bDjOMx3mNIyG0O46FVl31WkVAiybSSEp-FFuMLnD2vs/edit?usp=sharing) :  
 - **Activities:**
-  - Hands-on Kraken2 → Bracken workflow on WGS test dataset  
-  - Introduction to the **phyloseq** R package:  
-    - Importing taxonomy, abundance, and metadata  
-    - Exploring phyloseq object structures  
+  - Hands-on Kraken2 - Bracken workflow on WGS test dataset | [Exercises](link)
+  - **Exploring phyloseq** - Data import, manipulation, filtering | [Exercises](link)
 - **Deliverable:**  
   - Annotated R script (or R Markdown) demonstrating taxonomic profiling and data import  
 
 ## Week 3: Exploratory Data Analysis & Diversity Metrics
 - **Time Slots:** 2-hour long Project Presentations + 4 1-hour long slots (Tuesday, Wednesday, Thursday, Friday)
+- [**Slides for the Week**](link)
+- [**Exercises for the Week**](link)
 - **Phyloseq EDA:**  
   - Composition plots (barplots, relative-abundance heatmaps)  
 - **Diversity Analyses:**  
   - Alpha diversity (Shannon, Simpson, observed OTUs)  
-  - Beta diversity (Bray–Curtis, UniFrac)  
+  - Beta diversity (Bray-Curtis, UniFrac)  
 - **Advanced Methods Overview:**  
   - ANCOMBC-2 for differential abundance  
   - ML methods for feature selection (e.g., random forest, LASSO)  
@@ -62,12 +65,19 @@
 
 # TODO
 - **Davit Hakobyan (primary contributor):**  
-  - Finalize & upload Week 1 readings on background and conceptual foundations
-  - Upload "Intro to Phyloseq + EDA" slides for Week 2 - **Deadline: June 30**
-  - Prepare *Group Project Intro Presentation* – **Deadline: July 7** 
+  - [X] Finalize & upload Week 1 readings on background and conceptual foundations
+  - [ ] Write Reader Guides for a couple of the complex readings
+  - [X] Upload "Intro to Phyloseq" slides for Week 2 - **Deadline: June 30**
+  - [ ] Upload "Intro to Phyloseq" exercise set with R Markdown - **Deadline: July 7**
+  - [ ] Prepare *Group Project Intro Presentation* - **Deadline: July 8**
+  - [ ] *Prepare ML slides - **Deadline: TBD*** (Needs approval)
+  - [ ] Upload "EDA with Phyloseq" slides for Week 3 - **Deadline: July 15**
+  - [ ] Upload "EDA with Phyloseq" exercise set with R Makrdown - **Deadline: July 15**
 
 - **Razmik Sargsyan:**  
-  - Upload Kraken2 and Bracken tutorial scripts for Week 2 – **Deadline: Monday, June 27**
+  - [ ] Upload Kraken2 and Bracken tutorial exercises for Week 2 - **Deadline: July 8**
+  - [ ] Upload slides on Kraken2 and Bracken for Week 2 - **Deadline: July 15**
 
 - **Nelli Vardazaryan:**  
-  - Phyloseq Intro and Exercises – **Deadline: July 7**
+  - [ ] ANCOMBC2 Slides - **Deadline: July 8**
+  - [ ] Slides on project goals + dataset upload - **Deadline: July 15**
