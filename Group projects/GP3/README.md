@@ -154,8 +154,46 @@ For the visualizaton, group samples by their countries of origin. Then in each c
    - Grouping samples in clusters by countries
    - Rscript in bash
 
-### Phylogenetic analysis [in progress: Maria]
-Exploring the evolutionary relationships among different grape accessions based on SNPs variants <br>
-Presumably SNPhylo tool
+## STEP 4 Phylogenetic analysis [in progress: Maria]
+
+Phylogeny is the representation of the evolutionary history and relationships between groups of organisms.
+
+
+Phylogenetic analysis is employed to infer the evolutionary relationships among genes or species and to represent these relationships through a branching diagram called a phylogenetic tree. Phylogenetic analysis is essential because the entities under study—commonly referred to as taxa, whether they are genes, species, or other biological units—are not statistically independent, but are linked by shared evolutionary history. To draw meaningful statistical conclusions about patterns of biological variation among taxa, it is necessary to first estimate these historical relationships. Some introductory material you can find [here](https://www.sciencedirect.com/science/article/pii/S0960982297700708)
+
+
+One of the project trajectories is to explore the evolutionary relationships and structure among Caucasian grape accessions based on SNPs variants. To achieve this goal, the phylogenetic tree should be constructed using Maximum Likelihood phylogenetic analysis algorithm.
+
+Preliminary SNPs data filtering is required:
+
+- Minor allele frequency should be more than 10 % (MAF > 0.1)
+- Missing genotype rate should be less than 10 % (geno < 0.1)
+
+The essential component for tree construction is genetic SNPs data of outgroup sample. Outgroups are species that branched off from the ingroup taxa (species of interes) before those taxa diverged from one another, and they are commonly used to establish the root of a phylogenetic tree. It has been proposed that, among all outgroups with similar sequencing quality, the one most closely related to the ingroup is the most suitable choice for accurate tree rooting. It is known that the accuracy of phylogenetic reconstruction decreases when more distant outgroups are used. For our project we are going to use  Vitis rotundifolia, the muscadine grape as an outgroup sample.
+
+The construction of the ML phylogenetic tree can be cunstructed using SNPhylo tool. Official pipeline you can find [here](https://github.com/thlee/SNPhylo). Tool description is provided in this [paper](https://pubmed.ncbi.nlm.nih.gov/24571581/). Tool path is presented below:
+
+```
+/mnt/proj/vine/user_projects/shengchang/soft
+```
+
+The tree should be constructed using 100 bootstrap replicates. Suppose we have m sequences, each consisting of n nucleotides (or codons or amino acids). A phylogenetic tree can be built from these sequences using a chosen tree-building method.
+To assess how reliable the structure of the tree, bootstrapping technique is applied.
+
+Here’s how it works:
+
+- From each original sequence, n positions are randomly selected with replacement (meaning the same position can be picked more than once).
+- This creates a new set of sequences — they have the same length as the originals but contain a shuffled combination of the original sites.
+- A new phylogenetic tree is built using this resampled dataset and the same tree-building method as before.
+- The topology (structure) of this new tree is then compared to the original tree.
+- Each internal branch of the original tree (which separates groups of sequences) is evaluated.
+
+  If that branch is not present in the new tree, it gets a score of 0. If it matches, it gets a score of 1.
+
+This process — resampling the sites, rebuilding the tree, and scoring — is repeated hundreds of times (often 100–1000).
+For each internal branch, wpercentage of trees in which it received a score of 1 is calculated. This percentage is called the bootstrap value. As a general guideline, if a branch has a bootstrap value of **95% or higher**, it is considered reliable, and the tree structure at that point is regarded as statistically supported.
+
+Visualization of custructed tree can be performed using [iTOL](http://itol.embl.de/). It is general advice to introduce color palette for each region, e.g. Armenian samples of different clusters should be of the red shades and so on. Later this palette should be applied for both ADMIXTURE ploting and Phylogenetic tree construction.
+
 
 
