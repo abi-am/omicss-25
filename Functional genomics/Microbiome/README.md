@@ -31,6 +31,8 @@ To explore the microbiome field, introduce key concepts, and discuss current adv
 #### ⏰ 4:00 PM – 5:00 PM  
 **Topic:** *Amplicon Sequencing and Data Analysis*  
 **Presenter:** Nelli Vardazaryan  
+**[Slide](**[Slide](https://docs.google.com/presentation/d/1O5pF04_NXHzg43szyuDRQDQN3wNtxTd8S7KzPI5LVxk/edit?slide=id.p#slide=id.p)**)** 
+
 
 **Objective:**  
 To introduce amplicon sequencing and demonstrate how to analyze sequencing data using the **[DADA2](https://benjjneb.github.io/dada2/)** pipeline. Participants will learn the basics of processing amplicon sequence datasets.
