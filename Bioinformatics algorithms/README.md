@@ -52,7 +52,7 @@
   - [ ] Day 5 practice problems — **due 11.07**
 
   ### Davit Hakobyan
-  - [ ] Day 2 practice problems — **due 30.06**
+  - [x] Day 2 practice problems — **due 30.06**
     - Implement local alignment using the Smith-Waterman algorithm
     - Implement semi-global alignment for read alignment
     - Create questions to:
