@@ -42,10 +42,10 @@ Welcome, students, to the **OMICSS‑25 Summer School** experimental technique's
 
 | Topic                 | Slides    | Quiz      |
 | --------------------- | --------- | --------- |
-| NGS Technologies      | - [x] Outline  | - [ ] Not started yet  |
-| Long‑Read Sequencing  | - [ ] Outline  | - [ ] Not started yet  |
-| DNA Extraction        | - [ ] Not started yet  | - [ ] Not started yet |
-| PCR & Electrophoresis | - [ ] Draft | [ ] Not started yet |
+| NGS Technologies      | <ul><li>[ ] Not started yet </li> |  <ul><li>[ ] Not started yet </li>  |
+| Long‑Read Sequencing  | <ul><li>[ ] Outline </li>  |  <ul>[ ] Not started yet </li>  |
+| DNA Extraction        | <ul><li>[ ] Not started yet </li> |  <ul><li>[ ] Not started yet </li>  |
+| PCR & Electrophoresis | <ul><li>[x] Draft </li>  |  <ul><li>[ ] Not started yet </li><li> |
 
 ## Timeline
 
