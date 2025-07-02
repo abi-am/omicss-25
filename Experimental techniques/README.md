@@ -43,18 +43,18 @@ Welcome, students, to the **OMICSS‑25 Summer School** experimental technique's
 | Topic                 | Slides    | Quiz      |
 | --------------------- | --------- | --------- |
 | NGS Technologies      | <ul><li>[ ] Not started yet </li> |  <ul><li>[ ] Not started yet </li>  |
-| Long‑Read Sequencing  | <ul><li>[ ] Outline </li>  |  <ul>[ ] Not started yet </li>  |
+| Long‑Read Sequencing  | <ul><li>[ ] Outline </li>  |  <ul><li>[ ] Not started yet </li>  |
 | DNA Extraction        | <ul><li>[ ] Not started yet </li> |  <ul><li>[ ] Not started yet </li>  |
-| PCR & Electrophoresis | <ul><li>[x] Draft </li>  |  <ul><li>[ ] Not started yet </li><li> |
+| PCR & Electrophoresis | <ul><li>[x] Draft </li>  |  <ul><li>[ ] Not started yet </li> |
 
 ## Timeline
 
-| Topic                 | Slides    
-| --------------------- | ---------  
-| NGS Technologies      | - [ ] Draft : 07/07/2025? : Lilit Nersisyan  
-| Long‑Read Sequencing  | - [ ] Draft: 07/07/2025? : Maria Nikoghosyan
-| DNA Extraction        | - [ ] Final draft by: 07/07/2025 : Nelli Vardazaryan
-| PCR & Electrophoresis | - [ ] Final draft by: 07/07/2025 : Razmik Sargsyan
+| Topic                 | Slides                  | Due date                                             | Quizz               | Due Date            | Contributor         |
+| --------------------- | ----------------------- | ---------------------------------------------------- | --------------------| --------------------| ---------------| 
+| NGS Technologies      | <ul><li>[ ] Draft </li> | 07/07/2025?                                          | <ul><li> [ ] Draft </li> | 14/15/2025          | Lilit Nersisyan
+| Long‑Read Sequencing  | <ul><li>[ ] Draft </li> | 07/07/2025?                                          | <ul><li> [ ] Draft </li> | 14/15/2025          | Maria Nikoghosyan
+| DNA Extraction        | <ul><li>[ ] Final draft  </li> |  07/07/2025                                   | <ul><li> [ ] Draft </li> | 14/15/2025          | Nelli Vardazaryan
+| PCR & Electrophoresis | <ul><li>[ ] Final draft by </li> |  07/07/2025                                 | <ul><li> [ ] Draft </li> | 14/15/2025          |  Razmik Sargsyan
 
 Please update the both in progress and Timeline as you proceed. 
 ---
