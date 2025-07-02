@@ -1,11 +1,20 @@
   # Contributors
     Primary contributor: Siras Hakobyan
     Contributing authors: Antranig Vardanian, Anahit Yeghiazaryan
-  # Content  
-  # TODO
-    Primary contributor assigns tasks to contributing authors with deadlines
 
-# Welcome to the Linux Command Line Course (omics-25)
+## 🗂️ Course Content & Schedule
+
+| Section                                | Duration     |
+|----------------------------------------|--------------|
+| [📚 Lecture](#-lecture)                | 60 minutes   |
+| [🔐 Generating SSH Keys](#-generating-an-ssh-key-pair) | 10 minutes   |
+| [🌐 Connecting to the Server](#-connecting-to-the-server) | 30 minutes   |
+| [🧪 Command Line: Introductory Materials](#-command-line-introductory-materials) | 180 minutes  |
+| [🧰 Tmux: Terminal Multiplexer](#-tmux-terminal-multiplexer) | 30 minutes   |
+| [🧮 AWK Tutorial (advanced)](#-awk-tutorial)      | — |
+| **🧮 Total Time**                      | **310 minutes (~5h 10m)** |
+
+# Welcome to the Linux Command Line Course (omicss-25)
 
 ## 📚 Lecture
 
@@ -79,6 +88,6 @@ When working on multiple projects or running long jobs on a server, it's importa
 
 ---
 
-## 🧮 AWK Tutorial
+## 🧮 AWK Tutorial (advanced)
 
 *Content coming soon...*
