@@ -2,7 +2,7 @@
 Primary contributor: Tatevik Jalatyan  
 Contributing authors: Anahit Yeghiazaryan, Davit Tareverdyan, Mher Kurghinyan  
 
-# Contents  (update)
+# Contents  (update) test
 - [Project description](#project-description)
 - [Week 1](#week-1)
   - [7/29/2025 - 5PM-6PM](#7292025---5pm-6pm)
