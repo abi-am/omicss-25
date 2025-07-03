@@ -90,4 +90,9 @@ When working on multiple projects or running long jobs on a server, it's importa
 
 ## 🧮 AWK Tutorial (advanced)
 
-*Content coming soon...*
+**AWK** is one of the essential tools for processing large text files, which are very common in bioinformatics workflows. It is especially useful for extracting columns, filtering data, and performing basic calculations in a fast and efficient manner—often directly in the terminal.
+
+To get started, we recommend the following online tutorial:
+
+🔗 [AWK Tutorial – Tutorialspoint](https://www.tutorialspoint.com/awk/index.htm)
+
