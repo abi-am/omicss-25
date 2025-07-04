@@ -8,28 +8,28 @@ Contributing authors: Anahit Yeghiazaryan, Davit Tareverdyan, Mher Kurghinyan
   - [7/28/2025 - 3PM-5PM](#7282025---3pm-5pm)
     - [Project presentations [Anahit, Davit T., Mher]](#project-presentations-anahit-davit-t-mher)
   - [7/29/2025 - 5PM-6PM](#7292025---5pm-6pm)
-    - [Molecular Biology Recap](#molecular-biology-recap)
+    - [Molecular biology recap](#molecular-biology-recap)
   - [7/30/2025 - 5PM-6PM](#7302025---5pm-6pm)
-    - [Statistics Recap](#statistics-recap)
+    - [Statistics recap](#statistics-recap)
   - [7/31/2025 - 5PM-6PM](#7312025---5pm-6pm)
-    - [Cytoscape, PSF Tutorials](#cytoscape-psf-tutorials)
-    - [PSF, TMM Practice](#psf-tmm-practice)
-  - [Extra Reading (Optional)](#extra-reading-optional)
+    - [Cytoscape, PSF tutorials](#cytoscape-psf-tutorials)
+    - [PSF, TMM practice](#psf-tmm-practice)
+  - [Extra reading (optional)](#extra-reading-optional)
 - [Week 2](#week-2)
   - [8/4/2025 - 4PM-5PM](#842025---4pm-5pm)
+    - [TMM paper reading](#tmm-paper-reading)
   - [8/6/2025 - 5PM-6PM](#862025---5pm-6pm)
-    - [R Plotting Practice](#r-plotting-practice)
+    - [R plotting practice](#r-plotting-practice)
   - [8/7/2025 - 5PM-6PM](#872025---5pm-6pm)
     - [Prepare project presentation](#prepare-project-presentation)
 - [Week 3](#week-3)
   - [8/11/2025 - 4PM-6PM](#8112025---4pm-6pm)
     - [Project presentation by students](#project-presentation-by-students)
   - [8/12/2025 - 4PM-5PM](#8122025---4pm-5pm)
-    - [Dataset Description](#dataset-description)
+    - [Dataset description](#dataset-description)
     - [Initial quality check](#initial-quality-check)
   - [8/13/2025 - 5PM-6PM](#8132025---5pm-6pm)
     - [Quality and adapter trimming](#quality-and-adapter-trimming)
-    - [What to trim](#what-to-trim)
   - [8/14/2025 - 4PM-5PM](#8142025---4pm-5pm)
     - [Post-trimming quality check](#post-trimming-quality-check)
   - [8/15/2025 - 4PM-5PM](#8152025---4pm-5pm)
@@ -42,7 +42,7 @@ Contributing authors: Anahit Yeghiazaryan, Davit Tareverdyan, Mher Kurghinyan
     - [TRV analysis on pre-generated table: between dataset comparisons [Tatevik]](#trv-analysis-on-pre-generated-table-between-dataset-comparisons-tatevik)
     - [TRV analysis on pre-generated table: cluster samples by TRV abundance [Tatevik]](#trv-analysis-on-pre-generated-table-cluster-samples-by-trv-abundance-tatevik)
   - [8/18/2025 - 4PM-5PM](#8182025---4pm-5pm)
-    - [Journal Club](#journal-club)
+    - [Journal club](#journal-club)
   - [8/19/2025 - 12PM-1PM](#8192025---12pm-1pm)
     - [Alignment on reference genome](#alignment-on-reference-genome)
     - [Reference genome index](#reference-genome-index)
@@ -75,7 +75,7 @@ This project explores telomeric sequences in plasma cell-free DNA (cfDNA) to dis
 ### Project presentations [Anahit, Davit T., Mher]
 
 ## 7/29/2025 - 5PM-6PM  
-### Molecular Biology Recap  
+### Molecular biology recap  
 - Telomeres and telomeric repeat variants (TRVs):   
 [Telomeres](https://www.ncbi.nlm.nih.gov/books/NBK576429/)  
 [TRVs (only Background section up to Fig. 1)](https://doi.org/10.1186/s12859-024-05807-5)  
@@ -91,7 +91,7 @@ Promoters are fundamental DNA sequences located just upstream of genes that serv
 
   
 ## 7/30/2025 - 5PM-6PM  
-### Statistics Recap  
+### Statistics recap  
 - Non-parametric tests (e.g. Mann–Whitney U)
     * [what are non-parametric tests](https://corporatefinanceinstitute.com/resources/data-science/nonparametric-tests/) - 3 min read
     * [Mann–Whitney U test, with medical data example](https://datatab.net/tutorial/mann-whitney-u-test) - 7 min read
@@ -103,13 +103,13 @@ Promoters are fundamental DNA sequences located just upstream of genes that serv
 - Clustering methods (e.g. hierarchical)
     * [Youtube video: Intuitive intro to unsupervised ML and clustering](https://www.youtube.com/watch?v=IUn8k5zSI6g) - 10 min watch
     * [Youtube video: K-means](https://www.youtube.com/watch?v=4b5d3muPQmA&t=304s) - 8 min watch
-- Dimensionality Reduction (PCA)
+- Dimensionality reduction (PCA)
   * [PCA step by step](https://www.youtube.com/watch?v=FgakZw6K1QQ&t=5s) - 20 min watch
   
 
 ## 7/31/2025 - 5PM-6PM  
 
-### Cytoscape, PSF Tutorials  
+### Cytoscape, PSF tutorials  
 - Cytoscape  
   * [Cytoscape tutorial for networks](https://cytoscape.org/cytoscape-tutorials/presentations/network-analysis-ebi-2021.html#/)  
     This tutotial will guide you through basic usage of cytoscape, network visualization and a hands-on experiecne. Just follow the arrows.  
@@ -118,12 +118,12 @@ Promoters are fundamental DNA sequences located just upstream of genes that serv
 - Pathway Signal Flow (PSF) basic usage  
   * [PSFC user manual](https://big.sci.am/apps/psfc/PSFC_User_Manual_1.1.3.pdf)  
 
-### PSF, TMM Practice  
+### PSF, TMM practice  
 - Run PSF with an example gene count matrix for Telomere Maintenance Mechanism (TMM) pathways  
   - Follow the steps of [TMM package user guide](https://big.sci.am/software/tmm/#userguide)    
     Data: [TMM pathway (Data Sheet 4.ZIP)](https://www.frontiersin.org/journals/genetics/articles/10.3389/fgene.2021.662464/full#supplementary-material)  
 
-## Extra Reading (Optional)
+## Extra reading (optional)
 - Telomere biology and cancer (e.g. telomere structure, maintenance, dysfunction in cancer)  
   [Telomeres: history, health, and hallmarks of aging](https://www.sciencedirect.com/science/article/pii/S0092867420317505)  
 - [Genetics, DNA Packaging](https://www.ncbi.nlm.nih.gov/books/NBK534207/)  
@@ -142,6 +142,7 @@ Promoters are fundamental DNA sequences located just upstream of genes that serv
 
 ## Week 2
 ## 8/4/2025 - 4PM-5PM  
+### TMM paper reading
 Read and discuss this paper    
 - [Telomere Maintenance Pathway Activity Analysis Enables Tissue- and Gene-Level Inferences (Nersisyan et al., 2021)](https://doi.org/10.3389/fgene.2021.662464)    
 **Homework**:  
@@ -151,7 +152,7 @@ Read and discuss this paper
   
 
 ## 8/6/2025 - 5PM-6PM  
-### R Plotting Practice  
+### R plotting practice  
 R plotting practice on synthetic TRV data
  - See Practive/R_plotting.docx file for instructions
 
@@ -163,7 +164,7 @@ Prepare project presentation
 Project presentation by students
 
 ## 8/12/2025 - 4PM-5PM
-### Dataset Description 
+### Dataset description 
 
 One of the datasets for this project comes from [this paper](https://doi.org/10.1016/j.xcrm.2023.101281). We will use cfDNA data from 10 samples (5 colorectal cancer patients and 5 healthy donors) to perform raw NGS data processing steps including quality control, trimming and alignment.   
 
@@ -219,7 +220,7 @@ Check if any quality issues persist to perform trimming again if needed.
 ### TRV analysis on pre-generated table: cluster samples by TRV abundance [Tatevik]
 
 ## 8/18/2025 - 4PM-5PM
-### Journal Club  
+### Journal club  
 - Journal club presentation by students on this paper:
   [Inferring expressed genes by whole-genome sequencing of plasma DNA (Ulz et al., 2016)](https://doi.org/10.1038/ng.3648)
 
@@ -267,7 +268,7 @@ Check log files for alignment status, % of reads aligned and other stats.
 # TODO
 - **Tatevik:**  
   - [ ] Finalize contents  
-  - [ ] Complete ... sections with step-by-step description
+  - [ ] Complete indicated sections with step-by-step description
   - [X] Update JC paper and timing 
 
 - **Anahit:**  
