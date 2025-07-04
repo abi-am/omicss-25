@@ -18,6 +18,8 @@
     Deadline -  11:00 AM 07.07.2025\
    [] Arpine: Find a test or other suitable homework \
     Deadline -  11:00 AM 07.07.2025
+   [] Arpine: Update the readme mention hourly schedule \
+    Deadline -  11:00 AM 07.07.2025
 
     
      
