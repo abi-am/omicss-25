@@ -4,7 +4,6 @@ Contributing authors: Anahit Yeghiazaryan, Davit Tareverdyan, Mher Kurghinyan
 
 # Contents  
 - [Project description](#project-description)
-
 - [Week 1](#week-1)
   - [7/28/2025 - 3PM-5PM](#7282025---3pm-5pm)
     - [Project presentations [Anahit, Davit T., Mher]](#project-presentations-anahit-davit-t-mher)
@@ -16,14 +15,12 @@ Contributing authors: Anahit Yeghiazaryan, Davit Tareverdyan, Mher Kurghinyan
     - [Cytoscape, PSF Tutorials](#cytoscape-psf-tutorials)
     - [PSF, TMM Practice](#psf-tmm-practice)
   - [Extra Reading (Optional)](#extra-reading-optional)
-
 - [Week 2](#week-2)
   - [8/4/2025 - 4PM-5PM](#842025---4pm-5pm)
   - [8/6/2025 - 5PM-6PM](#862025---5pm-6pm)
     - [R Plotting Practice](#r-plotting-practice)
   - [8/7/2025 - 5PM-6PM](#872025---5pm-6pm)
     - [Prepare project presentation](#prepare-project-presentation)
-
 - [Week 3](#week-3)
   - [8/11/2025 - 4PM-6PM](#8112025---4pm-6pm)
     - [Project presentation by students](#project-presentation-by-students)
@@ -38,7 +35,6 @@ Contributing authors: Anahit Yeghiazaryan, Davit Tareverdyan, Mher Kurghinyan
   - [8/15/2025 - 4PM-5PM](#8152025---4pm-5pm)
     - [Run Computel for TRVs [Anahit]](#run-computel-for-trvs-anahit)
     - [TRV analysis on pre-generated table: within dataset comparisons [Tatevik]](#trv-analysis-on-pre-generated-table-within-dataset-comparisons-tatevik)
-
 - [Week 4](#week-4)
   - [8/18/2025 - 11AM-12PM](#8182025---11am-12pm)
     - [TRV analysis on pre-generated table: check for dataset batch effects [Davit T.]](#trv-analysis-on-pre-generated-table-check-for-dataset-batch-effects-davit-t)
@@ -62,13 +58,11 @@ Contributing authors: Anahit Yeghiazaryan, Davit Tareverdyan, Mher Kurghinyan
     - [Run PSF using cluster mean gene expression estimates for TMM genes [Mher]](#run-psf-using-cluster-mean-gene-expression-estimates-for-tmm-genes-mher)
   - [8/20/2025 - 4PM-5PM](#8202025---4pm-5pm)
     - [Perform combined analysis of ALT, TEL pathway activities and TRV abundances across samples [Tatevik]](#perform-combined-analysis-of-alt-tel-pathway-activities-and-trv-abundances-across-samples-tatevik)
-
 - [Bootcamp](#bootcamp)
   - [8/21/2025](#8212025)
   - [8/22/2025](#8222025)
   - [8/23/2025](#8232025)
   - [8/24/2025](#8242025)
-
 - [TODO](#todo)  
 
 
@@ -274,7 +268,7 @@ Check log files for alignment status, % of reads aligned and other stats.
 - **Tatevik:**  
   - [ ] Finalize contents  
   - [ ] Complete ... sections with step-by-step description
-  - [ ] Update JC paper and timing 
+  - [X] Update JC paper and timing 
 
 - **Anahit:**  
   - [ ] Complete "Run Computel for TRVs" section with step-by-step description
