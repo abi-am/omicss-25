@@ -53,7 +53,7 @@
      - Design a filtering rule that selects only seed hits that are near each other
      - Build a prefix tree (trie) from a list of k-mers
      - Query the trie for a prefix of length ≤ k
-     - (Bonus) Put all together:
+    (Bonus) Put all together:
       - Extract k-mers from the read
       - Build an index (trie) from a genome fragment
       - Find seed hits by querying the index
