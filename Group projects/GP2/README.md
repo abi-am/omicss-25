@@ -66,7 +66,7 @@ This project explores telomeric sequences in plasma cell-free DNA (cfDNA) to dis
 
 ## Week 1
 ## 7/28/2025 - 3PM-5PM  
-Project presentations [Anahit, Davit T., Mher]
+### Project presentations [Anahit, Davit T., Mher]
 
 ## 7/29/2025 - 5PM-6PM  
 ### Molecular Biology Recap  
@@ -136,7 +136,13 @@ Promoters are fundamental DNA sequences located just upstream of genes that serv
 
 ## Week 2
 ## 8/4/2025 - 4PM-5PM  
-
+Read and discuss this paper    
+- [Telomere Maintenance Pathway Activity Analysis Enables Tissue- and Gene-Level Inferences (Nersisyan et al., 2021)](https://doi.org/10.3389/fgene.2021.662464)    
+**Homework**:  
+  Read this paper:  
+  - [Inferring expressed genes by whole-genome sequencing of plasma DNA (Ulz et al., 2016)](https://doi.org/10.1038/ng.3648)  
+  Prepare a 45 min (+ 15 min Q&A) journal club presentation to present on 8/18/2025 4PM-5PM  
+  
 
 ## 8/6/2025 - 5PM-6PM  
 ### R Plotting Practice  
@@ -197,9 +203,6 @@ Check if any quality issues persist to perform trimming again if needed.
 ### Run Computel for TRVs [Anahit]
 ### TRV analysis on pre-generated table: within dataset comparisons [Tatevik]
 
-### Journal Club (*WHEN?*)
-- Read and discuss this paper:  
-  [Telomere Maintenance Pathway Activity Analysis Enables Tissue- and Gene-Level Inferences (Nersisyan et al., 2021)](https://doi.org/10.3389/fgene.2021.662464)
    
 ## Week 4
 ## 8/18/2025 - 11AM-12PM
@@ -207,9 +210,12 @@ Check if any quality issues persist to perform trimming again if needed.
 
 ## 8/18/2025 - 12PM-1PM
 ### TRV analysis on pre-generated table: between dataset comparisons [Tatevik]
+### TRV analysis on pre-generated table: cluster samples by TRV abundance [Tatevik]
 
 ## 8/18/2025 - 4PM-5PM
-### TRV analysis on pre-generated table: cluster samples by TRV abundance [Tatevik]
+### Journal Club  
+- Journal club presentation by students on this paper:
+  [Inferring expressed genes by whole-genome sequencing of plasma DNA (Ulz et al., 2016)](https://doi.org/10.1038/ng.3648)
 
 ## 8/19/2025 - 12PM-1PM
 ### Alignment on reference genome
