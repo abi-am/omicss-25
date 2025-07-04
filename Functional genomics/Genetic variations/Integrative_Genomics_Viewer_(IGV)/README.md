@@ -7,4 +7,4 @@ Prior to downloading see if your laptop environment meets following requirments:
 - For mac users the IGV Mac apps require MacOS 11 (Big Sur) or greater.
 - The IGV for Linux download includes AdoptOpenJDK (now Eclipse Temurin) version 21 for x64 Linux.  
 
-You can IGV browser download [here]()https://igv.org/doc/desktop/#DownloadPage/
+You can IGV browser download [here](https://igv.org/doc/desktop/#DownloadPage/)
