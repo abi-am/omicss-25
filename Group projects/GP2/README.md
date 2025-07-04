@@ -141,7 +141,7 @@ R plotting practice on synthetic TRV data
  - See Practive/R_plotting.docx file for instructions
 
 ## 8/7/2025 - 5PM-6PM  
-Prepare project presentation  
+Prepare project presentation  [Anahit, Davit T., Mher]
 
 ## Week 3
 ## 8/11/2025 - 4PM-6PM  
@@ -191,7 +191,26 @@ Check if any quality issues persist to perform trimming again if needed.
 
 ## 8/15/2025 - 4PM-5PM
 
-### Alignment to reference genome
+### Run Computel for TRVs [Anahit]
+### TRV analysis on pre-generated table: within dataset comparisons [Tatevik]
+
+### Journal Club (*WHEN?*)
+- Read and discuss this paper:  
+  [Telomere Maintenance Pathway Activity Analysis Enables Tissue- and Gene-Level Inferences (Nersisyan et al., 2021)](https://doi.org/10.3389/fgene.2021.662464)
+  []
+   
+## Week 4
+## 8/18/2025 - 11AM-12PM
+### TRV analysis on pre-generated table: check for dataset batch effects [Davit T.]
+
+## 8/18/2025 - 12PM-1PM
+### TRV analysis on pre-generated table: between dataset comparisons [Tatevik]
+
+## 8/18/2025 - 4PM-5PM
+### TRV analysis on pre-generated table: cluster samples by TRV abundance [Tatevik]
+
+## 8/19/2025 - 12PM-1PM
+### Alignment on reference genome
 Create script `src/align.sh` to align trimmed FASTQ files on human reference genome. Use [bwa mem](https://bio-bwa.sourceforge.net/bwa.shtml) program for alignment. 
 Log to:			`log/align.log`  
 Store output to directory:	`bam`  
@@ -201,41 +220,26 @@ You'll need a reference genome index to align your reads in FASTQ files. Use pre
  
 Check log files for alignment status, % of reads aligned and other stats. 
 
-### Journal Club (*WHEN?*)
-- Read and discuss this paper:  
-  [Telomere Maintenance Pathway Activity Analysis Enables Tissue- and Gene-Level Inferences (Nersisyan et al., 2021)](https://doi.org/10.3389/fgene.2021.662464)
-     
-## Week 4
-## 8/18/2025 - 11AM-12PM
-### Remove duplicated reads from bam (*INCLUDE?*)
-
-## 8/18/2025 - 12PM-1PM
-### Gene expression estimation using NDR 
-
-## 8/18/2025 - 4PM-5PM
-### Correlation with values from matched RNA-seq (*INCLUDE?*)
-
-## 8/19/2025 - 12PM-1PM
-### Run PSF using gene expression estimates for TMM genes
-
 ## 8/19/2025 - 2PM-3PM
-### Run Computel for TRVs (*INCLUDE?*)
-### TRV analysis on pre-generated table: within dataset comparisons
+### Remove duplicated reads from bam [Tatevik]
 
 ## 8/19/2025 - 3PM-4PM
-### TRV analysis on pre-generated table: check for dataset batch effects (*INCLUDE?*)
+### Gene expression estimation using NDR [Mher]
 
 ## 8/19/2025 - 4PM-5PM
-### TRV analysis on pre-generated table: between dataset comparisons
+### Run PSF using gene expression estimates for TMM genes [Mher]
 
 ## 8/20/2025 - 12PM-1PM
-### ...
-## 8/20/2025 - 2PM-3PM
-### ...
-## 8/20/2025 - 4PM-5PM
-### ...
+### Cluster samples by gene expression [Tatevik]
 
-## Bootcamp
+## 8/20/2025 - 2PM-3PM
+### Run PSF using cluster mean gene expression estimates for TMM genes [Mher]
+
+## 8/20/2025 - 4PM-5PM
+### Perform combined analysis of ALT, TEL pathway activities and TRV abundances across samples [Tatevik]
+
+
+## Bootcamp 
 ## 8/21/2025
 ### ...
 ## 8/22/2025
