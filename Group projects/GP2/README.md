@@ -252,5 +252,23 @@ Check log files for alignment status, % of reads aligned and other stats.
 ### ...
 
 
+# TODO
+- **Tatevik:**  
+  - [ ] Finalize contents  
+  - [ ] Complete ... sections with step-by-step description
+  - [ ] Update JC paper and timing 
+
+- **Anahit:**  
+  - [ ] Complete "Run Computel for TRVs" section with step-by-step description
+  - [ ] Prepare project intro presentation slides
+
+- **Davit:**  
+  - [ ] Complete "TRV analysis on pre-generated table: check for dataset batch effects" section with step-by-step description
+  - [ ] Prepare project intro presentation slides 
+
+- **Mher:**  
+  - [ ] Complete "Gene expression estimation using NDR", "Run PSF using gene expression estimates for TMM genes", "Run PSF using cluster mean gene expression estimates for TMM genes" sections with step-by-step description
+  - [ ] Prepare project intro presentation slides 
+
 
 
