@@ -34,7 +34,7 @@
   ### Lusine Adunts
   - [x] Day 1 slides — **due 24.06**
   - [x] Day 2 slides — **due 28.06**
-  - [ ] Day 3 slides — **due 02.07**
+  - [x] Day 3 slides — **due 02.07**
   - [ ] Day 4 slides — **due 06.07**
   - [ ] Day 5 slides — **due 09.07**
   - [ ] Final touch  — **due 11.07**
@@ -49,6 +49,17 @@
       - Matrix filling
       - Traceback
   - [ ] Day 3 practice problems — **due 04.07**
+     - Implement seed extraction from reads and genome (e.g., non-overlapping and overlapping k-mers)
+     - Design a filtering rule that selects only seed hits that are near each other
+     - Build a prefix tree (trie) from a list of k-mers
+     - Query the trie for a prefix of length ≤ k
+     - (Bonus) Put all together
+      - Extract k-mers from the read
+      - Build an index (trie) from a genome fragment
+      - Find seed hits by querying the index
+      - Select nearby seed matches
+      - Do full alignment on the selected region(s)
+      - Choose the best alignment
   - [ ] Day 5 practice problems — **due 11.07**
 
   ### Davit Hakobyan
