@@ -31,8 +31,10 @@ to
 - Create a Seurat object
 - Do quality control
 - Filter cells
-- Perform dimensionality reduction
-- Perform cell clustering 
+- Perform dimensionality reduction ([PCA](https://builtin.com/data-science/step-step-explanation-principal-component-analysis), [UMAP](https://youtu.be/eN0wFzBA4Sc?si=_8XakIY9aeJzdntp))
+- Perform cell clustering
+  
+In the abovementioned tutorial, you will find a brief description of these steps.
 
 BUT for data processing, we will follow
 [Seurat Tutorial 2](https://satijalab.org/seurat/articles/sctransform_vignette.html)
