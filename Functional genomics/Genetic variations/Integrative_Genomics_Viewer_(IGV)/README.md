@@ -3,8 +3,32 @@ Introductory information can be found [here](https://igv.org/doc/desktop/#)
 
 Prior to downloading see if your laptop environment meets following requirments:
 
-- For windows IGV requires Java 21 or greater as of IGV 2.19.1. If you download one of the IGV versions that does not include Java, make sure you have Java 21 installed and in your path.
-- For mac users the IGV Mac apps require MacOS 11 (Big Sur) or greater.
-- The IGV for Linux download includes AdoptOpenJDK (now Eclipse Temurin) version 21 for x64 Linux.  
+IGV requires Java 21 or greater as of IGV 2.19.1. If you download one of the IGV versions that does not include Java, make sure you have Java 21 installed and in your path.
+#### For windows:
+
+Press win+R , type ‘cmd’ and press Enter.
+
+In opened command line type java -version
+
+The output should look like this:
+```
+java version "21.0.1" 2023-10-17 LTS
+Java(TM) SE Runtime Environment ...
+```
+If your version is not 21.0.1 do the following:
+
+- Close command line and open Windows PowerShell (win+S then type PowerShell)
+- In the shell place the following command 
+```
+Invoke-WebRequest -Uri "https://corretto.aws/downloads/latest/amazon-corretto-21-x64-windows-jdk.msi" -OutFile "corretto-21.msi"
+```
+After it is finished type 
+```
+Start-Process .\corretto-21.msi
+``` 
+Then installation starts. After it is installed, open cmd again and type command java -version to check that new 21.0.1 version is used
+
+#### For mac users the IGV Mac apps require MacOS 11 (Big Sur) or greater.
+#### The IGV for Linux download includes AdoptOpenJDK (now Eclipse Temurin) version 21 for x64 Linux.  
 
 You can download IGV browser [here](https://igv.org/doc/desktop/#DownloadPage/)
