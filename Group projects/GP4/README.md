@@ -16,7 +16,7 @@ Contributors: Melina Tamazyan, Sveta Mnatsakanyan, Luiza Stepanyan
 [What is cancer](https://www.cancer.gov/about-cancer/understanding/what-is-cancer) \
 [About lung cancer](https://my.clevelandclinic.org/health/diseases/4375-lung-cancer) \
 [Cancer microenvironment](https://pmc.ncbi.nlm.nih.gov/articles/PMC8194051/) \
-Current understanding of lung cancer [Luiza]
+Current understanding of lung cancer [Sveta]
 
 ___
 
