@@ -65,6 +65,9 @@ Contributing authors: Anahit Yeghiazaryan, Davit Tareverdyan, Mher Kurghinyan
 This project explores telomeric sequences in plasma cell-free DNA (cfDNA) to discover novel biomarkers for early cancer detection and monitoring. Students will process raw cfDNA sequencing data, identify telomeric repeat variants, derive gene expression signals from cfDNA, and analyze telomere maintenance mechanism pathway activity. Statistical tests will be used to compare cancer and healthy samples across public datasets.
 
 ## Week 1
+## 7/28/2025 - 3PM-5PM  
+Project presentations [Anahit, Davit T., Mher]
+
 ## 7/29/2025 - 5PM-6PM  
 ### Molecular Biology Recap  
 - Telomeres and telomeric repeat variants (TRVs):   
@@ -141,7 +144,7 @@ R plotting practice on synthetic TRV data
  - See Practive/R_plotting.docx file for instructions
 
 ## 8/7/2025 - 5PM-6PM  
-Prepare project presentation  [Anahit, Davit T., Mher]
+Prepare project presentation
 
 ## Week 3
 ## 8/11/2025 - 4PM-6PM  
@@ -197,7 +200,6 @@ Check if any quality issues persist to perform trimming again if needed.
 ### Journal Club (*WHEN?*)
 - Read and discuss this paper:  
   [Telomere Maintenance Pathway Activity Analysis Enables Tissue- and Gene-Level Inferences (Nersisyan et al., 2021)](https://doi.org/10.3389/fgene.2021.662464)
-  []
    
 ## Week 4
 ## 8/18/2025 - 11AM-12PM
