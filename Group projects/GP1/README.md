@@ -67,7 +67,7 @@
 - **Final Deliverables:**  
   - GitHub repository with analysis code  
   - Presentation slides (PDF or PowerPoint)  
-  - Short written summary of results  
+  - Short written summary of results 
 
 # TODO
 - **Davit Hakobyan (primary contributor):**  
