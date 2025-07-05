@@ -6,49 +6,54 @@
 # Contents
 
 ## Week 1: Background & Conceptual Foundations
-- **Time Slots:** 3 1-hour long slots (Tuesday, Wednesday, Thursday)
+- **Project Presentations and Assignments:**
+  `📅 27/07/2025 | 🕒 15:00-17:00`
 - **Readings:**
   - Intro to Microbiome and Term Glossary
+    `📅 29/07/2025 | 🕔 17:00–18:00`
     - [Google doc](https://docs.google.com/document/d/1ZtNl5lPHTRIUPUAoNY7RFSjA7JTCTko8gS1dTk8QU1Y/edit?usp=sharing) Note: There are two tabs in the doc for the introductory reading and for the term glossary respectively_ 
   - Overview of the power of oral microbiome for disease classification:
+    `📅 30/07/2025 | 🕔 17:00–18:00`
     - [Oral Microbiome: A Review of Its Impact on Oral and Systemic Health](https://www.mdpi.com/2076-2607/12/9/1797). [Reader Guide](link)
   - State of the art review:
+    `📅 31/07/2025 | 🕔 17:00–18:00`
     - [The diagnostic potential and barriers of microbiome based therapeutics](https://www.degruyterbrill.com/document/doi/10.1515/dx-2022-0052/html). [Reader Guide](link)
   - _BONUS READING | on technologies in the context of oral microbiome research_
     - [Illuminating the oral microbiome and its host interactions: recent advancements in omics and bioinformatics technologies in the context of oral microbiome research](https://academic.oup.com/femsre/article/47/5/fuad051/7259894)
 - **Activities:**  
-  - Group discussion sessions for each paper
-  - Maybe compiling a shared glossary of key terms and concepts (a google doc)
+  - Group discussion sessions for each reading
+  - Compiling a shared glossary of key terms and concepts (a [Google doc](https://docs.google.com/document/d/1ZtNl5lPHTRIUPUAoNY7RFSjA7JTCTko8gS1dTk8QU1Y/edit?usp=sharing) Note: There are two tabs in the doc for the introductory reading and for the term glossary respectively_ )
 
 ## Week 2: Taxonomic Processing & Intro to Phyloseq
-**Time Slots:** 3 1-hour long slots (Monday, Wednesday, Thursday)
-- **Tools & Methods:**  
-  - **Kraken2** for taxonomic classification | [Slides](link)
-  - **Bracken** for abundance estimation | [Slides](link)
-  - Introduction to the **phyloseq** R package [Slides](https://docs.google.com/presentation/d/1bDjOMx3mNIyG0O46FVl31WkVAiybSSEp-FFuMLnD2vs/edit?usp=sharing) :  
-- **Activities:**
+- **Working with Microbial Abundance Data, EDA & Methods:**  
+  - **Diversity Analyses with R:** | [Slides](link)
+    `📅 04/08/2025 | 🕔 16:00–17:00`
+    - Composition plots (barplots, relative-abundance heatmaps)  
+    - Alpha diversity (Shannon, Simpson, observed OTUs)  
+    - Beta diversity (Bray-Curtis, UniFrac)  
+  - **Kraken2 and Bracken** for taxonomic classification and abundance estimation| [Slides](link)
+    `📅 06/08/2025 | 🕔 17:00–18:00`
+- **Activities:**  
   - Hands-on Kraken2 - Bracken workflow on WGS test dataset | [Exercises](link)
-  - **Exploring phyloseq** - Data import, manipulation, filtering | [Exercises](link)
-- **Deliverable:**  
-  - Annotated R script (or R Markdown) demonstrating taxonomic profiling and data import  
+    `📅 07/08/2025 | 🕔 17:00–18:00`
 
 ## Week 3: Exploratory Data Analysis & Diversity Metrics
-- **Time Slots:** 2-hour long Project Presentations + 4 1-hour long slots (Tuesday, Wednesday, Thursday, Friday)
+- **Project Presentations:**
+  `📅 11/08/2025 | 🕔 16:00–18:00`
 - [**Slides for the Week**](link)
 - [**Exercises for the Week**](link)
-- **Phyloseq EDA:**  
-  - Composition plots (barplots, relative-abundance heatmaps)  
-- **Diversity Analyses:**  
-  - Alpha diversity (Shannon, Simpson, observed OTUs)  
-  - Beta diversity (Bray-Curtis, UniFrac)  
-- **Advanced Methods Overview:**  
-  - ANCOMBC-2 for differential abundance  
-  - ML methods for feature selection (e.g., random forest, LASSO)  
-- **Activities:**  
-  - EDA plotting workshop in R  
-  - Diversity-metric computation exercises  
+- **Phyloseq + EDA with Phyloseq:**  
+  - Introduction to the **phyloseq** R package [Slides](https://docs.google.com/presentation/d/1bDjOMx3mNIyG0O46FVl31WkVAiybSSEp-FFuMLnD2vs/edit?usp=sharing) :  
+    `📅 12/08/2025 | 🕔 16:00–17:00`
+  - EDA with phyloseq [Exercises](link)
+    `📅 13/08/2025 | 🕔 17:00–18:00`
+- **Advanced Methods Overview:** [Slides](link) 
+  - ANCOMBC-2 for differential abundance
+    `📅 14/08/2025 | 🕔 16:00–17:00`
+  - ML methods for feature selection (e.g., random forest, LASSO) _(TBD)_
+    `📅 15/08/2025 | 🕔 16:00–17:00`
 - **Deliverable:**  
-  - R Markdown report with EDA figures and diversity summaries  
+  - R Markdown report with EDA figures, diversity summaries, ANCOMBC2 results  
 
 ## Week 4: Project Execution & Presentation
 - **Time Slots:** 8 1-hour long slots + Bootcamp
