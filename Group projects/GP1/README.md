@@ -12,13 +12,14 @@
   - Intro to Microbiome and Term Glossary
     `📅 29/07/2025 | 🕔 17:00–18:00`
     - [Google doc](https://docs.google.com/document/d/1ZtNl5lPHTRIUPUAoNY7RFSjA7JTCTko8gS1dTk8QU1Y/edit?usp=sharing) Note: There are two tabs in the doc for the introductory reading and for the term glossary respectively_ 
-  - Overview of the power of oral microbiome for disease classification:
+  - Role of the Microbiome:
     `📅 30/07/2025 | 🕔 17:00–18:00`
-    - [Oral Microbiome: A Review of Its Impact on Oral and Systemic Health](https://www.mdpi.com/2076-2607/12/9/1797). [Reader Guide](link)
-  - State of the art review:
+    - [Microbiota in health and diseases](https://www.nature.com/articles/s41392-022-00974-4). _Note: you can focus on oral diseases_
+  - Overview of the power of oral microbiome for disease classification:
     `📅 31/07/2025 | 🕔 17:00–18:00`
+    - [Oral Microbiome: A Review of Its Impact on Oral and Systemic Health](https://www.mdpi.com/2076-2607/12/9/1797). [Reader Guide](link)
+  - _BONUS READINGS | on methodologies in the context of oral microbiome research_
     - [The diagnostic potential and barriers of microbiome based therapeutics](https://www.degruyterbrill.com/document/doi/10.1515/dx-2022-0052/html). [Reader Guide](link)
-  - _BONUS READING | on technologies in the context of oral microbiome research_
     - [Illuminating the oral microbiome and its host interactions: recent advancements in omics and bioinformatics technologies in the context of oral microbiome research](https://academic.oup.com/femsre/article/47/5/fuad051/7259894)
 - **Activities:**  
   - Group discussion sessions for each reading
