@@ -48,7 +48,7 @@
       - Initialization
       - Matrix filling
       - Traceback
-  - [ ] Day 3 practice problems — **due 04.07**
+  - [x] Day 3 practice problems — **due 04.07**
      - Implement seed extraction from reads and genome (e.g., non-overlapping and overlapping k-mers)
      - Design a filtering rule that selects only seed hits that are near each other
      - Build a prefix tree (trie) from a list of k-mers
