@@ -34,6 +34,7 @@ Contributing authors: Anahit Yeghiazaryan, Davit Tareverdyan, Mher Kurghinyan
     - [Post-trimming quality check](#post-trimming-quality-check)
   - [8/15/2025 - 4PM-5PM](#8152025---4pm-5pm)
     - [Run Computel for TRVs [Anahit]](#run-computel-for-trvs-anahit)
+    - [Computel 2.0 SOP](https://docs.google.com/document/d/1gVZ7xYtBPW7v71oetAQkewMflmmAz8q_ja0ot0ISxG8/edit?tab=t.0)
     - [TRV analysis on pre-generated table: within dataset comparisons [Tatevik]](#trv-analysis-on-pre-generated-table-within-dataset-comparisons-tatevik)
 - [Week 4](#week-4)
   - [8/18/2025 - 11AM-12PM](#8182025---11am-12pm)
