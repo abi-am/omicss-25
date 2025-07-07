@@ -1,95 +1,165 @@
 # Variant Calling Pipeline with GATK
 
-This pipeline uses the [Genome Analysis Toolkit (GATK)](https://gatk.broadinstitute.org/) to identify variants in genomic data. The pipeline covers preprocessing steps, variant discovery, and filtering to ensure accurate and reliable variant calls. An example using the human MEFV gene sequence for one sample is provided. This pipeline is based on the [GATK Best Practices Workflows](https://gatk.broadinstitute.org/hc/en-us/sections/360007226651-Best-Practices-Workflows).
+In this tutorial, we will perform variant calling for two samples from the **Armenian Genome Project**. One sample is from a healthy individual, and the other from a patient diagnosed with **Familial Mediterranean Fever (FMF)**. Your goal is to follow the pipeline steps and identify which sample carries the FMF-related mutation.
 
-# Directory Setup
-In your home directory, copy the following folder with all data and scripts:
+We will demonstrate the full pipeline using one sample as an example. You are expected to repeat the same steps for the second sample. At the end, you will compare their variants to draw your conclusions.
 
-> mkdir variant_calling # creat direcroty
+---
+
+## Input Data
+
+You are given **paired-end FASTQ files** for two samples:
+
+- `wes46_chr21_chr16_R1.fastq`, `wes46_chr21_chr16_R2.fastq` — *Sample 1*
+- `wes78_chr21_chr16_R1.fastq`, `wes78_chr21_chr16_R2.fastq` — *Sample 2*
+
+> The reads are from chromosomes **21** and **16** only, extracted for faster testing and analysis.
+
+---
+## Directory Setup
+
+Before starting, create the following directory structure to organize your output files:
+
+```bash
+mkdir -p data/bam data/bam_clean data/gvcf data/vcf
+```
+--- 
+## Reference Genome
+
+We will use the GRCh38 reference genome, already prepared with the required index files for both BWA and GATK:
+
+> **Reference indexed for BWA:**  
+> `/mnt/db/genomes/homo_sapiens/GRCh38.p14/bwa_mem_0.7.17-r1188/GCF_000001405.40_GRCh38.p14_genomic.fna`  
 >
-> cd variant_calling
-> mkdir data
-> cp -r /mnt/proj/omicss24/variant_calling/data/trimmed_fastq_small ./data
+> **Reference indexed for GATK:**  
+> `/mnt/db/genomes/homo_sapiens/GRCh38.p14/picard_3.4.0_dictionary/GCF_000001405.40_GRCh38.p14_genomic.fna`
+
+---
+
+## Tools
+
+You will use the following tools throughout this tutorial:
+
+- `bwa` — for sequence alignment  
+- `samtools` — for sorting BAM files  
+- `gatk` — for post-processing, variant calling, and genotyping  
+    Path to the tool **/mnt/proj/vine/shared_files/soft/gatk-4.2.6.1/gatk**
+
+---
+
+## Pipeline Overview
+
+You will go through the following steps for **each sample**:
+
+1. Align reads to the reference genome  
+2. Sort and prepare BAM files for GATK  
+3. Mark duplicates  
+4. Call variants in GVCF mode  
+5. Combine GVCFs  
+6. Jointly genotype both samples  
+7. Filter variants (SNPs and INDELs)
+
+Below is the **example pipeline using `{sample}` as a placeholder** for your sample name (e.g., `wes46` or `wes78`). Replace `{sample}` with the actual name as needed.
+
+---
+
+## Step-by-step Tutorial
+
+### Step 1: BWA Alignment
+
+Align paired-end reads using BWA-MEM with read group information (`@RG`), and sort the output BAM with `samtools`.
+
+```bash
+bwa mem -t 4 -R "@RG\tID:{sample}\tLB:{sample}\tSM:{sample}\tPL:ILLUMINA" \
+/mnt/db/genomes/homo_sapiens/GRCh38.p14/bwa_mem_0.7.17-r1188/GCF_000001405.40_GRCh38.p14_genomic.fna \
+data/fastq/{sample}_chr21_chr16_R1.fastq \
+data/fastq/{sample}_chr21_chr16_R2.fastq | \
+samtools sort -o data/bam/{sample}_sorted.bam -
+
+```
+
+### Step 2: Sort BAM File (for GATK)
+Although we used samtools sort above, it's recommended to re-sort the BAM using GATK’s SortSam to ensure metadata compatibility.
+
+```bash
+gatk SortSam \
+  -I data/bam/{sample}_sorted.bam \
+  -O data/bam_clean/{sample}_sorted.bam \
+  --SORT_ORDER coordinate
+```
+
+### Step 3: Mark Duplicates
+Use GATK's MarkDuplicates to identify and flag duplicate reads. This step is essential for accurate variant calling.
 
 
+```bash
+gatk MarkDuplicates \
+  -I data/bam_clean/{sample}_sorted.bam \
+  -O data/bam_clean/{sample}_dedup.bam \
+  -M data/bam_clean/{sample}_dedup_metrics.txt \
+  --CREATE_INDEX true
+```
 
-This folder contains the following directories and files:
-- **data/trimmed_fastq_small** - Folder containing FASTQ files of the Illumina paired-end sequences for one sample.
-- **/mnt/proj/omicss24/variant_calling/data/ref_genome** - Folder containing the ecoli reference genome in FASTA format, along with the BWA index. Do not copy it into your direcotory
-- **/mnt/proj/omicss24/variant_calling/soft** - All the necessary soft. Do not copy it in your direcotory. 
+### Step 4: Variant Calling (HaplotypeCaller in GVCF mode)
+Generate a GVCF file for each sample using HaplotypeCaller. This mode enables joint genotyping in the next steps.
 
-# Alignment
-Raw reads need to be aligned to the human genome. First, an index should be created for the reference genome. Since genome indexing is time-consuming, it has already been performed, so you do not need to do it again. The code for indexing is provided below for reference:
+```bash
+gatk HaplotypeCaller \
+  -R /mnt/db/genomes/homo_sapiens/GRCh38.p14/picard_3.4.0_dictionary/GCF_000001405.40_GRCh38.p14_genomic.fna \
+  -I data/bam_clean/{sample}_dedup.bam \
+  -O data/gvcf/{sample}.g.vcf.gz \
+  -ERC GVCF
+```
 
-> bwa index /mnt/proj/omicss24/variant_calling/data/ref_genome/ecoli_rel606.fasta # Do not run this code
+### Step 5: Combine GVCFs
+Once you have GVCF files for both samples, combine them into a single file for joint genotyping:
 
-**Note:** The read group information is where you enter the metadata about your sample.
+``` bash
+gatk CombineGVCFs \
+  -R /mnt/db/genomes/homo_sapiens/GRCh38.p14/picard_3.4.0_dictionary/GCF_000001405.40_GRCh38.p14_genomic.fna \
+  --variant data/gvcf/wes46.g.vcf.gz \
+  --variant data/gvcf/wes78.g.vcf.gz \
+  -O data/gvcf/combined.g.vcf.gz
+```
 
-Create a directory for the alignment results:
+### Step 6: GenotypeGVCFs (Joint Genotyping)
+Perform joint genotyping to produce the final multi-sample VCF file:
 
-> mkdir data/bam_sam  # Creating a directory for the alignment results
+```bash
+gatk GenotypeGVCFs \
+  -R /mnt/db/genomes/homo_sapiens/GRCh38.p14/picard_3.4.0_dictionary/GCF_000001405.40_GRCh38.p14_genomic.fna \
+  -V data/gvcf/combined.g.vcf.gz \
+  -O data/vcf/genotyped_variants.vcf.gz
 
-Align the raw reads using the BWA tool:
-
-> bwa mem -M 
--R '@RG\tID:SRR2584863\tLB:SRR2584863\tPL:ILLUMINA\tPM:HISEQ\tSM:SRR2584863' /mnt/proj/omicss24/variant_calling/data/ref_genome/ecoli_rel606.fasta 
-data/trimmed_fastq_small/SRR2584863_1.trim.sub.fastq 
-data/trimmed_fastq_small/SRR2584863_2.trim.sub.fastq > data/bam_sam/aligned_reads.sam
-
-## Sorting SAM File and Marking Duplicates
-
-Sorting the SAM file is a necessary step before marking duplicates. During the sequencing process, the same DNA molecules can be sequenced several times. The resulting duplicate reads are not informative and should not be counted as additional evidence for or against a putative variant. The duplicate-marking process (sometimes called "dedupping" in bioinformatics slang) identifies these reads so that the GATK tools know to ignore them.
-
-As a result, you will get a sorted BAM file called **HbFMF.sort.markdup.bam**. This file contains the same content as the input file, except that any duplicate reads are marked. Here are the essential steps:
-- **Sorting:** The input sequencing data is first sorted by genomic coordinates.
-- **Identifying duplicates:** Duplicates are defined as reads that have the same start and end coordinates.
-- **Marking duplicates:** Once duplicates are identified, one of the reads is marked as the primary or representative read, while the duplicates are marked as secondary. This marking process involves modifying the flags or tags associated with each read in the BAM file.
-- **Optional duplicate removal**
-
-Sort the SAM file:
-
-> /mnt/proj/omicss24/variant_calling/soft/gatk-4.6.0.0/gatk SortSam  --INPUT data/bam_sam/aligned_reads.sam --OUTPUT data/bam_sam/aligned_reads.sort.bam --SORT_ORDER coordinate
-
-Making statistics of the sligned reads
-
-> samtools flagstat data/bam_sam/aligned_reads.sort.bam > data/bam_sam/alignment_metrics.txt
+```
 
 
-Mark duplicates:
+### Step7: Filter variants
 
-> /mnt/proj/omicss24/variant_calling/soft/gatk-4.6.0.0/gatk MarkDuplicates -I data/bam_sam/aligned_reads.sort.bam   -O data/bam_sam/aligned_reads.sort.markdup.bam -M data/bam_sam/aligned_reads.sort.markdup_metrics.txt
-
-Index the BAM file:
-
-> samtools index data/bam_sam/aligned_reads.sort.markdup.bam 
-
-Now you can download the **HbFMF.sort.markdup.bam** file and visualize it in IGV.
-
-# Variant Calling
-
-Create a directory for VCF files:
-
-> mkdir data/vcf # Create directory for VCF files
-
-Run variant calling:
-
-> /mnt/proj/omicss24/variant_calling/soft/gatk-4.6.0.0/gatk HaplotypeCaller -R /mnt/proj/omicss24/variant_calling/data/ref_genome/ecoli_rel606.fasta -I data/bam_sam/aligned_reads.sort.markdup.bam -O data/vcf/raw_variants.vcf
-
-# Variant Filtration
-
-### Separating SNPs and INDELs
-The result of variant calling is the **raw_variants.vcf** file, which includes both SNPs and small INDELs. However, in later steps of variant filtration, they should be separated. Create two separate VCF files for SNPs and INDELs:
+#### Separating SNPs and INDELs
+The raw VCF file (raw_variants.vcf) contains both SNPs and INDELs. These should be separated before applying different filtering criteria.
 
 For SNPs:
-
-> /mnt/proj/omicss24/variant_calling/soft/gatk-4.6.0.0/gatk SelectVariants -R /mnt/proj/omicss24/variant_calling/data/ref_genome/ecoli_rel606.fasta -V data/vcf/raw_variants.vcf --select-type-to-include SNP -O data/vcf/snp_variants.vcf
+```bash
+gatk SelectVariants \
+  -R /mnt/db/genomes/homo_sapiens/GRCh38.p14/picard_3.4.0_dictionary/GCF_000001405.40_GRCh38.p14_genomic.fna \
+  -V data/vcf/raw_variants.vcf \
+  --select-type-to-include SNP \
+  -O data/vcf/snp_variants.vcf
+```
 
 For INDELs:
+```bash
+gatk SelectVariants \
+  -R /mnt/db/genomes/homo_sapiens/GRCh38.p14/picard_3.4.0_dictionary/GCF_000001405.40_GRCh38.p14_genomic.fna \
+  -V data/vcf/raw_variants.vcf \
+  --select-type-to-include INDEL \
+  -O data/vcf/indel_variants.vcf
 
-> /mnt/proj/omicss24/variant_calling/soft/gatk-4.6.0.0/gatk SelectVariants -R /mnt/proj/omicss24/variant_calling/data/ref_genome/ecoli_rel606.fasta -V data/vcf/raw_variants.vcf --select-type-to-include INDEL -O data/vcf/indel_variants.vcf
+```
 
-
-### Filtering Variants
+#### Filtering Variants
+GATK recommends using different filters for SNPs and INDELs. Below are commonly used thresholds.
 
 In the default parameters, the most commonly used filters for SNPs and INDELs are as follows:
 
@@ -101,17 +171,29 @@ In the default parameters, the most commonly used filters for SNPs and INDELs ar
 - **MQRankSum:** MQRankSum is calculated by ranking the mapping qualities of the reads that support each allele and then calculating the difference in ranks between the alternate and reference alleles.
 - **ReadPosRankSum:** ReadPosRankSum is calculated by ranking the positions of the reads that support each allele and then calculating the difference in ranks between the alternate and reference alleles.
 
-#### SNPs
 
-Apply the following filters for SNPs:
+SNPs:
+```bash
+gatk VariantFiltration \
+  -R /mnt/db/genomes/homo_sapiens/GRCh38.p14/picard_3.4.0_dictionary/GCF_000001405.40_GRCh38.p14_genomic.fna \
+  -V data/vcf/snp_variants.vcf \
+  -filter "QD < 2.0" --filter-name "QD2" \
+  -filter "QUAL < 30.0" --filter-name "QUAL30" \
+  -filter "SOR > 10.0" --filter-name "SOR10" \
+  -filter "FS > 60.0" --filter-name "FS60" \
+  -O data/vcf/filtered_snps.vcf
+```
+INDELs:
+```bash
+gatk VariantFiltration \
+  -R /mnt/db/genomes/homo_sapiens/GRCh38.p14/picard_3.4.0_dictionary/GCF_000001405.40_GRCh38.p14_genomic.fna \
+  -V data/vcf/indel_variants.vcf \
+  -filter "QD < 2.0" --filter-name "QD2" \
+  -filter "QUAL < 30.0" --filter-name "QUAL30" \
+  -filter "SOR > 10.0" --filter-name "SOR10" \
+  -filter "FS > 100.0" --filter-name "FS100" \
+  -O data/vcf/filtered_indels.vcf
 
-> /mnt/proj/omicss24/variant_calling/soft/gatk-4.6.0.0/gatk VariantFiltration -R /mnt/proj/omicss24/variant_calling/data/ref_genome/ecoli_rel606.fasta  -V data/vcf/snp_variants.vcf -filter "QD < 2.0" --filter-name "QD2" -filter "QUAL < 30.0" --filter-name "QUAL30" -filter "SOR > 10.0" --filter-name "SOR10" -filter "FS > 60.0" --filter-name "FS60" -O data/vcf/filtered_snps.vcf
-
-
-#### INDELs
-
-Apply the following filters for INDELs:
-
-> /mnt/proj/omicss24/variant_calling/soft/gatk-4.6.0.0/gatk VariantFiltration -R /mnt/proj/omicss24/variant_calling/data/ref_genome/ecoli_rel606.fasta  -V data/vcf/indel_variants.vcf  -filter "QD < 2.0" --filter-name "QD2" -filter "QUAL < 30.0" --filter-name "QUAL30" -filter "SOR > 10.0" --filter-name "SOR10" -filter "FS > 100" --filter-name "FS100" -O data/vcf/filtered_indels.vcf
+```
 
 #### End of Pipeline ####
