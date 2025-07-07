@@ -48,6 +48,6 @@ To install these packages, start R and enter:
   
   **metadata.tsv** - sample metadata
   
-**   ** - Rmd file? (DESeq2 practice)
+**Transcriptomics_practice.md** - DESeq2 practice
 
 ---
