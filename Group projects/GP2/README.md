@@ -208,6 +208,7 @@ Check if any quality issues persist to perform trimming again if needed.
 ## 8/15/2025 - 4PM-5PM
 
 ### Run Computel for TRVs [Anahit]
+- Refer to [Computel 2.0 SOP](https://docs.google.com/document/d/1gVZ7xYtBPW7v71oetAQkewMflmmAz8q_ja0ot0ISxG8/edit?tab=t.0) for detaied instructions on installing, running and extracting results by Computel
 - Run Computel on trimmed FASTQ files
 - Generate CSV files with TRV counts/proportions
   
