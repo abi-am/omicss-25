@@ -211,9 +211,9 @@ Check if any quality issues persist to perform trimming again if needed.
 - Generate CSV files with TRV counts/proportions
   
 ### TRV analysis on pre-generated table: within dataset comparisons [Tatevik]
-Use the file ՝/mnt/proj/cfdna/cancer/unified/trv/merged/trv_abs.csv՝ for TRV counts and ՝/mnt/proj/cfdna/cancer/unified/trv/merged/trv_compositional.csv՝ for TRV percentages across samples derived from multiple datasets. Both files include sample metadata in the first 8 columns: `origin`, `timepoint`, `tissue-type`, `gender`, `age`, `patient_name`, `state`, and `full_name`. The remaining columns correspond to TRVs. Each row represents one sample, uniquely identified by the `full_name` column.  
+Use the file `/mnt/proj/cfdna/cancer/unified/trv/merged/trv_abs.csv` for TRV counts and `/mnt/proj/cfdna/cancer/unified/trv/merged/trv_compositional.csv` for TRV percentages across samples derived from multiple datasets. Both files include sample metadata in the first 8 columns: `origin`, `timepoint`, `tissue-type`, `gender`, `age`, `patient_name`, `state`, and `full_name`. The remaining columns correspond to TRVs. Each row represents one sample, uniquely identified by the `full_name` column.  
 
-#### Filter TRVs  (*Maybe provide already prepared df*)      
+#### Filter TRVs  (*Maybe provide already prepared df ?*)      
 Use these files to obtain a filtered list of TRVs with the following filtering criteria:  
 - For each sample keep only TRVs with TRV count >= 10  
 - For each sample take top 20 TRVs with TRV percentage > 0.5%  
@@ -221,7 +221,7 @@ Use these files to obtain a filtered list of TRVs with the following filtering c
 
 #### Within dataset comparisons
 For each dataset։  
-- Perform non-parametric Mann–Whitney U tests comparing percentages of filtered TRVs in cancer (or other disease) vs healthy samples, correct for multiple testing with FDR. Consider discarding the canonical variant from this analysis.  (*Maybe provide already prepared df*)      
+- Perform non-parametric Mann–Whitney U tests comparing percentages of filtered TRVs in cancer (or other disease) vs healthy samples, correct for multiple testing with FDR. Consider discarding the canonical variant from this analysis.  (*Maybe provide already prepared df ?*)      
 - Prepare visualisations (e.g. boxplot, heatmap, scatter plot) as performed during the R plotting practice session. Note, you can use Python as well.  
 
 ## Week 4
