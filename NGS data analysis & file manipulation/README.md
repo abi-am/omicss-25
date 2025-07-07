@@ -16,7 +16,8 @@
       - Introduction to File Types in Bioinformatics  
       - Basic File Manipulations on Linux  
       
-  **MATERIALS**: [SLIDES](https://docs.google.com/presentation/d/147S8KHfASleNNnflGcAHNm_17RivY0Ik3SBDx_QqfxA/edit?slide=id.g33d5a1ad07d_0_177#slide=id.g33d5a1ad07d_0_177), [EXERCISES]()  
+  **_MATERIALS_**: [SLIDES](https://docs.google.com/presentation/d/147S8KHfASleNNnflGcAHNm_17RivY0Ik3SBDx_QqfxA/edit?slide=id.g33d5a1ad07d_0_177#slide=id.g33d5a1ad07d_0_177), [EXERCISES]()  
+
 
 
   ### **TOPIC 2**: Quality Control (FASTQC, MULTIQC) & Interpretation  
@@ -32,7 +33,8 @@
       - Running FASTQC/MULTIQC  
       - Adapter Trimming  
       
-  **MATERIALS**: [SLIDES](https://docs.google.com/presentation/d/17kIqHhE1-EcamWTcxxPEj-M4FjJvLYy7nw7EVw7beiY/edit?usp=sharing), [TUTORIAL](https://github.com/abi-am/omicss-25/blob/d0419ab896f09ed672cb5552bba0791d006bc056/NGS%20data%20analysis%20%26%20file%20manipulation/exercises/fastqc_tutorial.md), [EXERCISES]()  
+  **_MATERIALS_**: [SLIDES](https://docs.google.com/presentation/d/17kIqHhE1-EcamWTcxxPEj-M4FjJvLYy7nw7EVw7beiY/edit?usp=sharing), [TUTORIAL](https://github.com/abi-am/omicss-25/blob/d0419ab896f09ed672cb5552bba0791d006bc056/NGS%20data%20analysis%20%26%20file%20manipulation/exercises/fastqc_tutorial.md), [EXERCISES]()  
+
 
 
   ### **TOPIC 3**: Alignment & Samtools  
@@ -48,8 +50,9 @@
       - File Formats in Alignment (SAM/BAM files)  
       - Alignment Tools (BWA, BT2, SAMTOOLS)  
       
-  **MATERIALS**: [SLIDES](https://docs.google.com/presentation/d/1tNOKpZZuyiv5n5Cl6aCLpbwf8a-lcqGt/edit?usp=drive_link&ouid=112677744829360659757&rtpof=true&sd=true), [TUTORIAL](https://github.com/abi-am/omicss-25/blob/58ae9c8058542b4a2a1b33658e6514eb474e2508/NGS%20data%20analysis%20%26%20file%20manipulation/alignment_practice/README.md), [EXERCISES]()
+  **_MATERIALS_**: [SLIDES](https://docs.google.com/presentation/d/1tNOKpZZuyiv5n5Cl6aCLpbwf8a-lcqGt/edit?usp=drive_link&ouid=112677744829360659757&rtpof=true&sd=true), [TUTORIAL](https://github.com/abi-am/omicss-25/blob/58ae9c8058542b4a2a1b33658e6514eb474e2508/NGS%20data%20analysis%20%26%20file%20manipulation/alignment_practice/README.md), [EXERCISES]()
   
+
 
   ### **TOPIC 4**: Annotation & Genomic Regions  
   
@@ -63,7 +66,7 @@
       - Annotation  
       -  
       
-  **MATERIALS**: [SLIDES]), [TUTORIAL](), [EXERCISES]()  
+  **_MATERIALS_**: [SLIDES]), [TUTORIAL](), [EXERCISES]()  
   
 
 
