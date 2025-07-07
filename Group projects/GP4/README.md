@@ -21,7 +21,7 @@ Current understanding of lung cancer [Sveta]
 ___
 
 ### Data 
-Link to the paper [Arpine] \
+[Publication](https://www.nature.com/articles/s41467-020-16164-1) \
 Path in the server [Arpine]
 
 ### Processing, Dimensionality Reduction, Clustering
