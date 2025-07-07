@@ -16,6 +16,8 @@ Now that whole-genome sequencing (WGS) is relatively cheap and accessible, it ha
 
 **Population genetics** is the study of the genetic makeup of biological populations and changes in this makeup over time. It provides insights into evolutionary processes such as natural selection, genetic drift, mutation, and migration.   
 
+> NOTE: new to mechanisms of evolution? You can learn more about them [here](https://evolution.berkeley.edu/evolution-101/mechanisms-the-processes-of-evolution/).
+
 **Population genomics** extends these principles to genome-wide data, allowing us to look at variation across the entire genome, rather than focusing on a few selected markers.  
 
 In practical terms, we might want to understand where a given sample came from, how it relates to others, or whether distinct groups of individuals share common ancestry. 
