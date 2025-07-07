@@ -53,6 +53,6 @@ we will have multi-step cell type identification.
 For identifying differentially expressed genes, we will use the FindMarkers() function implemented in Seurat 
 
 ### Gene Set Enrichment
-Go enrichment, fGSEA [Arpine]
+[GO Enrichment](https://yulab-smu.top/biomedical-knowledge-mining-book/clusterprofiler-go.html), [fGSEA](https://biostatsquid.com/fgsea-tutorial-gsea/)
 
 ### Hypothesis testing
