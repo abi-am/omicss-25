@@ -45,19 +45,19 @@ Contributing authors: Anahit Yeghiazaryan, Davit Tareverdyan, Mher Kurghinyan
     - [Journal club](#journal-club)
   - [8/19/2025 - 12PM-1PM](#8192025---12pm-1pm)
     - [Alignment on reference genome](#alignment-on-reference-genome)
-    - [Reference genome index](#reference-genome-index)
+    - [Reference genome index for alignment](#reference-genome-index-for-alignment)
   - [8/19/2025 - 2PM-3PM](#8192025---2pm-3pm)
-    - [Remove duplicated reads from bam [Tatevik]](#remove-duplicated-reads-from-bam-tatevik)
-  - [8/19/2025 - 3PM-4PM](#8192025---3pm-4pm)
     - [Gene expression estimation using NDR [Mher]](#gene-expression-estimation-using-ndr-mher)
-  - [8/19/2025 - 4PM-5PM](#8192025---4pm-5pm)
+  - [8/19/2025 - 3PM-4PM](#8192025---3pm-4pm)
     - [Run PSF using gene expression estimates for TMM genes [Mher]](#run-psf-using-gene-expression-estimates-for-tmm-genes-mher)
-  - [8/20/2025 - 12PM-1PM](#8202025---12pm-1pm)
+  - [8/19/2025 - 4PM-5PM](#8192025---4pm-5pm)
     - [Cluster samples by gene expression [Tatevik]](#cluster-samples-by-gene-expression-tatevik)
-  - [8/20/2025 - 2PM-3PM](#8202025---2pm-3pm)
+  - [8/20/2025 - 12PM-1PM](#8202025---12pm-1pm)
     - [Run PSF using cluster mean gene expression estimates for TMM genes [Mher]](#run-psf-using-cluster-mean-gene-expression-estimates-for-tmm-genes-mher)
-  - [8/20/2025 - 4PM-5PM](#8202025---4pm-5pm)
+  - [8/20/2025 - 2PM-3PM](#8202025---2pm-3pm)
     - [Perform combined analysis of ALT, TEL pathway activities and TRV abundances across samples [Tatevik]](#perform-combined-analysis-of-alt-tel-pathway-activities-and-trv-abundances-across-samples-tatevik)
+  - [8/20/2025 - 4PM-5PM](#8202025---4pm-5pm)
+    - [Perform combined analysis of ALT, TEL pathway activities and TRV abundances across samples (continued) [Tatevik]](#perform-combined-analysis-of-alt-tel-pathway-activities-and-trv-abundances-across-samples-continued-tatevik)  
 - [Bootcamp](#bootcamp)
   - [8/21/2025](#8212025)
   - [8/22/2025](#8222025)
@@ -153,7 +153,7 @@ Read and discuss this paper
 ## 8/6/2025 - 5PM-6PM  
 ### R plotting practice  
 R plotting practice on synthetic TRV data
- - See Practive/R_plotting.docx file for instructions
+ - See [R_plotting.docx](https://docs.google.com/document/d/1CqiE7FmCI2azC8rbFXeCmdmtHB6TxT0w/edit) file for instructions  
 
 ## 8/7/2025 - 5PM-6PM  
 Prepare project presentation
