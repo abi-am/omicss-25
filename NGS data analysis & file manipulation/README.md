@@ -56,7 +56,7 @@
   
   **LECTURERS**: Maria Nikoghosyan  
   
-  **SCHEDULE**:
+  **SCHEDULE**:  
       - Lecture: 11PM-12PM, August 12th, 2025  
       - Office Hours: 2-3PM, August 12th, 2025   
       
