@@ -25,15 +25,19 @@ A basic step in analyzing RNA-seq count data is finding genes that are expressed
 
 ## 🧰 Package installation
 
-Please follow the provided instructions to install _"DESeq2"_ package.
+Please follow the provided instructions to install _"DESeq2", "EnhancedVolcano", and "ashr"_ packages.
 
-To install this package, start R (version "4.5") and enter:
+To install these packages, start R and enter:
 
       if (!require("BiocManager", quietly = TRUE))
 
         install.packages("BiocManager")
 
       BiocManager::install("DESeq2")
+      BiocManager::install("EnhancedVolcano")
+
+      options(repos = c(CRAN = "https://cran.r-project.org"))
+      install.packages('ashr')
 
 ---
 
