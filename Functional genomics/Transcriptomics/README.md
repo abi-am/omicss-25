@@ -25,6 +25,5 @@ We will give a lecture covering the basics of differential gene expression analy
 
 In this practice, you will learn how to find differentially expressed genes using RNA-seq count data. You will use DESeq2 to test for differences between conditions and interpret results with log fold changes and p-values.
 
-➡️ **[Link to the presentation](https://docs.google.com/presentation/d/1Q-kH2b7tVQWlsNbOMMSBRgaV5apPos2axDYLrwrFP5o/edit?usp=sharing)**
 
 ---
