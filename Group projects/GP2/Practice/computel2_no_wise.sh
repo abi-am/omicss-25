@@ -1,14 +1,15 @@
 #!/usr/bin/env bash
 
-# A DAUGHTER SCRIPT TO RUN COMPUTEL (NO WISE)
-#
+# OMICSS-25 
+# A DAUGHTER SCRIPT TO RUN COMPUTEL FOR TRVs
+# 
 # Required:
-#  -1, --fastq       Path to input FASTQ (can be gzipped)
+#  -1, --fastq       Path to input FASTQ (gzipped)
 #  -2, --proc        Number of processors/threads to use
 #  -3, --outdir      Output directory for Computel results
-#      --verbose     Turn on verbose mode
+#      --verbose     Turn on verbose mode for detailed logging
 #
-# Usage: ./computel2_no_wise.sh <FASTQ> <PROC> <OUTDIR>
+# Usage: ./computel2.sh <FASTQ> <PROC> <OUTDIR>
 
 
 # Check for exactly four arguments
@@ -30,8 +31,8 @@ echo "Output directory:  $OUTDIR"
 # Create output directory
 mkdir -p "$OUTDIR"
 
-# Run Computel2 with WisecondorX and verbose
-echo "Running Computel2 (no wise) --verbose..."
+# Run Computel2 with verbose to get detailed outputs
+echo "Running Computel2 --verbose..."
 computel -fq "$FASTQ" \
          -proc "$PROC" \
          -o "$OUTDIR" \
