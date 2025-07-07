@@ -5,14 +5,11 @@
 | Content | Duration |
 |----------|----------|
 | 🧰 1. Practice part 1 | ~60-80m  |
-| 1.1 Input data||
-| 1.2 Pre-filtering||
+| 1.1 System preparation||
+| 1.2 Input data generation||
 | 1.3 Differential expression analysis||
-| 1.4 p-values and adjusted p-values||
-| 1.5 Task 1||
-| 1.6 Exploring and exporting results||
-| 1.7 EnhancedVolcano||
-| 1.8 Multi-factor designs||
+| 1.4 Volcano plots||
+| 1.5 Exporting results||
 | 🧰 2. Practice part 2 | ~40-60m  |
 | 2.1 Task for students||
 | Overall  | ~120m (2h)  |
@@ -37,10 +34,6 @@ To install this package, start R (version "4.5") and enter:
         install.packages("BiocManager")
 
       BiocManager::install("DESeq2")
-
-
-
-➡️ **[Link to the presentation](https://docs.google.com/presentation/d/1Q-kH2b7tVQWlsNbOMMSBRgaV5apPos2axDYLrwrFP5o/edit?usp=sharing)**
 
 ---
 
