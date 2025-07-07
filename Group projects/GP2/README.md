@@ -207,7 +207,9 @@ Check if any quality issues persist to perform trimming again if needed.
 ## 8/15/2025 - 4PM-5PM
 
 ### Run Computel for TRVs [Anahit]
-
+- Run Computel on trimmed FASTQ files
+- Generate CSV files with TRV counts/proportions
+  
 ### TRV analysis on pre-generated table: within dataset comparisons [Tatevik]
 
    
@@ -250,7 +252,6 @@ Check log files for alignment status, % of reads aligned and other stats.
 
 ## 8/19/2025 - 2PM-3PM
 ### Gene expression estimation using NDR [Mher]
-
 
 ## 8/19/2025 - 3PM-4PM
 ### Run PSF using gene expression estimates for TMM genes [Mher]
