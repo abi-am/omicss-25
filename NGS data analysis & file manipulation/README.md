@@ -63,7 +63,7 @@
   **SUBTOPICS**:   
 
       
-  **_MATERIALS_**: [SLIDES]), [TUTORIAL](), [EXERCISES]()  
+  **_MATERIALS_**: [SLIDES](https://docs.google.com/presentation/d/1VY8pyzhAUsLYkBp7o8lC2DbRwYWNGU4zPIHuZoPWCfo/edit?usp=sharing), [TUTORIAL](), [EXERCISES]()  
   
 
 
