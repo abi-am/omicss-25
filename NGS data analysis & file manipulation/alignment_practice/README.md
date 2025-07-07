@@ -1,6 +1,7 @@
   # Contributors
     Primary contributor: Nate Zadirako
   # Contents  
+  * adapter trimming
   * alignment to a reference
   * samtools commands
 
@@ -15,15 +16,45 @@ First, navigate to the directory where your data is stored and create a director
 ```
 # path to fastq files
 cd /mnt/proj/vine/shared_files/omicss_25/
-
-# let's make a subdirectory for our alignment
-mkdir bam
 ```
-Both `samtools` and `bwa mem` can be called anywhere; type `samtools --help` and `bwa mem -help` to make sure: if the tool is available, this command will bring up its manual in the terminal.
+
+### ALIGNMENT TO A REFERENCE
+
+Before we get to the alignment, we need to perform **adapter trimming**.
+
+During sequencing, adapters (sequences—short artificial sequences used in library preparation) can sometimes be read into the output FASTQ files. These non-biological sequences can interfere with downstream analysis like alignment and variant calling, so we must remove them.  
+
+Their presence is typically indicated by the FASTQC report.  
+
+We will use the command line tool [cutadapt](https://cutadapt.readthedocs.io/en/stable/guide.html) for this.
+
+> NOTE: when performing the same operation on multiple samples, you can loop over them in your script.
+
+```
+# cutadapt usage
+
+cutadapt \
+  -a ADAPTER_FWD \
+  -A ADAPTER_REV \
+  -o sample_trimmed_R1.fastq.gz \
+  -p sample_trimmed_R2.fastq.gz \
+sample_R1.fastq.gz sample_R2.fastq.gz
+```
  
 ### ALIGNMENT TO A REFERENCE
 
-Since the reads are [this length], bwa-mem suits us best. It's a fast and efficient algorithm, but alignment is still a computationally expensive task, which is why we're limited to a small dataset for this practice. Real datasets may take days to run.  
+Now we're ready to align our trimmed reads to the reference.  
+
+Since the reads are relatively short, bwa-mem suits us best. It's a fast and efficient algorithm, but alignment is still a computationally expensive task, which is why we're limited to a small dataset for this practice. Real datasets may take days to run. 
+
+> How would you find out how long these reads are?
+
+```
+# let's make a subdirectory for our alignment
+mkdir bam
+```
+
+Both `samtools` and `bwa mem` can be called anywhere; type `samtools --help` and `bwa mem -help` to make sure: if the tool is available, this command will bring up its manual in the terminal.
 
 You can write a script performing the alignment. The reference we're using is GRCh38.p14, the most recent assembly of the human genome.   
 
@@ -46,7 +77,7 @@ bwa mem -t 4 -R "@RG\tID:${sample}\tLB:${sample}\tSM:${sample}\tPL:ILLUMINA" \
 ```
 > What are the `-t` and `-R` options for?  
 
-You can loop through the samples or run each separately. Add the  slurm batch parameters on top of your script, make the script executable and run:  
+Add the  slurm batch parameters on top of your script, make the script executable and run:  
 
 ```
 chmod +x alignment.sh
