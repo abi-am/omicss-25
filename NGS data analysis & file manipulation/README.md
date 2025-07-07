@@ -13,14 +13,13 @@
       - Office Hours: 12PM-1PM,  August 8th, 2025  
       
   **SUBTOPICS**:   
-- Introduction to File Types in Bioinformatics  
-- Basic File Manipulations on Linux  
+    - Introduction to File Types in Bioinformatics  
+    - Basic File Manipulations on Linux  
       
   **_MATERIALS_**: [SLIDES](https://docs.google.com/presentation/d/147S8KHfASleNNnflGcAHNm_17RivY0Ik3SBDx_QqfxA/edit?slide=id.g33d5a1ad07d_0_177#slide=id.g33d5a1ad07d_0_177), [EXERCISES]()  
 
 
-
-  ### **TOPIC 2**: Quality Control (FASTQC, MULTIQC) & Interpretation  
+### **TOPIC 2**: Quality Control (FASTQC, MULTIQC) & Interpretation  
   
   **LECTURERS**: Lilit Nersisyan, Mher Kurghinyan, Anahit Yeghiazaryan  
   
@@ -29,15 +28,14 @@
       - Practice: 3-5PM, August 8th, 2025  
       
   **SUBTOPICS**:   
-- FASTQC Reports & Interpretation  
-- Running FASTQC/MULTIQC  
-- Adapter Trimming  
+    - FASTQC Reports & Interpretation  
+    - Running FASTQC/MULTIQC  
+    - Adapter Trimming  
       
   **_MATERIALS_**: [SLIDES](https://docs.google.com/presentation/d/17kIqHhE1-EcamWTcxxPEj-M4FjJvLYy7nw7EVw7beiY/edit?usp=sharing), [TUTORIAL](https://github.com/abi-am/omicss-25/blob/d0419ab896f09ed672cb5552bba0791d006bc056/NGS%20data%20analysis%20%26%20file%20manipulation/exercises/fastqc_tutorial.md), [EXERCISES]()  
 
 
-
-  ### **TOPIC 3**: Alignment & Samtools  
+### **TOPIC 3**: Alignment & Samtools  
   
   **LECTURERS**: Lilit Nersisyan, Nate Zadirako  
   
@@ -47,14 +45,14 @@
       - Practice: 2-4PM, August 11th, 2025  
       
   **SUBTOPOICS**:   
-- File Formats in Alignment (SAM/BAM files)  
-- Alignment Tools (BWA, BT2, SAMTOOLS)  
+    - File Formats in Alignment (SAM/BAM files)  
+    - Alignment Tools (BWA, BT2, SAMTOOLS)  
       
   **_MATERIALS_**: [SLIDES](https://docs.google.com/presentation/d/1tNOKpZZuyiv5n5Cl6aCLpbwf8a-lcqGt/edit?usp=drive_link&ouid=112677744829360659757&rtpof=true&sd=true), [TUTORIAL](https://github.com/abi-am/omicss-25/blob/58ae9c8058542b4a2a1b33658e6514eb474e2508/NGS%20data%20analysis%20%26%20file%20manipulation/alignment_practice/README.md), [EXERCISES]()
   
 
 
-  ### **TOPIC 4**: Annotation & Genomic Regions  
+### **TOPIC 4**: Annotation & Genomic Regions  
   
   **LECTURERS**: Maria Nikoghosyan  
   
@@ -63,8 +61,7 @@
       - Office Hours: 2-3PM, August 12th, 2025   
       
   **SUBTOPICS**:   
-      - Annotation  
-      -  
+
       
   **_MATERIALS_**: [SLIDES]), [TUTORIAL](), [EXERCISES]()  
   
