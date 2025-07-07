@@ -47,6 +47,6 @@ To install this package, start R (version "4.5") and enter:
   
   **metadata.tsv** - sample metadata
   
-**Diffexpression_analysis.R** - Rscript file (DESeq2 practice)
+**   ** - Rmd file? (DESeq2 practice)
 
 ---
