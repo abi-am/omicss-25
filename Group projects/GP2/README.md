@@ -147,10 +147,8 @@ Read and discuss this paper
 - [Telomere Maintenance Pathway Activity Analysis Enables Tissue- and Gene-Level Inferences (Nersisyan et al., 2021)](https://doi.org/10.3389/fgene.2021.662464)  
 
 **Homework**:  
-  Read this paper:  
+  Read this paper and prepare a 45 min (+ 15 min Q&A) journal club presentation for 8/18/2025 4PM-5PM:  
   - [Inferring expressed genes by whole-genome sequencing of plasma DNA (Ulz et al., 2016)](https://doi.org/10.1038/ng.3648)  
-  Prepare a 45 min (+ 15 min Q&A) journal club presentation to present on 8/18/2025 4PM-5PM  
-  
 
 ## 8/6/2025 - 5PM-6PM  
 ### R plotting practice  
@@ -209,6 +207,7 @@ Check if any quality issues persist to perform trimming again if needed.
 ## 8/15/2025 - 4PM-5PM
 
 ### Run Computel for TRVs [Anahit]
+
 ### TRV analysis on pre-generated table: within dataset comparisons [Tatevik]
 
    
@@ -231,28 +230,42 @@ Create script `src/align.sh` to align trimmed FASTQ files on human reference gen
 Log to:			`log/align.log`  
 Store output to directory:	`bam`  
 
-#### Reference genome index  
+#### Reference genome index for alignment  
 You'll need a reference genome index to align your reads in FASTQ files. Use prebuilt index for telomere-to-telomere assembly version of human genome (T2T-CHM13v2.0) located here: `/mnt/db/genomes/homo_sapiens/T2T-CHM13v2.0/bwa_mem_0.7.17-r1188/GCF_009914755.1_T2T-CHM13v2.0_genomic.fna`. 
- 
+
+#### Process the alignment output SAM file  
+Include these steps in `src/align.sh` script to obtain a final sorted, deduplicated BAM file using the specified [samtools](http://www.htslib.org/doc/samtools.html) command for each step:  
+- Convert the alignment output SAM file to BAM file (`samtools view -bS`)  
+- Sort the obtained BAM file by genomic coordinates (`samtools sort`)  
+- Remove duplicated reads from the sorted BAM file
+  - Prepare paired-end reads for duplicate marking by adding necessary tags to the BAM file (`samtools fixmate -m`)  
+  - Sort again by genomic coordinates (`samtools sort`)
+  - Identifies and remove duplicates (`samtools markdup -r`)
+- Index the deduplicated and sorted BAM file (`samtools index`)
+- Clean up intermediate files
+
 Check log files for alignment status, % of reads aligned and other stats. 
 
-## 8/19/2025 - 2PM-3PM
-### Remove duplicated reads from bam [Tatevik]
 
-## 8/19/2025 - 3PM-4PM
+
+## 8/19/2025 - 2PM-3PM
 ### Gene expression estimation using NDR [Mher]
 
-## 8/19/2025 - 4PM-5PM
+
+## 8/19/2025 - 3PM-4PM
 ### Run PSF using gene expression estimates for TMM genes [Mher]
 
-## 8/20/2025 - 12PM-1PM
+## 8/19/2025 - 4PM-5PM
 ### Cluster samples by gene expression [Tatevik]
 
-## 8/20/2025 - 2PM-3PM
+## 8/20/2025 - 12PM-1PM
 ### Run PSF using cluster mean gene expression estimates for TMM genes [Mher]
 
-## 8/20/2025 - 4PM-5PM
+## 8/20/2025 - 2PM-3PM
 ### Perform combined analysis of ALT, TEL pathway activities and TRV abundances across samples [Tatevik]
+
+## 8/20/2025 - 4PM-5PM
+### Perform combined analysis of ALT, TEL pathway activities and TRV abundances across samples (continued) [Tatevik]
 
 
 ## Bootcamp 
