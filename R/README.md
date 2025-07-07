@@ -18,13 +18,13 @@
   Addressing R package installation problems [Luiza] 
 
   # TODO
-   [*] Luiza: Work R presentation based on comments \
+   [+] Luiza: Work R presentation based on comments \
     Deadline -  11:00 AM 07.07.2025 \
    [] Luiza: Upload to GitHub a link discussing package installation problems in R + useful packages for bioinf analysis\
     Deadline -  11:00 AM 07.07.2025\
-   [*] Arpine: Find a test or other suitable homework or something for practicals \
+   [+] Arpine: Find a test or other suitable homework or something for practicals \
     Deadline -  11:00 AM 07.07.2025 \
-   [*] Arpine: Update the readme mention hourly schedule \
+   [+] Arpine: Update the readme mention hourly schedule \
     Deadline -  11:00 AM 07.07.2025
 
     
