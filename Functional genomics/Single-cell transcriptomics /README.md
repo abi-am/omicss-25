@@ -11,7 +11,7 @@
 
 [scRNA-seq analysis tutorial](https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://satijalab.org/seurat/articles/pbmc3k_tutorial.html&ved=2ahUKEwiDvbTo5P-NAxWh7QIHHbXzI78QFnoECBUQAQ&usg=AOvVaw0IdDAx5dVzTG_RBzez-R1T)
 
-#### Paper reading 13:00 - 15:00 
+#### Paper reading 14:00 - 15:00 
 
 Homework 1 - to read the paper about the general guidelines for scRNA-seq analysis, prepare a short summary report \
  ``` Practice/hw1.pdf  ``` \
@@ -23,5 +23,5 @@ Homework 2 - to read the paper about best practices in scRNA-seq analysis, prepa
   # TODO
     [] Melina: Update the presentation 
         Deadline -  11:00 AM 07.06.2025
-    [] Arpine: Check out and touch-up the presentation 
+    [*] Arpine: Check out and touch-up the presentation 
         Deadline -  11:00 AM 07.06.2025
