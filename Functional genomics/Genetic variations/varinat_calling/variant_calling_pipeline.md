@@ -134,7 +134,7 @@ gatk GenotypeGVCFs \
 ```
 
 
-### Step7: Filter variants
+### Step 7: Filter variants
 
 #### Separating SNPs and INDELs
 The raw VCF file (raw_variants.vcf) contains both SNPs and INDELs. These should be separated before applying different filtering criteria.
