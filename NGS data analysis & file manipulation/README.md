@@ -3,12 +3,12 @@
     Contributing authors: Lilit Nersisyan, Davit Tarverdyan, Mher Kurghinyan, Tatev Jalatyan, Nate Zadirako, Siras Hakobyan
   
 # Contents 
-  ### NGS data analysis & file manipulation
-  TOPIC: FASTA/FASTQ file formats & manipulation on Linux 
-  LECTURERS:  Davit Tarverdyan, Tatevik Jalatyan
-  SCHEDULE:
-      - Practice: 11AM-12PM, AUGUST 8th, 2025
-      - Office Hours: Linux & FASTA/Q manipulation - 8/8/2025 12PM-1PM]  
+  ### NGS data analysis & file manipulation  
+  TOPIC: FASTA/FASTQ file formats & manipulation on Linux   
+  LECTURERS:  Davit Tarverdyan, Tatevik Jalatyan  
+  SCHEDULE:  
+      - Practice: 11AM-12PM, AUGUST 8th, 2025  
+      - Office Hours: Linux & FASTA/Q manipulation - 8/8/2025 12PM-1PM]   
   SUBTOPICS:   
       - Introduction to File Types in Bioinformatics
       - Basic File Manipulations on Linux 
