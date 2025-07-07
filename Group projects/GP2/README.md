@@ -144,7 +144,8 @@ Promoters are fundamental DNA sequences located just upstream of genes that serv
 ## 8/4/2025 - 4PM-5PM  
 ### TMM paper reading
 Read and discuss this paper    
-- [Telomere Maintenance Pathway Activity Analysis Enables Tissue- and Gene-Level Inferences (Nersisyan et al., 2021)](https://doi.org/10.3389/fgene.2021.662464)    
+- [Telomere Maintenance Pathway Activity Analysis Enables Tissue- and Gene-Level Inferences (Nersisyan et al., 2021)](https://doi.org/10.3389/fgene.2021.662464)  
+
 **Homework**:  
   Read this paper:  
   - [Inferring expressed genes by whole-genome sequencing of plasma DNA (Ulz et al., 2016)](https://doi.org/10.1038/ng.3648)  
@@ -221,7 +222,7 @@ Check if any quality issues persist to perform trimming again if needed.
 
 ## 8/18/2025 - 4PM-5PM
 ### Journal club  
-- Journal club presentation by students on this paper:
+- Journal club presentation by students on this paper:  
   [Inferring expressed genes by whole-genome sequencing of plasma DNA (Ulz et al., 2016)](https://doi.org/10.1038/ng.3648)
 
 ## 8/19/2025 - 12PM-1PM
