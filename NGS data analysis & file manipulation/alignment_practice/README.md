@@ -4,35 +4,32 @@
   * alignment to a reference
   * samtools commands
 
-> Note: I'll change the paths etc around a bit when we actually get to the server and I'll set it up and run through it myself.
+We will now practice using bwa-mem and samtools on a toy dataset composed of 2 human WES (Whole-Exome Sequencing) samples, each in turn composed of 2 files: with forward and reverse reads. These are fastq files derived from paired-end ILLUMINA sequencing.   
 
----
-We will now practice using bwa-mem and samtools on a toy dataset composed of 3 grapevine samples, each in turn composed of 2 files: with forward and reverse reads. These are fastq files derived from paired-end ILLUMINA sequencing.   
+> NOTE: human genomes are huge! The haploid genome is 3.3 Gb in length. Since processing something so large would take too much time, we selected and kept two smaller chromosomes, 16 and 21.
+>  
+> Is there anything special about chr16?
 
 First, navigate to the directory where your data is stored and create a directory for your alignment.     
 
 ```
 # path to fastq files
-cd path
+cd /mnt/proj/vine/shared_files/omicss_25/
 
+# let's make a subdirectory for our alignment
 mkdir bam
-cd bam
 ```
-When calling the tools, you will be using these paths to access them:    
-
-```
-# path to bwa-mem2
-# path to samtools if needed
-```
+Both `samtools` and `bwa mem` can be called anywhere; type `samtools --help` and `bwa mem -help` to make sure: if the tool is available, this command will bring up its manual in the terminal.
+ 
 ### ALIGNMENT TO A REFERENCE
 
-Since the reads are [this length], bwa-mem2 suits us best. It's a fast and efficient algorithm, but alignment is still a computationally expensive task, which is why we're limited to a small dataset for this practice. Real datasets may take days to run.  
+Since the reads are [this length], bwa-mem suits us best. It's a fast and efficient algorithm, but alignment is still a computationally expensive task, which is why we're limited to a small dataset for this practice. Real datasets may take days to run.  
 
-You can write a script performing the alignment. The reference we're using is [what it is].   
+You can write a script performing the alignment. The reference we're using is GRCh38.p14, the most recent assembly of the human genome.   
 
 ```
 # path to the reference
-
+/mnt/db/genomes/homo_sapiens/GRCh38.p14/bwa_mem_0.7.17-r1188/GCF_000001405.40_GRCh38.p14_genomic.fn
 ```
 
 The script can be run through the task manager called `slurm` that allocates resources and maintains your jobs while you're away from the terminal.  
@@ -40,10 +37,15 @@ The script can be run through the task manager called `slurm` that allocates res
 Since SAM files take up a lot of space, we can skip them and pipe straight to samtools to create a BAM file. The command you'll want is:  
 
 ```
-# make sure that R1 and R2 are forward and reverse reads of the same sample
+# make sure that READ1 and READ2 are forward and reverse reads of the same sample
+# define your sample, R1 and R2 as variables
 
-bwa-mem2 mem $REF $READ1 $READ2 | samtools view -Sb - > $OUT
+bwa mem -t 4 -R "@RG\tID:${sample}\tLB:${sample}\tSM:${sample}\tPL:ILLUMINA" \
+  $REF $READ1 $READ2 | \
+  samtools view -Sb - > bam/${sample}.bam
 ```
+> What are the `-t` and `-R` options for?  
+
 You can loop through the samples or run each separately. Add the  slurm batch parameters on top of your script, make the script executable and run:  
 
 ```
@@ -62,7 +64,7 @@ cd bam
 samtools sort sample.bam -o sample.sorted.bam
 ```
 
-We can also index the files. Indexing allows tools to rapidly access specific regions (e.g. chr1:10000-20000) without reading the entire file. It creates an additional smaller file that acts like a lookup table to retrieve parts without reading through the entire thing (files storing genonic data are very large!).  
+We can also index the files. Indexing allows tools to rapidly access specific regions (e.g. chr16:10000-20000) without reading the entire file. It creates an additional smaller file that acts like a lookup table to retrieve parts without reading through the entire thing (files storing genonic data are very large!).  
 
 > Note: different tools require different indexes and may have their own indexing commands, such as `bwa index` for the reference sequence and `tabix` for VCF files.   
 
@@ -94,6 +96,9 @@ samtools flagstat sample.bam > sample.flagstat.txt
 ```
 
 This command outputs some statistics for each sample. If you have many samples, you can write a script that collects the values of interest into a single table. You can revise what the fields mean [here](https://www.biostars.org/p/12475/).  
+
+> How do these samples compare to each other?  
+> How many reads are there in total? How many reads have been mapped?  
 
 Another thing we might want to know about our alignment is the sequencing depth across positions. Depth refers to the number of reads that cover each position in the genome. This helps us evaluate how evenly the genome was covered and whether certain regions are under- or over-represented.  
 
