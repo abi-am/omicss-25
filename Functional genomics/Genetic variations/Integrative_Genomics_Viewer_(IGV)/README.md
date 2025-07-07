@@ -32,3 +32,11 @@ Then installation starts. After it is installed, open cmd again and type command
 #### The IGV for Linux download includes AdoptOpenJDK (now Eclipse Temurin) version 21 for x64 Linux.  
 
 You can download IGV browser [here](https://igv.org/doc/desktop/#DownloadPage/)
+
+For successful installation on Windows it is recommended to turn of SmartScreen defender in your privacy settings:
+
+Start Menu → Windows Security → App & browser control → Reputation-based protection settings →
+-  Check apps and files → Off
+-  SmartScreen for Microsoft Edge → Off
+-   otentially unwanted app blocking → Off
+-   SmartScreen for Microsoft Store apps → Off
