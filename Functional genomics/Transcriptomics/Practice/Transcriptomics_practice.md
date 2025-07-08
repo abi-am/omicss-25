@@ -243,7 +243,7 @@ boxplot(
 )
 ```
 
-![](Transcriptomics_practice_files/figure-gfm/esr1-1.png)<!-- -->
+![](figures/esr1-1.png)<!-- -->
 
 # Differential expression analysis
 
@@ -335,7 +335,7 @@ EnhancedVolcano(
 )
 ```
 
-![](Transcriptomics_practice_files/figure-gfm/raw-1.png)<!-- -->
+![](figures/raw-1.png)<!-- -->
 
 ### After Shrinkage
 
@@ -348,7 +348,7 @@ EnhancedVolcano(
 )
 ```
 
-![](Transcriptomics_practice_files/figure-gfm/shrink-1.png)<!-- -->
+![](figures/shrink-1.png)<!-- -->
 
 ## Filtering
 
