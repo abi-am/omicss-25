@@ -53,8 +53,8 @@ Welcome, students, to the **OMICSS‑25 Summer School** experimental technique's
 | --------------------- | ----------------------- | ---------------------------------------------------- | --------------------| --------------------| ---------------| 
 | NGS Technologies      | <ul><li>[ ] Draft </li> | 07/07/2025?                                          | <ul><li> [ ] Draft </li> | 14/15/2025          | Lilit Nersisyan
 | Long‑Read Sequencing  | <ul><li>[ ] Draft </li> | 07/07/2025?                                          | <ul><li> [ ] Draft </li> | 14/15/2025          | Maria Nikoghosyan
-| DNA Extraction        | <ul><li>[ ] Final draft  </li> |  07/07/2025                                   | <ul><li> [ ] Draft </li> | 14/15/2025          | Nelli Vardazaryan
-| PCR & Electrophoresis | <ul><li>[ ] Final draft by </li> |  07/07/2025                                 | <ul><li> [ ] Draft </li> | 14/15/2025          |  Razmik Sargsyan
+| DNA Extraction        | <ul><li>[x] Final draft  </li> |  07/07/2025                                   | <ul><li> [ ] Draft </li> | 14/15/2025          | Nelli Vardazaryan
+| PCR & Electrophoresis | <ul><li>[x] Final draft by </li> |  07/07/2025                                 | <ul><li> [ ] Draft </li> | 14/15/2025          |  Razmik Sargsyan
 
 Please update the both in progress and Timeline as you proceed. 
 ---
