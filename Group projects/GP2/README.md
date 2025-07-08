@@ -297,10 +297,10 @@ Check log files for alignment status, % of reads aligned and other stats.
 - **Tatevik:**  
   - [ ] Finalize contents  
   - [ ] Complete indicated sections with step-by-step description
-  - [X] Update JC paper and timing 
+  - [x] Update JC paper and timing 
 
 - **Anahit:**  
-  - [ ] Complete "Run Computel for TRVs" section with step-by-step description
+  - [x] Complete "Run Computel for TRVs" section with step-by-step description
   - [ ] Prepare project intro presentation slides
 
 - **Davit:**  
