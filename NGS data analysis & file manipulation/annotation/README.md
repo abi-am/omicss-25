@@ -22,7 +22,6 @@ Together, these formats enable accurate annotation, sharing, and analysis of gen
 ### Now lets try to  solve some practical exercises
 To solve those you may use samtools combined with Unix commands 
 
-# path to bed / gtf/ gff3 files
-!!!ADD!!
+#  ! path to bed / gtf/ gff3 files !
 ```
 
