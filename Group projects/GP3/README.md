@@ -42,6 +42,19 @@ You can familiarise yourself with the samples, their regions of origin, genetic 
 /mnt/proj/vine/shared_files/data/metadata/cauc_arm_grape.metadata.tsv
 ```
 
+| **Field**                      | **Description**                                                                                                                               |
+|-------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
+| **Sample code**               | A unique identifier assigned to each accession. This code is also used in the filenames.                                                     |
+| **Variety ID**                | The name of the accession.                                                                          |
+| **Genetic background**        | Indicates whether the sample is *V. vinifera* ssp. *vinifera* (cultivated), *V. vinifera* ssp. *sylvestris* (wild), or a hybrid/cross.      |
+| **Utilization**               | Describes the intended use of the grapes: table consumption, wine production, raisin making, or multiple uses.                              |
+| **Berry skin color**          | The observed skin color of the grape berries.                                                                                                |
+| **Flower phenotype**          | Indicates the flower type: male, female, or hermaphrodite.                                                                                   |
+| **Geographic origin (region)**| For Armenian samples, the origin is further specified by region within the country.                                                           |
+| **Bunch density**             | Describes the compactness of the grape bunches, ranging from loose to dense.                                                                  |
+| **Geographic origin (country)**| The country where the sample was collected.                                                                                                 |
+| **Muscat taste**              | Indicates whether the characteristic muscat flavor is present or absent.                                                                     |
+
 > NOTE: the actual dataset is large, so we need to select a few well-behaving samples.  
 
 The data is provided to you as VCF files. These files were created from sequencing reads which were controlled for quality, aligned to the reference, and subjected to variant calling using the GATK toolkit.  
