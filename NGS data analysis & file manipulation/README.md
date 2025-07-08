@@ -16,7 +16,7 @@
     - Introduction to File Types in Bioinformatics  
     - Basic File Manipulations on Linux  
       
-  **_MATERIALS_**: [SLIDES](https://docs.google.com/presentation/d/147S8KHfASleNNnflGcAHNm_17RivY0Ik3SBDx_QqfxA/edit?slide=id.g33d5a1ad07d_0_177#slide=id.g33d5a1ad07d_0_177), [EXERCISES](), check [```exercises```](https://github.com/abi-am/omicss-25/tree/main/NGS%20data%20analysis%20%26%20file%20manipulation/exercises) folder   
+  **_MATERIALS_**: [SLIDES](https://docs.google.com/presentation/d/147S8KHfASleNNnflGcAHNm_17RivY0Ik3SBDx_QqfxA/edit?slide=id.g33d5a1ad07d_0_177#slide=id.g33d5a1ad07d_0_177), check [```exercises```](https://github.com/abi-am/omicss-25/tree/main/NGS%20data%20analysis%20%26%20file%20manipulation/exercises) folder   
 
 
 ### **TOPIC 2**: Quality Control (FASTQC, MULTIQC) & Interpretation  
@@ -32,7 +32,7 @@
     - Running FASTQC/MULTIQC  
     - Adapter Trimming  
       
-  **_MATERIALS_**: [SLIDES](https://docs.google.com/presentation/d/17kIqHhE1-EcamWTcxxPEj-M4FjJvLYy7nw7EVw7beiY/edit?usp=sharing), [TUTORIAL](https://github.com/abi-am/omicss-25/blob/d0419ab896f09ed672cb5552bba0791d006bc056/NGS%20data%20analysis%20%26%20file%20manipulation/exercises/fastqc_tutorial.md), [EXERCISES](), check [```exercises```](https://github.com/abi-am/omicss-25/tree/main/NGS%20data%20analysis%20%26%20file%20manipulation/exercises) folder     
+  **_MATERIALS_**: [SLIDES](https://docs.google.com/presentation/d/17kIqHhE1-EcamWTcxxPEj-M4FjJvLYy7nw7EVw7beiY/edit?usp=sharing), [TUTORIAL](https://github.com/abi-am/omicss-25/blob/d0419ab896f09ed672cb5552bba0791d006bc056/NGS%20data%20analysis%20%26%20file%20manipulation/exercises/fastqc_tutorial.md), check [```exercises```](https://github.com/abi-am/omicss-25/tree/main/NGS%20data%20analysis%20%26%20file%20manipulation/exercises) folder     
 
 
 ### **TOPIC 3**: Alignment & Samtools  
@@ -48,7 +48,7 @@
     - File Formats in Alignment (SAM/BAM files)  
     - Alignment Tools (BWA, BT2, SAMTOOLS)  
       
-  **_MATERIALS_**: [SLIDES](https://docs.google.com/presentation/d/1tNOKpZZuyiv5n5Cl6aCLpbwf8a-lcqGt/edit?usp=drive_link&ouid=112677744829360659757&rtpof=true&sd=true), [TUTORIAL](https://github.com/abi-am/omicss-25/blob/58ae9c8058542b4a2a1b33658e6514eb474e2508/NGS%20data%20analysis%20%26%20file%20manipulation/alignment_practice/README.md), [EXERCISES](), check [```alignment_practice```](https://github.com/abi-am/omicss-25/tree/1eb7a6469073a88e2e11428b63bedc761712b962/NGS%20data%20analysis%20%26%20file%20manipulation/alignment_practice) folder   
+  **_MATERIALS_**: [SLIDES](https://docs.google.com/presentation/d/1tNOKpZZuyiv5n5Cl6aCLpbwf8a-lcqGt/edit?usp=drive_link&ouid=112677744829360659757&rtpof=true&sd=true), [TUTORIAL](https://github.com/abi-am/omicss-25/blob/58ae9c8058542b4a2a1b33658e6514eb474e2508/NGS%20data%20analysis%20%26%20file%20manipulation/alignment_practice/README.md), check [```alignment_practice```](https://github.com/abi-am/omicss-25/tree/1eb7a6469073a88e2e11428b63bedc761712b962/NGS%20data%20analysis%20%26%20file%20manipulation/alignment_practice) folder   
   
 
 
@@ -63,7 +63,7 @@
   **SUBTOPICS**:   
 
       
-  **_MATERIALS_**: [SLIDES](https://docs.google.com/presentation/d/1VY8pyzhAUsLYkBp7o8lC2DbRwYWNGU4zPIHuZoPWCfo/edit?usp=sharing), [TUTORIAL](), [EXERCISES](), check check [```annotation```](https://github.com/abi-am/omicss-25/tree/7d7d7851ed90707cd442639298f90bc4222fd305/NGS%20data%20analysis%20%26%20file%20manipulation/annotation) folder     
+  **_MATERIALS_**: [SLIDES](https://docs.google.com/presentation/d/1VY8pyzhAUsLYkBp7o8lC2DbRwYWNGU4zPIHuZoPWCfo/edit?usp=sharing), check [```annotation```](https://github.com/abi-am/omicss-25/tree/7d7d7851ed90707cd442639298f90bc4222fd305/NGS%20data%20analysis%20%26%20file%20manipulation/annotation) folder     
   
 
 
