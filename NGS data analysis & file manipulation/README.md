@@ -63,7 +63,7 @@
   **SUBTOPICS**:   
 
       
-  **_MATERIALS_**: [SLIDES](https://docs.google.com/presentation/d/1VY8pyzhAUsLYkBp7o8lC2DbRwYWNGU4zPIHuZoPWCfo/edit?usp=sharing), [TUTORIAL](), [EXERCISES](), check check [```annotation```]() folder     
+  **_MATERIALS_**: [SLIDES](https://docs.google.com/presentation/d/1VY8pyzhAUsLYkBp7o8lC2DbRwYWNGU4zPIHuZoPWCfo/edit?usp=sharing), [TUTORIAL](), [EXERCISES](), check check [```annotation```](https://github.com/abi-am/omicss-25/tree/7d7d7851ed90707cd442639298f90bc4222fd305/NGS%20data%20analysis%20%26%20file%20manipulation/annotation) folder     
   
 
 
