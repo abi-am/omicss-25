@@ -27,7 +27,7 @@
 
 ## Week 2: Taxonomic Processing & Intro to Phyloseq
 - **Working with Microbial Abundance Data, EDA & Methods:**  
-  - **Diversity Analyses with R:** | [Slides](link)
+  - **Microbial EDA and Diversity Analysis:** | [Slides](https://docs.google.com/presentation/d/19Z14W7211RZr7DdL1cOx1DAVndnoPNalzU3JaY0aJPo/edit?usp=sharing)
     `📅 04/08/2025 | 🕔 16:00–17:00`
     - Composition plots (barplots, relative-abundance heatmaps)  
     - Alpha diversity (Shannon, Simpson, observed OTUs)  
