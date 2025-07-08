@@ -28,11 +28,8 @@ mkdir -p data/bam data/bam_clean data/gvcf data/vcf
 
 We will use the GRCh38 reference genome, already prepared with the required index files for both BWA and GATK:
 
-> **Reference indexed for BWA:**  
-> `/mnt/db/genomes/homo_sapiens/GRCh38.p14/bwa_mem_0.7.17-r1188/GCF_000001405.40_GRCh38.p14_genomic.fna`  
->
-> **Reference indexed for GATK:**  
-> `/mnt/db/genomes/homo_sapiens/GRCh38.p14/picard_3.4.0_dictionary/GCF_000001405.40_GRCh38.p14_genomic.fna`
+> **Reference indexed for BWA and GATK:**  
+> `/full_path`  
 
 ---
 
