@@ -35,3 +35,5 @@ In the **vcf_file_manipulation** folder, you will find the materials for the pra
 
   # TODO
      Adjust paths 
+     Prepare VCF manipulation practice [Maria A]
+     Prepare IGV presentation and practice [Maria A & Maria N] 
