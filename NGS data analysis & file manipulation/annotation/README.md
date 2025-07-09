@@ -18,9 +18,24 @@ A tab-delimited format that describes gene structure, including exons, transcrip
 A more flexible and standardized format compared to GTF. It supports a rich set of annotations and hierarchical relationships (e.g., gene → transcript → exon), with attributes in a structured key=value format. GFF3 is often used for complex genome annotations and is compatible with many bioinformatics tools.
 
 Together, these formats enable accurate annotation, sharing, and analysis of genomic features across tools and platforms.
-For more detailed information about annotation you can watch [this.](https://www.coursera.org/learn/genomic-tools/lecture/s3pYM/sequences-and-genomic-features-3-annotation)
 
-### Now lets try to  solve some practical exercises
+ **Now lets try to  solve some practical exercises**
+ All the files for the practice are located in the following directory 
+ ```
+    /mnt/proj/vine/shared_files/omicss_25/annotation/data/
+### Exercise 1
+Extract only "exon" regions from .gtf file and save it in seperate file. How many exons are there ?
+
+
+
+
+
+
+
+
+
+
+
 To solve those you may use samtools combined with Unix commands 
 
 #  ! path to bed / gtf/ gff3 files !
