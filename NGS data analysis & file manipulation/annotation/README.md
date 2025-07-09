@@ -23,21 +23,36 @@ Together, these formats enable accurate annotation, sharing, and analysis of gen
  All the files for the practice are located in the following directory 
  ```
     /mnt/proj/vine/shared_files/omicss_25/annotation/data/
-### Exercise 1
-Extract only "exon" regions from .gtf file and save it in seperate file. How many exons are there ?
-
-
-
-
-
-
-
-
-
-
-
-To solve those you may use samtools combined with Unix commands 
-
-#  ! path to bed / gtf/ gff3 files !
 ```
+Before starting the exersices you can play a little with those files, see how they are structured and what each column means.
+
+### Exercise 1
+Extract only "exon" regions from .gtf file and save them in seperate .gtf file. How many exons are there ?
+
+### Exercise 2
+What kind of genetic regions you have in .gff3 file ? Optionally also find out how many from each 
+
+### Exercise 3
+Find a gene with ID=ENSG00000210196.2 in .gff3 file. On what chromosome it is located?
+
+### Exercise 4
+For this exercise you are going to work with .gtf file. First take transcripts and genes and store them in seperate .gtf files. Sort those files. Find out how they overlap. Redirect the output to the plain gtf file so it would be easier to analyze it.
+
+>NOTE: Bedtools intersect works faster of you give as an input sorted files
+>NOTE: running bedtools intersect might take a coumple of minutes
+
+### Exercise 5
+See how many genomic regions are located on forward and how many on reverese strand in .bed file.
+
+### Exercise 6
+How many unique chromosomes you have in .bed file?
+
+### Exercise 7
+Fine on what strand the genomic region with name "ENST00000615165.1" in .bed file is located. 
+
+
+
+
+
+
 
