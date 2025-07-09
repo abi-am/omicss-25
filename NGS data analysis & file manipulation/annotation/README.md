@@ -49,7 +49,7 @@ See how many genomic regions are located on forward and how many on reverese str
 How many unique chromosomes you have in .bed file?
 
 ### Exercise 7
-Fine on what strand the genomic region with name "ENST00000615165.1" in .bed file is located. 
+Find on what strand the genomic region with name "ENST00000615165.1" in .bed file is located. 
 
 
 
