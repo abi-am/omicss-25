@@ -36,9 +36,10 @@ What kind of genetic regions you have in .gff3 file ? Optionally also find out h
 Find a gene with ID=ENSG00000210196.2 in .gff3 file. On what chromosome it is located?
 
 ### Exercise 4
-For this exercise you are going to work with .gtf file. First take exons and genes and store them in seperate .gtf files. Sort those files. Find out how they overlap. Redirect the output to the seperate gtf file so it would be easier to analyze it.
+For this exercise you are going to work with .gtf file. First take exons and genes and store them in seperate .gtf files. Sort those files. Find out how they overla. Redirect the output to the seperate gtf file so it would be easier to analyze it.
 
 >NOTE: Bedtools intersect works faster of you give as an input sorted files
+
 >NOTE: running bedtools intersect might take a coumple of minutes
 
 ### Exercise 5
