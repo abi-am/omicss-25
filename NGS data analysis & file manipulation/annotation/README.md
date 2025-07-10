@@ -1,5 +1,7 @@
-# Contributors
-    Primary contributor: Maria Nikoghosyan
+  # Contributors 
+    Primary contributor: Nane Pivazyan
+    Contributing authors: Maria Nikoghosyan
+    
   # Contents  
   * Annotation Overview 
   * Practical exersices
