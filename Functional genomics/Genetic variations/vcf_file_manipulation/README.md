@@ -2,6 +2,18 @@
 
 In this set of exercises, you will use **PLINK** to filter and explore genetic variants stored in VCF format. The data comes from two VCF files — one with SNPs (`filtered_snps.vcf`) and another with indels (`filtered_indels.vcf`), each containing two samples.
 
+## 📂 VCF Files Used in These Exercises
+
+The VCF files used in these exercises are located on the server at:
+ > /path
+
+
+- `filtered_snps.vcf` — contains only SNP (single nucleotide polymorphism) variants  
+- `filtered_indels.vcf` — contains only indel (insertion and deletion) variants  
+
+Both VCF files include genotype data for two samples and are used throughout the exercises for format conversion, filtering, and merging.
+
+
 ## 🧬 What is PLINK?
 
 [PLINK](https://www.cog-genomics.org/plink/) is a widely used open-source toolset for genome-wide association studies (GWAS) and population-based genetic analyses.  
@@ -18,6 +30,8 @@ PLINK stores genetic data in a compact binary format composed of three files:
 - **FAM** – Text file containing individual-level metadata: family ID, sample ID, sex, and phenotype.
 
 Together, these files enable fast and scalable analysis of genome-wide variation data.
+
+
 
 ---
 
