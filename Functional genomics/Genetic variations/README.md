@@ -1,6 +1,6 @@
   # Contributors 
     Primary contributor: Maria Nikoghosyan
-    Contributing authors: Nate Zadirako, Emma Hovhannisyan
+    Contributing authors: Nate Zadirako, Mariia Arakelyan
 
 ## Session Schedule
 
