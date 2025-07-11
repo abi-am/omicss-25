@@ -19,3 +19,6 @@ Homework 2 - to read the paper about best practices in scRNA-seq analysis, prepa
 ``` Practice/hw2.pdf ``` 
 
 #### Discussion 15:00 - 16:00
+### Useful links
+[scRNA-seq analysis book](https://www.sc-best-practices.org/introduction/prior_art.html)
+
