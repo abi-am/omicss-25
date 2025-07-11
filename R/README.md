@@ -15,18 +15,4 @@
   [Guide For Installing R and RStudio](https://rstudio-education.github.io/hopr/starting.html) \
   [Introduction to R Course](https://www.w3schools.com/r/r_intro.asp) \
   [1-Hour Crash Course Video About R](https://www.youtube.com/watch?v=eR-XRSKsuR4) \
-  Addressing R package installation problems [Luiza] 
-
-  # TODO
-   [+] Luiza: Work R presentation based on comments \
-    Deadline -  11:00 AM 07.07.2025 \
-   [] Luiza: Upload to GitHub a link discussing package installation problems in R + useful packages for bioinf analysis\
-    Deadline -  11:00 AM 07.07.2025\
-   [+] Arpine: Find a test or other suitable homework or something for practicals \
-    Deadline -  11:00 AM 07.07.2025 \
-   [+] Arpine: Update the readme mention hourly schedule \
-    Deadline -  11:00 AM 07.07.2025
-
-    
-     
-
+  [Addressing R package installation problems](https://predictiveecology.org/training/_book/TroubleshootingPackageInstallation.html)
