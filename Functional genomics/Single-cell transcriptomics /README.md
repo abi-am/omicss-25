@@ -18,7 +18,7 @@ Homework 1 - to read the paper about the general guidelines for scRNA-seq analys
 Homework 2 - to read the paper about best practices in scRNA-seq analysis, prepare a short summary report \
 ``` Practice/hw2.pdf ``` 
 
-#### Discussion 15:00 - 16:00
+#### Discussion 15:00 - 16:00 
 ### Useful links
 [scRNA-seq analysis book](https://www.sc-best-practices.org/introduction/prior_art.html)
 
