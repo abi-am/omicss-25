@@ -2,7 +2,7 @@
     Primary contributor: Arpine Grigoryan
     Contributing authors: Melina Tamazyan
   # Contents  
-  ### Lecture 11:00am – 12:00pm
+  ### Lecture 11:00 – 12:00
   [Lecture for 08.15.2025](https://docs.google.com/presentation/d/1y9dZdsu_vii38DSJbjHd1iSOuKEdmrO-/edit?usp=share_link&ouid=108169334741774870734&rtpof=true&sd=true) \
   [sc-Quiz](https://www.mentimeter.com/app/presentation/alkweigcfgxsvpukrcy8ii5z58v8j1y7/edit?question=kwmkxznzc2s7)
   
@@ -19,9 +19,3 @@ Homework 2 - to read the paper about best practices in scRNA-seq analysis, prepa
 ``` Practice/hw2.pdf ``` 
 
 #### Discussion 15:00 - 16:00
-
-  # TODO
-    [] Melina: Update the presentation 
-        Deadline -  11:00 AM 07.06.2025
-    [*] Arpine: Check out and touch-up the presentation 
-        Deadline -  11:00 AM 07.06.2025
