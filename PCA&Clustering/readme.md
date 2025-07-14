@@ -25,7 +25,9 @@ Let's get started!
   
 * Presentation - 10 min
 * Supplementary materials - 10 min
-* Hands-on examples (notebook) - 40 min  
+* Hands-on examples (notebook) - 40 min
+
+  
   **2. [Clustering](./2.Clustering) - 60 min**
   
 * Presentation - 10 min
