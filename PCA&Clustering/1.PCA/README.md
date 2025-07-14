@@ -15,5 +15,4 @@ After the presentation, deepen your understanding by watching the supplementary 
 You’ll find the links and descriptions here:
 
 ### 3. Try It Yourself: Hands-on Notebook
-# PCA you can go ahead and Module – Omics 25 Summer School
-Welcome to the PCA (P This notebook contains step-by-step practical examples where you'll:
+Next, download the Python notebook included in this folder. This notebook contains step-by-step practical examples where you'll:
