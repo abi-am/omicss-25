@@ -268,10 +268,10 @@ Check log files for alignment status, % of reads aligned and other stats.
 ### Gene expression estimation using NDR [Mher] 
 In order to estimate gene expression from cell-free DNA data a number of inputs are required. 
 - bam files
-- gene position bed file (standard for all samples)
-- transcript expression matrix with TPM values obtained from GTEx (standard for all samples)
-- annotation file for transcript expression matrix (standard for all samples)
-- healthy tissue contribution file (standard for all samples)
+- gene position bed file (standard for all samples) - Homo_sapiens-GCA_009914755.4-2022_07-genes-only.bed
+- transcript expression matrix with TPM values obtained from GTEx (standard for all samples) - GTEx_Analysis_v10_RSEMv1.3.3_transcripts_tpm.pkl.gz
+- annotation file for transcript expression matrix (standard for all samples) - GTEx_Analysis_v8_Annotations_SampleAttributesDS.txt
+- healthy tissue contribution file (standard for all samples) - tissue_contribution.tsv
 - tumor fraction file (calculated for each bam file)
 - gene list
 - tumor tissue of origin
