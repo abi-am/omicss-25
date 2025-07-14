@@ -1,6 +1,14 @@
+# Contributors
+    Primary contributor: Maria Nikoghosyan
+    Contributing authors: Nate Zadirako
+
+**Intended duration: 1.5 hours.**
+
 # 🧬 SAMtools Practical Exercises
 
 In this set of exercises, you will use **SAMtools** to explore and manipulate **SAM/BAM files**, which are standard formats for storing aligned sequencing reads. The tasks range from basic read counting to more advanced operations like extracting specific regions and identifying duplicate reads.
+
+While solutions are available if you get stuck, we encourage you to try on your own!
 
 ---
 
@@ -14,7 +22,10 @@ Command:
 samtools view -c -F 4 sample.bam
 
 Explanation:
-The `-F 4` flag excludes unmapped reads, and `-c` counts the remaining ones.
+
+The `-F` flag filters out reads where the flag you give it is set (in this case, SAM flag 0x4 means unmapped reads). So the `-F 4` flag excludes unmapped reads, and `-c` counts the remaining ones.
+
+If you wanted to include reads with this flag, you'd use `-f` instead.
 -->
 
 ---
@@ -44,10 +55,8 @@ Command:
 samtools view -c -f 2 sample.bam
 
 Explanation:
-The `-f 2` flag selects reads that are marked as properly paired in the BAM file.
+The `-f 2` flag selects reads that are marked as properly paired in the BAM file. Properly paired means the read and its mate: are both mapped, are mapped to the same chromosome, are facing each other, and are the expected distance apart.
 -->
-
----
 ---
 
 ## 🔹 Exercise 4: Calculate Average Read Depth Over a Region on Chromosome 16
@@ -60,7 +69,7 @@ Command:
 samtools depth -r chr16:1000000-2000000 sample.bam | awk '{sum+=$3} END {print sum/NR}'
 
 Explanation:
-`samtools depth` reports per-base coverage, and `awk` computes the average.
+`samtools depth` reports per-base coverage in the defined region (`-r` is for region), and `awk` computes the average: column 3 is where depth values are, so you sum them up and divide by the number of lines/records.
 -->
 
 ---
@@ -99,7 +108,9 @@ The `view` command with region filters and `-b` outputs BAM format; `sort` arran
 ## 🔹 Exercise 7 (Advanced): Identify Duplicate Reads and Count Them
 
 **Description:**  
-Mark duplicate reads in the BAM file and calculate how many are present. This helps assess library complexity and potential PCR amplification bias.
+Mark duplicate reads in the BAM file and calculate how many are present. This helps assess library complexity and potential PCR amplification bias.   
+
+Duplicates refer to reads that are copies of the same original DNA fragment, likely introduced during PCR amplification in library preparation. They are not true biological replicates and may be removed later.  
 
 <!--
 Commands:
@@ -110,8 +121,9 @@ samtools markdup fixmate_sorted.bam marked.bam
 samtools view -c -f 1024 marked.bam
 
 Explanation:
-This pipeline first prepares the file for duplication marking, then `markdup` identifies duplicates, and `-f 1024` counts them.
+This pipeline first prepares the file for duplication marking by sorting by by genomic coordinates and adding mate information; `-m` only output reads that are properly paired. We sort by position again as markdup requires it. Then `markdup` identifies duplicates. Duplicates are not removed — just marked with SAM flag 0x400 (1024 in decimal). Then `-f 1024` counts them.
 -->
 
 ---
 
+That's it for now :) See you again at the variant calling practice. Thank you for your attention!
