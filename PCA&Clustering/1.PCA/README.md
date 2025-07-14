@@ -14,5 +14,7 @@ After the presentation, deepen your understanding by watching the supplementary 
 * Real-world applications in biology
 You’ll find the links and descriptions here:
 
+* (PCA main ideas)[https://www.youtube.com/watch?v=HMOI_lkzW08]
+* 
 ### 3. Try It Yourself: Hands-on Notebook
 Next, download the Python notebook included in this folder. This notebook contains step-by-step practical examples where you'll:
