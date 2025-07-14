@@ -6,7 +6,7 @@ Contributing authors: Anahit Yeghiazaryan, Davit Tareverdyan, Mher Kurghinyan
 - [Project description](#project-description)
 - [Week 1](#week-1)
   - [7/28/2025 - 3PM-5PM](#7282025---3pm-5pm)
-    - [Project presentations [Anahit, Davit T., Mher]](#project-presentations-anahit-davit-t-mher)
+    - [Project presentations [Anahit, Davit T., Mher]]([#project-presentations-anahit-davit-t-mher](https://docs.google.com/presentation/d/1g2G7LY51qzxKn596i--rHjXK6IBzhMlYm-RCr64h5LE/edit?usp=sharing)
   - [7/29/2025 - 5PM-6PM](#7292025---5pm-6pm)
     - [Molecular biology recap](#molecular-biology-recap)
   - [7/30/2025 - 5PM-6PM](#7302025---5pm-6pm)
