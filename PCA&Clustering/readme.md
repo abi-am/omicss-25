@@ -22,13 +22,13 @@ Let's get started!
     Contributing authors: [LUIZA STEPANYAN]   
 # Content  
   **1. [PCA](./1.PCA) - 60 min **
-    * Presentation - 10 min
-    * Supplementary materials - 10 min
-    * Hands-on examples (notebook) - 40 min  
+        * Presentation - 10 min
+        * Supplementary materials - 10 min
+        * Hands-on examples (notebook) - 40 min  
   **2. [Clustering](./2.Clustering) - 60 min**
-    * Presentation - 10 min
-    * Supplementary materials - 20 min
-    * Exercises - 30 min
+        * Presentation - 10 min
+        * Supplementary materials - 20 min
+        * Exercises - 30 min
   
 # TODO
 
