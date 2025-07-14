@@ -263,17 +263,34 @@ Check log files for alignment status, % of reads aligned and other stats.
 
 
 
+
 ## 8/19/2025 - 2PM-3PM
-### Gene expression estimation using NDR [Mher]
+### Gene expression estimation using NDR [Mher] 
+In order to estimate gene expression from cell-free DNA data a number of inputs are required. 
+- bam files
+- gene position bed file (standard for all samples)
+- transcript expression matrix with TPM values obtained from GTEx (standard for all samples)
+- annotation file for transcript expression matrix (standard for all samples)
+- healthy tissue contribution file (standard for all samples)
+- tumor fraction file (calculated for each bam file)
+- gene list
+- tumor tissue of origin
+
+You will be using weighted_coverage_calculation.py script. The script utilizes [samtools depth](http://www.htslib.org/doc/samtools-depth.html) function to calculate the coverage of a given position. Make a daughter script where you will call it and give all the inputs.  
+Tumor fractions are obtained with [ichorCNA](https://github.com/broadinstitute/ichorCNA/wiki) tool and usually are calculated for each bam file. You will be provided with ready tumor fractions and do not need to calculate them with ichorCNA.
+NB: The script uses Ensembl gene and transcript IDs to perform all the calcuations.
 
 ## 8/19/2025 - 3PM-4PM
 ### Run PSF using gene expression estimates for TMM genes [Mher]
+Now that you have an expression estimate for each TMM gene, you can use them in Cytoscape to run PSF. 
+NB: Entrez IDs are required for TMM analysis, so make sure to replace Ensembl IDs in coverage matrix to Entrez IDs. You can use the ncbi_to_ensembl_mapping.tsv file, which contains Ensembl IDs and their corresponding Entrez IDs. Examine the pathways and think how their activity has changed.
 
 ## 8/19/2025 - 4PM-5PM
 ### Cluster samples by gene expression [Tatevik]
 
 ## 8/20/2025 - 12PM-1PM
 ### Run PSF using cluster mean gene expression estimates for TMM genes [Mher]
+Perform the same operations as above, only use cluster mean gene expression estimates as input to Cytoscape. See how well mean expression estimates represent the cancer biology and whether individual samples differ.
 
 ## 8/20/2025 - 2PM-3PM
 ### Perform combined analysis of ALT, TEL pathway activities and TRV abundances across samples [Tatevik]
