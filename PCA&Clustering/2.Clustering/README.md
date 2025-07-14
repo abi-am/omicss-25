@@ -9,7 +9,7 @@ Clustering plays a vital role in bioinformatics — from identifying gene expres
 To make the most out of this module, please follow the steps below:
 
 ### 1. Watch the Introductory Presentation
-Begin by watching the **Clustering presentation** provided in this folder. It introduces the key ideas behind clustering, explains the differences between algorithms like **K-Means** and **Hierarchical Clustering**, and demonstrates how these methods are applied to biological datasets.
+Begin by watching the **Clustering presentation** (`clustering_presentation.pdf`) provided in this folder. It introduces the key ideas behind clustering.
 
 ### 2. Explore Additional Learning Materials
 Once you've seen the presentation, continue your learning with the **supplementary video list**.
@@ -34,7 +34,7 @@ Now it's time to apply what you've learned! Download the following files from th
 
 Now it's time to put your knowledge into action. In this step, you'll work through a set of **structured exercises** designed to deepen your intuition and practical understanding of clustering.
 
-Download the file `Clustering_Exercises.pdf` (or `.md`, `.ipynb`, depending on the format provided) from this folder. Make sure all related resources (if any) are in the **same directory** to ensure everything runs smoothly.
+Download the file `clustering_exercises.pdf`  from this folder. Make sure all related resources (if any) are in the **same directory** to ensure everything runs smoothly.
 
 These exercises cover:
 - **Manual simulation of K-Means:** Perform one iteration using 2D points and calculate distances and new centroids.
