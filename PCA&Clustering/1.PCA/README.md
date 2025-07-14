@@ -12,6 +12,7 @@ After the presentation, deepen your understanding by watching the supplementary 
 * Geometric intuition
 * Eigenvectors and eigenvalues
 * Real-world applications in biology
+  
 You’ll find the links and descriptions here:
 
 * [PCA main ideas](https://www.youtube.com/watch?v=HMOI_lkzW08) - 5 min watch
@@ -19,4 +20,6 @@ You’ll find the links and descriptions here:
   
 ### 3. Try It Yourself: Hands-on Notebook
 Next, download the following files included in this folder: `PCA.ipynb`, `pca_utils.py`, `toy_example.csv`. 
-Make sure all of these files are saved in the same directory on your local machine. The notebook relies on these resources being in the same folder to function properly. **Note: You don’t need to worry about the contents of pca_utils.py — it’s a utility script that supports some of the code in the notebook behind the scenes.**
+Make sure all of these files are saved in the same directory on your local machine. The notebook relies on these resources being in the same folder to function properly. 
+
+**Note: You don’t need to worry about the contents of pca_utils.py — it’s a utility script that supports some of the code in the notebook behind the scenes.**
