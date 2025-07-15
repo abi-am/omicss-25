@@ -223,7 +223,7 @@ Use these files to obtain a filtered list of TRVs with the following filtering c
 
 #### Within dataset comparisons
 For each dataset։  
-- Perform non-parametric Mann–Whitney U tests comparing percentages of filtered TRVs in cancer (or other disease) vs healthy samples, correct for multiple testing with FDR. Consider discarding the canonical variant from this analysis.  (*Maybe provide already prepared df ?*)      
+- Perform non-parametric Mann–Whitney U tests comparing percentages of filtered TRVs in cancer (or other disease) vs healthy samples, correct for multiple testing with FDR. Consider excluding the canonical variant from this analysis.  (*Maybe provide already prepared df ?*)      
 - Prepare visualisations (e.g. boxplot, heatmap, scatter plot) as performed during the R plotting practice session. Note, you can use Python as well.  
 
 ## Week 4
@@ -237,7 +237,18 @@ Use only healthy samples (discard p18 from prostate cancer data) of all availabl
 
 ## 8/18/2025 - 12PM-1PM
 ### TRV analysis on pre-generated table: between dataset comparisons [Tatevik]
+Compare TRV percentages between healthy and cancer samples across multiple datasets, after checking that no significant batch effect is detected among healthy samples from different datasets. Use the same filtered TRV list obtained from the previous filtering step.  
+
+Group:
+- All healthy samples together, regardless of dataset.
+- Cancer samples by cancer (or other disease) type, combining samples from all datasets for each type.  
+
+For each cancer (or other disease) type:  
+- Perform non-parametric Mann–Whitney U tests comparing percentages of filtered TRVs in that cancer type group vs healthy group, correct for multiple testing with FDR. Consider excluding the canonical variant from this analysis. (*Maybe provide already prepared df ?*)
+- Prepare visualisations (e.g. boxplot, heatmap, scatter plot) as performed during the R plotting practice session. Note, you can use Python as well.   
+
 ### TRV analysis on pre-generated table: cluster samples by TRV abundance [Tatevik]
+
 
 ## 8/18/2025 - 4PM-5PM
 ### Journal club  
