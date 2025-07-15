@@ -63,7 +63,7 @@
   **SUBTOPICS**:   
 
       
-  **_MATERIALS_**: [SLIDES](https://docs.google.com/presentation/d/1oNrTYNsbymxngAjDxGQ88RQnLGIPsYIBCuIccDrLDN4/edit?usp=sharing), check [```annotation```](https://github.com/abi-am/omicss-25/tree/main/NGS%20data%20analysis%20%26%20file%20manipulation/annotation) folder     
+  **_MATERIALS_**: [SLIDES](https://docs.google.com/presentation/d/1oNrTYNsbymxngAjDxGQ88RQnLGIPsYIBCuIccDrLDN4/edit?usp=sharing), [TUTORIAL](https://github.com/abi-am/omicss-25/blob/main/NGS%20data%20analysis%20%26%20file%20manipulation/annotation/samtools_tutorial.md), check [```annotation```](https://github.com/abi-am/omicss-25/tree/main/NGS%20data%20analysis%20%26%20file%20manipulation/annotation) folder     
   
 
 
