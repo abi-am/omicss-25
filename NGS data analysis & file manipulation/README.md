@@ -32,7 +32,7 @@
     - Running FASTQC/MULTIQC  
     - Adapter Trimming  
       
-  **_MATERIALS_**: [SLIDES](https://docs.google.com/presentation/d/17kIqHhE1-EcamWTcxxPEj-M4FjJvLYy7nw7EVw7beiY/edit?usp=sharing), [TUTORIAL](https://github.com/abi-am/omicss-25/blob/d0419ab896f09ed672cb5552bba0791d006bc056/NGS%20data%20analysis%20%26%20file%20manipulation/exercises/fastqc_tutorial.md), check [```fastqc_tutorial```](https://github.com/abi-am/omicss-25/tree/main/NGS%20data%20analysis%20%26%20file%20manipulation/fastqc_tutorial) folder     
+  **_MATERIALS_**: [SLIDES](https://docs.google.com/presentation/d/17kIqHhE1-EcamWTcxxPEj-M4FjJvLYy7nw7EVw7beiY/edit?usp=sharing), [TUTORIAL](https://github.com/abi-am/omicss-25/blob/d0419ab896f09ed672cb5552bba0791d006bc056/NGS%20data%20analysis%20%26%20file%20manipulation/exercises/fastqc_tutorial.md), check [```fastqc_practice```](https://github.com/abi-am/omicss-25/tree/main/NGS%20data%20analysis%20%26%20file%20manipulation/fastqc_practice) folder     
 
 
 ### **TOPIC 3**: Alignment & Samtools  
