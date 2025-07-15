@@ -3,6 +3,11 @@
     Contributing authors: Lilit Nersisyan, Davit Tarverdyan, Mher Kurghinyan, Tatev Jalatyan, Nate Zadirako, Siras Hakobyan
   
 # Contents 
+  1. FASTA/FASTQ file formats  
+  2. Quality Control (FASTQC, MULTIQC) & Interpretation  
+  3. Alignment & Samtools  
+  4. Annotation & Genomic Regions  
+
   ## NGS data analysis & file manipulation  
   ### **TOPIC 1**: FASTA/FASTQ file formats & manipulation on Linux   
   
