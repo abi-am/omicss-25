@@ -41,7 +41,6 @@ Contributing authors: Anahit Yeghiazaryan, Davit Tareverdyan, Mher Kurghinyan
     - [TRV analysis on pre-generated table: check for dataset batch effects [Davit T.]](#trv-analysis-on-pre-generated-table-check-for-dataset-batch-effects-davit-t)
   - [8/18/2025 - 12PM-1PM](#8182025---12pm-1pm)
     - [TRV analysis on pre-generated table: between dataset comparisons [Tatevik]](#trv-analysis-on-pre-generated-table-between-dataset-comparisons-tatevik)
-    - [TRV analysis on pre-generated table: cluster samples by TRV abundance [Tatevik]](#trv-analysis-on-pre-generated-table-cluster-samples-by-trv-abundance-tatevik)
   - [8/18/2025 - 4PM-5PM](#8182025---4pm-5pm)
     - [Journal club](#journal-club)
   - [8/19/2025 - 12PM-1PM](#8192025---12pm-1pm)
@@ -73,7 +72,7 @@ This project explores telomeric sequences in plasma cell-free DNA (cfDNA) to dis
 
 ## Week 1
 ## 7/28/2025 - 3PM-5PM  
-### [Project presentations [Anahit, Davit T., Mher]](https://docs.google.com/presentation/d/1g2G7LY51qzxKn596i--rHjXK6IBzhMlYm-RCr64h5LE/edit?usp=sharing)
+### Project presentations [Anahit, Davit T., Mher]
 
 ## 7/29/2025 - 5PM-6PM  
 ### Molecular biology recap  
@@ -166,7 +165,7 @@ Project presentation by students
 ## 8/12/2025 - 4PM-5PM
 ### Dataset description 
 
-One of the datasets for this project comes from [this paper](https://doi.org/10.1016/j.xcrm.2023.101281). We will use cfDNA data from 10 samples (5 colorectal cancer patients and 5 healthy donors) to perform raw NGS data processing steps including quality control, trimming and alignment.   
+One of the datasets for this project comes from [this paper](https://doi.org/10.1016/j.xcrm.2023.101281). We will use cfDNA data from 10 samples (5 colorectal cancer (CRC) patients and 5 healthy donors) to perform raw NGS data processing steps including quality control, trimming and alignment.   
 
 Raw FASTQ files with sequencing reads are located here: `/mnt/proj/omicss25/gp2/ds-23_gastrointestinal/common/fq_renamed`  
 Sample metadata table is located [here](https://docs.google.com/spreadsheets/d/1mgSEbhlcq2JeOBCpB2Ksu-gm89gW8pmp4pD4jkiMh9g/edit?usp=sharing)  
@@ -224,7 +223,7 @@ Use these files to obtain a filtered list of TRVs with the following filtering c
 #### Within dataset comparisons
 For each dataset։  
 - Perform non-parametric Mann–Whitney U tests comparing percentages of filtered TRVs in cancer (or other disease) vs healthy samples, correct for multiple testing with FDR. Consider excluding the canonical variant from this analysis.  (*Maybe provide already prepared df ?*)      
-- Prepare visualisations (e.g. boxplot, heatmap, scatter plot) as performed during the R plotting practice session. Note, you can use Python as well.  
+- Prepare visualizations (e.g. boxplot, heatmap, scatter plot) as performed during the R plotting practice session. Note, you can use Python as well.  
 
 ## Week 4
 ## 8/18/2025 - 11AM-12PM
@@ -245,9 +244,7 @@ Group:
 
 For each cancer (or other disease) type:  
 - Perform non-parametric Mann–Whitney U tests comparing percentages of filtered TRVs in that cancer type group vs healthy group, correct for multiple testing with FDR. Consider excluding the canonical variant from this analysis. (*Maybe provide already prepared df ?*)
-- Prepare visualisations (e.g. boxplot, heatmap, scatter plot) as performed during the R plotting practice session. Note, you can use Python as well.   
-
-### TRV analysis on pre-generated table: cluster samples by TRV abundance [Tatevik]
+- Prepare visualizations (e.g. boxplot, heatmap, scatter plot) as performed during the R plotting practice session. Note, you can use Python as well.   
 
 
 ## 8/18/2025 - 4PM-5PM
@@ -296,7 +293,9 @@ NB: The script uses Ensembl gene and transcript IDs to perform all the calcuatio
 ## 8/19/2025 - 3PM-4PM
 ### Run PSF using gene expression estimates for TMM genes [Mher]
 Now that you have an expression estimate for each TMM gene, you can use them in Cytoscape to run PSF. 
-NB: Entrez IDs are required for TMM analysis, so make sure to replace Ensembl IDs in coverage matrix to Entrez IDs. You can use the ncbi_to_ensembl_mapping.tsv file, which contains Ensembl IDs and their corresponding Entrez IDs. Examine the ALT and TEL pathways for each sample and think compare their activity in healthy vs cancer samples.  
+NB: Entrez IDs are required for TMM analysis, so make sure to replace Ensembl IDs in coverage matrix to Entrez IDs. You can use the ncbi_to_ensembl_mapping.tsv file, which contains Ensembl IDs and their corresponding Entrez IDs. Examine the ALT and TEL pathways for each sample and compare their activity in healthy vs cancer samples.  
+
+Generate a scatter plot with TEL score on x-axis and ALT score on y-axis, with points showing samples and colored by group (cancer, healthy) to check how well the groups separate based on TEL, ALT pathway activity.  
 
 ## 8/19/2025 - 4PM-5PM
 ### Cluster samples by gene expression [Tatevik]
@@ -308,10 +307,13 @@ Perform the same operations as above (see "Run PSF using gene expression estimat
 
 ## 8/20/2025 - 2PM-3PM
 ### Perform combined analysis of ALT, TEL pathway activities and TRV abundances across samples [Tatevik]
+Use PSF scores for the ALT and TEL pathways, along with the abundances of identified CRC-specific TRVs per sample, to perform an integrated analysis of telomere maintenance mechanisms and telomeric repeat variants.  
+
+Create a scatter plot with TEL scores on the x-axis and ALT scores on the y-axis, where each point represents a sample and is colored by group (cancer, healthy). For each point, either overlay a radar plot to depict the abundance of CRC-specific TRVs or vary the point size based on the abundance of a CRC-specific TRV. This visualization will help explore TRV abundance patterns across TEL- and ALT-active samples, and healthy and cancer samples.  
 
 ## 8/20/2025 - 4PM-5PM
 ### Perform combined analysis of ALT, TEL pathway activities and TRV abundances across samples (continued) [Tatevik]
-
+Think creatively and explore additional types of visualizations that can illustrate the combined patterns of ALT and TEL pathway activity with TRV abundances across samples.  
 
 ## Bootcamp 
 ## 8/21/2025
@@ -326,8 +328,8 @@ Perform the same operations as above (see "Run PSF using gene expression estimat
 
 # TODO
 - **Tatevik:**  
-  - [ ] Finalize contents  
-  - [ ] Complete indicated sections with step-by-step description
+  - [x] Finalize contents  
+  - [x] Complete indicated sections with step-by-step description
   - [x] Update JC paper and timing
   - [ ] Prepare files/folders in /mnt/proj/omicss25 
 
@@ -341,7 +343,4 @@ Perform the same operations as above (see "Run PSF using gene expression estimat
 
 - **Mher:**  
   - [x] Complete "Gene expression estimation using NDR", "Run PSF using gene expression estimates for TMM genes", "Run PSF using cluster mean gene expression estimates for TMM genes" sections with step-by-step description
-  - [ ] Prepare project intro presentation slides 
-
-
-
+  - [ ] Prepare project intro presentation slides
