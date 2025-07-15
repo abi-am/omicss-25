@@ -73,7 +73,7 @@ This project explores telomeric sequences in plasma cell-free DNA (cfDNA) to dis
 
 ## Week 1
 ## 7/28/2025 - 3PM-5PM  
-### Project presentations [Anahit, Davit T., Mher]
+### [Project presentations [Anahit, Davit T., Mher]](https://docs.google.com/presentation/d/1g2G7LY51qzxKn596i--rHjXK6IBzhMlYm-RCr64h5LE/edit?usp=sharing)
 
 ## 7/29/2025 - 5PM-6PM  
 ### Molecular biology recap  
