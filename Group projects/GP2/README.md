@@ -168,7 +168,7 @@ Project presentation by students
 
 One of the datasets for this project comes from [this paper](https://doi.org/10.1016/j.xcrm.2023.101281). We will use cfDNA data from 10 samples (5 colorectal cancer patients and 5 healthy donors) to perform raw NGS data processing steps including quality control, trimming and alignment.   
 
-Raw FASTQ files with sequencing reads are located here: `/mnt/proj/cfdna/cancer/ds-23_gastrointestinal/common/fq_renamed`  
+Raw FASTQ files with sequencing reads are located here: `/mnt/proj/omicss25/gp2/ds-23_gastrointestinal/common/fq_renamed`  
 Sample metadata table is located [here](https://docs.google.com/spreadsheets/d/1mgSEbhlcq2JeOBCpB2Ksu-gm89gW8pmp4pD4jkiMh9g/edit?usp=sharing)  
 
 ### Initial quality check
@@ -213,7 +213,7 @@ Check if any quality issues persist to perform trimming again if needed.
 - Generate CSV files with TRV counts/proportions
   
 ### TRV analysis on pre-generated table: within dataset comparisons [Tatevik]
-Use the file `/mnt/proj/cfdna/cancer/unified/trv/merged/trv_abs.csv` for TRV counts and `/mnt/proj/cfdna/cancer/unified/trv/merged/trv_compositional.csv` for TRV percentages across samples derived from multiple datasets. Both files include sample metadata in the first 8 columns: `origin`, `timepoint`, `tissue-type`, `gender`, `age`, `patient_name`, `state`, and `full_name`. The remaining columns correspond to TRVs. Each row represents one sample, uniquely identified by the `full_name` column.  
+Use the file `/mnt/proj/omicss25/gp2/unified/trv/merged/trv_abs.csv` for TRV counts and `/mnt/proj/omicss25/gp2/unified/trv/merged/trv_compositional.csv` for TRV percentages across samples derived from multiple datasets. Both files include sample metadata in the first 8 columns: `origin`, `timepoint`, `tissue-type`, `gender`, `age`, `patient_name`, `state`, and `full_name`. The remaining columns correspond to TRVs. Each row represents one sample, uniquely identified by the `full_name` column.  
 
 #### Filter TRVs  (*Maybe provide already prepared df ?*)      
 Use these files to obtain a filtered list of TRVs with the following filtering criteria:  
@@ -275,10 +275,7 @@ Include these steps in `src/align.sh` script to obtain a final sorted, deduplica
 - Index the deduplicated and sorted BAM file (`samtools index`)
 - Clean up intermediate files
 
-Check log files for alignment status, % of reads aligned and other stats. 
-
-
-
+Check log files for alignment status, % of reads aligned and other stats.  
 
 ## 8/19/2025 - 2PM-3PM
 ### Gene expression estimation using NDR [Mher] 
@@ -299,14 +296,15 @@ NB: The script uses Ensembl gene and transcript IDs to perform all the calcuatio
 ## 8/19/2025 - 3PM-4PM
 ### Run PSF using gene expression estimates for TMM genes [Mher]
 Now that you have an expression estimate for each TMM gene, you can use them in Cytoscape to run PSF. 
-NB: Entrez IDs are required for TMM analysis, so make sure to replace Ensembl IDs in coverage matrix to Entrez IDs. You can use the ncbi_to_ensembl_mapping.tsv file, which contains Ensembl IDs and their corresponding Entrez IDs. Examine the pathways and think how their activity has changed.
+NB: Entrez IDs are required for TMM analysis, so make sure to replace Ensembl IDs in coverage matrix to Entrez IDs. You can use the ncbi_to_ensembl_mapping.tsv file, which contains Ensembl IDs and their corresponding Entrez IDs. Examine the ALT and TEL pathways for each sample and think compare their activity in healthy vs cancer samples.  
 
 ## 8/19/2025 - 4PM-5PM
 ### Cluster samples by gene expression [Tatevik]
+Use the expression estimates of the TMM genes for each sample (5 crc, 5 healthy) to perform hierarchical clustering and plot heatmap with dendograms to see how well the estimated gene expression values separate crc patients from healthy donors. If you identify clusters, use the samples of each cluster for cluster-level pathway scoring of ALT, TEL pathways.  
 
 ## 8/20/2025 - 12PM-1PM
 ### Run PSF using cluster mean gene expression estimates for TMM genes [Mher]
-Perform the same operations as above, only use cluster mean gene expression estimates as input to Cytoscape. See how well mean expression estimates represent the cancer biology and whether individual samples differ.
+Perform the same operations as above (see "Run PSF using gene expression estimates for TMM genes" section), only use cluster mean gene expression estimates as input to Cytoscape. See how well mean expression estimates represent the cancer biology and whether individual samples differ.  
 
 ## 8/20/2025 - 2PM-3PM
 ### Perform combined analysis of ALT, TEL pathway activities and TRV abundances across samples [Tatevik]
