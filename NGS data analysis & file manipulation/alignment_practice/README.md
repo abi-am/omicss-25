@@ -161,4 +161,4 @@ You can use this file to check which chromosomes (or other reference sequences) 
 awk '{count[$1]++} END {for (chr in count) print chr, count[chr]}' sample.depth.txt | sort
 ```
 ---
-This concludes the demonstration. You can practice some more by completing the [exercises](https://github.com/abi-am/omicss-25/blob/main/NGS%20data%20analysis%20%26%20file%20manipulation/alignment_practice/samtools_practice.md).  
+This concludes the demonstration. You can practice some more by completing the [exercises](https://github.com/abi-am/omicss-25/blob/main/NGS%20data%20analysis%20%26%20file%20manipulation/alignment_practice/samtools_tutorial.md).  
