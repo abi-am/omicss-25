@@ -39,7 +39,7 @@
   
   **LECTURERS**: Lilit Nersisyan, Nate Zadirako  
   
-  **SCHEDULE**:
+  **SCHEDULE**:    
       - Lecture: 11AM – 12PM, August 11th, 2025  
       - Practice: 12-1PM, August 11th, 2025  
       - Practice: 2-4PM, August 11th, 2025  
