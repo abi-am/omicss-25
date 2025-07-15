@@ -104,6 +104,7 @@ Promoters are fundamental DNA sequences located just upstream of genes that serv
 - Clustering methods (e.g. hierarchical)
     * [Youtube video: Intuitive intro to unsupervised ML and clustering](https://www.youtube.com/watch?v=IUn8k5zSI6g) - 10 min watch
     * [Youtube video: K-means](https://www.youtube.com/watch?v=4b5d3muPQmA&t=304s) - 8 min watch
+    * [Youtube video: Hierarchical Clustering](https://www.youtube.com/watch?v=7xHsRkOdVwo) - 11 min watch  
 - Dimensionality reduction (PCA)
   * [PCA step by step](https://www.youtube.com/watch?v=FgakZw6K1QQ&t=5s) - 20 min watch
   
@@ -135,7 +136,6 @@ Promoters are fundamental DNA sequences located just upstream of genes that serv
 - [Youtube video on non-parametric tests - Sign test, Wilcoxon signed rank, Mann-Whitney](https://www.youtube.com/watch?v=IcLSKko2tsg)
 - [Correlation (Hardcore math)](https://en.wikipedia.org/wiki/Correlation)
 - [Person correlation vs Spearman correlation](https://www.surveymonkey.com/market-research/resources/pearson-correlation-vs-spearman-correlation/)
-- [Youtube video: Hierarchy](https://www.youtube.com/watch?v=7xHsRkOdVwo)
 - [Youtube video: DBSCAN (advanced)](https://www.youtube.com/watch?v=RDZUdRSDOok)
 - [Cluster analysis (hardcore math)](https://en.wikipedia.org/wiki/Cluster_analysis)
 - [blogpost on the Math of clustering](https://medium.com/@rohit_batra/the-math-behind-the-k-means-and-hierarchical-clustering-algorithm-1d9a36a56c08)  
@@ -229,6 +229,11 @@ For each dataset։
 ## Week 4
 ## 8/18/2025 - 11AM-12PM
 ### TRV analysis on pre-generated table: check for dataset batch effects [Davit T.]  
+Use only healthy samples (discard p18 from prostate cancer data) of all available datasets for:
+- Hierarchical Clustering 
+- CLR + PCA 
+- Permanova, PCoA 
+- Try with and without canonical variant
 
 ## 8/18/2025 - 12PM-1PM
 ### TRV analysis on pre-generated table: between dataset comparisons [Tatevik]
@@ -314,7 +319,8 @@ Perform the same operations as above, only use cluster mean gene expression esti
 - **Tatevik:**  
   - [ ] Finalize contents  
   - [ ] Complete indicated sections with step-by-step description
-  - [x] Update JC paper and timing 
+  - [x] Update JC paper and timing
+  - [ ] Prepare files/folders in /mnt/proj/omicss25 
 
 - **Anahit:**  
   - [x] Complete "Run Computel for TRVs" section with step-by-step description
@@ -325,7 +331,7 @@ Perform the same operations as above, only use cluster mean gene expression esti
   - [ ] Prepare project intro presentation slides 
 
 - **Mher:**  
-  - [ ] Complete "Gene expression estimation using NDR", "Run PSF using gene expression estimates for TMM genes", "Run PSF using cluster mean gene expression estimates for TMM genes" sections with step-by-step description
+  - [x] Complete "Gene expression estimation using NDR", "Run PSF using gene expression estimates for TMM genes", "Run PSF using cluster mean gene expression estimates for TMM genes" sections with step-by-step description
   - [ ] Prepare project intro presentation slides 
 
 
