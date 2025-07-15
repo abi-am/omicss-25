@@ -22,7 +22,10 @@ ___
 
 ### Data 
 [Publication](https://www.nature.com/articles/s41467-020-16164-1) \
-Path in the server [Arpine]
+Path on the server
+```
+comp0:/mnt/proj/omicss25/cancer/data
+```
 
 ### Processing, Dimensionality Reduction, Clustering
 We will follow
