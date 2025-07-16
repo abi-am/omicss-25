@@ -5,7 +5,7 @@
   # Contents  
 
   ### Lecture 14:00 - 15:00
-  [Introduction to R Lecture](https://docs.google.com/presentation/d/123DruZEKS_vYKDugWMUHxxNWizO96gn6/edit?usp=share_link&ouid=108169334741774870734&rtpof=true&sd=true) 
+  [Introduction to R Lecture for 07.29.2025](https://docs.google.com/presentation/d/123DruZEKS_vYKDugWMUHxxNWizO96gn6/edit?usp=share_link&ouid=108169334741774870734&rtpof=true&sd=true) 
 
   ### Practice 15:00 - 17:00
   [R Basics - Short Test](https://www.w3schools.com/r/exercise.asp?filename=exercise_data_types1) \
