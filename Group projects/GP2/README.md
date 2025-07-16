@@ -209,30 +209,29 @@ Check if any quality issues persist to perform trimming again if needed.
 
 ### Run Computel for TRVs [Anahit]
 - Refer to [Computel 2.0 SOP](https://docs.google.com/document/d/1gVZ7xYtBPW7v71oetAQkewMflmmAz8q_ja0ot0ISxG8/edit?tab=t.0) for detaied instructions on installing, running and extracting results by Computel
-- Run Computel on trimmed FASTQ files
-- Generate CSV files with TRV counts/proportions
+- Run Computel on trimmed FASTQ files to generate CSV files with TRV counts/proportions
   
 ### TRV analysis on pre-generated table: within dataset comparisons [Tatevik]
 Use the file `/mnt/proj/omicss25/gp2/unified/trv/merged/trv_abs.csv` for TRV counts and `/mnt/proj/omicss25/gp2/unified/trv/merged/trv_compositional.csv` for TRV percentages across samples derived from multiple datasets. Both files include sample metadata in the first 8 columns: `origin`, `timepoint`, `tissue-type`, `gender`, `age`, `patient_name`, `state`, and `full_name`. The remaining columns correspond to TRVs. Each row represents one sample, uniquely identified by the `full_name` column.  
 
-#### Filter TRVs  (*Maybe provide already prepared df ?*)      
+#### Filter TRVs  (*Maybe provide already prepared df ?*) @LN they can filter - it's a good exercise      
 Use these files to obtain a filtered list of TRVs with the following filtering criteria:  
 - For each sample keep only TRVs with TRV count >= 10  
-- For each sample take top 20 TRVs with TRV percentage > 0.5%  
-- Take union of TRVs from all samples  
+- For each sample take top 20 TRVs with TRV percentage > 0.5%  @LN clarify is canonical included or not
+- Take union of TRVs from all samples @LN and reduce to unique values 
 
 #### Within dataset comparisons
 For each dataset։  
-- Perform non-parametric Mann–Whitney U tests comparing percentages of filtered TRVs in cancer (or other disease) vs healthy samples, correct for multiple testing with FDR. Consider excluding the canonical variant from this analysis.  (*Maybe provide already prepared df ?*)      
+- Perform non-parametric Mann–Whitney U tests comparing percentages of filtered TRVs in cancer (or other disease) vs healthy samples, correct for multiple testing with FDR. Consider excluding the canonical variant from this analysis.  (*Maybe provide already prepared df ?*)  @LN I think better to just exclude. You can discuss with them why we decided to do that    
 - Prepare visualizations (e.g. boxplot, heatmap, scatter plot) as performed during the R plotting practice session. Note, you can use Python as well.  
 
 ## Week 4
 ## 8/18/2025 - 11AM-12PM
 ### TRV analysis on pre-generated table: check for dataset batch effects [Davit T.]  
-Use only healthy samples (discard p18 from prostate cancer data) of all available datasets for:
+Use only healthy samples (discard p18 from prostate cancer data) of all available datasets for: @LN you can remove p18 from the table a priori not to introduce confusion
 - Hierarchical Clustering 
-- CLR + PCA 
-- Permanova, PCoA 
+- CLR + PCA @LN maybe no PCA? see below
+- Permanova, PCoA @LN I would suggest to concenterate on one and specific, .e.g PCoA + Euclidean distance + CLR; not to confuse with PCA, pcoa, normalized and unnormalized. So you can provide more detailed instructions on what metric to use how to normalize
 - Try with and without canonical variant
 
 ## 8/18/2025 - 12PM-1PM
@@ -269,7 +268,7 @@ Include these steps in `src/align.sh` script to obtain a final sorted, deduplica
 - Remove duplicated reads from the sorted BAM file
   - Prepare paired-end reads for duplicate marking by adding necessary tags to the BAM file (`samtools fixmate -m`)  
   - Sort again by genomic coordinates (`samtools sort`)
-  - Identifies and remove duplicates (`samtools markdup -r`)
+  - Identify and remove duplicates (`samtools markdup -r`)
 - Index the deduplicated and sorted BAM file (`samtools index`)
 - Clean up intermediate files
 
@@ -287,9 +286,9 @@ In order to estimate gene expression from cell-free DNA data a number of inputs 
 - gene list
 - tumor tissue of origin
 
-You will be using weighted_coverage_calculation.py script. The script utilizes [samtools depth](http://www.htslib.org/doc/samtools-depth.html) function to calculate the coverage of a given position. Make a daughter script where you will call it and give all the inputs.  
+You will be using weighted_coverage_calculation.py script. The script utilizes [samtools depth](http://www.htslib.org/doc/samtools-depth.html) function to calculate the coverage of a given position. Make a daughter script where you will call it and give all the inputs. @LN this will be the parent script that calls the daughter
 Tumor fractions are obtained with [ichorCNA](https://github.com/broadinstitute/ichorCNA/wiki) tool and usually are calculated for each bam file. You will be provided with ready tumor fractions and do not need to calculate them with ichorCNA.
-NB: The script uses Ensembl gene and transcript IDs to perform all the calcuations.
+NB: The script uses Ensembl gene and transcript IDs to perform all the calculations.
 
 ## 8/19/2025 - 3PM-4PM
 ### Run PSF using gene expression estimates for TMM genes [Mher]
@@ -318,7 +317,7 @@ Think creatively and explore additional types of visualizations that can illustr
 
 ## Bootcamp 
 ## 8/21/2025
-### ...
+### ... @LN they will only have 21-22. 23 is for German-Armenian workshop
 ## 8/22/2025
 ### ...
 ## 8/23/2025
