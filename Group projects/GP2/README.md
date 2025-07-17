@@ -214,15 +214,15 @@ Check if any quality issues persist to perform trimming again if needed.
 ### TRV analysis on pre-generated table: within dataset comparisons [Tatevik]
 Use the file `/mnt/proj/omicss25/gp2/unified/trv/merged/trv_abs.csv` for TRV counts and `/mnt/proj/omicss25/gp2/unified/trv/merged/trv_compositional.csv` for TRV percentages across samples derived from multiple datasets. Both files include sample metadata in the first 8 columns: `origin`, `timepoint`, `tissue-type`, `gender`, `age`, `patient_name`, `state`, and `full_name`. The remaining columns correspond to TRVs. Each row represents one sample, uniquely identified by the `full_name` column.  
 
-#### Filter TRVs  (*Maybe provide already prepared df ?*) @LN they can filter - it's a good exercise      
+#### Filter TRVs  
 Use these files to obtain a filtered list of TRVs with the following filtering criteria:  
 - For each sample keep only TRVs with TRV count >= 10  
-- For each sample take top 20 TRVs with TRV percentage > 0.5%  @LN clarify is canonical included or not
-- Take union of TRVs from all samples @LN and reduce to unique values 
+- For each sample take top 20 TRVs with TRV percentage > 0.5% including the canonical variant  
+- Take union of TRVs from all samples and reduce to unique values 
 
 #### Within dataset comparisons
 For each dataset։  
-- Perform non-parametric Mann–Whitney U tests comparing percentages of filtered TRVs in cancer (or other disease) vs healthy samples, correct for multiple testing with FDR. Consider excluding the canonical variant from this analysis.  (*Maybe provide already prepared df ?*)  @LN I think better to just exclude. You can discuss with them why we decided to do that    
+- Perform non-parametric Mann–Whitney U tests comparing percentages of filtered TRVs in cancer (or other disease) vs healthy samples, correct for multiple testing with FDR. Exclude the canonical variant from this analysis.   
 - Prepare visualizations (e.g. boxplot, heatmap, scatter plot) as performed during the R plotting practice session. Note, you can use Python as well.  
 
 ## Week 4
@@ -317,13 +317,9 @@ Think creatively and explore additional types of visualizations that can illustr
 
 ## Bootcamp 
 ## 8/21/2025
-### ... @LN they will only have 21-22. 23 is for German-Armenian workshop
+### ... 
 ## 8/22/2025
-### ...
-## 8/23/2025
-### ...
-## 8/24/2025
-### ...
+### ... 
 
 
 # TODO
