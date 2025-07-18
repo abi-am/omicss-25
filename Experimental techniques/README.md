@@ -11,7 +11,7 @@ Welcome, students, to the **OMICSS‑25 Summer School** experimental technique's
 | **29 July**   | 11:00 – 12:00 | Next‑Generation Sequencing Technologies | [`Sequencing/`](./Sequencing/)                                      |
 |               | 12:00 – 13:00 | Long‑Read Sequencing                    | [`Sequencing/`](./Sequencing/)                                      |
 | **31 July**   | 16:00 – 17:00 | DNA Extraction                          | [`DNA Extraction/`](./DNA%20extraction/)                              |
-| **01 August** | 14:00 – 15:00 | PCR & Gel Electrophoresis               | [`PCR,Electrophoresis/`](./PCR,20%Electrophoresis/)  |
+| **01 August** | 14:00 – 15:00 | PCR & Gel Electrophoresis               | [`PCR,Electrophoresis/`](./PCR,Electrophoresis/)  |
 
 
 ---
