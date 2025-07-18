@@ -52,18 +52,18 @@ In the **FASTQ** section, you will practice:
 ### **EXERCISE 4: Extract the record for a specific read (e.g., read42)**  		
 Filter out headers so that only raw nucleotide strings remain, with `grep -v`. Sequence-only output is often required by k‑mer counters, GC-content calculators, or other sequence‑based tools.  
 *What needs to be done:* Identify the header line matching a given identifier (`>read42`) and extract that header plus its sequence.  		
-*Why:* Pulling single reads allows you to inspect anomalies, troubleshoot alignment failures, or spotlight reads of special interest.  		
-
+*Why:* Pulling single reads allows you to inspect anomalies, troubleshoot alignment failures, or spotlight reads of special interest.    		
+*Suggested command:* use `grep`		   
 
 ### **EXERCISE 5: Print only the header lines**  		
 *What needs to be done:* Extract just the lines that begin with `>`, listing all read identifiers.   		
-*Why:* Generating a list of read IDs can help cross-reference with other files, prepare index lists, or verify naming schemes.  		
+*Why:* Generating a list of read IDs can help cross-reference with other files, prepare index lists, or verify naming schemes.      		
 *Suggested command:* use `grep`		
 
 
 ### **EXERCISE 6: Count total nucleotides across all reads**  (Optional)  
 *What needs to be done:* Concatenate all sequence lines into one continuous string, then count its characters to get the total base count.  		
-*Why:* Total base count helps estimate genome coverage or sequencing depth when mapped to a reference.  		
+*Why:* Total base count helps estimate genome coverage or sequencing depth when mapped to a reference.      		
 *Suggested command:* use `grep`, `tr`, and `wc`		
 
 
@@ -75,7 +75,7 @@ Filter out headers so that only raw nucleotide strings remain, with `grep -v`. S
 
 ### **EXERCISE 8: Show the length of each read**  		
 *What needs to be done:* For each sequence record, calculate and print the number of bases alongside its header.  Leverage `awk` to calculate and print the sequence length for each record next to its header. This check confirms uniform read length or flags outliers for quality control.    
-*Why:* Verifies read length uniformity (important for certain analyses) and helps identify outliers or partial reads.       		
+*Why:* Verifies read length uniformity (important for certain analyses) and helps identify outliers or partial reads.           		
 *Suggested command:* use `awk`		
 
 
@@ -87,7 +87,7 @@ Filter out headers so that only raw nucleotide strings remain, with `grep -v`. S
 
 ### **EXERCISE 9: Display the first 10 reads of the FASTQ file**  	
 *What needs to be done:* Show the first ten four-line records (header, sequence, plus line, and quality).      
-*Why:* Confirms both sequence and quality score formatting, ensuring no misalignment between these paired lines.  	    	
+*Why:* Confirms both sequence and quality score formatting, ensuring no misalignment between these paired lines.  	        	
 *Suggested command:* use the `head` command		  
 
 
