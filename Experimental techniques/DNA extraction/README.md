@@ -27,18 +27,6 @@ It includes the presentation slides and student quizzes related to DNA extractio
 
 ---
 
-## 📝 Quizzes
-
-A short quiz will follow the presentation to check understanding of DNA extraction principles.
-
-### Planned Quiz:
-
-* **DNA Extraction Concepts Quiz**
-
-### Link:
-
-* 👉 [DNA Extraction Quiz (Draft)](link-to-DNA-extraction-quiz)
-
 ### Progress:
 
 * 🟡 Quiz questions are being prepared
