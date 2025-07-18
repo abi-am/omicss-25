@@ -1,6 +1,7 @@
 After you perform the alignment and variant calling it is preferable to check the found variants and validate them.
 
 Download your  .bam and .vcf files, wes46_dedup.bam and wes78_dedup.bam.  Note that one sample was obtained from a healthy individual, while the other was collected from a person diagnosed with Familial Mediterranean Fever (FMF).  Do not forget that .bam file requires index file in the same directory. It is recommended to name your index file like .bam.bai, in that way it is guaranteed that IGV browser would open your file correctly.    
+
 Below presented some practical exercises
 
 ## Step 1
