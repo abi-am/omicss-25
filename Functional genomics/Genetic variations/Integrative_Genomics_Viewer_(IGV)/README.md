@@ -1,9 +1,16 @@
+The Integrative Genomics Viewer (IGV) is a high-performance, interactive tool for visualizing large-scale genomic data. It supports a wide range of data types, including sequence alignments, gene annotations, and variant calls, making it especially useful for tasks such as quality control, variant validation, and identifying structural variations. Its intuitive interface and real-time data rendering help researchers quickly interpret complex genomic datasets.
+
+
 Introductory information can be found [here](https://igv.org/doc/desktop/#)
 
 
 Prior to downloading see if your laptop environment meets following requirments:
 
-IGV requires Java 21 or greater as of IGV 2.19.1. If you download one of the IGV versions that does not include Java, make sure you have Java 21 installed and in your path.
+IGV requires Java 21 or greater as of IGV 2.19.1. If you download one of the IGV versions that does not include Java, make sure you have Java 21 installed and in your path. 
+
+If for some reson you do not want to install IGV version with Java 21 included, here are described steps how to check the Java version on your computer and install the required one.
+
+
 #### For windows:
 
 Press win+R , type ‘cmd’ and press Enter.
