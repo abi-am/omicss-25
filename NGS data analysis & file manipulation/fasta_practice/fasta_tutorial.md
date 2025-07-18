@@ -5,19 +5,26 @@ This practical workbook uses two sample files stored locally:		This practical wo
 
 
 In the **FASTA** section, you will learn to:		**Key terms:**
-- Inspect the beginning of your dataset to verify file integrity and format consistency.		- **Read:** A single sequenced fragment of DNA.
-- Search for specific motifs (short nucleotide patterns) or sequence features across all reads.		- **Header line:** In FASTA, starts with `>` followed by the read identifier; in FASTQ, starts with `@`.
-- Quantify both the number of reads and the total bases to estimate dataset size and sequencing depth.		- **Sequence line:** The nucleotide letters (A, C, G, T) representing the read.
-- Extract, filter, and reformat sequences for use in downstream analyses, such as alignment or variant calling.		- **Plus line (FASTQ):** A line beginning with `+` that separates sequence from quality.
+- Inspect the beginning of your dataset to verify file integrity and format consistency.		
+- Search for specific motifs (short nucleotide patterns) or sequence features across all reads.		
+- Quantify both the number of reads and the total bases to estimate dataset size and sequencing depth.		
+- Extract, filter, and reformat sequences for use in downstream analyses, such as alignment or variant calling.		
 
-- **Quality-score line (FASTQ):** ASCII-encoded symbols representing the confidence of each base call.
-In the **FASTQ** section, you will practice:		- **Motif:** A short, biologically meaningful nucleotide pattern (e.g., a primer site) that you might search within sequences.
+
+In the **FASTQ** section, you will practice:		
 - Viewing paired sequence and quality-score entries to validate data quality formats.		
 - Counting reads and isolating only the nucleotides or the quality scores for separate analyses.		
 - Detecting ambiguous bases (e.g., “N”) or specific motifs to assess sequencing accuracy.		
 - Converting between FASTQ and FASTA formats, as well as examining file tails for completeness.		
+  
 
-
+ ### Key terms   
+- **Read:** A single sequenced fragment of DNA.
+- **Header line:** In FASTA, starts with `>` followed by the read identifier; in FASTQ, starts with `@`.
+- **Sequence line:** The nucleotide letters (A, C, G, T) representing the read.
+- **Plus line (FASTQ):** A line beginning with `+` that separates sequence from quality.
+- **Quality-score line (FASTQ):** ASCII-encoded symbols representing the confidence of each base call.
+- **Motif:** A short, biologically meaningful nucleotide pattern (e.g., a primer site) that you might search within sequences.
 ---		---
 
 
