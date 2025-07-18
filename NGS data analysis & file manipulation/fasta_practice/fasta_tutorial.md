@@ -31,7 +31,7 @@ In the **FASTQ** section, you will practice:
 ## FASTA Practice Exercises	
 
 
-**EXERCISE 1: Display the first 10 reads of the FASTA file**  		**EXERCISE 1: Display the first 10 reads of the FASTA file**  
+**EXERCISE 1: Display the first 10 reads of the FASTA file**  		    
 *What needs to be done:* Show the first ten complete entries (header lines beginning with `>` plus their subsequent sequences).  		Merge of viewing data and format check: show the first ten complete FASTA entries (header + sequence) using the `head` command. This quickly validates file structure and confirms that sequencing records start correctly with `>` headers and full sequences.
 *Why:* This gives a quick overview of file structure, confirming headers follow the correct naming convention and sequences are present without truncation.  		
 *Suggested command:* use the `head` command		
