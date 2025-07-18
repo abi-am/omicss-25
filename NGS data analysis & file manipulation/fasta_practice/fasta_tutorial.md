@@ -74,8 +74,8 @@ Filter out headers so that only raw nucleotide strings remain, with `grep -v`. S
 
 
 ### **EXERCISE 8: Show the length of each read**  		
-*What needs to be done:* For each sequence record, calculate and print the number of bases alongside its header.  		Leverage `awk` to calculate and print the sequence length for each record next to its header. This check confirms uniform read length or flags outliers for quality control.    
-*Why:* Verifies read length uniformity (important for certain analyses) and helps identify outliers or partial reads.  		
+*What needs to be done:* For each sequence record, calculate and print the number of bases alongside its header.  Leverage `awk` to calculate and print the sequence length for each record next to its header. This check confirms uniform read length or flags outliers for quality control.    
+*Why:* Verifies read length uniformity (important for certain analyses) and helps identify outliers or partial reads.       		
 *Suggested command:* use `awk`		
 
 
@@ -86,27 +86,27 @@ Filter out headers so that only raw nucleotide strings remain, with `grep -v`. S
 
 
 ### **EXERCISE 9: Display the first 10 reads of the FASTQ file**  	
-*What needs to be done:* Show the first ten four-line records (header, sequence, plus line, and quality).  
+*What needs to be done:* Show the first ten four-line records (header, sequence, plus line, and quality).      
 *Why:* Confirms both sequence and quality score formatting, ensuring no misalignment between these paired lines.  		
-*Suggested command:* use the `head` command		
+*Suggested command:* use the `head` command		  
 
 
-### **EXERCISE 10: Count the total number of reads in the FASTQ file**  		
-*What needs to be done:* Divide the total number of lines by four (each read spans four lines).  		
-*Why:* Provides a fast way to verify dataset size before intensive processing or splitting.  		
+### **EXERCISE 10: Count the total number of reads in the FASTQ file**  		  
+*What needs to be done:* Divide the total number of lines by four (each read spans four lines).    		
+*Why:* Provides a fast way to verify dataset size before intensive processing or splitting.     		
 *Suggested command:* use `wc -l` piped to `awk`	
 
 
 ### **EXERCISE 11: Find reads containing the motif "GATTACA" and list their IDs**  		
-*What needs to be done:* Scan only the sequence lines (every second line) for the motif, then extract the preceding header lines.   
-*Why:* Identifying reads that contain a specific motif like "GATTACA" helps locate biologically relevant patterns (e.g., adapters, barcodes, conserved regions). It also aids in diagnostics, primer matching, or filtering steps.  
+*What needs to be done:* Scan only the sequence lines (every second line) for the motif, then extract the preceding header lines.     
+*Why:* Identifying reads that contain a specific motif like "GATTACA" helps locate biologically relevant patterns (e.g., adapters, barcodes, conserved regions). It also aids in diagnostics, primer matching, or filtering steps.    
 *Suggested command:* `awk`	  
 
 
 ### **EXERCISE 12: Extract a specific FASTQ record (e.g., read42)**  (optional)   
-**What needs to be done:** Locate the header line beginning with `@read42`, and extract that line along with the following three lines (sequence, plus-line, and quality). This constitutes one complete `FASTQ` record.    
-**Why:** Useful for identifying reads with [adapters](https://en.wikipedia.org/wiki/Adapter_(genetics)), barcodes, or biologically relevant patterns. Examining both sequence and corresponding quality scores helps diagnose read-specific issues.
-**Suggested command:** Use `grep` with the -A context option.   
+*What needs to be done:*Locate the header line beginning with `@read42`, and extract that line along with the following three lines (sequence, plus-line, and quality). This constitutes one complete `FASTQ` record.    
+*Why:* Useful for identifying reads with [adapters](https://en.wikipedia.org/wiki/Adapter_(genetics)), barcodes, or biologically relevant patterns. Examining both sequence and corresponding quality scores helps diagnose read-specific issues.  
+*Suggested command:* Use `grep` with the -A context option.   
 
 
 
