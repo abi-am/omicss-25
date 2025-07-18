@@ -28,26 +28,6 @@ It includes the presentation slides and quizzes for student engagement.
 
 ---
 
-## 📝 Quizzes
-
-We will have short quizzes after the presentation to assess understanding.
-
-### Planned Quizzes:
-
-1. **PCR Basics Quiz**
-2. **Gel Electrophoresis Principles Quiz**
-
-### Links:
-
-* 👉 [PCR Quiz (Draft)](link-to-PCR-quiz)
-* 👉 [Electrophoresis Quiz (Draft)](link-to-Electrophoresis-quiz)
-
-### Progress:
-
-* 🟡 Quiz questions are being drafted
-* ⬜ Review and finalization pending
-
----
 
 ## ✅ To-Do Checklist
 
