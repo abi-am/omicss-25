@@ -34,5 +34,6 @@ For variants in exome regions present in both .bam and .vcf files write the vari
 ## Step 10
 Try to assume what variant/variants drive the FMF disease and in what sample.
 
-After you complete your practice the list od variants coordinates would be shared with you. Good luck!
+
+After you complete your practice, the list of variants coordinates would be shared with you. Good luck!
 
