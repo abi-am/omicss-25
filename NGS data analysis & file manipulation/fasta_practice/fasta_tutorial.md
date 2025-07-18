@@ -98,9 +98,9 @@ Filter out headers so that only raw nucleotide strings remain, with `grep -v`. S
 
 
 ### **EXERCISE 11: Find reads containing the motif "GATTACA" and list their IDs**  		
-*What needs to be done:* Scan only the sequence lines (every second line) for the motif, then extract the preceding header lines.
-#Why:# Identifying reads that contain a specific motif like "GATTACA" helps locate biologically relevant patterns (e.g., adapters, barcodes, conserved regions). It also aids in diagnostics, primer matching, or filtering steps.  
-*Suggested command: `awk`	  
+*What needs to be done:* Scan only the sequence lines (every second line) for the motif, then extract the preceding header lines.   
+*Why:* Identifying reads that contain a specific motif like "GATTACA" helps locate biologically relevant patterns (e.g., adapters, barcodes, conserved regions). It also aids in diagnostics, primer matching, or filtering steps.  
+*Suggested command:* `awk`	  
 
 
 ### **EXERCISE 12: Extract a specific FASTQ record (e.g., read42)**  (optional)   
