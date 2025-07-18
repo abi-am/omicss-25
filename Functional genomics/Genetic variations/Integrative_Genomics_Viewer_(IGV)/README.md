@@ -8,7 +8,7 @@ Introductory information can be found [here](https://igv.org/doc/desktop/#)
 
 IGV requires Java 21 or greater as of IGV 2.19.1. If you download one of the IGV versions that does not include Java, make sure you have Java 21 installed and in your path. 
 
-If for some reson you do not want to install IGV version with Java 21 included, here are described steps how to check the Java version on your computer and install the required one.
+If for some reason you do not want to install IGV version with Java 21 included, here are described steps how to check the Java version on your computer and install the required one.
 
 
 #### For windows:
