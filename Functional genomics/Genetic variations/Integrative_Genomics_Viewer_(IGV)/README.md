@@ -4,7 +4,7 @@ The Integrative Genomics Viewer (IGV) is a high-performance, interactive tool fo
 Introductory information can be found [here](https://igv.org/doc/desktop/#)
 
 
-## Prior to downloading see if your laptop environment meets following requirments: ##
+#### Prior to downloading see if your laptop environment meets following requirments: ##
 
 IGV requires Java 21 or greater as of IGV 2.19.1. If you download one of the IGV versions that does not include Java, make sure you have Java 21 installed and in your path. 
 
