@@ -104,7 +104,7 @@ Filter out headers so that only raw nucleotide strings remain, with `grep -v`. S
 
 
 ### **EXERCISE 12: Extract a specific FASTQ record (e.g., read42)**  (optional)   
-*What needs to be done:*Locate the header line beginning with `@read42`, and extract that line along with the following three lines (sequence, plus-line, and quality). This constitutes one complete `FASTQ` record.    
+*What needs to be done:* Locate the header line beginning with `@read42`, and extract that line along with the following three lines (sequence, plus-line, and quality). This constitutes one complete `FASTQ` record.    
 *Why:* Useful for identifying reads with [adapters](https://en.wikipedia.org/wiki/Adapter_(genetics)), barcodes, or biologically relevant patterns. Examining both sequence and corresponding quality scores helps diagnose read-specific issues.  
 *Suggested command:* Use `grep` with the -A context option.   
 
