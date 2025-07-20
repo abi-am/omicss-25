@@ -48,11 +48,11 @@ Navigate to omicss-25-main/Functional genomics/Transcriptomics/Practice
 
 **dataset/** - Input data folder
 
-  **STAR_counts.tsv** - read counts matrix
+    STAR_counts.tsv - read counts matrix
   
-  **gencode.v42.genes.tsv** - gene annotation
+    gencode.v42.genes.tsv - gene annotation
   
-  **metadata.tsv** - sample metadata
+    metadata.tsv - sample metadata
   
 **Transcriptomics_practice.md** - DESeq2 practice
 
