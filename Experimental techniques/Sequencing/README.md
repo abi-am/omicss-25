@@ -28,5 +28,5 @@ Long read sequencing enables the generation of reads that span thousands to even
 ## Presentations
 
 - [Next-Generation Sequencing Technologies Presentation](#)  
-- [Long Read Sequencing Presentation](#)
+- [Long Read Sequencing Presentation](https://docs.google.com/presentation/d/1WGnRDvC2DIcVOj9dbJ5fIhMznaqWl8ZB/edit?slide=id.p1#slide=id.p1)
 
