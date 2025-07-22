@@ -1,5 +1,11 @@
 After you perform the alignment and variant calling it is preferable to check the found variants and validate them.
 
+Create index .bai files for your bam files, if they are not present in the folder with bam files. Use following command:
+
+
+samtools index wes46_dedup.bam.bai
+
+
 Download your  .bam and .vcf files, wes46_dedup.bam and wes78_dedup.bam.  Note that one sample was obtained from a healthy individual, while the other was collected from a person diagnosed with Familial Mediterranean Fever (FMF).  Do not forget that .bam file requires index file in the same directory. It is recommended to name your index file like .bam.bai, in that way it is guaranteed that IGV browser would open your file correctly.    
 
 Below presented some practical exercises
