@@ -8,6 +8,13 @@
 
 In this set of exercises, you will use **SAMtools** to explore and manipulate **SAM/BAM files**, which are standard formats for storing aligned sequencing reads. The tasks range from basic read counting to more advanced operations like extracting specific regions and identifying duplicate reads.
 
+We'll be working with the same samples as in the [tutorial](https://github.com/abi-am/omicss-25/blob/main/NGS%20data%20analysis%20%26%20file%20manipulation/alignment_practice/README.md):  
+
+`wes46_chr21_chr16_R1.fastq`, `wes46_chr21_chr16_R2.fastq` — Sample 1  
+`wes78_chr21_chr16_R1.fastq`, `wes78_chr21_chr16_R2.fastq` — Sample 2  
+
+While going through the tutorial, you have already performed the alignment and generated your BAM files, which you can use to answer the following questions.
+
 While solutions are available if you get stuck, we encourage you to try on your own!
 
 ---
