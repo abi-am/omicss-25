@@ -1,6 +1,6 @@
 #  DNA Extraction
 
-**Contributor:** Nelli Vardazaryan
+**Contributor:** Nelli Vardazaryan, Meghrig Hekimian
 
 ## 📑 Overview
 
@@ -27,18 +27,10 @@ It includes the presentation slides and student quizzes related to DNA extractio
 
 ---
 
-### Progress:
-
-* 🟡 Quiz questions are being prepared
-* ⬜ Review and finalization pending
-
----
 
 ## ✅ To-Do Checklist
 
-* [ ] Main outline of the presentation
-* [ ] Draft quiz
-* [ ] Finalize quiz
+* [x] Main outline of the presentation
 * [ ] Prepare final version for upload
 
 ---
