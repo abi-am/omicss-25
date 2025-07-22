@@ -55,7 +55,7 @@
     - File Formats in Alignment (SAM/BAM files)  
     - Alignment Tools (BWA, BT2, SAMTOOLS)  
       
-  **_MATERIALS_**: [SLIDES](https://docs.google.com/presentation/d/1tNOKpZZuyiv5n5Cl6aCLpbwf8a-lcqGt/edit?usp=drive_link&ouid=112677744829360659757&rtpof=true&sd=true), [TUTORIAL](https://github.com/abi-am/omicss-25/blob/58ae9c8058542b4a2a1b33658e6514eb474e2508/NGS%20data%20analysis%20%26%20file%20manipulation/alignment_practice/README.md), check [```alignment_practice```](https://github.com/abi-am/omicss-25/tree/1eb7a6469073a88e2e11428b63bedc761712b962/NGS%20data%20analysis%20%26%20file%20manipulation/alignment_practice) folder   
+  **_MATERIALS_**: [SLIDES](https://docs.google.com/presentation/d/1tNOKpZZuyiv5n5Cl6aCLpbwf8a-lcqGt/edit?usp=drive_link&ouid=112677744829360659757&rtpof=true&sd=true), [TUTORIAL](https://github.com/abi-am/omicss-25/blob/main/NGS%20data%20analysis%20%26%20file%20manipulation/alignment_practice/README.md), [EXERCISES](https://github.com/abi-am/omicss-25/blob/main/NGS%20data%20analysis%20%26%20file%20manipulation/alignment_practice/samtools_tutorial.md).
   
 ----- 
 
