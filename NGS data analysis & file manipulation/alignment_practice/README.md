@@ -85,6 +85,8 @@ bwa mem -t 4 -R "@RG\tID:${sample}\tLB:${sample}\tSM:${sample}\tPL:ILLUMINA" \
   samtools view -Sb - > bam/${sample}.bam
 ```
 > What are the `-t` and `-R` options for?  
+  
+> Remind yourself what [read groups](https://gatk.broadinstitute.org/hc/en-us/articles/360035890671-Read-groups) stand for.
 
 Add the  slurm batch parameters on top of your script, make the script executable and run:  
 
