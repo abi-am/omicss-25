@@ -27,28 +27,27 @@
 
 ## Week 2: Taxonomic Processing & Intro to Phyloseq
 - **Working with Microbial Abundance Data, EDA & Methods:**  
-  - **Microbial EDA and Diversity Analysis:** | [Slides](https://docs.google.com/presentation/d/19Z14W7211RZr7DdL1cOx1DAVndnoPNalzU3JaY0aJPo/edit?usp=sharing)
+  - Introduction to the **phyloseq** R package [Slides](https://docs.google.com/presentation/d/1bDjOMx3mNIyG0O46FVl31WkVAiybSSEp-FFuMLnD2vs/edit?usp=sharing)
+    [Exercises](link)
     `📅 04/08/2025 | 🕔 16:00–17:00`
-    - Composition plots (barplots, relative-abundance heatmaps)  
-    - Alpha diversity (Shannon, Simpson, observed OTUs)  
-    - Beta diversity (Bray-Curtis, UniFrac)  
-  - **Kraken2 and Bracken** for taxonomic classification and abundance estimation| [Slides](link)
+  - Exploratory and Diversity Data Analyses with phyloseq [Slides](https://docs.google.com/presentation/d/19Z14W7211RZr7DdL1cOx1DAVndnoPNalzU3JaY0aJPo/edit?usp=sharing)
+    [Exercises](link)
     `📅 06/08/2025 | 🕔 17:00–18:00`
-- **Activities:**  
-  - Hands-on Kraken2 - Bracken workflow on WGS test dataset | [Exercises](link)
+- **2-Week Recap**
+  - Summary of key findings and insights from readings:
+  - Discussion of any challenges and questions raised during the first 2 weeks
+  - Recap of practical skills learned (phyloseq, visualizations, EDA, Diversity analyses):
+  - Preview of what's coming in Week 3 [Slides](link)
     `📅 07/08/2025 | 🕔 17:00–18:00`
 
 ## Week 3: Exploratory Data Analysis & Diversity Metrics
 - **Project Presentations:**
   `📅 11/08/2025 | 🕔 16:00–18:00`
-- [**Slides for the Week**](link)
-- [**Exercises for the Week**](link)
-- **Phyloseq + EDA with Phyloseq:**  
-  - Introduction to the **phyloseq** R package [Slides](https://docs.google.com/presentation/d/1bDjOMx3mNIyG0O46FVl31WkVAiybSSEp-FFuMLnD2vs/edit?usp=sharing) :  
+- **Kraken2 and Bracken** for taxonomic classification and abundance estimation| [Slides](https://docs.google.com/presentation/d/1VVVUJF-MHUnwJs6QUgIrOI6gI5qSQfd5l3i2ynaeTBs/edit?usp=sharing)
     `📅 12/08/2025 | 🕔 16:00–17:00`
-  - EDA with phyloseq [Exercises](link)
+  - Hands-on Kraken2 - Bracken workflow on WGS test dataset | [Exercises](link)
     `📅 13/08/2025 | 🕔 17:00–18:00`
-- **Advanced Methods Overview:** [Slides](link) 
+- **Advanced Methods Overview:** [Slides](link)
   - ANCOMBC-2 for differential abundance
     `📅 14/08/2025 | 🕔 16:00–17:00`
   - ML methods for feature selection (e.g., random forest, LASSO) _(TBD)_
@@ -77,12 +76,12 @@
   - [ ] Upload "Intro to Phyloseq" exercise set with R Markdown - **Deadline: July 7**
   - [ ] Prepare *Group Project Intro Presentation* - **Deadline: July 8**
   - [ ] *Prepare ML slides - **Deadline: TBD*** (Needs approval)
-  - [ ] Upload "EDA with Phyloseq" slides for Week 3 - **Deadline: July 15**
+  - [X] Upload "EDA with Phyloseq" slides for Week 3 - **Deadline: July 15**
   - [ ] Upload "EDA with Phyloseq" exercise set with R Makrdown - **Deadline: July 15**
 
 - **Razmik Sargsyan:**  
   - [ ] Upload Kraken2 and Bracken tutorial exercises for Week 2 - **Deadline: July 8**
-  - [ ] Upload slides on Kraken2 and Bracken for Week 2 - **Deadline: July 15**
+  - [X] Upload slides on Kraken2 and Bracken for Week 2 - **Deadline: July 15**
 
 - **Nelli Vardazaryan:**  
   - [ ] ANCOMBC2 Slides - **Deadline: July 8**
