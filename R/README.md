@@ -1,4 +1,3 @@
-
   # Contributors
     Primary contributor: Arpine Grigoryan
     Contributing authors: Luiza Stepanyan
