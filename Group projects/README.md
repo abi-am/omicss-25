@@ -1,4 +1,4 @@
-## GP1: Machine Learning-Based Identification of Bacterial Biomarkers for Disease Classification
+## GP1: Identification of Bacterial Biomarkers for Disease Classification
  - Mentors: Davit Hakobyan, Nelli Vardazaryan, Razmik Sargsyan, Lusine Adunts
  - Students (will be added)
  - Short description: This project aims to identify bacterial biomarkers with disease classification potential using microbial abundance data from WGS/Shotgun metagenomics data. Students will apply tools like ANCOM-BC2 and machine learning models, and may also be involved in preprocessing raw sequencing data to generate OTU tables.
