@@ -1,4 +1,4 @@
-  # Contributors
+# Contributors
     Primary contributor: Arpine Grigoryan
     Contributing authors: Melina Tamazyan
   # Contents  
