@@ -59,4 +59,4 @@ For identifying differentially expressed genes, we will use the FindMarkers() fu
 [GO Enrichment](https://yulab-smu.top/biomedical-knowledge-mining-book/clusterprofiler-go.html), [fGSEA](https://biostatsquid.com/fgsea-tutorial-gsea/)
 
 ### Hypothesis testing
-Statistical testing between various clinical groups
+Statistical testing between various clinical groups (age, gender, cancer progression stage, etc.)
