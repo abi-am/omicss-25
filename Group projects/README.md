@@ -17,5 +17,5 @@
 
  - Mentors: Arpine Grigoryan, Melina Tamazyan, Sveta Mnatsakanyan, Luiza Stepanyan
  - Students (will be added)
- - Short description: Investigate the cellular heterogeneity of lung cancer by analyzing single-cell RNA sequencing data, identify the key genes, cell populations, and molecular pathways that contribute to the development and progression of lung cancer.
+ - Short description: This project aims to investigate the cellular heterogeneity of lung cancer by analyzing single-cell RNA sequencing data from publicly available sources. The students will learn how to identify the genes, cell populations, and molecular pathways that contribute to the development and progression of lung cancer.
 
