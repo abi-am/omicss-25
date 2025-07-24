@@ -28,10 +28,10 @@
 ## Week 2: Taxonomic Processing & Intro to Phyloseq
 - **Working with Microbial Abundance Data, EDA & Methods:**  
   - Introduction to the **phyloseq** R package [Slides](https://docs.google.com/presentation/d/1bDjOMx3mNIyG0O46FVl31WkVAiybSSEp-FFuMLnD2vs/edit?usp=sharing)
-    [Exercises](link)
+    [Exercises](https://drive.google.com/file/d/1JtJ09bz3chn3D9QUjLXnD7gTWxS0NhoQ/view?usp=drive_link)
     `📅 04/08/2025 | 🕔 16:00–17:00`
   - Exploratory and Diversity Data Analyses with phyloseq [Slides](https://docs.google.com/presentation/d/19Z14W7211RZr7DdL1cOx1DAVndnoPNalzU3JaY0aJPo/edit?usp=sharing)
-    [Exercises](link)
+    [Exercises](https://drive.google.com/file/d/1dmxDjnTsMQHhnY6zijUFHbV2k7GnMism/view?usp=drive_link)
     `📅 06/08/2025 | 🕔 17:00–18:00`
 - **2-Week Recap**
   - Summary of key findings and insights from readings:
@@ -45,7 +45,7 @@
   `📅 11/08/2025 | 🕔 16:00–18:00`
 - **Kraken2 and Bracken** for taxonomic classification and abundance estimation| [Slides](https://docs.google.com/presentation/d/1VVVUJF-MHUnwJs6QUgIrOI6gI5qSQfd5l3i2ynaeTBs/edit?usp=sharing)
     `📅 12/08/2025 | 🕔 16:00–17:00`
-  - Hands-on Kraken2 - Bracken workflow on WGS test dataset | [Exercises](link)
+  - Hands-on Kraken2 - Bracken workflow on WGS test dataset | [Exercises](https://docs.google.com/document/d/1lt99SpV4PNsKcypB8sQjApN3YFj6s2o3CpQMoS0dNHY/edit?usp=drive_link)
     `📅 13/08/2025 | 🕔 17:00–18:00`
 - **Advanced Methods Overview:** [Slides](link)
   - ANCOMBC-2 for differential abundance
