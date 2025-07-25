@@ -17,21 +17,7 @@ It includes the presentation slides and student quizzes related to DNA extractio
 
 ### Link to Presentation:
 
-* 👉 [DNA Extraction Slides (Draft)](https://docs.google.com/presentation/d/1_tiaPIMi8kPa0JILCkhvKJ0ZpneEsTHL3ay6cwwdHwE/edit?slide=id.p#slide=id.p) <!-- Replace with your actual link -->
-
-### Progress:
-
-* ✅ Main outline completed
-* 🟡 Draft version being finalized
-* ⬜ Final version pending
-
----
-
-
-## ✅ To-Do Checklist
-
-* [x] Main outline of the presentation
-* [ ] Prepare final version for upload
+* 👉 [DNA Extraction Slides (Draft)](https://docs.google.com/presentation/d/1_tiaPIMi8kPa0JILCkhvKJ0ZpneEsTHL3ay6cwwdHwE/edit?slide=id.p#slide=id.p)
 
 ---
 
