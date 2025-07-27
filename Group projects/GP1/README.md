@@ -17,13 +17,13 @@
     - [Microbiota in health and diseases](https://www.nature.com/articles/s41392-022-00974-4). _Note: you can focus on oral diseases_
   - Overview of the power of oral microbiome for disease classification:
     `📅 31/07/2025 | 🕔 17:00–18:00`
-    - [Oral Microbiome: A Review of Its Impact on Oral and Systemic Health](https://www.mdpi.com/2076-2607/12/9/1797). [Reader Guide](link)
+    - [Oral Microbiome: A Review of Its Impact on Oral and Systemic Health](https://www.mdpi.com/2076-2607/12/9/1797). Here is a [Reader Guide](https://docs.google.com/document/d/1Dg6fC8XLRIjB1AudXjKiA4XBKfHIKkNdXDpN230H6j0/edit?usp=drive_link) :)
   - _BONUS READINGS | on methodologies in the context of oral microbiome research_
-    - [The diagnostic potential and barriers of microbiome based therapeutics](https://www.degruyterbrill.com/document/doi/10.1515/dx-2022-0052/html). [Reader Guide](link)
+    - [The diagnostic potential and barriers of microbiome based therapeutics](https://www.degruyterbrill.com/document/doi/10.1515/dx-2022-0052/html). Here is a [Reader Guide](https://docs.google.com/document/d/1zmJZv0iitOCD3cP-Apra3lrzDZ40_-DBjetkIfzWw7o/edit?usp=drive_link) :)
     - [Illuminating the oral microbiome and its host interactions: recent advancements in omics and bioinformatics technologies in the context of oral microbiome research](https://academic.oup.com/femsre/article/47/5/fuad051/7259894)
 - **Activities:**  
   - Group discussion sessions for each reading
-  - Compiling a shared glossary of key terms and concepts (a [Google doc](https://docs.google.com/document/d/1ZtNl5lPHTRIUPUAoNY7RFSjA7JTCTko8gS1dTk8QU1Y/edit?usp=sharing) Note: There are two tabs in the doc for the introductory reading and for the term glossary respectively_ )
+  - Compiling a shared glossary of key terms and concepts (a [Google doc](https://docs.google.com/document/d/1ZtNl5lPHTRIUPUAoNY7RFSjA7JTCTko8gS1dTk8QU1Y/edit?usp=sharing) _Note: There are two tabs in the doc for the introductory reading and for the term glossary respectively_ )
 
 ## Week 2: Taxonomic Processing & Intro to Phyloseq
 - **Working with Microbial Abundance Data, EDA & Methods:**  
@@ -47,7 +47,7 @@
     `📅 12/08/2025 | 🕔 16:00–17:00`
   - Hands-on Kraken2 - Bracken workflow on WGS test dataset | [Exercises](https://docs.google.com/document/d/1lt99SpV4PNsKcypB8sQjApN3YFj6s2o3CpQMoS0dNHY/edit?usp=drive_link)
     `📅 13/08/2025 | 🕔 17:00–18:00`
-- **Advanced Methods Overview:** [Slides](link)
+- **Advanced Methods Overview:** [Guide](https://rpubs.com/mrgambero/lesson_20_ancom)
   - ANCOMBC-2 for differential abundance
     `📅 14/08/2025 | 🕔 16:00–17:00`
   - ML methods for feature selection (e.g., random forest, LASSO) _(TBD)_
@@ -66,23 +66,4 @@
 - **Final Deliverables:**  
   - GitHub repository with analysis code  
   - Presentation slides (PDF or PowerPoint)  
-  - Short written summary of results 
-
-# TODO
-- **Davit Hakobyan (primary contributor):**  
-  - [X] Finalize & upload Week 1 readings on background and conceptual foundations
-  - [ ] Write Reader Guides for a couple of the complex readings
-  - [X] Upload "Intro to Phyloseq" slides for Week 2 - **Deadline: June 30**
-  - [ ] Upload "Intro to Phyloseq" exercise set with R Markdown - **Deadline: July 7**
-  - [ ] Prepare *Group Project Intro Presentation* - **Deadline: July 8**
-  - [ ] *Prepare ML slides - **Deadline: TBD*** (Needs approval)
-  - [X] Upload "EDA with Phyloseq" slides for Week 3 - **Deadline: July 15**
-  - [ ] Upload "EDA with Phyloseq" exercise set with R Makrdown - **Deadline: July 15**
-
-- **Razmik Sargsyan:**  
-  - [ ] Upload Kraken2 and Bracken tutorial exercises for Week 2 - **Deadline: July 8**
-  - [X] Upload slides on Kraken2 and Bracken for Week 2 - **Deadline: July 15**
-
-- **Nelli Vardazaryan:**  
-  - [ ] ANCOMBC2 Slides - **Deadline: July 8**
-  - [ ] Slides on project goals + dataset upload - **Deadline: July 15**
+  - Short written summary of results
