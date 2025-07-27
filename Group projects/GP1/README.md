@@ -4,10 +4,10 @@
 **Contributing authors:** Nelli Vardazaryan, Razmik Sargsyan, Lusine Adunts
 
 # Contents
-
+  
 ## Week 1: Background & Conceptual Foundations
 - **Project Presentations and Assignments:**
-  `📅 27/07/2025 | 🕒 15:00-17:00`
+  `📅 28/07/2025 | 🕒 15:00-17:00` [Slides](https://docs.google.com/presentation/d/1uTf0XXXNeIODziOfPifdiCMmZgStPnH_xNxA7szwXZ4/edit?usp=sharing)
 - **Readings:**
   - Intro to Microbiome and Term Glossary
     `📅 29/07/2025 | 🕔 17:00–18:00`
