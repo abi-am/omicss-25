@@ -3,6 +3,8 @@
 
 **Contributing authors:** Nelli Vardazaryan, Razmik Sargsyan, Lusine Adunts
 
+**Short Description:** This project aims to identify bacterial biomarkers with disease classification potential using microbial abundance data from WGS/Shotgun metagenomics data. Students will apply tools like ANCOM-BC2 and machine learning models, and may also be involved in preprocessing raw sequencing data to generate OTU tables.
+
 # Contents
   
 ## Week 1: Background & Conceptual Foundations
