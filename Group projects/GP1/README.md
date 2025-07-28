@@ -13,7 +13,7 @@
 - **Readings:**
   - Intro to Microbiome and Term Glossary
     `📅 29/07/2025 | 🕔 17:00–18:00`
-    - [Google doc](https://docs.google.com/document/d/1ZtNl5lPHTRIUPUAoNY7RFSjA7JTCTko8gS1dTk8QU1Y/edit?usp=sharing) Note: There are two tabs in the doc for the introductory reading and for the term glossary respectively_ 
+    - [Google doc](https://docs.google.com/document/d/1ZtNl5lPHTRIUPUAoNY7RFSjA7JTCTko8gS1dTk8QU1Y/edit?usp=sharing) _Note: There are two tabs in the doc for the introductory reading and for the term glossary respectively_ 
   - Role of the Microbiome:
     `📅 30/07/2025 | 🕔 17:00–18:00`
     - [Microbiota in health and diseases](https://www.nature.com/articles/s41392-022-00974-4). _Note: you can focus on oral diseases_
