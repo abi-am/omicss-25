@@ -32,15 +32,15 @@
   # TODO
 
   ### Lusine Adunts
-  - [x] Day 1 slides — **due 24.06**
-  - [x] Day 2 slides — **due 28.06**
-  - [x] Day 3 slides — **due 02.07**
-  - [ ] Day 4 slides — **due 06.07**
-  - [ ] Day 5 slides — **due 09.07**
-  - [ ] Final touch  — **due 11.07**
+  - [x] Day 1 slides
+  - [x] Day 2 slides
+  - [x] Day 3 slides
+  - [x] Day 4 slides
+  - [ ] Day 5 slides
+  - [ ] Final touch
 
   ### Tatev Jalatyan
-  - [x] Day 1 practice problems — **due 26.06**
+  - [x] Day 1 practice problems
     - Implement pattern matching using the naive approach
     - Implement pattern matching using the Boyer–Moore algorithm
     - Create conceptual questions to differentiate types of sequence alignment
@@ -48,7 +48,7 @@
       - Initialization
       - Matrix filling
       - Traceback
-  - [x] Day 3 practice problems — **due 04.07**
+  - [x] Day 3 practice problems
      - Implement seed extraction from reads and genome (e.g., non-overlapping and overlapping k-mers)
      - Design a filtering rule that selects only seed hits that are near each other
      - Build a prefix tree (trie) from a list of k-mers
@@ -60,13 +60,16 @@
        - Select nearby seed matches
        - Do full alignment on the selected region(s)
        - Choose the best alignment
-  - [ ] Day 5 practice problems — **due 11.07**
+  - [ ] Day 5 practice problems
 
   ### Davit Hakobyan
-  - [x] Day 2 practice problems — **due 30.06**
+  - [x] Day 2 practice problems
     - Implement local alignment using the Smith-Waterman algorithm
     - Implement semi-global alignment for read alignment
     - Create questions to:
       - Compare global, local, and semi-global alignment algorithms including key differences in initialization, matrix filling, and traceback
       - Evaluate how different substitution matrices (e.g., PAM, BLOSUM) affect alignment scoring and interpretation
-  - [ ] Day 4 practice problems — **due 08.07**
+  - [ ] Day 4 practice problems
+    - Assemble the genome through overlap graph
+    - Assemble the genome through de Bruijn graph
+    - Conceptual questions on assembly, the two main approaches, challenges
