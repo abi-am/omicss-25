@@ -242,7 +242,7 @@ Group:
 - Cancer samples by cancer (or other disease) type, combining samples from all datasets for each type.  
 
 For each cancer (or other disease) type:  
-- Perform non-parametric Mann–Whitney U tests comparing percentages of filtered TRVs in that cancer type group vs healthy group, correct for multiple testing with FDR. Consider excluding the canonical variant from this analysis. (*Maybe provide already prepared df ?*)
+- Perform non-parametric Mann–Whitney U tests comparing percentages of filtered TRVs in that cancer type group vs healthy group, correct for multiple testing with FDR. Exclude the canonical variant from this analysis.  
 - Prepare visualizations (e.g. boxplot, heatmap, scatter plot) as performed during the R plotting practice session. Note, you can use Python as well.   
 
 
