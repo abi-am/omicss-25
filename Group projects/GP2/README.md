@@ -6,7 +6,7 @@ Contributing authors: Anahit Yeghiazaryan, Davit Tareverdyan, Mher Kurghinyan
 - [Project description](#project-description)
 - [Week 1](#week-1)
   - [7/28/2025 - 3PM-5PM](#7282025---3pm-5pm)
-    - [Project presentation [Anahit, Davit T., Mher]](#project-presentation-anahit-davit-t-mher)
+    - [Project presentation](#project-presentation)
   - [7/29/2025 - 5PM-6PM](#7292025---5pm-6pm)
     - [Molecular biology recap](#molecular-biology-recap)
   - [7/30/2025 - 5PM-6PM](#7302025---5pm-6pm)
@@ -33,31 +33,31 @@ Contributing authors: Anahit Yeghiazaryan, Davit Tareverdyan, Mher Kurghinyan
   - [8/14/2025 - 4PM-5PM](#8142025---4pm-5pm)
     - [Post-trimming quality check](#post-trimming-quality-check)
   - [8/15/2025 - 4PM-5PM](#8152025---4pm-5pm)
-    - [Run Computel for TRVs [Anahit]](#run-computel-for-trvs-anahit)
+    - [Run Computel for TRVs](#run-computel-for-trvs)
     - [Computel 2.0 SOP](https://docs.google.com/document/d/1gVZ7xYtBPW7v71oetAQkewMflmmAz8q_ja0ot0ISxG8/edit?tab=t.0)
-    - [TRV analysis on pre-generated table: within dataset comparisons [Tatevik]](#trv-analysis-on-pre-generated-table-within-dataset-comparisons-tatevik)
+    - [TRV analysis on pre-generated table: within dataset comparisons](#trv-analysis-on-pre-generated-table-within-dataset-comparisons)
 - [Week 4](#week-4)
   - [8/18/2025 - 11AM-12PM](#8182025---11am-12pm)
-    - [TRV analysis on pre-generated table: check for dataset batch effects [Davit T.]](#trv-analysis-on-pre-generated-table-check-for-dataset-batch-effects-davit-t)
+    - [TRV analysis on pre-generated table: check for dataset batch effects](#trv-analysis-on-pre-generated-table-check-for-dataset-batch-effects)
   - [8/18/2025 - 12PM-1PM](#8182025---12pm-1pm)
-    - [TRV analysis on pre-generated table: between dataset comparisons [Tatevik]](#trv-analysis-on-pre-generated-table-between-dataset-comparisons-tatevik)
+    - [TRV analysis on pre-generated table: between dataset comparisons](#trv-analysis-on-pre-generated-table-between-dataset-comparisons)
   - [8/18/2025 - 4PM-5PM](#8182025---4pm-5pm)
     - [Journal club](#journal-club)
   - [8/19/2025 - 12PM-1PM](#8192025---12pm-1pm)
     - [Alignment on reference genome](#alignment-on-reference-genome)
     - [Reference genome index for alignment](#reference-genome-index-for-alignment)
   - [8/19/2025 - 2PM-3PM](#8192025---2pm-3pm)
-    - [Gene expression estimation using NDR [Mher]](#gene-expression-estimation-using-ndr-mher)
+    - [Gene expression estimation using NDR](#gene-expression-estimation-using-ndr)
   - [8/19/2025 - 3PM-4PM](#8192025---3pm-4pm)
-    - [Run PSF using gene expression estimates for TMM genes [Mher]](#run-psf-using-gene-expression-estimates-for-tmm-genes-mher)
+    - [Run PSF using gene expression estimates for TMM genes](#run-psf-using-gene-expression-estimates-for-tmm-genes)
   - [8/19/2025 - 4PM-5PM](#8192025---4pm-5pm)
-    - [Cluster samples by gene expression [Tatevik]](#cluster-samples-by-gene-expression-tatevik)
+    - [Cluster samples by gene expression](#cluster-samples-by-gene-expression)
   - [8/20/2025 - 12PM-1PM](#8202025---12pm-1pm)
-    - [Run PSF using cluster mean gene expression estimates for TMM genes [Mher]](#run-psf-using-cluster-mean-gene-expression-estimates-for-tmm-genes-mher)
+    - [Run PSF using cluster mean gene expression estimates for TMM genes](#run-psf-using-cluster-mean-gene-expression-estimates-for-tmm-genes)
   - [8/20/2025 - 2PM-3PM](#8202025---2pm-3pm)
-    - [Perform combined analysis of ALT, TEL pathway activities and TRV abundances across samples [Tatevik]](#perform-combined-analysis-of-alt-tel-pathway-activities-and-trv-abundances-across-samples-tatevik)
+    - [Perform combined analysis of ALT, TEL pathway activities and TRV abundances across samples](#perform-combined-analysis-of-alt-tel-pathway-activities-and-trv-abundances-across-samples)
   - [8/20/2025 - 4PM-5PM](#8202025---4pm-5pm)
-    - [Perform combined analysis of ALT, TEL pathway activities and TRV abundances across samples (continued) [Tatevik]](#perform-combined-analysis-of-alt-tel-pathway-activities-and-trv-abundances-across-samples-continued-tatevik)  
+    - [Perform combined analysis of ALT, TEL pathway activities and TRV abundances across samples (continued)](#perform-combined-analysis-of-alt-tel-pathway-activities-and-trv-abundances-across-samples-continued)  
 - [Bootcamp](#bootcamp)
   - [8/21/2025](#8212025)
   - [8/22/2025](#8222025)
@@ -72,7 +72,7 @@ This project explores telomeric sequences in plasma cell-free DNA (cfDNA) to dis
 
 ## Week 1
 ## 7/28/2025 - 3PM-5PM  
-### Project presentation [Anahit, Davit T., Mher]
+### Project presentation  
 - [Slides](https://docs.google.com/presentation/d/1g2G7LY51qzxKn596i--rHjXK6IBzhMlYm-RCr64h5LE/edit?usp=sharing)
 
 ## 7/29/2025 - 5PM-6PM  
@@ -207,11 +207,11 @@ Check if any quality issues persist to perform trimming again if needed.
 
 ## 8/15/2025 - 4PM-5PM
 
-### Run Computel for TRVs [Anahit]
+### Run Computel for TRVs 
 - Refer to [Computel 2.0 SOP](https://docs.google.com/document/d/1gVZ7xYtBPW7v71oetAQkewMflmmAz8q_ja0ot0ISxG8/edit?tab=t.0) for detaied instructions on installing, running and extracting results by Computel
 - Run Computel on trimmed FASTQ files to generate CSV files with TRV counts/proportions
   
-### TRV analysis on pre-generated table: within dataset comparisons [Tatevik]
+### TRV analysis on pre-generated table: within dataset comparisons 
 Use the file `/mnt/proj/omicss25/gp2/unified/trv/merged/trv_abs.csv` for TRV counts and `/mnt/proj/omicss25/gp2/unified/trv/merged/trv_compositional.csv` for TRV percentages across samples derived from multiple datasets. Both files include sample metadata in the first 8 columns: `origin`, `timepoint`, `tissue-type`, `gender`, `age`, `patient_name`, `state`, and `full_name`. The remaining columns correspond to TRVs. Each row represents one sample, uniquely identified by the `full_name` column.  
 
 #### Filter TRVs  
@@ -227,15 +227,14 @@ For each dataset։
 
 ## Week 4
 ## 8/18/2025 - 11AM-12PM
-### TRV analysis on pre-generated table: check for dataset batch effects [Davit T.]  
-Use only healthy samples (discard p18 from prostate cancer data) of all available datasets for: @LN you can remove p18 from the table a priori not to introduce confusion
+### TRV analysis on pre-generated table: check for dataset batch effects 
+Use only healthy samples of all available datasets for:  
 - Hierarchical Clustering 
-- CLR + PCA @LN maybe no PCA? see below
-- Permanova, PCoA @LN I would suggest to concenterate on one and specific, .e.g PCoA + Euclidean distance + CLR; not to confuse with PCA, pcoa, normalized and unnormalized. So you can provide more detailed instructions on what metric to use how to normalize
+- PCoA + Euclidean distance + CLR, Permanova   
 - Try with and without canonical variant
 
 ## 8/18/2025 - 12PM-1PM
-### TRV analysis on pre-generated table: between dataset comparisons [Tatevik]
+### TRV analysis on pre-generated table: between dataset comparisons  
 Compare TRV percentages between healthy and cancer samples across multiple datasets, after checking that no significant batch effect is detected among healthy samples from different datasets. Use the same filtered TRV list obtained from the previous filtering step.  
 
 Group:
@@ -275,7 +274,7 @@ Include these steps in `src/align.sh` script to obtain a final sorted, deduplica
 Check log files for alignment status, % of reads aligned and other stats.  
 
 ## 8/19/2025 - 2PM-3PM
-### Gene expression estimation using NDR [Mher] 
+### Gene expression estimation using NDR 
 In order to estimate gene expression from cell-free DNA data a number of inputs are required. 
 - bam files
 - gene position bed file (standard for all samples) - Homo_sapiens-GCA_009914755.4-2022_07-genes-only.bed
@@ -286,57 +285,39 @@ In order to estimate gene expression from cell-free DNA data a number of inputs 
 - gene list
 - tumor tissue of origin
 
-You will be using weighted_coverage_calculation.py script. The script utilizes [samtools depth](http://www.htslib.org/doc/samtools-depth.html) function to calculate the coverage of a given position. Make a daughter script where you will call it and give all the inputs. @LN this will be the parent script that calls the daughter
+You will be using weighted_coverage_calculation.py script. The script utilizes [samtools depth](http://www.htslib.org/doc/samtools-depth.html) function to calculate the coverage of a given position. Make a parent script where you will call it and give all the inputs. 
 Tumor fractions are obtained with [ichorCNA](https://github.com/broadinstitute/ichorCNA/wiki) tool and usually are calculated for each bam file. You will be provided with ready tumor fractions and do not need to calculate them with ichorCNA.
 NB: The script uses Ensembl gene and transcript IDs to perform all the calculations.
 
 ## 8/19/2025 - 3PM-4PM
-### Run PSF using gene expression estimates for TMM genes [Mher]
+### Run PSF using gene expression estimates for TMM genes  
 Now that you have an expression estimate for each TMM gene, you can use them in Cytoscape to run PSF. 
 NB: Entrez IDs are required for TMM analysis, so make sure to replace Ensembl IDs in coverage matrix to Entrez IDs. You can use the ncbi_to_ensembl_mapping.tsv file, which contains Ensembl IDs and their corresponding Entrez IDs. Examine the ALT and TEL pathways for each sample and compare their activity in healthy vs cancer samples.  
 
 Generate a scatter plot with TEL score on x-axis and ALT score on y-axis, with points showing samples and colored by group (cancer, healthy) to check how well the groups separate based on TEL, ALT pathway activity.  
 
 ## 8/19/2025 - 4PM-5PM
-### Cluster samples by gene expression [Tatevik]
+### Cluster samples by gene expression  
 Use the expression estimates of the TMM genes for each sample (5 crc, 5 healthy) to perform hierarchical clustering and plot heatmap with dendograms to see how well the estimated gene expression values separate crc patients from healthy donors. If you identify clusters, use the samples of each cluster for cluster-level pathway scoring of ALT, TEL pathways.  
 
 ## 8/20/2025 - 12PM-1PM
-### Run PSF using cluster mean gene expression estimates for TMM genes [Mher]
+### Run PSF using cluster mean gene expression estimates for TMM genes  
 Perform the same operations as above (see "Run PSF using gene expression estimates for TMM genes" section), only use cluster mean gene expression estimates as input to Cytoscape. See how well mean expression estimates represent the cancer biology and whether individual samples differ.  
 
 ## 8/20/2025 - 2PM-3PM
-### Perform combined analysis of ALT, TEL pathway activities and TRV abundances across samples [Tatevik]
+### Perform combined analysis of ALT, TEL pathway activities and TRV abundances across samples  
 Use PSF scores for the ALT and TEL pathways, along with the abundances of identified CRC-specific TRVs per sample, to perform an integrated analysis of telomere maintenance mechanisms and telomeric repeat variants.  
 
 Create a scatter plot with TEL scores on the x-axis and ALT scores on the y-axis, where each point represents a sample and is colored by group (cancer, healthy). For each point, either overlay a radar plot to depict the abundance of CRC-specific TRVs or vary the point size based on the abundance of a CRC-specific TRV. This visualization will help explore TRV abundance patterns across TEL- and ALT-active samples, and healthy and cancer samples.  
 
 ## 8/20/2025 - 4PM-5PM
-### Perform combined analysis of ALT, TEL pathway activities and TRV abundances across samples (continued) [Tatevik]
+### Perform combined analysis of ALT, TEL pathway activities and TRV abundances across samples (continued) 
 Think creatively and explore additional types of visualizations that can illustrate the combined patterns of ALT and TEL pathway activity with TRV abundances across samples.  
 
 ## Bootcamp 
 ## 8/21/2025
-### ... 
+Finalise the results.
 ## 8/22/2025
-### ... 
+Finalise the results.  
+ 
 
-
-# TODO
-- **Tatevik:**  
-  - [x] Finalize contents  
-  - [x] Complete indicated sections with step-by-step description
-  - [x] Update JC paper and timing
-  - [ ] Prepare files/folders in /mnt/proj/omicss25 
-
-- **Anahit:**  
-  - [x] Complete "Run Computel for TRVs" section with step-by-step description
-  - [ ] Prepare project intro presentation slides
-
-- **Davit:**  
-  - [ ] Complete "TRV analysis on pre-generated table: check for dataset batch effects" section with step-by-step description
-  - [ ] Prepare project intro presentation slides 
-
-- **Mher:**  
-  - [x] Complete "Gene expression estimation using NDR", "Run PSF using gene expression estimates for TMM genes", "Run PSF using cluster mean gene expression estimates for TMM genes" sections with step-by-step description
-  - [ ] Prepare project intro presentation slides
