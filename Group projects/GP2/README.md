@@ -61,8 +61,6 @@ Contributing authors: Anahit Yeghiazaryan, Davit Tareverdyan, Mher Kurghinyan
 - [Bootcamp](#bootcamp)
   - [8/21/2025](#8212025)
   - [8/22/2025](#8222025)
-  - [8/23/2025](#8232025)
-  - [8/24/2025](#8242025)
 - [TODO](#todo)  
 
 
