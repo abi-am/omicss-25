@@ -18,3 +18,6 @@
 
   ### Practice 07.30.2025 15:00 - 16:00
 [R Data Visualization](https://r-graph-gallery.com) 
+
+### Useful links 
+[Which Plot To Make Decision Tree](https://www.data-to-viz.com)
