@@ -15,3 +15,6 @@
   [Introduction to R Course](https://www.w3schools.com/r/r_intro.asp) \
   [1-Hour Crash Course Video About R](https://www.youtube.com/watch?v=eR-XRSKsuR4) \
   [Addressing R package installation problems](https://predictiveecology.org/training/_book/TroubleshootingPackageInstallation.html)
+
+  ### Practice 07.30.2025 15:00 - 16:00
+[R Data Visualization](https://r-graph-gallery.com) 
