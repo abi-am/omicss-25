@@ -5,7 +5,7 @@ This practice focuses on interpreting differential gene expression results using
 1. **Over-Representation Analysis (ORA)** — detects enriched biological terms among significantly differentially expressed genes.
 2. **Gene Set Enrichment Analysis (GSEA)** — identifies consistent expression trends across ranked gene sets.
 
-We compare **Luminal A** and **Triple Negative Breast Cancer (TNBC)** subtypes, which differ in prognosis and aggressiveness.
+We use differentially expressed genes from the comparison of **Luminal A** and **Triple Negative Breast Cancer (TNBC)** subtypes, from previous practice.
 
 ---
 
@@ -44,7 +44,7 @@ ora_down <- enrichr(res_signif_down$gene_name, databases = dbs)
 ora_up <- lapply(ora_up, function(x) x[x$Adjusted.P.value < 0.05, ])
 ora_down <- lapply(ora_down, function(x) x[x$Adjusted.P.value < 0.05, ])
 
-# Eexploring results
+# Exploring results
 View(ora_up)
 View(ora_down)
 ```
@@ -113,7 +113,7 @@ GSEA <- function(gene_list, GO_file, pval) {
 }
 
 
-# Rank genes by p values
+# Rank genes by p-values
 res_raw <- res_raw[order(res_raw$stat, decreasing = TRUE), ]
 ordered_gene_list <- setNames(res_raw$stat, substr(rownames(res_raw), 1, 15))
 
