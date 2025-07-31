@@ -14,7 +14,9 @@ We use differentially expressed genes from the comparison of **Luminal A** and *
 Install required packages in R (if not already installed):
 
 ```r
-install.packages(c("enrichR", "fgsea", "dplyr", "msigdbr", "ggplot2"))
+install.packages(c("enrichR", "dplyr", "msigdbr", "ggplot2", "devtools"))
+
+install_github("ctlab/fgsea")
 ```
 
 Load the analysis results prepared from the previous practice:
