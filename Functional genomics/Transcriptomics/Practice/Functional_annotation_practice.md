@@ -16,6 +16,8 @@ Install required packages in R (if not already installed):
 ```r
 install.packages(c("enrichR", "dplyr", "msigdbr", "ggplot2", "devtools"))
 
+library(devtools)
+
 install_github("ctlab/fgsea")
 ```
 
