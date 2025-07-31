@@ -166,13 +166,3 @@ plotPCA(vst(dds, blind=FALSE), intgroup="Subtype") +
 
 **Figure: PCA plot of Luminal A and TNBC subtypes**  
 ![PCA plot](figures/pca_plot.png)<!-- -->
-
----
-
-## ✅ Summary
-
-- **ORA** helped identify significantly deregulated pathways in TNBC.
-- **GSEA** detected more subtle, coordinated biological processes, including EMT.
-- **PCA** confirmed transcriptomic separation between subtypes.
-
----
