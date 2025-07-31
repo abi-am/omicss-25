@@ -36,7 +36,7 @@
   - [x] Day 2 slides
   - [x] Day 3 slides
   - [x] Day 4 slides
-  - [ ] Day 5 slides
+  - [x] Day 5 slides
   - [ ] Final touch
 
   ### Tatev Jalatyan
@@ -61,6 +61,7 @@
        - Do full alignment on the selected region(s)
        - Choose the best alignment
   - [ ] Day 5 practice problems
+    - Make conceptual questions on phylogenetic tree construction, usage, etc.
 
   ### Davit Hakobyan
   - [x] Day 2 practice problems
@@ -69,7 +70,7 @@
     - Create questions to:
       - Compare global, local, and semi-global alignment algorithms including key differences in initialization, matrix filling, and traceback
       - Evaluate how different substitution matrices (e.g., PAM, BLOSUM) affect alignment scoring and interpretation
-  - [ ] Day 4 practice problems
+  - [x] Day 4 practice problems
     - Assemble the genome through overlap graph
     - Assemble the genome through de Bruijn graph
     - Conceptual questions on assembly, the two main approaches, challenges
