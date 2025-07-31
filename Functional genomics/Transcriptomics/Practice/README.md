@@ -55,6 +55,7 @@ Navigate to omicss-25-main/Functional genomics/Transcriptomics/Practice
     metadata.tsv - sample metadata
   
 **Transcriptomics_practice.md** - DESeq2 practice
+
 **Functional_annotation_practice.md** - Functional annotation practice
 
 ---
