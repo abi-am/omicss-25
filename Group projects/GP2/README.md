@@ -189,7 +189,8 @@ Check if any quality issues persist to perform trimming again if needed.
 
 ## 8/15/2025 - 4PM-5PM
 
-### Run Computel for TRVs 
+### Run Computel 2.0 for TRVs 
+- Refer to [this poster](https://drive.google.com/drive/u/0/folders/1_GYrCpPV-Xte8bCnGxjCXcE1P5xFF3eN) for background informaton.
 - Refer to [Computel 2.0 SOP](https://docs.google.com/document/d/1gVZ7xYtBPW7v71oetAQkewMflmmAz8q_ja0ot0ISxG8/edit?tab=t.0) for detaied instructions on installing, running and extracting results by Computel
 - Run Computel on trimmed FASTQ files to generate CSV files with TRV counts/proportions
   
@@ -255,7 +256,9 @@ Check log files for alignment status, % of reads aligned and other stats.
 
 ## 8/19/2025 - 2PM-3PM
 ### Gene expression estimation using NDR 
-In order to estimate gene expression from cell-free DNA data a number of inputs are required. 
+- Refer to [this poster](https://drive.google.com/drive/u/0/folders/1_GYrCpPV-Xte8bCnGxjCXcE1P5xFF3eN) for background informaton.
+
+In order to estimate gene expression from cell-free DNA data a number of inputs are required:  
 - bam files
 - gene position bed file (standard for all samples) - Homo_sapiens-GCA_009914755.4-2022_07-genes-only.bed
 - transcript expression matrix with TPM values obtained from GTEx (standard for all samples) - GTEx_Analysis_v10_RSEMv1.3.3_transcripts_tpm.pkl.gz
