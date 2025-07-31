@@ -1,6 +1,6 @@
 # Contributors
 Primary contributor: Tatevik Jalatyan  
-Contributing authors: Anahit Yeghiazaryan, Davit Tareverdyan, Mher Kurghinyan  
+Contributing authors: Anahit Yeghiazaryan, Davit Tarverdyan, Mher Kurghinyan  
 
 # Contents  
 - [Project description](#project-description)
@@ -61,7 +61,66 @@ Contributing authors: Anahit Yeghiazaryan, Davit Tareverdyan, Mher Kurghinyan
 - [Bootcamp](#bootcamp)
   - [8/21/2025](#8212025)
   - [8/22/2025](#8222025)
-- [TODO](#todo)  
+
+# Contents  
+- [Project description](#project-description)
+- [Week 1](#week-1)
+  - [7/28/2025 - 3PM-5PM](#7282025---3pm-5pm)
+    - [Project presentation](#project-presentation)
+  - [7/29/2025 - 5PM-6PM](#7292025---5pm-6pm)
+    - [Molecular biology recap](#molecular-biology-recap)
+  - [7/30/2025 - 5PM-6PM](#7302025---5pm-6pm)
+    - [Statistics recap](#statistics-recap)
+  - [7/31/2025 - 5:30PM-6:30PM](#7312025---530pm-630pm)
+    - [HOMEWORK - TMM paper](#homework---tmm-paper)
+  - [Extra reading (optional)](#extra-reading-optional)
+- [Week 2](#week-2)
+  - [8/4/2025 - 4PM-5PM](#8042025---4pm-5pm)
+    - [Journal club](#journal-club)
+  - [8/6/2025 - 5PM-6PM](#8062025---5pm-6pm)
+    - [R plotting practice](#r-plotting-practice)
+  - [8/7/2025 - 5PM-6PM](#8072025---5pm-6pm)
+    - [Prepare project presentation](#prepare-project-presentation)
+- [Week 3](#week-3)
+  - [8/11/2025 - 4PM-6PM](#8112025---4pm-6pm)
+    - [Project presentation by students](#project-presentation-by-students)
+  - [8/12/2025 - 4PM-5PM](#8122025---4pm-5pm)
+    - [Dataset description](#dataset-description)
+    - [Initial quality check](#initial-quality-check)
+  - [8/13/2025 - 5PM-6PM](#8132025---5pm-6pm)
+    - [Quality and adapter trimming](#quality-and-adapter-trimming)
+  - [8/14/2025 - 4PM-5PM](#8142025---4pm-5pm)
+    - [Post-trimming quality check](#post-trimming-quality-check)
+  - [8/15/2025 - 4PM-5PM](#8152025---4pm-5pm)
+    - [Run Computel for TRVs](#run-computel-for-trvs)
+    - [TRV analysis on pre-generated table: within dataset comparisons](#trv-analysis-on-pre-generated-table-within-dataset-comparisons)
+
+- [Week 4](#week-4)
+  - [8/18/2025 - 11AM-12PM](#8182025---11am-12pm)
+    - [TRV analysis on pre-generated table: check for dataset batch effects (skip)](#trv-analysis-on-pre-generated-table-check-for-dataset-batch-effects-skip)
+  - [8/18/2025 - 12PM-1PM](#8182025---12pm-1pm)
+    - [TRV analysis on pre-generated table: between dataset comparisons (skip)](#trv-analysis-on-pre-generated-table-between-dataset-comparisons--skip)
+  - [8/18/2025 - 4PM-5PM](#8182025---4pm-5pm)
+    - TBD
+  - [8/19/2025 - 12PM-1PM](#8192025---12pm-1pm)
+    - [Alignment on reference genome](#alignment-on-reference-genome)
+    - [Reference genome index for alignment](#reference-genome-index-for-alignment)
+  - [8/19/2025 - 2PM-3PM](#8192025---2pm-3pm)
+    - [Gene expression estimation using NDR](#gene-expression-estimation-using-ndr)
+  - [8/19/2025 - 3PM-4PM](#8192025---3pm-4pm)
+    - [Run PSF using gene expression estimates for TMM genes](#run-psf-using-gene-expression-estimates-for-tmm-genes)
+  - [8/19/2025 - 4PM-5PM](#8192025---4pm-5pm)
+    - [Cluster samples by gene expression](#cluster-samples-by-gene-expression)
+  - [8/20/2025 - 12PM-1PM](#8202025---12pm-1pm)
+    - [Run PSF using cluster mean gene expression estimates for TMM genes](#run-psf-using-cluster-mean-gene-expression-estimates-for-tmm-genes)
+  - [8/20/2025 - 2PM-3PM](#8202025---2pm-3pm)
+    - [Perform combined analysis of ALT, TEL pathway activities and TRV abundances across samples](#perform-combined-analysis-of-alt-tel-pathway-activities-and-trv-abundances-across-samples)
+  - [8/20/2025 - 4PM-5PM](#8202025---4pm-5pm)
+    - [Perform combined analysis of ALT, TEL pathway activities and TRV abundances across samples (continued)](#perform-combined-analysis-of-alt-tel-pathway-activities-and-trv-abundances-across-samples-continued)
+
+- [Bootcamp](#bootcamp)
+  - [8/21/2025](#8212025)
+  - [8/22/2025](#8222025)
 
 
 ## Project description  
@@ -105,23 +164,14 @@ Promoters are fundamental DNA sequences located just upstream of genes that serv
     * [Youtube video: Hierarchical Clustering](https://www.youtube.com/watch?v=7xHsRkOdVwo) - 11 min watch  
 - Dimensionality reduction (PCA)
   * [PCA step by step](https://www.youtube.com/watch?v=FgakZw6K1QQ&t=5s) - 20 min watch
-  
 
-## 7/31/2025 - 5PM-6PM  
+## 7/31/2025 - 5:30PM-6:30PM  
+Finish the molecular biology and statistics recap tasks.
 
-### Cytoscape, PSF tutorials  
-- Cytoscape  
-  * [Cytoscape tutorial for networks](https://cytoscape.org/cytoscape-tutorials/presentations/network-analysis-ebi-2021.html#/)  
-    This tutotial will guide you through basic usage of cytoscape, network visualization and a hands-on experiecne. Just follow the arrows.  
-  * [Cytoscape installation tutorial](https://www.youtube.com/watch?v=YH-XXHhrv58)  
-  * [Cytoscape installation link](https://cytoscape.org/download.html)  
-- Pathway Signal Flow (PSF) basic usage  
-  * [PSFC user manual](https://big.sci.am/apps/psfc/PSFC_User_Manual_1.1.3.pdf)  
+### HOMEWORK - TMM paper  
+Read this paper and prepare a 45 min (+ 15 min Q&A) journal club presentation summarizing the aim of the research, methods and key findings to present on **8/4/2025 - 4PM-5PM**: 
+- [Telomere Maintenance Pathway Activity Analysis Enables Tissue- and Gene-Level Inferences (Nersisyan et al., 2021)](https://doi.org/10.3389/fgene.2021.662464)  
 
-### PSF, TMM practice  
-- Run PSF with an example gene count matrix for Telomere Maintenance Mechanism (TMM) pathways  
-  - Follow the steps of [TMM package user guide](https://big.sci.am/software/tmm/#userguide)    
-    Data: [TMM pathway (Data Sheet 4.ZIP)](https://www.frontiersin.org/journals/genetics/articles/10.3389/fgene.2021.662464/full#supplementary-material)  
 
 ## Extra reading (optional)
 - Telomere biology and cancer (e.g. telomere structure, maintenance, dysfunction in cancer)  
@@ -141,13 +191,9 @@ Promoters are fundamental DNA sequences located just upstream of genes that serv
 
 ## Week 2
 ## 8/4/2025 - 4PM-5PM  
-### TMM paper reading
-Read and discuss this paper    
-- [Telomere Maintenance Pathway Activity Analysis Enables Tissue- and Gene-Level Inferences (Nersisyan et al., 2021)](https://doi.org/10.3389/fgene.2021.662464)  
-
-**Homework**:  
-  Read this paper and prepare a 45 min (+ 15 min Q&A) journal club presentation for 8/18/2025 4PM-5PM:  
-  - [Inferring expressed genes by whole-genome sequencing of plasma DNA (Ulz et al., 2016)](https://doi.org/10.1038/ng.3648)  
+### Journal club  
+- Journal club presentation by students on this paper:  
+  [Telomere Maintenance Pathway Activity Analysis Enables Tissue- and Gene-Level Inferences (Nersisyan et al., 2021)](https://doi.org/10.3389/fgene.2021.662464)
 
 ## 8/6/2025 - 5PM-6PM  
 ### R plotting practice  
@@ -155,11 +201,11 @@ R plotting practice on synthetic TRV data
  - See [R_plotting.docx](https://docs.google.com/document/d/1CqiE7FmCI2azC8rbFXeCmdmtHB6TxT0w/edit) file for instructions  
 
 ## 8/7/2025 - 5PM-6PM  
-Prepare project presentation
+Prepare a 20 min (+ 10 min Q&A) project presentation for 8/11/2025 - 4PM-6PM.
 
 ## Week 3
 ## 8/11/2025 - 4PM-6PM  
-Project presentation by students
+Project presentation by students.
 
 ## 8/12/2025 - 4PM-5PM
 ### Dataset description 
@@ -225,14 +271,14 @@ For each dataset։
 
 ## Week 4
 ## 8/18/2025 - 11AM-12PM
-### TRV analysis on pre-generated table: check for dataset batch effects 
+### TRV analysis on pre-generated table: check for dataset batch effects (skip)
 Use only healthy samples of all available datasets for:  
 - Hierarchical Clustering 
 - PCoA + Euclidean distance + CLR, Permanova   
 - Try with and without canonical variant
 
 ## 8/18/2025 - 12PM-1PM
-### TRV analysis on pre-generated table: between dataset comparisons  
+### TRV analysis on pre-generated table: between dataset comparisons  (skip)
 Compare TRV percentages between healthy and cancer samples across multiple datasets, after checking that no significant batch effect is detected among healthy samples from different datasets. Use the same filtered TRV list obtained from the previous filtering step.  
 
 Group:
@@ -245,9 +291,7 @@ For each cancer (or other disease) type:
 
 
 ## 8/18/2025 - 4PM-5PM
-### Journal club  
-- Journal club presentation by students on this paper:  
-  [Inferring expressed genes by whole-genome sequencing of plasma DNA (Ulz et al., 2016)](https://doi.org/10.1038/ng.3648)
+TBD
 
 ## 8/19/2025 - 12PM-1PM
 ### Alignment on reference genome
@@ -290,6 +334,18 @@ NB: The script uses Ensembl gene and transcript IDs to perform all the calculati
 ## 8/19/2025 - 3PM-4PM
 ### Run PSF using gene expression estimates for TMM genes  
 Now that you have an expression estimate for each TMM gene, you can use them in Cytoscape to run PSF. 
+
+#### Use following tutorials to run PSF  
+- Cytoscape
+  * [Cytoscape installation link](https://cytoscape.org/download.html)
+  * [Cytoscape installation tutorial](https://www.youtube.com/watch?v=YH-XXHhrv58)  
+  * [Cytoscape tutorial for networks](https://cytoscape.org/cytoscape-tutorials/presentations/network-analysis-ebi-2021.html#/)  
+    This tutotial will guide you through basic usage of cytoscape, network visualization and a hands-on experience. Just follow the arrows.  
+- Pathway Signal Flow (PSF) basic usage  
+  * [PSFC user manual](https://big.sci.am/apps/psfc/PSFC_User_Manual_1.1.3.pdf)  
+- PSF for Telomere Maintenance Mechanism (TMM) pathways basic usage 
+  * [TMM package user guide](https://big.sci.am/software/tmm/#userguide)
+  
 NB: Entrez IDs are required for TMM analysis, so make sure to replace Ensembl IDs in coverage matrix to Entrez IDs. You can use the ncbi_to_ensembl_mapping.tsv file, which contains Ensembl IDs and their corresponding Entrez IDs. Examine the ALT and TEL pathways for each sample and compare their activity in healthy vs cancer samples.  
 
 Generate a scatter plot with TEL score on x-axis and ALT score on y-axis, with points showing samples and colored by group (cancer, healthy) to check how well the groups separate based on TEL, ALT pathway activity.  
