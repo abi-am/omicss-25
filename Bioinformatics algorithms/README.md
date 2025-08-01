@@ -37,7 +37,7 @@
   - [x] Day 3 slides
   - [x] Day 4 slides
   - [x] Day 5 slides
-  - [ ] Final touch
+  - [x] Final touch
 
   ### Tatev Jalatyan
   - [x] Day 1 practice problems
@@ -60,7 +60,7 @@
        - Select nearby seed matches
        - Do full alignment on the selected region(s)
        - Choose the best alignment
-  - [ ] Day 5 practice problems
+  - [x] Day 5 practice problems
     - Make conceptual questions on phylogenetic tree construction, usage, etc.
 
   ### Davit Hakobyan
