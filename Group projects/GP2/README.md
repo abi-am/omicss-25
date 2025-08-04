@@ -108,7 +108,7 @@ Finish the molecular biology and statistics recap tasks.
 
 ### HOMEWORK - TMM paper  
 Read this paper and prepare a 45 min (+ 15 min Q&A) journal club presentation summarizing the aim of the research, methods and key findings to present on **8/4/2025 - 4PM-5PM**: 
-- [Telomere Maintenance Pathway Activity Analysis Enables Tissue- and Gene-Level Inferences (Nersisyan et al., 2021)](https://doi.org/10.3389/fgene.2021.662464)  
+- [Telomere Maintenance Pathway Activity Analysis Enables Tissue- and Gene-Level Inferences (Nersisyan et al., 2021)](https://pmc.ncbi.nlm.nih.gov/articles/PMC8058386/)  
 
 
 ## Extra reading (optional)
