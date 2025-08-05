@@ -39,7 +39,7 @@
   - Summary of key findings and insights from readings:
   - Discussion of any challenges and questions raised during the first 2 weeks
   - Recap of practical skills learned (phyloseq, visualizations, EDA, Diversity analyses):
-  - Preview of what's coming in Week 3 [Slides](link)
+  - Preview of what's coming in Week 3
     `📅 07/08/2025 | 🕔 17:00–18:00`
 
 ## Week 3: Taxonomic Processing & Intro to Phyloseq
