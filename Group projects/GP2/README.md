@@ -139,7 +139,7 @@ R plotting practice on synthetic TRV data
  - See [R_plotting.docx](https://docs.google.com/document/d/1CqiE7FmCI2azC8rbFXeCmdmtHB6TxT0w/edit) file for instructions  
 
 ## 8/7/2025 - 5PM-6PM  
-Prepare a 20 min (+ 10 min Q&A) project presentation for 8/11/2025 - 4PM-6PM.
+Prepare a 10-12 min project presentation for 8/11/2025 - 4PM-6PM.
 
 ## Week 3
 ## 8/11/2025 - 4PM-6PM  
