@@ -27,7 +27,7 @@
   - Group discussion sessions for each reading
   - Compiling a shared glossary of key terms and concepts (a [Google doc](https://docs.google.com/document/d/1ZtNl5lPHTRIUPUAoNY7RFSjA7JTCTko8gS1dTk8QU1Y/edit?usp=sharing) _Note: There are two tabs in the doc for the introductory reading and for the term glossary respectively_ )
 
-## Week 2: Taxonomic Processing & Intro to Phyloseq
+## Week 2: Exploratory Data Analysis & Diversity Metrics
 - **Working with Microbial Abundance Data, EDA & Methods:**  
   - Introduction to the **phyloseq** R package [Slides](https://docs.google.com/presentation/d/1bDjOMx3mNIyG0O46FVl31WkVAiybSSEp-FFuMLnD2vs/edit?usp=sharing)
     [Exercises](https://drive.google.com/file/d/1JtJ09bz3chn3D9QUjLXnD7gTWxS0NhoQ/view?usp=drive_link)
@@ -42,7 +42,7 @@
   - Preview of what's coming in Week 3 [Slides](link)
     `📅 07/08/2025 | 🕔 17:00–18:00`
 
-## Week 3: Exploratory Data Analysis & Diversity Metrics
+## Week 3: Taxonomic Processing & Intro to Phyloseq
 - **Project Presentations:**
   `📅 11/08/2025 | 🕔 16:00–18:00`
 - **Kraken2 and Bracken** for taxonomic classification and abundance estimation| [Slides](https://docs.google.com/presentation/d/1VVVUJF-MHUnwJs6QUgIrOI6gI5qSQfd5l3i2ynaeTBs/edit?usp=sharing)
