@@ -151,7 +151,7 @@ Project presentation by students.
 One of the datasets for this project comes from [this paper](https://doi.org/10.1016/j.xcrm.2023.101281). We will use cfDNA data from 10 samples (5 colorectal cancer (CRC) patients and 5 healthy donors) to perform raw NGS data processing steps including quality control, trimming and alignment.   
 
 Raw FASTQ files with sequencing reads are located here: `/mnt/proj/omicss25/gp2/ds-23_gastrointestinal/common/fq_renamed`  
-Sample metadata table is located [here](https://docs.google.com/spreadsheets/d/1mgSEbhlcq2JeOBCpB2Ksu-gm89gW8pmp4pD4jkiMh9g/edit?usp=sharing)  
+Sample metadata table is located [here](https://docs.google.com/spreadsheets/d/1USKgJ9OnbJ2-ICiB7btrKTYcY18Twn-FVCnDWzCoq_8/edit?gid=0#gid=0)   
 
 ### Initial quality check
 Create script		`src/fastqc.sh` to run FASTQC on files in `fq_renamed` directory storing outputs in `fastqc` directory.  
