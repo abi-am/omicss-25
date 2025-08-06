@@ -154,6 +154,8 @@ Raw FASTQ files with sequencing reads are located here: `/mnt/proj/omicss25/gp2/
 Sample metadata table is located [here](https://docs.google.com/spreadsheets/d/1USKgJ9OnbJ2-ICiB7btrKTYcY18Twn-FVCnDWzCoq_8/edit?gid=0#gid=0)   
 
 ### Initial quality check
+Use `/mnt/proj/omicss25/gp2/ds-23_gastrointestinal/common` as the working directory.
+
 Create script		`src/fastqc.sh` to run FASTQC on files in `fq_renamed` directory storing outputs in `fastqc` directory.  
 Create script `src/multiqc.sh` to run MULTIQC on files in `fastqc` directory storing outputs in `multiqc` directory.  
 
