@@ -38,13 +38,31 @@ You may view MULTIQC report at multiqc_report/multiqc_report.html.
 ### 5. Trimming with cutadapt
 
 Finally, based on quality inspection of ```multiqc_report.html```, we will decide on parameters for trimming with cutadapt.  
-```mkdir fastq_trimmed_samples```  
-```cutadapt ...``` [in progress]   
+First make a folder with ```mkdir fastq_trimmed_samples```. This is where the trimmed output files will be saved. 
+Then you can perform trimming with ```cutadapt```. 
+For single end files the command looks like this: 
+```bash
+cutadapt -a <adapter_sequence> -u <trim_5p> -u <-trim_3p> -o <output_file> <input_file>
+```
+For paired end files the command looks like this: 
+```bash
+cutadapt -a <adapter_sequence_R1> -A <adapter_sequence_R2> \ 
+            -u <trim_5p_R1> -U <trim_5p_R2> \ 
+            -u <-trim_3p_R1> -U <-trim_3p_R2> \ 
+            -o <output_file_R1> -p <output_file_R2> \ 
+            <input_file_R1> <input_file_R2>
+```
+Notice how there are different parameters for read 1s and read 2s, lowercase for read 1s and uppercase for read 2s.
+
+Below are provided the most common adapter sequences, which you can use for your practice. Understand from your fasqc results which one(s) you need and just copy and paste it in the command. 
+* Illumina universal adapter (most common): ```AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC``` 
+* Illumina Nextera adapter: ```CTGTCTCTTATACACATCT``` 
+* TruSeq adapter: ```AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT``` 
 
 ### 6. Repeat QC steps 
 
 As for the last step, after the trimming we need to inspect the quality once again to make sure that we are satisfied with the data quality  
-run '''fastqc''' and ```multiqc''' again to ensure that trimming was successful  
+run ```fastqc``` and ```multiqc``` again to ensure that trimming was successful  
 
 ### Additional materials
 For more advanced pipelines and trimming steps, see:  
