@@ -13,7 +13,7 @@ Now, copy the sample files from ```/mnt/proj/omicss25/ngs_data_analysis/fastqc_p
 ```bash
 cp /mnt/proj/omicss25/ngs_data_analysis/fastqc_practice/data/* fastq_samples
 ```
-* - specifies to copy all the files in the given directory
+```*``` - specifies to copy all the files in the given directory
  
 ### 2. Run FastQC on all files  
 
