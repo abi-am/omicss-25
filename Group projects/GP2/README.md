@@ -197,7 +197,7 @@ Check if any quality issues persist to perform trimming again if needed.
 - Run Computel on trimmed FASTQ files to generate CSV files with TRV counts/proportions
   
 ### TRV analysis on pre-generated table: within dataset comparisons 
-Use the file `/mnt/proj/omicss25/gp2/unified/trv/merged/trv_abs.csv` for TRV counts and `/mnt/proj/omicss25/gp2/unified/trv/merged/trv_compositional.csv` for TRV percentages across samples derived from multiple datasets. Both files include sample metadata in the first 8 columns: `origin`, `timepoint`, `tissue-type`, `gender`, `age`, `patient_name`, `state`, and `full_name`. The remaining columns correspond to TRVs. Each row represents one sample, uniquely identified by the `full_name` column.  
+Use the file `/mnt/proj/omicss25/gp2/trv_analysis/csv/trv_abs.csv` for TRV counts and `/mnt/proj/omicss25/gp2/trv_analysis/csv/trv_compositional.csv` for TRV percentages across samples derived from multiple datasets. Both files include sample metadata in the first 8 columns: `origin`, `timepoint`, `tissue-type`, `gender`, `age`, `patient_name`, `state`, and `full_name`. The remaining columns correspond to TRVs. Each row represents one sample, uniquely identified by the `full_name` column.  
 
 #### Filter TRVs  
 Use these files to obtain a filtered list of TRVs with the following filtering criteria:  
