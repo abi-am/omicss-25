@@ -13,7 +13,7 @@ Now, copy the sample files from ```/mnt/proj/omicss25/ngs_data_analysis/fastqc_p
 ```bash
 cp /mnt/proj/omicss25/ngs_data_analysis/fastqc_practice/data/* fastq_samples
 ```
-First input specified where __from__ to copy and the second input specifies where __to__ 
+First input specified _where from_ to copy and the second input specifies _where to_   
 ```*``` - specifies to copy all the files in the given directory
 
  
