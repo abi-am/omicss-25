@@ -1,6 +1,6 @@
 This sample pipline will introduce you to performing quality control with FASTQC and more.  
 
-First create directories to store your files  
+First, let's create directories to store your files  
 
 ### 1. Create directories to store inputs and outputs
 ```bash
@@ -8,10 +8,11 @@ mkdir fastq_samples
 mkdir fastqc_reports
 ```
 
-Now, upload the files from ```sample inputs``` on GtiHub to ```fastq_samples``` folder on server  
+Now, copy the sample files from ```/mnt/proj/omicss25/ngs_data_analysis/fastqc_practice/data``` to ```fastq_samples``` folder on server  
 
-```fastq_samples/```: place your raw FASTQ files here (e.g., via upload or cp).  
-Copy your ```*.fastq.gz``` files into fastq_samples ``` cp *.fastq.gz /path/fastq_samples ```  
+```bash
+cp /mnt/proj/omicss25/ngs_data_analysis/fastqc_practice/data/* fastq_samples
+```
 
 ### 2. Run FastQC on all files  
 
@@ -21,7 +22,7 @@ Moving forward to running the ```fastqc``` with the command below which will pro
 
 ### 3. Inspect reports  
 
-Open ```fastqc_reports/sample1_fastqc.html``` in a browser to see the report and let's start analyzing our outputs.   
+Open ```fastqc_reports/some_sample_fastqc.html``` in a browser to see the report and let's start analyzing our outputs.   
 
 ### 4. Aggregate with MultiQC  
 
