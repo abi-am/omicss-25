@@ -8,7 +8,8 @@ We will demonstrate the full pipeline using one sample as an example. You are ex
 
 ## Input Data
 
-You are given **paired-end FASTQ files** for two samples:
+You are given **paired-end FASTQ files** for two samples, the files are located in the folloing folder on the server:
+**/mnt/proj/omicss25/ngs_data_analysis/alignment_samtools/data**
 
 - `wes46_chr21_chr16_R1.fastq`, `wes46_chr21_chr16_R2.fastq` — *Sample 1*
 - `wes78_chr21_chr16_R1.fastq`, `wes78_chr21_chr16_R2.fastq` — *Sample 2*
@@ -29,7 +30,8 @@ mkdir -p data/bam data/bam_clean data/gvcf data/vcf
 We will use the GRCh38 reference genome, already prepared with the required index files for both BWA and GATK:
 
 > **Reference indexed for BWA and GATK:**  
-> `/full_path`  
+> `/mnt/proj/omicss25/ngs_data_analysis/alignment_samtools/ref_genome`  
+
 
 ---
 
@@ -40,7 +42,7 @@ You will use the following tools throughout this tutorial:
 - `bwa` — for sequence alignment  
 - `samtools` — for sorting BAM files  
 - `gatk` — for post-processing, variant calling, and genotyping  
-    Path to the tool **/mnt/proj/vine/shared_files/soft/gatk-4.2.6.1/gatk**
+    Path to the tool **/mnt/proj/omicss25/soft/gatk-4.2.6.1/gatk**
 
 ---
 
@@ -110,6 +112,12 @@ gatk HaplotypeCaller \
 
 ### Step 5: Combine GVCFs
 Once you have GVCF files for both samples, combine them into a single file for joint genotyping:
+
+⚠️ **NOTE:** This command may take quite a long time to run.  
+You can start it to make sure your code works correctly, but you don't need to let it finish.  
+The final output files are already available at:  
+`/mnt/proj/omicss25/ngs_data_analysis/variant_calling/data/gvcf`  
+You can copy them into your working directory if needed.
 
 ``` bash
 gatk CombineGVCFs \
