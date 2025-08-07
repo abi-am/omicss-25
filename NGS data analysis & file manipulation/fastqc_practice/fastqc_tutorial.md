@@ -25,7 +25,13 @@ Moving forward to running the ```fastqc``` with the command below which will pro
 
 ### 3. Inspect reports  
 
-Open ```fastqc_reports/some_sample_fastqc.html``` in a browser to see the report and let's start analyzing our outputs.   
+Open ```fastqc_reports/some_sample_fastqc.html``` in a browser to see the report. 
+
+If you are using MobaXterm on Widnows, on the left you can see SSH Browser (SFTP) <img width="20" height="22" alt="image" src="https://github.com/user-attachments/assets/ec23647e-d5d0-4cb4-bfed-211c7215edf2" />, where the files are listed visually. Make sure you check the *Follow terminal folder* box in the bottom so that it follows your activity in terminal. You can right click on the FASTQC .html file and click *Open with default program*.  
+
+If you are a Mac user you can execute this command in the terminal ```python -m http.server 8080```, then open your browser (e.g. Google), type *comp0.genomic.abi.am:8080* . Now you can see your files like you would see them in your local folder. Click on the desired FASTQC .html file to open it. After you are finished make sure to press **CTRL C** in the terminal to kill the previous command.
+ 
+Now let's do the analyzing.   
 
 ### 4. Aggregate with MultiQC  
 
@@ -33,7 +39,7 @@ To inspect the bigger picture of the dataset's quality, aggregate the results us
 ```mkdir multiqc_report```  
 ```multiqc fastqc_reports -o multiqc_report```  
 
-You may view MULTIQC report at multiqc_report/multiqc_report.html.  
+You may view MULTIQC report at multiqc_report/multiqc_report.html the same way you did with FASTQC reports.  
 
 ### 5. Trimming with cutadapt
 
@@ -54,7 +60,7 @@ cutadapt -a <adapter_sequence_R1> -A <adapter_sequence_R2> \
 ```
 Notice how there are different parameters for read 1s and read 2s, lowercase for read 1s and uppercase for read 2s.
 
-Below are provided the most common adapter sequences, which you can use for your practice. Understand from your fasqc results which one(s) you need and just copy and paste it in the command. 
+Below are provided the most common adapter sequences, which you can use for your practice. Understand from your fastqc results which one(s) you need and just copy and paste it in the command. 
 * Illumina universal adapter (most common): ```AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC``` 
 * Illumina Nextera adapter: ```CTGTCTCTTATACACATCT``` 
 * TruSeq adapter: ```AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT``` 
