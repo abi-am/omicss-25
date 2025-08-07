@@ -66,6 +66,7 @@ Explonation:
 This command 1st unzips .gz file. Then we get rid of lines that start with "#" as those are metadata headers and we dont need them in this task. Then we cut only 3rd column as it stores names of the genomic regions, we sort them and keep unique ones. The command uniq -c not only print out unique genomic regions but also counts how many from each we have. Sorting ot essential here because uniq -c command can work only on consecutive dublicate lines. Sorting ensures that all different genetic regions are grouped together.
 -->
 
+---
 ### Exercise 3
 Find a gene with ID=ENSG00000210196.2 in .gff3 file. On what chromosome it is located?
 
@@ -80,6 +81,7 @@ Explonation:
 This command 1st unzips .gz file. Then it searches and keeps the line that has "ID=ENSG00000210196.2" in it. In the end it print just 1st column as it contains chromosome information. 
 -->
 
+---
 ### Exercise 4
 For this exercise you are going to work with .gtf file. First take exons and genes and store them in seperate .gtf files. Sort those files. Find out how they overlap. Redirect the output to the seperate gtf file so it would be easier to analyze it.
 
@@ -101,7 +103,7 @@ These commands extract gene and exon entries from a GTF file, sort them, and the
 
 -->
 
-
+---
 ### Exercise 5
 See how many genomic regions are located on forward and how many on reverese strand in .bed file.
 
@@ -117,6 +119,7 @@ Explonation:
 This command 1st unzips .gz file. Then it searches and keeps the lines that have "+" in them and counts how many are there. Same with "-". 
 -->
 
+---
 ### Exercise 6
 How many unique chromosomes you have in .bed file?
 
@@ -131,6 +134,7 @@ Explonation:
 This command 1st uncomprasses .gz file. Then it extracts the first column (which usually contains chromosome names), sorts them, removes duplicates, and then counts how many unique entries there are. 
 -->
 
+---
 ### Exercise 7
 Find on what strand the genomic region with name "ENST00000615165.1" in .bed file is located. 
 
