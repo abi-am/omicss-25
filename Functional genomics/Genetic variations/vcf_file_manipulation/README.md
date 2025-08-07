@@ -5,7 +5,7 @@ In this set of exercises, you will use **PLINK** to filter and explore genetic v
 ## 📂 VCF Files Used in These Exercises
 
 The VCF files used in these exercises are located on the server at:
- > /path
+ > `/mnt/proj/omicss25/ngs_data_analysis/variant_calling/data/vcf`
 
 
 - `filtered_snps.vcf` — contains only SNP (single nucleotide polymorphism) variants  
