@@ -69,11 +69,13 @@ Below is the **example pipeline using `{sample}` as a placeholder** for your sam
 Align paired-end reads using BWA-MEM with read group information (`@RG`), and sort the output BAM with `samtools`.
 
 ```bash
-bwa mem -t 4 -R "@RG\tID:{sample}\tLB:{sample}\tSM:{sample}\tPL:ILLUMINA" \
+data_dir='/mnt/proj/omicss25/ngs_data_analysis/alignment_samtools/data'
+
+bwa mem -t 4 -R "@RG\tID:${sample}\tLB:${sample}\tSM:${sample}\tPL:ILLUMINA" \
 /mnt/db/genomes/homo_sapiens/GRCh38.p14/bwa_mem_0.7.17-r1188/GCF_000001405.40_GRCh38.p14_genomic.fna \
-data/fastq/{sample}_chr21_chr16_R1.fastq \
-data/fastq/{sample}_chr21_chr16_R2.fastq | \
-samtools sort -o data/bam/{sample}_sorted.bam -
+${data_dir}/${sample}_chr21_chr16_R1.fastq \
+${data_dir}/${sample}_chr21_chr16_R2.fastq | \
+samtools sort -o data/bam/${sample}_sorted.bam -
 
 ```
 
@@ -81,9 +83,11 @@ samtools sort -o data/bam/{sample}_sorted.bam -
 Although we used samtools sort above, it's recommended to re-sort the BAM using GATK’s SortSam to ensure metadata compatibility.
 
 ```bash
-gatk SortSam \
-  -I data/bam/{sample}_sorted.bam \
-  -O data/bam_clean/{sample}_sorted.bam \
+gatk_bin=/mnt/proj/omicss25/soft/gatk-4.2.6.1/gatk
+
+${gatk_bin} SortSam \
+  -I data/bam/${sample}_sorted.bam \
+  -O data/bam_clean/${sample}_sorted.bam \
   --SORT_ORDER coordinate
 ```
 
@@ -92,10 +96,10 @@ Use GATK's MarkDuplicates to identify and flag duplicate reads. This step is ess
 
 
 ```bash
-gatk MarkDuplicates \
-  -I data/bam_clean/{sample}_sorted.bam \
-  -O data/bam_clean/{sample}_dedup.bam \
-  -M data/bam_clean/{sample}_dedup_metrics.txt \
+${gatk_bin} MarkDuplicates \
+  -I data/bam_clean/${sample}_sorted.bam \
+  -O data/bam_clean/${sample}_dedup.bam \
+  -M data/bam_clean/${sample}_dedup_metrics.txt \
   --CREATE_INDEX true
 ```
 
@@ -103,10 +107,10 @@ gatk MarkDuplicates \
 Generate a GVCF file for each sample using HaplotypeCaller. This mode enables joint genotyping in the next steps.
 
 ```bash
-gatk HaplotypeCaller \
+${gatk_bin} HaplotypeCaller \
   -R /mnt/db/genomes/homo_sapiens/GRCh38.p14/picard_3.4.0_dictionary/GCF_000001405.40_GRCh38.p14_genomic.fna \
-  -I data/bam_clean/{sample}_dedup.bam \
-  -O data/gvcf/{sample}.g.vcf.gz \
+  -I data/bam_clean/${sample}_dedup.bam \
+  -O data/gvcf/${sample}.g.vcf.gz \
   -ERC GVCF
 ```
 
@@ -120,7 +124,7 @@ The final output files are already available at:
 You can copy them into your working directory if needed.
 
 ``` bash
-gatk CombineGVCFs \
+${gatk_bin} CombineGVCFs \
   -R /mnt/db/genomes/homo_sapiens/GRCh38.p14/picard_3.4.0_dictionary/GCF_000001405.40_GRCh38.p14_genomic.fna \
   --variant data/gvcf/wes46.g.vcf.gz \
   --variant data/gvcf/wes78.g.vcf.gz \
@@ -131,7 +135,7 @@ gatk CombineGVCFs \
 Perform joint genotyping to produce the final multi-sample VCF file:
 
 ```bash
-gatk GenotypeGVCFs \
+${gatk_bin} GenotypeGVCFs \
   -R /mnt/db/genomes/homo_sapiens/GRCh38.p14/picard_3.4.0_dictionary/GCF_000001405.40_GRCh38.p14_genomic.fna \
   -V data/gvcf/combined.g.vcf.gz \
   -O data/vcf/genotyped_variants.vcf.gz
@@ -146,7 +150,7 @@ The raw VCF file (raw_variants.vcf) contains both SNPs and INDELs. These should 
 
 For SNPs:
 ```bash
-gatk SelectVariants \
+${gatk_bin} SelectVariants \
   -R /mnt/db/genomes/homo_sapiens/GRCh38.p14/picard_3.4.0_dictionary/GCF_000001405.40_GRCh38.p14_genomic.fna \
   -V data/vcf/raw_variants.vcf \
   --select-type-to-include SNP \
@@ -155,7 +159,7 @@ gatk SelectVariants \
 
 For INDELs:
 ```bash
-gatk SelectVariants \
+${gatk_bin} SelectVariants \
   -R /mnt/db/genomes/homo_sapiens/GRCh38.p14/picard_3.4.0_dictionary/GCF_000001405.40_GRCh38.p14_genomic.fna \
   -V data/vcf/raw_variants.vcf \
   --select-type-to-include INDEL \
@@ -179,7 +183,7 @@ In the default parameters, the most commonly used filters for SNPs and INDELs ar
 
 SNPs:
 ```bash
-gatk VariantFiltration \
+${gatk_bin} VariantFiltration \
   -R /mnt/db/genomes/homo_sapiens/GRCh38.p14/picard_3.4.0_dictionary/GCF_000001405.40_GRCh38.p14_genomic.fna \
   -V data/vcf/snp_variants.vcf \
   -filter "QD < 2.0" --filter-name "QD2" \
@@ -190,7 +194,7 @@ gatk VariantFiltration \
 ```
 INDELs:
 ```bash
-gatk VariantFiltration \
+${gatk_bin} VariantFiltration \
   -R /mnt/db/genomes/homo_sapiens/GRCh38.p14/picard_3.4.0_dictionary/GCF_000001405.40_GRCh38.p14_genomic.fna \
   -V data/vcf/indel_variants.vcf \
   -filter "QD < 2.0" --filter-name "QD2" \
@@ -202,3 +206,4 @@ gatk VariantFiltration \
 ```
 
 #### End of Pipeline ####
+
