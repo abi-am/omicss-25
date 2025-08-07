@@ -5,6 +5,7 @@
   * Overview
   * Background
   * Data preprocessing
+  * Principal Component Analysis
   * ADMIXTURE
   * Phylogenetic analysis
     
@@ -39,7 +40,7 @@ The data for this project comes from [this publication](https://www.science.org/
 You can familiarise yourself with the samples, their regions of origin, genetic background and phenotypes by studying the metadata table here:   
 
 ```
-/mnt/proj/vine/shared_files/data/metadata/cauc_arm_grape.metadata.tsv
+/mnt/proj/omicss25/gp3/metadata/cauc_arm_grape.metadata.tsv
 ```
 
 | **Field**                      | **Description**                                                                                                                               |
@@ -61,6 +62,8 @@ The data is provided to you as VCF files. These files were created from sequenci
 
 ```
 # path to the data
+
+/mnt/proj/omicss25/gp3/data
 ```
 
 Learn more about the VCF file format and what each field represents [here](https://samtools.github.io/hts-specs/VCFv4.2.pdf).  
