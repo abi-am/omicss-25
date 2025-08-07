@@ -64,7 +64,7 @@ In the **FASTQ** section, you will practice:
 *Why:* Alphabetical ordering can aid in merging datasets, detecting duplicates, or preparing for comparative set operations.  
 *Suggested command:* use `grep` piped to `sort`  
 
-### **EXERCISE 8: Show the length of each read**  
+### **EXERCISE 8: Show the length of each read**  (Optional)  
 *What needs to be done:* For each sequence record, calculate and print the number of bases alongside its header.  
 *Why:* Verifies read length uniformity (important for certain analyses) and helps identify outliers or partial reads.  
 *Suggested command:* use `awk`  
