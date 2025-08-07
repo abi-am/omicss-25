@@ -76,7 +76,7 @@ Learn more about the VCF file format and what each field represents [here](https
 
 For any scripts engaging the GATK tooks, refer to the path here:
 ```
-/mnt/proj/vine/user_projects/shengchang/soft/gatk-4.1.8.1/gatk
+/mnt/proj/omicss25/soft/gatk-4.1.8.1/gatk
 ```
 
 We started with sequencing data for individual samples and used GATK’s [HaplotypeCaller](https://gatk.broadinstitute.org/hc/en-us/articles/360037225632-HaplotypeCaller) to perform variant calling and identify reference and alternative alleles. The files it outputs are gVCF files (genomic VCF). This format includes not only the variant sites but contains information about non-variant regions as well, so the entire genome is covered. 
