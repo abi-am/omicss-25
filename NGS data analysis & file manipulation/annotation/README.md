@@ -24,7 +24,7 @@ Together, these formats enable accurate annotation, sharing, and analysis of gen
  **Now lets try to  solve some practical exercises**
  All the files for the practice are located in the following directory 
  ```
-    /mnt/proj/vine/shared_files/omicss_25/annotation/data/
+    /mnt/proj/omicss25/ngs_data_analysis/annotation_practice/data/
 ```
 Before starting the exersices you can play a little with those files, see how they are structured and what each column means.
 
