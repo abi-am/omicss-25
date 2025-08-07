@@ -52,7 +52,7 @@ Follow this setup guide:
 You can connect directly using your terminal. Use the following command:
 
 ```bash
-ssh -l yourusername@comp1.abi.am
+ssh yourusername@comp0.genomic.abi.am
 ```
 ⚠️ **Note:** Replace `yourusername` with the username you received via email.
 
