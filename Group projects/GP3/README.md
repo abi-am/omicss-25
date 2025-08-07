@@ -138,7 +138,7 @@ This command will output `.eigenval` (eigenvalues, variance explained by each PC
 
 For any scripts engaging the ADMIXTURE tool, refer to the path here:
 ```
-/mnt/proj/vine/shared_files/soft/admixture_linux-1.3.0/admixture
+/mnt/proj/omicss25/soft/admixture_linux-1.3.0/admixture
 ```
   ## Step 1 (Filtering)
   
