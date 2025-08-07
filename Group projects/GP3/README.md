@@ -104,6 +104,31 @@ After filtering is complete, the resulting VCF file needs to be indexed. 
 
 ## Population Genomics
 
+### Principal Component Analysis  
+
+This is a preliminary step that will help us explore our data and might be useful for defining sample groupings down the line. **PCA** is a dimensionality reduction method. Our data contains many thousands of SNPs, which makes it high-dimentional – we wouldn't be able to make sense of the similarities and differences between our samples just by looking at the VCF file. Instead, we will perform clustering using PCA, and then visualise it to get a nice, inetrpretable representation of our dataset.  
+
+If you're new to PCA, consider watching these videos: an [explanation](https://youtu.be/HMOI_lkzW08?si=gRvIc-k7yNK6HDH1) of the concept and a more detailed [tutorial](https://youtu.be/FgakZw6K1QQ?si=YCuLSSm8LHvFYzix) on how it is performed.   
+
+We will perform PCA using plink (see the dimensionality reduction section of the [plink manual](https://www.cog-genomics.org/plink/1.9/strat)).  
+
+> Remember that plink has its own preferred formats and will not run directly on your VCF file.  
+
+> The data used for PCA needs to be quality-controlled, and outliers and missingness need to be handled before you start.  
+
+```
+# N tells plink how many PCs to calculate
+# omit this parameter to get the default 20 
+
+plink --bfile caucasian_grape --pca [N] --out caucasian_grape_pca
+```
+
+This command will output `.eigenval` (eigenvalues, variance explained by each PC), `.eigenvec` (eigenvectors, principal component scores for each individual; in this file, each row is a sample with its projected coordinates on each principal component) and a `log` file.  
+
+ Visualize the PCA results with your favourite plotting tools by plotting PCs against each other – it's nothing more complicated than a scatter plot. You can also use PCs as covariates in association tests to correct for stratification.   
+ 
+> What can you tell from looking at the clustering? Can the principal components themselves be interpreted?
+
 ### ADMIXTURE 
 
   The **ADMIXTURE** is a computational program used in population genetics to estimate the ancestry composition of individuals based on their genetic data. Given genotype data from multiple individuals, the tool models each individual's genome as having originated from a predefined number of ancestral populations (often denoted as K). The program uses a statistical algorithm to estimate, for each individual, the proportion of their genome that comes from each of these ancestral populations. For example, if K = 3, an individual might have 70% ancestry from population 1, 25% from population 2, and 5% from population 3. This shows that their genetic background is mostly from the first population but also includes contributions from the others.
