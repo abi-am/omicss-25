@@ -149,7 +149,7 @@ ${gatk_bin} GenotypeGVCFs \
 ### Step 7: Filter variants
 
 #### Separating SNPs and INDELs
-The raw VCF file (raw_variants.vcf) contains both SNPs and INDELs. These should be separated before applying different filtering criteria.
+The raw VCF file (genotyped_variants.vcf.gz) contains both SNPs and INDELs. These should be separated before applying different filtering criteria.
 
 For SNPs:
 ```bash
@@ -164,7 +164,7 @@ For INDELs:
 ```bash
 ${gatk_bin} SelectVariants \
   -R ${ref} \
-  -V data/vcf/raw_variants.vcf \
+  -V data/vcf/genotyped_variants.vcf.gz \
   --select-type-to-include INDEL \
   -O data/vcf/indel_variants.vcf
 
