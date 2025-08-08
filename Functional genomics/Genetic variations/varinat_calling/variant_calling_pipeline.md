@@ -106,8 +106,10 @@ ${gatk_bin} MarkDuplicates \
 ### Step 4: Variant Calling (HaplotypeCaller in GVCF mode)
 Generate a GVCF file for each sample using HaplotypeCaller. This mode enables joint genotyping in the next steps.
 
+> If you're using slurm, make sure the memory you allocate there matches the memory you allocate within the script.
+
 ```bash
-${gatk_bin} HaplotypeCaller \
+${gatk_bin} --java-options "-Xmx16g" HaplotypeCaller \
   -R /mnt/db/genomes/homo_sapiens/GRCh38.p14/picard_3.4.0_dictionary/GCF_000001405.40_GRCh38.p14_genomic.fna \
   -I data/bam_clean/${sample}_dedup.bam \
   -O data/gvcf/${sample}.g.vcf.gz \
@@ -206,4 +208,5 @@ ${gatk_bin} VariantFiltration \
 ```
 
 #### End of Pipeline ####
+
 
