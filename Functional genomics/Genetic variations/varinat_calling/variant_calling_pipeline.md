@@ -69,10 +69,11 @@ Below is the **example pipeline using `{sample}` as a placeholder** for your sam
 Align paired-end reads using BWA-MEM with read group information (`@RG`), and sort the output BAM with `samtools`.
 
 ```bash
-data_dir='/mnt/proj/omicss25/ngs_data_analysis/alignment_samtools/data'
+data_dir='/mnt/proj/omicss25/ngs_data_analysis/alignment_samtools/data' 
+ref='/mnt/proj/omicss25/ngs_data_analysis/alignment_samtools/ref_genome/hg38.fa'
 
 bwa mem -t 4 -R "@RG\tID:${sample}\tLB:${sample}\tSM:${sample}\tPL:ILLUMINA" \
-/mnt/db/genomes/homo_sapiens/GRCh38.p14/bwa_mem_0.7.17-r1188/GCF_000001405.40_GRCh38.p14_genomic.fna \
+${ref} \
 ${data_dir}/${sample}_chr21_chr16_R1.fastq \
 ${data_dir}/${sample}_chr21_chr16_R2.fastq | \
 samtools sort -o data/bam/${sample}_sorted.bam -
@@ -110,7 +111,7 @@ Generate a GVCF file for each sample using HaplotypeCaller. This mode enables jo
 
 ```bash
 ${gatk_bin} --java-options "-Xmx16g" HaplotypeCaller \
-  -R /mnt/db/genomes/homo_sapiens/GRCh38.p14/picard_3.4.0_dictionary/GCF_000001405.40_GRCh38.p14_genomic.fna \
+  -R ${ref} \
   -I data/bam_clean/${sample}_dedup.bam \
   -O data/gvcf/${sample}.g.vcf.gz \
   -ERC GVCF
@@ -127,7 +128,7 @@ You can copy them into your working directory if needed.
 
 ``` bash
 ${gatk_bin} CombineGVCFs \
-  -R /mnt/db/genomes/homo_sapiens/GRCh38.p14/picard_3.4.0_dictionary/GCF_000001405.40_GRCh38.p14_genomic.fna \
+  -R ${ref} \
   --variant data/gvcf/wes46.g.vcf.gz \
   --variant data/gvcf/wes78.g.vcf.gz \
   -O data/gvcf/combined.g.vcf.gz
@@ -138,7 +139,7 @@ Perform joint genotyping to produce the final multi-sample VCF file:
 
 ```bash
 ${gatk_bin} GenotypeGVCFs \
-  -R /mnt/db/genomes/homo_sapiens/GRCh38.p14/picard_3.4.0_dictionary/GCF_000001405.40_GRCh38.p14_genomic.fna \
+  -R ${ref} \
   -V data/gvcf/combined.g.vcf.gz \
   -O data/vcf/genotyped_variants.vcf.gz
 
@@ -153,8 +154,8 @@ The raw VCF file (raw_variants.vcf) contains both SNPs and INDELs. These should 
 For SNPs:
 ```bash
 ${gatk_bin} SelectVariants \
-  -R /mnt/db/genomes/homo_sapiens/GRCh38.p14/picard_3.4.0_dictionary/GCF_000001405.40_GRCh38.p14_genomic.fna \
-  -V data/vcf/raw_variants.vcf \
+  -R ${ref} \
+  -V data/vcf/genotyped_variants.vcf.gz \
   --select-type-to-include SNP \
   -O data/vcf/snp_variants.vcf
 ```
@@ -162,7 +163,7 @@ ${gatk_bin} SelectVariants \
 For INDELs:
 ```bash
 ${gatk_bin} SelectVariants \
-  -R /mnt/db/genomes/homo_sapiens/GRCh38.p14/picard_3.4.0_dictionary/GCF_000001405.40_GRCh38.p14_genomic.fna \
+  -R ${ref} \
   -V data/vcf/raw_variants.vcf \
   --select-type-to-include INDEL \
   -O data/vcf/indel_variants.vcf
@@ -186,7 +187,7 @@ In the default parameters, the most commonly used filters for SNPs and INDELs ar
 SNPs:
 ```bash
 ${gatk_bin} VariantFiltration \
-  -R /mnt/db/genomes/homo_sapiens/GRCh38.p14/picard_3.4.0_dictionary/GCF_000001405.40_GRCh38.p14_genomic.fna \
+  -R ${ref} \
   -V data/vcf/snp_variants.vcf \
   -filter "QD < 2.0" --filter-name "QD2" \
   -filter "QUAL < 30.0" --filter-name "QUAL30" \
@@ -197,7 +198,7 @@ ${gatk_bin} VariantFiltration \
 INDELs:
 ```bash
 ${gatk_bin} VariantFiltration \
-  -R /mnt/db/genomes/homo_sapiens/GRCh38.p14/picard_3.4.0_dictionary/GCF_000001405.40_GRCh38.p14_genomic.fna \
+  -R ${ref} \
   -V data/vcf/indel_variants.vcf \
   -filter "QD < 2.0" --filter-name "QD2" \
   -filter "QUAL < 30.0" --filter-name "QUAL30" \
@@ -208,5 +209,6 @@ ${gatk_bin} VariantFiltration \
 ```
 
 #### End of Pipeline ####
+
 
 
