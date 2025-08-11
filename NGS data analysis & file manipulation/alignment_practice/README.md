@@ -21,7 +21,7 @@ Your data is stored in the following directory:
 ```
 # path to fastq files
 
-cd /mnt/proj/omicss_25/ngs_data_analysis/fastqc_practice/data
+cd /mnt/proj/omicss25/ngs_data_analysis/fastqc_practice/data
 ```
 
 Navigate to the directory where you intend to work and use the path above to access your samples.   
