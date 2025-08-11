@@ -264,3 +264,21 @@ This process — resampling the sites, rebuilding the tree, and scoring — is r
 For each internal branch, wpercentage of trees in which it received a score of 1 is calculated. This percentage is called the bootstrap value. As a general guideline, if a branch has a bootstrap value of **95% or higher**, it is considered reliable, and the tree structure at that point is regarded as statistically supported.  
 
 Visualization of custructed tree can be performed using [iTOL](http://itol.embl.de/). It is general advice to introduce color palette for each region, e.g. Armenian samples of different clusters should be of the red shades and so on. Later this palette should be applied for both ADMIXTURE ploting and Phylogenetic tree construction.  
+
+Path to the tool:
+
+```
+/mnt/proj/omicss25/soft/snphylo/
+```
+
+What you should do:
+- go to your personal directory and created snphylo_results folder and log folder inside the snphylo_log. Copy the folder with tool into snphylo_results directory
+  ```
+  cp -a /mnt/proj/omicss25/soft/snphylo/ your_directory/snphylo_results
+  ```
+- open file snphylo.sh. In the SBATCH section change paths for log files
+```
+#SBATCH -o your_directory/snphylo_results/log/snphylo.out
+#SBATCH -e your_directory/snphylo_results/log/snphylo.err
+```
+- set the directory snphylo_results as your working directory and launch snphylo.sh file from there
