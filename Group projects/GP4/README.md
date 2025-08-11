@@ -24,7 +24,7 @@ ___
 [Publication](https://www.nature.com/articles/s41467-020-16164-1) \
 Path on the server
 ```
-comp0:/mnt/proj/omicss25/cancer/data
+comp1:/mnt/proj/omicss25/gp4/data
 ```
 
 ### Processing, Dimensionality Reduction, Clustering
