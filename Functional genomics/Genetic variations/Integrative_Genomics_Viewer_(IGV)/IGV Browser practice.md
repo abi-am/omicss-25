@@ -12,10 +12,15 @@ The list of files to download:
 - wes46_dedup.bam.bai
 - wes78_dedup.bam
 - wes78_dedup.bam.bai
-- wes46_dedup.vcf.gz
-- wes46_dedup.vcf.gz.tbi
-- wes78_dedup.vcf.gz
-- wes78_dedup.vcf.gz.tbi
+- wes46.vcf.gz
+- wes46.vcf.gz.tbi
+- wes78.vcf.gz
+- wes78.vcf.gz.tbi
+
+path to the directory with files:
+```
+/mnt/proj/omicss25/ngs_data_analysis/variant_calling/data/vcf/
+```
 
 Note that one sample was obtained from a healthy individual, while the other was collected from a person diagnosed with Familial Mediterranean Fever (FMF).  Do not forget that .bam anc .vcg files require index files in the same directory. For bam files it is recommended to name your index file like .bam.bai, in that way it is guaranteed that IGV browser would open your file correctly.    
 
