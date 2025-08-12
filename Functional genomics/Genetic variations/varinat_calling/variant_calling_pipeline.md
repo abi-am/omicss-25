@@ -84,7 +84,7 @@ samtools sort -o data/bam/${sample}_sorted.bam -
 Although we used samtools sort above, it's recommended to re-sort the BAM using GATK’s SortSam to ensure metadata compatibility.
 
 ```bash
-gatk_bin=/mnt/proj/omicss25/soft/gatk-4.2.6.1/gatk
+gatk_bin="/mnt/proj/omicss25/soft/gatk-4.2.6.1/gatk"
 
 ${gatk_bin} SortSam \
   -I data/bam/${sample}_sorted.bam \
@@ -209,6 +209,7 @@ ${gatk_bin} VariantFiltration \
 ```
 
 #### End of Pipeline ####
+
 
 
 
