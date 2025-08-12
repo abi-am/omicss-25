@@ -21,7 +21,7 @@ From microbiomes to meaningful insights.
 #### ⏰ 3:00 PM – 4:00 PM  
 **Topic:** *Introduction to the Microbiome*  
 **Presenter:** Raz Sargsyan  
-**[Slide](https://docs.google.com/presentation/d/1O5pF04_NXHzg43szyuDRQDQN3wNtxTd8S7KzPI5LVxk/edit?slide=id.p#slide=id.p)** 
+**[Slide](https://docs.google.com/presentation/d/1VVVUJF-MHUnwJs6QUgIrOI6gI5qSQfd5l3i2ynaeTBs/edit?usp=share_link)** 
 
 **Objective:**  
 To explore the microbiome field, introduce key concepts, and discuss current advancements. Participants will gain a foundational understanding of microbiome analysis.
@@ -31,7 +31,7 @@ To explore the microbiome field, introduce key concepts, and discuss current adv
 #### ⏰ 4:00 PM – 5:00 PM  
 **Topic:** *Amplicon Sequencing and Data Analysis*  
 **Presenter:** Nelli Vardazaryan  
-**[Slide](https://docs.google.com/presentation/d/1O5pF04_NXHzg43szyuDRQDQN3wNtxTd8S7KzPI5LVxk/edit?slide=id.p#slide=id.p)** 
+**[Slide](https://drive.google.com/file/d/1iLqlFPbrRsCrsxBonCqvsR5B_yuzh52x/view?usp=share_link)** 
 
 
 **Objective:**  
@@ -44,6 +44,8 @@ To introduce amplicon sequencing and demonstrate how to analyze sequencing data 
 #### ⏰ 3:00 PM – 4:00 PM  
 **Topic:** *[Metagenomic Sequencing and Data Analysis](https://docs.google.com/presentation/d/1VVVUJF-MHUnwJs6QUgIrOI6gI5qSQfd5l3i2ynaeTBs/edit?slide=id.p10#slide=id.p10)*  
 **Presenter:** Lilit Nersisyan  
+**[Slide](https://docs.google.com/presentation/d/1VVVUJF-MHUnwJs6QUgIrOI6gI5qSQfd5l3i2ynaeTBs/edit?usp=share_link)** 
+
 
 **Objective:**  
 To cover metagenomic sequencing techniques and introduce the **Kraken/Bracken** analysis pipeline. Participants will understand the principles of metagenomic data analysis.
@@ -71,22 +73,9 @@ Vizualization will include:
 
 | **Topic**                                           | **Presenter**        | **Status**         |
 |-----------------------------------------------------|----------------------|--------------------|
-| [Introduction to the microbiome (slide)             | Raz Sargsyan         | ⬜ 100 %           |
-| Amplicon sequencing and analysis (slide)            | Nelli Vardazaryan    | ⬜ 15 %            |
-| Metagenomic sequencing and  analysis (slide)        | Lilit Nersisyan      | ⬜ 80 %            |
-| Data visualization with Phyloseq (slide & practice) | Davit Hakobyan       | ⬜ 100 %           |
+| [Introduction to the microbiome (slide)             | Raz Sargsyan         |  100 %             |
+| Amplicon sequencing and analysis (slide)            | Nelli Vardazaryan    |  100 %             |
+| Metagenomic sequencing and  analysis (slide)        | Lilit Nersisyan      |  100 %             |
+| Data visualization with Phyloseq (slide & practice) | Davit Hakobyan       |  100 %             |
 
 ---
-
-## ✅ TODOs & Deadlines
-
-| Contributor        | Task Deadline   |
-|--------------------|-----------------|
-| Raz Sargsyan       | July 4, 2025    |
-| Davit Hakobyan     | July 4, 2025    |
-| Nelli Vardazaryan  | August 11, 2025 |
-| Lilit Nersisyan    | August 11, 2025 |
-
----
-
-🛠️ _To be updated as the workshop progresses._
