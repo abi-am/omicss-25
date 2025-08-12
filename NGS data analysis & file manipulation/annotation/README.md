@@ -33,7 +33,7 @@ Extract only "exon" regions from .gtf file and save them in seperate .gtf file. 
 
 <!--
 Command:
-zcat gencode.v38.annotation.gtf.gz | grep "exon" > exons.gtf
+zcat gencode.v38.annotation.gtf.gz | grep -w "exon" > exons.gtf
 wc -l exons.gtf
 
 Answer:
@@ -91,8 +91,8 @@ For this exercise you are going to work with .gtf file. First take exons and gen
 
 <!--
 Command:
-zcat gencode.v38.annotation.gtf.gz | grep "gene" > genes.gtf
-zcat gencode.v38.annotation.gtf.gz | grep "exon" > genes.gtf
+zcat gencode.v38.annotation.gtf.gz | grep -w "gene" > genes.gtf
+zcat gencode.v38.annotation.gtf.gz | grep -w "exon" > genes.gtf
 bedtools sort -i genes.gtf > genes.sorted.gtf  
 bedtools sort -i =exons.gtf > exons.sorted.gtf
 bedtools intersect -a exons.sorted.gtf -b genes.sorted.gtf > overlaps.gtf
