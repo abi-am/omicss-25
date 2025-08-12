@@ -260,15 +260,15 @@ Check log files for alignment status, % of reads aligned and other stats.
 ### Gene expression estimation using NDR 
 - Refer to [this poster](https://drive.google.com/file/d/1TmkcANuG47_UXITqIjzOVJx4npqvzBsf/view?usp=sharing) for background informaton.
 
-In order to estimate gene expression from cell-free DNA data a number of inputs are required:  
-- bam files
-- gene position bed file (standard for all samples) - Homo_sapiens-GCA_009914755.4-2022_07-genes-only.bed
-- transcript expression matrix with TPM values obtained from GTEx (standard for all samples) - GTEx_Analysis_v10_RSEMv1.3.3_transcripts_tpm.pkl.gz
-- annotation file for transcript expression matrix (standard for all samples) - GTEx_Analysis_v8_Annotations_SampleAttributesDS.txt
-- healthy tissue contribution file (standard for all samples) - tissue_contribution.tsv
-- tumor fraction file (calculated for each bam file)
-- gene list
-- tumor tissue of origin
+In order to estimate gene expression from cell-free DNA data a number of inputs are required, which are located in ```meta``` folder:  
+- gene position bed file (standard for all samples) - reference.bed 
+- promoter positions file - promoter_positions.tsv 
+- transcript expression matrix with TPM values obtained from GTEx (standard for all samples) - gtex_tpm.pkl.gz 
+- annotation file for transcript expression matrix (standard for all samples) - gtex_attributes.txt 
+- healthy tissue contribution file (standard for all samples) - healthy_contributions.tsv 
+- tumor fraction file (calculated for each bam file) - ds-23_tumor-fractions.txt 
+- gene list - tmm_gene_list.txt 
+- tumor tissue of origin (specify in the script)
 
 You will be using weighted_coverage_calculation.py script. The script utilizes [samtools depth](http://www.htslib.org/doc/samtools-depth.html) function to calculate the coverage of a given position. Make a parent script where you will call it and give all the inputs. 
 Tumor fractions are obtained with [ichorCNA](https://github.com/broadinstitute/ichorCNA/wiki) tool and usually are calculated for each bam file. You will be provided with ready tumor fractions and do not need to calculate them with ichorCNA.
