@@ -270,7 +270,7 @@ In order to estimate gene expression from cell-free DNA data a number of inputs 
 - gene list - tmm_gene_list.txt 
 - tumor tissue of origin (specify in the script)
 
-You will be using weighted_coverage_calculation.py script. The script utilizes [samtools depth](http://www.htslib.org/doc/samtools-depth.html) function to calculate the coverage of a given position. Make a parent script where you will call it and give all the inputs. 
+You will be using ```weighted_coverage_calculation.py``` script. The script utilizes [samtools depth](http://www.htslib.org/doc/samtools-depth.html) function to calculate the coverage of a given position. Make a parent script where you will call it and give all the inputs. 
 Tumor fractions are obtained with [ichorCNA](https://github.com/broadinstitute/ichorCNA/wiki) tool and usually are calculated for each bam file. You will be provided with ready tumor fractions and do not need to calculate them with ichorCNA.
 NB: The script uses Ensembl gene and transcript IDs to perform all the calculations.
 
