@@ -34,8 +34,6 @@ Each folder includes a `README` file that describes the content of that topic.
 
 8. [`Group projects`](./Group%20projects/)
 
-    - [`Group projects`](./Group%20projects/)
-
     - [`GP1`](./Group%20projects/GP1/): *Machine Learning-Based Identification of Bacterial Biomarkers for Disease Classification*
     - [`GP2`](./Group%20projects/GP2/): *Discovery of Telomeric Biomarkers for Cancer Detection in Cell-Free DNA*
     - [`GP3`](./Group%20projects/GP3/): *Genomic Characterization of Population Structure in Caucasian Grape Varieties Using Whole-Genome Sequencing*
