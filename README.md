@@ -25,7 +25,7 @@ Each folder includes a `README` file that describes the content of that topic.
     - [`Transcriptomics (DEGs, Functional annotation)`](./Functional%20genomics/Transcriptomics/)
      - [`Genetic variations (variant calling, IGV, GWAS)`](./Functional%20genomics/Genetic%20variations/)
      - [`Microbiome (metagenomic profiling)`](./Functional%20genomics/Microbiome/)
-    - [`Single-cell transcriptomics (Seurat)`](./Functional%20genomics/Single-cell%20transcriptomics/)
+    - [Single-cell transcriptomics (Seurat)](./Functional%20genomics/Single-cell%20transcriptomics/)
 
 7. [`PCA&Clustering`](./PCA%26Clustering/)
 
