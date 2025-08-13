@@ -9,7 +9,7 @@ Each folder includes a `README` file that describes the content of that topic.
 1. [`Bioinformatics algorithms`](./Bioinformatics%20algorithms/) 
 2. [`Experimental techniques`](./Experimental%20techniques/)
 
-    - [`Sequencing/`](./Experimental%20techniques/Sequencing/)
+    - [`Sequencing`](./Experimental%20techniques/Sequencing/)
     - [`DNA Extraction`](./Experimental%20techniques/DNA%20extraction/)
     - [`PCR,Electrophoresis`](./Experimental%20techniques/PCR%2C%20Electrophoresis/) 
 3. [`R`](./R/)
