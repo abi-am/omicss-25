@@ -172,7 +172,7 @@ Create script `src/trim.sh` to remove adapters and low quality bases from files 
  Illumina universal adapter (most common): AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC  
  Illumina Nextera adapter: CTGTCTCTTATACACATCT  
  TruSeq adapter: AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT  
- Adapters are usually found at the 3' end of your reads. In rare cases, you'll also need to remove barcodes or adapters from the 5' end.  
+ Adapters are [usually found at the 3' end of your reads](https://knowledge.illumina.com/software/general/software-general-reference_material-list/000002905). In rare cases, you'll also need to remove barcodes or adapters from the 5' end.  
 
 - Low quality bases  
   The 3' ends of the reads usually have lower quality (FASTQC Report section: “Per base sequence quality”). If those are too low, you may want to trim all the reads by a certain number of bases from the 3' end.  
