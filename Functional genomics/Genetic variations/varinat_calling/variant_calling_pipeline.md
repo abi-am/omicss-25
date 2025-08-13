@@ -107,6 +107,12 @@ ${gatk_bin} MarkDuplicates \
 ### Step 4: Variant Calling (HaplotypeCaller in GVCF mode)
 Generate a GVCF file for each sample using HaplotypeCaller. This mode enables joint genotyping in the next steps.
 
+⚠️ **NOTE:** Step 4 and 5 command may take quite a long time to run.  
+You can start it to make sure your code works correctly, but you don't need to let it finish.  
+The final output files are already available at:  
+`/mnt/proj/omicss25/ngs_data_analysis/variant_calling/data/gvcf and /vcf`  
+You can copy them into your working directory if needed.
+
 > If you're using slurm, make sure the memory you allocate there matches the memory you allocate within the script.
 
 ```bash
@@ -120,11 +126,7 @@ ${gatk_bin} --java-options "-Xmx16g" HaplotypeCaller \
 ### Step 5: Combine GVCFs
 Once you have GVCF files for both samples, combine them into a single file for joint genotyping:
 
-⚠️ **NOTE:** This command may take quite a long time to run.  
-You can start it to make sure your code works correctly, but you don't need to let it finish.  
-The final output files are already available at:  
-`/mnt/proj/omicss25/ngs_data_analysis/variant_calling/data/gvcf`  
-You can copy them into your working directory if needed.
+
 
 ``` bash
 ${gatk_bin} CombineGVCFs \
@@ -209,6 +211,7 @@ ${gatk_bin} VariantFiltration \
 ```
 
 #### End of Pipeline ####
+
 
 
 
