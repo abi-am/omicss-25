@@ -36,9 +36,9 @@ Contributing authors: Anahit Yeghiazaryan, Davit Tarverdyan, Mher Kurghinyan
     - [TRV analysis on pre-generated table: within dataset comparisons](#trv-analysis-on-pre-generated-table-within-dataset-comparisons)
 - [Week 4](#week-4)
   - [8/18/2025 - 11AM-12PM](#8182025---11am-12pm)
-    - [TRV analysis on pre-generated table: check for dataset batch effects (skip)](#trv-analysis-on-pre-generated-table-check-for-dataset-batch-effects-skip)
+    - TBD
   - [8/18/2025 - 12PM-1PM](#8182025---12pm-1pm)
-    - [TRV analysis on pre-generated table: between dataset comparisons (skip)](#trv-analysis-on-pre-generated-table-between-dataset-comparisons--skip)
+    - TBD
   - [8/18/2025 - 4PM-5PM](#8182025---4pm-5pm)
     - TBD
   - [8/19/2025 - 12PM-1PM](#8192025---12pm-1pm)
@@ -197,7 +197,7 @@ Check if any quality issues persist to perform trimming again if needed.
 - Run Computel on trimmed FASTQ files to generate CSV files with TRV counts/proportions
 
 
-### TRV analysis on pre-generated table: within dataset comparisons [Try to have some results by 8/18/2025]  
+### TRV analysis on pre-generated table: within dataset comparisons (Try to have some results by 8/18/2025)
 Use the file `/mnt/proj/omicss25/gp2/trv_analysis/csv/trv_abs.csv` for TRV counts and `/mnt/proj/omicss25/gp2/trv_analysis/csv/trv_compositional.csv` for TRV percentages across samples derived from multiple datasets. Both files include sample metadata in the first 8 columns: `origin`, `timepoint`, `tissue-type`, `gender`, `age`, `patient_name`, `state`, and `full_name`. The remaining columns correspond to TRVs. Each row represents one sample, uniquely identified by the `full_name` column.  
 
 #### Filter TRVs  
@@ -213,23 +213,10 @@ For each dataset։
 
 ## Week 4
 ## 8/18/2025 - 11AM-12PM
-### TRV analysis on pre-generated table: check for dataset batch effects (skip)
-Use only healthy samples of all available datasets for:  
-- Hierarchical Clustering 
-- PCoA + Euclidean distance + CLR, Permanova   
-- Try with and without canonical variant
+### TRV analysis on pre-generated table: within dataset comparisons (Finalise results)
 
 ## 8/18/2025 - 12PM-1PM
-### TRV analysis on pre-generated table: between dataset comparisons  (skip)
-Compare TRV percentages between healthy and cancer samples across multiple datasets, after checking that no significant batch effect is detected among healthy samples from different datasets. Use the same filtered TRV list obtained from the previous filtering step.  
-
-Group:
-- All healthy samples together, regardless of dataset.
-- Cancer samples by cancer (or other disease) type, combining samples from all datasets for each type.  
-
-For each cancer (or other disease) type:  
-- Perform non-parametric Mann–Whitney U tests comparing percentages of filtered TRVs in that cancer type group vs healthy group, correct for multiple testing with FDR. Exclude the canonical variant from this analysis.  
-- Prepare visualizations (e.g. boxplot, heatmap, scatter plot) as performed during the R plotting practice session. Note, you can use Python as well.   
+TBD
 
 
 ## 8/18/2025 - 4PM-5PM
