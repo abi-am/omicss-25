@@ -249,13 +249,13 @@ Check log files for alignment status, % of reads aligned and other stats.
 - Refer to [this poster](https://drive.google.com/file/d/1TmkcANuG47_UXITqIjzOVJx4npqvzBsf/view?usp=sharing) for background informaton.
 
 In order to estimate gene expression from cell-free DNA data a number of inputs are required, which are located in ```meta``` folder:  
-- gene position bed file (standard for all samples) - reference.bed 
-- promoter positions file - promoter_positions.tsv 
-- transcript expression matrix with TPM values obtained from GTEx (standard for all samples) - gtex_tpm.pkl.gz 
-- annotation file for transcript expression matrix (standard for all samples) - gtex_attributes.txt 
-- healthy tissue contribution file (standard for all samples) - healthy_contributions.tsv 
-- tumor fraction file (calculated for each bam file) - ds-23_tumor-fractions.txt 
-- gene list - tmm_gene_list.txt 
+- gene position bed file (standard for all samples) - ```reference.bed``` 
+- promoter positions file - ```promoter_positions.tsv``` 
+- transcript expression matrix with TPM values obtained from GTEx (standard for all samples) - ```gtex_tpm.pkl.gz``` 
+- annotation file for transcript expression matrix (standard for all samples) - ```gtex_attributes.txt``` 
+- healthy tissue contribution file (standard for all samples) - ```healthy_contributions.tsv``` 
+- tumor fraction file (calculated for each bam file) - ```ds-23_tumor-fractions.txt``` 
+- gene list - ```tmm_gene_list.txt``` 
 - tumor tissue of origin (specify in the script)
 
 You will be using ```weighted_coverage_calculation.py``` script. The script utilizes [samtools depth](http://www.htslib.org/doc/samtools-depth.html) function to calculate the coverage of a given position. Make a parent script where you will call it and give all the inputs. 
@@ -277,7 +277,7 @@ Now that you have an expression estimate for each TMM gene, you can use them in 
 - PSF for Telomere Maintenance Mechanism (TMM) pathways basic usage 
   * [TMM package user guide](https://big.sci.am/software/tmm/#userguide)
   
-NB: Entrez IDs are required for TMM analysis, so make sure to replace Ensembl IDs in coverage matrix to Entrez IDs. You can use the ncbi_to_ensembl_mapping.tsv file, which contains Ensembl IDs and their corresponding Entrez IDs. Examine the ALT and TEL pathways for each sample and compare their activity in healthy vs cancer samples.  
+NB: Entrez IDs are required for TMM analysis, so make sure to replace Ensembl IDs in coverage matrix to Entrez IDs. You can use the ```ncbi_to_ensembl_mapping.tsv``` file, which contains Ensembl IDs and their corresponding Entrez IDs. Examine the ALT and TEL pathways for each sample and compare their activity in healthy vs cancer samples.  
 
 Generate a scatter plot with TEL score on x-axis and ALT score on y-axis, with points showing samples and colored by group (cancer, healthy) to check how well the groups separate based on TEL, ALT pathway activity.  
 
