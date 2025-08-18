@@ -33,20 +33,14 @@ Contributing authors: Anahit Yeghiazaryan, Davit Tarverdyan, Mher Kurghinyan
     - [Post-trimming quality check](#post-trimming-quality-check)
   - [8/15/2025 - 4PM-5PM](#8152025---4pm-5pm)
     - [Run Computel for TRVs](#run-computel-for-trvs)
-    - [TRV analysis on pre-generated table: within dataset comparisons](#trv-analysis-on-pre-generated-table-within-dataset-comparisons)
 - [Week 4](#week-4)
-  - [8/18/2025 - 11AM-12PM](#8182025---11am-12pm)
-    - TBD
-  - [8/18/2025 - 12PM-1PM](#8182025---12pm-1pm)
-    - TBD
+  - [8/18/2025 - 11AM-1PM](#8182025---11am-1pm)
+    - [TRV analysis on pre-generated table: within dataset comparisons](#trv-analysis-on-pre-generated-table-within-dataset-comparisons)
   - [8/18/2025 - 4PM-5PM](#8182025---4pm-5pm)
-    - TBD
-  - [8/19/2025 - 12PM-1PM](#8192025---12pm-1pm)
     - [Alignment on reference genome](#alignment-on-reference-genome)
-    - [Reference genome index for alignment](#reference-genome-index-for-alignment)
-  - [8/19/2025 - 2PM-3PM](#8192025---2pm-3pm)
+  - [8/19/2025 - 12PM-1PM](#8192025---12pm-1pm)
     - [Gene expression estimation using NDR](#gene-expression-estimation-using-ndr)
-  - [8/19/2025 - 3PM-4PM](#8192025---3pm-4pm)
+  - [8/19/2025 - 2PM-4PM](#8192025---2pm-4pm)
     - [Run PSF using gene expression estimates for TMM genes](#run-psf-using-gene-expression-estimates-for-tmm-genes)
   - [8/19/2025 - 4PM-5PM](#8192025---4pm-5pm)
     - [Cluster samples by gene expression](#cluster-samples-by-gene-expression)
@@ -197,7 +191,9 @@ Check if any quality issues persist to perform trimming again if needed.
 - Run Computel on trimmed FASTQ files to generate CSV files with TRV counts/proportions
 
 
-### TRV analysis on pre-generated table: within dataset comparisons (Try to have some results by 8/18/2025)
+## Week 4
+## 8/18/2025 - 11AM-1PM
+### TRV analysis on pre-generated table: within dataset comparisons 
 Use the file `/mnt/proj/omicss25/gp2/trv_analysis/csv/trv_abs.csv` for TRV counts and `/mnt/proj/omicss25/gp2/trv_analysis/csv/trv_compositional.csv` for TRV percentages across samples derived from multiple datasets. Both files include sample metadata in the first 8 columns: `origin`, `timepoint`, `tissue-type`, `gender`, `age`, `patient_name`, `state`, and `full_name`. The remaining columns correspond to TRVs. Each row represents one sample, uniquely identified by the `full_name` column.  
 
 #### Filter TRVs  
@@ -209,20 +205,9 @@ Use these files to obtain a filtered list of TRVs with the following filtering c
 #### Within dataset comparisons
 For each dataset։  
 - Perform non-parametric Mann–Whitney U tests comparing percentages of filtered TRVs in cancer (or other disease) vs healthy samples, correct for multiple testing with FDR. Exclude the canonical variant from this analysis.   
-- Prepare visualizations (e.g. boxplot, heatmap, scatter plot) as performed during the R plotting practice session. Note, you can use Python as well.  
-
-## Week 4
-## 8/18/2025 - 11AM-12PM
-### TRV analysis on pre-generated table: within dataset comparisons (Finalise results)
-
-## 8/18/2025 - 12PM-1PM
-TBD
-
+- Prepare visualizations (e.g. boxplot, heatmap, scatter plot) as performed during the R plotting practice session. Note, you can use Python as well.
 
 ## 8/18/2025 - 4PM-5PM
-TBD
-
-## 8/19/2025 - 12PM-1PM
 ### Alignment on reference genome
 Create script `src/align.sh` to align trimmed FASTQ files on human reference genome. Use [bwa mem](https://bio-bwa.sourceforge.net/bwa.shtml) program for alignment. 
 Log to:			`log/align.log`  
@@ -244,7 +229,7 @@ Include these steps in `src/align.sh` script to obtain a final sorted, deduplica
 
 Check log files for alignment status, % of reads aligned and other stats.  
 
-## 8/19/2025 - 2PM-3PM
+## 8/19/2025 - 12PM-1PM
 ### Gene expression estimation using NDR 
 - Refer to [this poster](https://drive.google.com/file/d/1TmkcANuG47_UXITqIjzOVJx4npqvzBsf/view?usp=sharing) for background informaton.
 
@@ -262,7 +247,7 @@ You will be using ```weighted_coverage_calculation.py``` script. The script util
 Tumor fractions are obtained with [ichorCNA](https://github.com/broadinstitute/ichorCNA/wiki) tool and usually are calculated for each bam file. You will be provided with ready tumor fractions and do not need to calculate them with ichorCNA.
 NB: The script uses Ensembl gene and transcript IDs to perform all the calculations.
 
-## 8/19/2025 - 3PM-4PM
+## 8/19/2025 - 2PM-4PM
 ### Run PSF using gene expression estimates for TMM genes  
 Now that you have an expression estimate for each TMM gene, you can use them in Cytoscape to run PSF. 
 
@@ -301,8 +286,8 @@ Think creatively and explore additional types of visualizations that can illustr
 
 ## Bootcamp 
 ## 8/21/2025
-Finalise the results.
+Finalise the results and prepare project presentation.
 ## 8/22/2025
-Finalise the results.  
+Final project presentation.  
  
 
