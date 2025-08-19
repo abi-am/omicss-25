@@ -250,6 +250,13 @@ NB: The script uses Ensembl gene and transcript IDs to perform all the calculati
 ## 8/19/2025 - 2PM-4PM
 ### Run PSF using gene expression estimates for TMM genes  
 Now that you have an expression estimate for each TMM gene, you can use them in Cytoscape to run PSF. 
+__Note__ you need to prepare the output for PSF. In order to do that you need to:
+ * First, get the fold change values by dividing each coverage value by the median of this gene across all samples.
+ * Second, you need to inverse these numbers (remeber that they are inversly correlated with gene expression)
+ * Third, Entrez IDs are required for TMM analysis, so make sure to replace Ensembl IDs in coverage matrix to Entrez IDs. You can use the ```meta/ncbi_to_ensembl_mapping.tsv``` file, which contains Ensembl IDs and their corresponding Entrez IDs.
+
+   Examine the ALT and TEL pathways for each sample and compare their activity in healthy vs cancer samples.  
+
 
 #### Use following tutorials to run PSF  
 - Cytoscape
@@ -261,8 +268,6 @@ Now that you have an expression estimate for each TMM gene, you can use them in 
   * [PSFC user manual](https://big.sci.am/apps/psfc/PSFC_User_Manual_1.1.3.pdf)  
 - PSF for Telomere Maintenance Mechanism (TMM) pathways basic usage 
   * [TMM package user guide](https://big.sci.am/software/tmm/#userguide)
-  
-NB: Entrez IDs are required for TMM analysis, so make sure to replace Ensembl IDs in coverage matrix to Entrez IDs. You can use the ```ncbi_to_ensembl_mapping.tsv``` file, which contains Ensembl IDs and their corresponding Entrez IDs. Examine the ALT and TEL pathways for each sample and compare their activity in healthy vs cancer samples.  
 
 Generate a scatter plot with TEL score on x-axis and ALT score on y-axis, with points showing samples and colored by group (cancer, healthy) to check how well the groups separate based on TEL, ALT pathway activity.  
 
