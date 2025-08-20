@@ -255,6 +255,15 @@ __Note__ you need to prepare the output for PSF. In order to do that you need to
  * Second, you need to inverse these numbers (remeber that they are inversly correlated with gene expression)
  * Third, Entrez IDs are required for TMM analysis, so make sure to replace Ensembl IDs in coverage matrix to Entrez IDs. You can use the ```meta/ncbi_to_ensembl_mapping.tsv``` file, which contains Ensembl IDs and their corresponding Entrez IDs.
 
+   In order to input it to Cytoscape, the file should have the following format:
+   
+    | Gene | Sample1 | Sample2 | Sample3 | ... | SampleN |
+    |------|---------|---------|---------|-----|---------|
+    | 1111 | 0.9 | 0.7 | 1.2 | ... | 1.6 |
+    | 3324 | 0.7 | 0.8 | 1.3 | ... | 1.9 |
+    | ... | ... | ... | ... | ... | ... |
+    | #63 gene ID | 0.5 | 0.9 | 1.6 | ... | 1.2 |
+   
    Examine the ALT and TEL pathways for each sample and compare their activity in healthy vs cancer samples.  
 
 
