@@ -8,7 +8,7 @@ By analyzing gene expression at the single-cell level, we aim to identify key ce
  ### Contributors
 ```
 Project lead: Maria Nikoghosyan
-Contributors:  Melina Tamazyan, Ekaterina Kostiuk
+Contributors: Melina Tamazyan, Ekaterina Kostiuk
 ```
   ___
   
