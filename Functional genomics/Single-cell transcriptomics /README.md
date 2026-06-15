@@ -1,6 +1,6 @@
 # Contributors
-    Primary contributor: Arpine Grigoryan
-    Contributing authors: Melina Tamazyan
+    Primary contributor: Maria Nikoghosyan
+    Contributing authors: Melina Tamazyan, Ekaterina Kostiuk
   # Contents  
   ### Lecture 11:00 – 12:00
   [Lecture for 08.15.2025](https://docs.google.com/presentation/d/1y9dZdsu_vii38DSJbjHd1iSOuKEdmrO-/edit?usp=share_link&ouid=108169334741774870734&rtpof=true&sd=true) \
