@@ -24,7 +24,7 @@ ___
 [Publication](https://www.nature.com/articles/s41467-020-16164-1) \
 Path on the server
 ```
-comp1:/mnt/proj/omicss25/gp4/data
+comp1:/mnt/nas0/proj/omicss26/gp4/data
 ```
 
 ### Analysis Pipeline
