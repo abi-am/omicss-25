@@ -38,7 +38,7 @@ We will follow [Seurat Tutorial 1](https://satijalab.org/seurat/articles/pbmc3k_
 
 In the abovementioned tutorial, you will find a brief description of these steps.
 
-BUT for data processing, we will follow [Seurat Tutorial 2](https://satijalab.org/seurat/articles/sctransform_vignette.html) as we are going to use `SCTransform()`
+There is several normalisation methods try different versions and choose one.For example [Seurat Tutorial 2](https://satijalab.org/seurat/articles/sctransform_vignette.html) `SCTransform()`
 
 For cell type annotation via label transfer, we will follow [Seurat Label Transfer Tutorial](https://satijalab.org/seurat/articles/integration_mapping.html) using `FindTransferAnchors()` and `TransferData()`
 
