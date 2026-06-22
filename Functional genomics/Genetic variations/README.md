@@ -1,16 +1,16 @@
   # Contributors 
     Primary contributor: Maria Nikoghosyan
-    Contributing authors: Nate Zadirako, Mariia Arakelyan
+    Contributing authors: Nate Zadirako, Anna Hakobyan
 
 ## Session Schedule
 
-| Date (2025)   | Time          | Topic                                   | Folder                                                              |
+| Date (2026)   | Time          | Topic                                   | Folder                                                              |
 | ------------- | ------------- | --------------------------------------- | ------------------------------------------------------------------- |
-| **13 August**   | 11:00 – 12:00 | Lecture: Genomic Variations     | [`Genetic variations/`](./)                                      |
-|   **13 August**  | 12:00 – 13:00   | Practice: Variant Calling   | [`varinat_calling/`](./varinat_calling/)                                      |
-| **13 August**   | 14:00 – 15:00   | Practice: VCF File Manipulation    | [`vcf_file_manipulation/`](./vcf_file_manipulation/)  |
-| **14 August** | 11:00 – 12:00 | Lecture: Integrative Genomics Viewer (IGV)| [`Integrative_Genomics_Viewer_(IGV)/`](./Integrative_Genomics_Viewer_(IGV)/) |
-| **14 August** | 12:00 – 13:00 |Practice: Integrative Genomics Viewer (IGV)| [`Integrative_Genomics_Viewer_(IGV)/`](./Integrative_Genomics_Viewer_(IGV)/)  |
+| **27 July**   | 11:00 – 13:00 | Lecture: Bioinformatics databases       | [`Genetic variations/`](./)                                         |
+| **28 July**   | 11:00 – 13:00 | Lecture: Algorithms: Variant Calling    | [`varinat_calling/`](./varinat_calling/)                            |
+| **28 July**   | 14:00 – 16:00 | Practice: Variant Calling               | [`varinat_calling/`](./varinat_calling/)                            |
+| **30 July**   | 12:00 – 13:00 | Practice: VCF File Manipulation         | [`vcf_file_manipulation/`](./vcf_file_manipulation/)                |
+| **31 July**   | 11:00 – 12:00 | Lecture & Practice: Integrative Genomics Viewer (IGV) | [`Integrative_Genomics_Viewer_(IGV)/`](./Integrative_Genomics_Viewer_(IGV)/) |
 
 
 ---
