@@ -210,7 +210,24 @@ ${gatk_bin} VariantFiltration \
 
 #### End of Pipeline ####
 
+After identifying and filtering variants using the Genome Analysis Toolkit (GATK) pipeline, the next step is to interpret their potential biological significance. For this, we use **ANNOVAR**, a widely used tool for functional annotation of genetic variants.
 
+We use ANNOVAR together with several annotation databases:
 
+* refGene → identifies the gene and functional region (e.g. exonic, intronic)
+* gnomAD → provides population allele frequencies
+* ClinVar → links variants to known clinical significance
 
+Run `annotate_variants.sh` script provided with the variant calling pipeline and examine the annotated VCF.
+
+> Note: we should have annovar somewhere, but I can't find it. Will consult tomorrow. -N
+
+Recall that the goal of the practice is to identify which sample carries the FMF-related mutation. The FMF (Familial Mediterranean Fever) gene, officially called the MEFV gene, provides instructions for making an immune system protein called pyrin. Mutations in this gene disrupt the body's ability to regulate inflammation, leading to recurrent fevers and severe abdominal, chest, and joint pain. Let's take a look.
+
+```bash
+bcftools view -i 'INFO/Gene.refGene=="MEFV"' \
+  cohort.hg38_multianno.vcf \
+  -o MEFV.vcf
+```
+Do you see any variants present in one sample but not the other? How would you know which variant is the one?
 
