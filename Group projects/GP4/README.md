@@ -52,7 +52,10 @@ For cell type annotation via label transfer, we will follow [Seurat Label Transf
 - Calculate QC metrics using `PercentageFeatureSet(object, pattern = "^MT-")`
 - Apply adaptive thresholds to exclude low-quality droplets (potential cell fragments) and cells with high mitochondrial content (damaged/dying cells)
 - Run log-normalization (`NormalizeData`) and find highly variable features (`FindVariableFeatures`) to prepare for dimensionality reduction
+**Target Deliverables:**
+  - Plots: Pre- and post-filtering *Violin Plots* showing the distribution of total RNA counts (nCount_RNA), detected genes (nFeature_RNA), and mitochondrial gene percentage (percent.mt); *Scatter Plot* correlating nCount_RNA vs. percent.mt to visualize filtering thresholds. *Variable Features Plot* highlighting the top highly variable genes (HVGs).
 
+- (Optional): Auxillary tables reporting initial cell counts, filtered cell counts, and the number of cells discarded per sample, and the used filtering metrics.
 ---
 
 #### Phase 2: Global Lineage Mapping
@@ -72,6 +75,10 @@ For cell type annotation via label transfer, we will follow [Seurat Label Transf
 | B cells | `MS4A1` |
 | Endothelial / Stromal | `VWF`, `COL1A1` |
 
+**Target Deliverables:**
+
+- Plots: *Elbow Plot* justifying the PC cutoff; *UMAP Plot* colored by seurat_cluster; *Expression Feature Plots* for canonical lineage markers location visualisation. 
+
 ---
 
 #### Phase 3: Map TME Atlas via Seurat Label Transfer
@@ -83,6 +90,10 @@ For cell type annotation via label transfer, we will follow [Seurat Label Transf
 - Load a public, annotated Lung TME reference atlas (e.g., from the paper or HLCA)
 - Find integration transfer anchors between the student query dataset and the reference using `FindTransferAnchors()`
 - Predict high-resolution immune cell types (e.g., Alveolar Macrophages vs. Monocyte-derived Macrophages, CD8+ Exhausted T-cells vs. Naive T-cells) using `TransferData()`
+
+**Target Deliverables:**
+
+- Plots: TME-Specific *UMAP Plot* colored by the newly transferred cell types.
 
 ---
 
@@ -114,6 +125,11 @@ For cell type annotation via label transfer, we will follow [Seurat Label Transf
 
 6. **Naming** — assign each cluster a biologically interpretable label by comparing average cluster expression against the canonical signatures (AT2 / AT1 / Club / Ciliated / Malignant-Sq / Malignant-Adeno / Malignant-Prolif / Hypoxic / EMT); produce a final annotated UMAP with named clusters
 
+**Target Deliverables:**
+
+- Plots: *Module Score Plots* showing the separation of Normal (AT2, AT1, Club, Ciliated) vs. Malignant (Squamous, Adeno, Prolif) signature scores; Marker Gene *DotPlot* displaying the top 3 specific marker genes per epithelial cluster; Expression *Heatmap* displaying the top 5 DEGs per cluster; GO Enrichment *DotPlots* showing the top 10 significantly enriched terms per cluster.
+
+- Tables: DEG Table containing log-fold changes, p-values, and percentage detection metrics, GO Enrichment Results Table containing pathways, gene ratios, and BH-adjusted p-values. Both best saved as .csv files.
 ---
 
 #### Phase 5: Condition Shift Analysis
@@ -135,3 +151,9 @@ Group the clustered data by the 7 clinical origin states:
 | `PE` | Pleural effusion fluid |
 
 Generate fractional stacked bar charts showing how cell type proportions shift across these environments (e.g., the expansion of malignant cells and monocyte-derived macrophages in `mBrain` and `mLN` vs. `nLung`).
+
+**Target Deliverables:**
+
+- Plots: Fractional *Stacked Bar Charts* comparing the relative proportions of all cell types across the 7 clinical origin states.
+- Tables: An *Abundance Table* reporting cell counts and percentages of each cell type across the 7 clinical environments.
+
