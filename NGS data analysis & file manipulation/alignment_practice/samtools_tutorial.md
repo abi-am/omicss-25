@@ -63,7 +63,6 @@ The `-f 2` flag selects reads that are marked as properly paired in the BAM file
 -->
 
 ---
----
 
 ## 🔹 Exercise 4: Calculate Average Read Depth Over a Region on Chromosome 16
 
