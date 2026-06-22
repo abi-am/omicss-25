@@ -220,14 +220,12 @@ We use ANNOVAR together with several annotation databases:
 
 Run `annotate_variants.sh` script provided with the variant calling pipeline and examine the annotated VCF.
 
-> Note: we should have annovar somewhere, but I can't find it. Will consult tomorrow. -N
+> Note: we should have annovar somewhere, but I can't find it. Will consult tomorrow. When I have it, I'll try it myself & adjust the code. -N
 
 Recall that the goal of the practice is to identify which sample carries the FMF-related mutation. The FMF (Familial Mediterranean Fever) gene, officially called the MEFV gene, provides instructions for making an immune system protein called pyrin. Mutations in this gene disrupt the body's ability to regulate inflammation, leading to recurrent fevers and severe abdominal, chest, and joint pain. Let's take a look.
 
 ```bash
-bcftools view -i 'INFO/Gene.refGene=="MEFV"' \
-  cohort.hg38_multianno.vcf \
-  -o MEFV.vcf
+grep "MEFV" cohort.hg38_multianno.vcf > MEFV.vcf
 ```
 Do you see any variants present in one sample but not the other? How would you know which variant is the one?
 
