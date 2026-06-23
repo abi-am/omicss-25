@@ -1,13 +1,12 @@
 # Contributors
-   Primary contributor: Nate Zadirako  
-   Contributing authors: Mariia Arakelian, Nane Pivazyan  
+   Primary contributor: Nane Pivazyan
+   Contributing authors: Nate Zadirako, Lusine Gevorgyan   
   # Contents  
   * Overview
   * Background
   * Data preprocessing
   * Principal Component Analysis
   * ADMIXTURE
-  * Phylogenetic analysis
     
 ## Project Overview
 [This project](https://docs.google.com/presentation/d/1DHRvp5NNiV4ECnvonUFlFQRDzW8pGVzK/edit?usp=sharing&ouid=115394168503379180010&rtpof=true&sd=true) aims to explore the population structure of Caucasian varieties of grapevine using whole-genome sequencing data. The participants will become familiar with the VCF file format, the standard data preprocessing pipeline (variant calling, filtering) and the downstream population genomics analyses (ADMIXTURE, phylogenetic tree construction).  
