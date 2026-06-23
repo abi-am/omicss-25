@@ -226,3 +226,182 @@ For the visualizaton, group samples by their countries of origin. Then in each c
    - Grouping samples in clusters by countries
    - Rscript in bash
 
+
+
+   ## FST (Fixation Index)
+
+After identifying population structure with PCA and ADMIXTURE, we can ask another important question:
+
+**How genetically different are the populations from each other?**
+
+PCA helps us visualise clustering patterns, while ADMIXTURE estimates ancestry proportions for each individual. However, neither method directly quantifies the degree of genetic differentiation between populations.
+
+To answer this question, we use **FST (Fixation Index)**.
+
+**FST** is one of the most commonly used statistics in population genetics. It measures how much of the genetic variation is explained by differences between populations rather than differences within populations.
+
+In simple words:
+
+> FST tells us whether two populations are genetically similar or genetically distinct.
+
+For example, imagine two populations where the frequencies of genetic variants are almost identical. In this case, the populations would have a low FST value because they are genetically similar.
+
+On the other hand, if the frequencies of genetic variants differ substantially between populations, the FST value will be higher, indicating stronger genetic differentiation.
+
+### Why perform FST analysis?
+
+FST can help answer biological questions such as:
+
+* Are cultivated and wild grapevines genetically differentiated?
+* Are grapevine populations from different countries genetically distinct?
+* Are ADMIXTURE-defined clusters truly separated from one another?
+* Which population pairs show the strongest genetic differentiation?
+
+### Conceptual example
+
+Imagine two baskets filled with red and blue beads, where each bead colour represents a genetic variant.
+
+**Population 1**
+
+* 50% red beads
+* 50% blue beads
+
+**Population 2**
+
+* 52% red beads
+* 48% blue beads
+
+The two populations are very similar, therefore FST would be low.
+
+Now imagine:
+
+**Population 1**
+
+* 95% red beads
+* 5% blue beads
+
+**Population 2**
+
+* 5% red beads
+* 95% blue beads
+
+The two populations are very different, therefore FST would be high.
+
+### General interpretation of FST values
+
+| **FST value** | **Interpretation**          |
+| ------------- | --------------------------- |
+| 0             | No differentiation          |
+| 0 - 0.05      | Low differentiation         |
+| 0.05 - 0.15   | Moderate differentiation    |
+| 0.15 - 0.25   | Strong differentiation      |
+| > 0.25        | Very strong differentiation |
+
+> NOTE: These thresholds are only general guidelines. The biological interpretation depends on the species and dataset being analysed.
+
+### Why perform FST after ADMIXTURE?
+
+ADMIXTURE estimates ancestry proportions and helps identify genetic clusters.
+
+FST complements ADMIXTURE by quantifying how different those clusters are from each other.
+
+A useful way to remember this is:
+
+* ADMIXTURE tells us **who belongs to which ancestry group**
+* FST tells us **how different those ancestry groups are from each other**
+
+Together, these analyses provide a more complete picture of population structure.
+
+### Defining populations for FST analysis
+
+Before calculating FST, we must decide which populations we want to compare.
+
+There is no single correct strategy. The choice depends on the biological question being asked.
+
+Possible approaches include:
+
+**ADMIXTURE-defined groups**
+
+* Compare individuals assigned to different ancestry clusters.
+* Useful for testing whether inferred clusters are genetically differentiated.
+
+**Cultivated vs wild populations**
+
+* Compare cultivated grapevines against wild grapevines.
+* Useful for investigating the effects of domestication.
+
+**Geographic groups**
+
+* Compare samples originating from different countries or regions.
+* Useful for studying geographic population structure.
+
+**Metadata-based groups**
+
+* Compare samples based on phenotypes or other metadata categories.
+
+### How should groups be selected?
+
+When defining populations for FST analysis:
+
+* Use PCA and ADMIXTURE results as guidance.
+* Choose groups that answer a clear biological question.
+* Avoid very small groups whenever possible.
+* Consider excluding highly admixed individuals.
+* Verify that sample names match those present in the VCF file.
+
+### Input files
+
+To calculate FST, we need:
+
+* A filtered VCF file containing SNPs.
+* A text file containing sample IDs for population 1.
+* A text file containing sample IDs for population 2.
+
+Each population file should contain one sample identifier per line.
+
+Example:
+
+```
+Arm1
+Arm2
+Arm3
+Arm4
+```
+
+### Windowed FST
+
+FST can be calculated for individual SNPs or for genomic windows.
+
+In this project, we will calculate **windowed FST**, which averages FST values across genomic regions.
+
+Windowed FST reduces noise and makes it easier to identify genomic regions with elevated differentiation between populations.
+
+The output can later be visualised using heatmaps and genome-wide plots.
+
+### Questions to consider
+
+Before running the analysis:
+
+* Which populations will you compare?
+* Why did you choose these groups?
+* Do you expect high or low differentiation?
+* Does your expectation agree with the PCA and ADMIXTURE results?
+
+After running the analysis:
+
+* What is the average FST between the populations?
+* Which genomic regions show elevated differentiation?
+* Do the results support your biological hypothesis?
+* How do the results compare with the ADMIXTURE clustering patterns?
+
+### Summary
+
+* PCA reveals clustering patterns.
+* ADMIXTURE estimates ancestry proportions.
+* FST quantifies genetic differentiation between populations.
+
+Together, these analyses help us understand both the structure of grapevine populations and the degree of genetic separation between them.
+
+
+
+
