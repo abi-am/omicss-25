@@ -17,6 +17,7 @@ Contributors: Melina Tamazyan, Ekaterina Kostiuk
 [About lung cancer](https://my.clevelandclinic.org/health/diseases/4375-lung-cancer) \
 [Cancer microenvironment](https://pmc.ncbi.nlm.nih.gov/articles/PMC8194051/) \
 [Paper including discussion about current understanding of lung cancer](https://pmc.ncbi.nlm.nih.gov/articles/PMC11116453/?utm_source=chatgpt.com)
+[Mechanisms of lung cancer metastasis](https://doi.org/10.1016/j.biopha.2021.112035)
 
 ___
 
@@ -85,6 +86,9 @@ For cell type annotation via label transfer, we will follow [Seurat Label Transf
 
 **What to analyze:** High-resolution classification of the Tumor Microenvironment.
 
+**Literature:**
+[Reference paper for label transfer](https://doi.org/10.1038/s41591-023-02327-2)
+
 **How to do it:**
 - Subset the non-epithelial compartments (immune and stromal cells)
 - Load a public, annotated Lung TME reference atlas (e.g., from the paper or HLCA)
@@ -152,8 +156,40 @@ Group the clustered data by the 7 clinical origin states:
 
 Generate fractional stacked bar charts showing how cell type proportions shift across these environments (e.g., the expansion of malignant cells and monocyte-derived macrophages in `mBrain` and `mLN` vs. `nLung`).
 
-**Target Deliverables:**
+---
 
-- Plots: Fractional *Stacked Bar Charts* comparing the relative proportions of all cell types across the 7 clinical origin states.
-- Tables: An *Abundance Table* reporting cell counts and percentages of each cell type across the 7 clinical environments.
+#### Phase 6: Expanding Differential Expression Analysis
+
+**What to analyze:** The within-microenvironment shift in expression across conditions provided in the study metadata.
+
+**Literature:** 
+[Avoiding pseudoreplication bias in single-cell studies via pseudobulk approach](https://doi.org/10.1038/s41467-021-21038-1)
+
+[Lung cancer in never smokers and smokers](https://doi.org/10.1016/j.ccm.2006.11.002)
+
+**How to do it:**
+Group the cell counts/normalized expression matrix per sample level, creating sample-level expression matrix. 
+Attach sample-level metadata from the study (e.g. Sex, Cancer Stage, Smoking Status, Tissue Origin (already mentioned)). 
+
+Example aggregated metadata: 
+| Pseudo-bulk Sample ID | Source Single-Cell Barcodes (Count) | Clinical Origin (`Origin_State`) | Smoking Status (`Smoking`) | Cancer Stage (`Stage`) | Sex (`Sex`) | Total Aggregated Counts |
+| :--- | :---: | :--- | :--- | :--- | :---: | :---: |
+| **SP01_Macro** | 1,420 | `tLung`  | Current Smoker | Stage IIIA | M | 4,210,500 |
+| **SP02_Macro** | 890 | `tLung` | Never Smoked | Stage IB | F | 2,650,000 |
+| **SP03_Macro** | 1,105 | `mBrain` | Current Smoker | Stage IV | M | 3,110,200 |
+
+Pose biological questions, based on the knowledge of cancer dynamics that you have acquired and think of the best way to ask them. Identify the desired contrasts and experiment with different design formulas for DESeq. 
+
+Example question and design formula:
+**Biological Question:** *How does a history of smoking alter the inflammatory and immunosuppressive landscape of macrophages within the primary tumor microenvironment (`tLung`)?*
+* **Target Contrast:** `Current Smoker` vs. `Never Smoked` restricted strictly to Macrophages harvested from `tLung`.
+* **DESeq2 Design Formula:** 
+  `design = ~ Sex + Stage + Smoking`
+Identify top DEGs and run `enrichGO` (Biological Process, BH-adjusted *p* < 0.05) on the top differentially expressed genes. Explain the obtained results.
+
+**Target Deliverables:**
+- Plots: Sample *PCA Plot* for Pseudo-bulk QC, PCA of the aggregated sample-level expression matrices to evaluate if samples grouping are driven primarily by clinical origin or by patient batch; *Volcano Plots* visualizing statistical significance -log(p_adj) against magnitude of change log_2(FC) for chosen contrasts;GO Enrichment DotPlots / Bar Charts: Illustrating the activated or suppressed biological pathways (e.g., upregulation of EMT or angiogenic pathways in brain metastases).
+
+- Tables: *DESeq2 results table* (.csv) for each tested contrast, including baseMean, log2FoldChange, lfcSE, pvalue, and padj (ordered by adjusted p-value). (Important!) *A pseudo-bulk metadata mapping*: maps single-cell aggregations to their respective sample IDs, and clinical metadata traits. *Functional Enrichment Table*: Complete clusterProfiler output containing exact BH-adjusted p-values, gene counts, and specific altered genes matching each term.
+
 
