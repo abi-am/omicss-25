@@ -64,9 +64,9 @@
   **LECTURERS**: Maria Nikoghosyan, Nate Zadirako  
   
   **SCHEDULE**:  
-      - Practice: 2AM-4PM, July 28th, 2026
-      - Lecture & Practice: 11AM-1PM, July 30th, 2026
-      - Lecture & (Self)Practice: 11AM-1PM, July 31st, 2026
+       - Practice: 2AM-4PM, July 28th, 2026
+       - Lecture & Practice: 11AM-1PM, July 30th, 2026
+       - Lecture & (Self)Practice: 11AM-1PM, July 31st, 2026
           
   **_MATERIALS_**: [SLIDES](https://docs.google.com/presentation/d/1oNrTYNsbymxngAjDxGQ88RQnLGIPsYIBCuIccDrLDN4/edit?usp=sharing), [TUTORIAL](https://github.com/abi-am/omicss-25/blob/main/NGS%20data%20analysis%20%26%20file%20manipulation/annotation/samtools_tutorial.md), check [```annotation```](https://github.com/abi-am/omicss-25/tree/main/NGS%20data%20analysis%20%26%20file%20manipulation/annotation) folder     
   
