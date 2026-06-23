@@ -31,7 +31,7 @@ To explore the microbiome field, introduce key concepts, and discuss current adv
 #### ⏰ 4:00 PM – 5:00 PM  
 **Topic:** *Amplicon Sequencing and Data Analysis*  
 **Presenter:** Nelli Vardazaryan  
-**[Slide](https://drive.google.com/file/d/1iLqlFPbrRsCrsxBonCqvsR5B_yuzh52x/view?usp=share_link)** 
+**[Slide](https://drive.google.com/file/d/1iLqlFPbrRsCrsxBonCqvsR5B_yuzh52x/view?usp=drive_link)** 
 
 
 **Objective:**  
