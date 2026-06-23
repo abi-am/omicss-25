@@ -1,13 +1,12 @@
 # Contributors
-   Primary contributor: Nate Zadirako  
-   Contributing authors: Mariia Arakelian, Nane Pivazyan  
+   Primary contributor: Nane Pivazyan  
+   Contributing authors:  Nate Zadirako, Lusine Gevorgyan  
   # Contents  
   * Overview
   * Background
   * Data preprocessing
   * Principal Component Analysis
   * ADMIXTURE
-  * Phylogenetic analysis
     
 ## Project Overview
 [This project](https://docs.google.com/presentation/d/1DHRvp5NNiV4ECnvonUFlFQRDzW8pGVzK/edit?usp=sharing&ouid=115394168503379180010&rtpof=true&sd=true) aims to explore the population structure of Caucasian varieties of grapevine using whole-genome sequencing data. The participants will become familiar with the VCF file format, the standard data preprocessing pipeline (variant calling, filtering) and the downstream population genomics analyses (ADMIXTURE, phylogenetic tree construction).  
@@ -40,7 +39,7 @@ The data for this project comes from [this publication](https://www.science.org/
 You can familiarise yourself with the samples, their regions of origin, genetic background and phenotypes by studying the metadata table here:   
 
 ```
-/mnt/proj/omicss25/gp3/metadata/cauc_arm_grape.metadata.tsv
+/mnt/nas0/proj/omicss25/gp3/metadata/cauc_arm_grape.metadata.tsv
 ```
 
 | **Field**                      | **Description**                                                                                                                               |
@@ -63,7 +62,7 @@ The data is provided to you as VCF files. These files were created from sequenci
 ```
 # path to the data
 
-/mnt/proj/omicss25/gp3/data
+/mnt/nas0/proj/omicss25/gp3/data
 ```
 
 Learn more about the VCF file format and what each field represents [here](https://samtools.github.io/hts-specs/VCFv4.2.pdf).  
@@ -76,7 +75,7 @@ Learn more about the VCF file format and what each field represents [here](https
 
 For any scripts engaging the GATK tooks, refer to the path here:
 ```
-/mnt/proj/omicss25/soft/gatk-4.1.8.1/gatk
+/mnt/nas0/proj/omicss25/soft/gatk-4.1.8.1/gatk
 ```
 
 We started with sequencing data for individual samples and used GATK’s [HaplotypeCaller](https://gatk.broadinstitute.org/hc/en-us/articles/360037225632-HaplotypeCaller) to perform variant calling and identify reference and alternative alleles. The files it outputs are gVCF files (genomic VCF). This format includes not only the variant sites but contains information about non-variant regions as well, so the entire genome is covered. 
@@ -138,7 +137,7 @@ This command will output `.eigenval` (eigenvalues, variance explained by each PC
 
 For any scripts engaging the ADMIXTURE tool, refer to the path here:
 ```
-/mnt/proj/omicss25/soft/admixture_linux-1.3.0/admixture
+/mnt/nas0/proj/omicss25/soft/admixture_linux-1.3.0/admixture
 ```
   ## Step 1 (Filtering)
   
@@ -149,7 +148,7 @@ For any scripts engaging the ADMIXTURE tool, refer to the path here:
 **Then we can proceed with Filtering using [PLINK](https://www.cog-genomics.org/plink/1.9/filter) tool**.
 
 ```
-/mnt/proj/vine/user_projects/shengchang/soft/plink/plink
+/mnt/nas0/proj/vine/user_projects/shengchang/soft/plink/plink
 ```
    - take only 1-19 autosomal chromosomes
    - **Biallelic SNPs** - we keep the SNPs that are either reference or alternative variant.
@@ -227,58 +226,182 @@ For the visualizaton, group samples by their countries of origin. Then in each c
    - Grouping samples in clusters by countries
    - Rscript in bash
 
-## STEP 4 Phylogenetic analysis
-
-Phylogeny is the representation of the evolutionary history and relationships between groups of organisms.  
-
-Phylogenetic analysis is employed to infer the evolutionary relationships among genes or species and to represent these relationships through a branching diagram called a phylogenetic tree. Phylogenetic analysis is essential because the entities under study—commonly referred to as taxa, whether they are genes, species, or other biological units—are not statistically independent, but are linked by shared evolutionary history. To draw meaningful statistical conclusions about patterns of biological variation among taxa, it is necessary to first estimate these historical relationships. Some introductory material you can find [here](https://www.sciencedirect.com/science/article/pii/S0960982297700708).  
 
 
-One of the project trajectories is to explore the evolutionary relationships and structure among Caucasian grape accessions based on SNPs variants. To achieve this goal, the phylogenetic tree should be constructed using Maximum Likelihood phylogenetic analysis algorithm.  
+   ## Population Differentiation Analysis(FST)
 
-Preliminary SNPs data filtering is required:  
+After identifying population structure with PCA and ADMIXTURE, we can ask another important question:
 
-- Minor allele frequency should be more than 10 % (MAF > 0.1)  
-- Missing genotype rate should be less than 10 % (geno < 0.1)  
+**How genetically different are the populations from each other?**
 
-The essential component for tree construction is genetic SNPs data of outgroup sample. Outgroups are species that branched off from the ingroup taxa (species of interes) before those taxa diverged from one another, and they are commonly used to establish the root of a phylogenetic tree. It has been proposed that, among all outgroups with similar sequencing quality, the one most closely related to the ingroup is the most suitable choice for accurate tree rooting. It is known that the accuracy of phylogenetic reconstruction decreases when more distant outgroups are used. For our project we are going to use  Vitis rotundifolia, the muscadine grape as an outgroup sample.  
+PCA helps us visualise clustering patterns, while ADMIXTURE estimates ancestry proportions for each individual. However, neither method directly quantifies the degree of genetic differentiation between populations.
 
-The construction of the ML phylogenetic tree can be cunstructed using SNPhylo tool. Official pipeline you can find [here](https://github.com/thlee/SNPhylo). Tool description is provided in this [paper](https://pubmed.ncbi.nlm.nih.gov/24571581/). Tool path is presented below:  
+To answer this question, we use **FST (Fixation Index)**.
+
+**FST** is one of the most commonly used statistics in population genetics. It measures how much of the genetic variation is explained by differences between populations rather than differences within populations.
+
+In simple words:
+
+> FST tells us whether two populations are genetically similar or genetically distinct.
+
+For example, imagine two populations where the frequencies of genetic variants are almost identical. In this case, the populations would have a low FST value because they are genetically similar.
+
+On the other hand, if the frequencies of genetic variants differ substantially between populations, the FST value will be higher, indicating stronger genetic differentiation.
+
+### Why perform FST analysis?
+
+FST can help answer biological questions such as:
+
+* Are cultivated and wild grapevines genetically differentiated?
+* Are grapevine populations from different countries genetically distinct?
+* Are ADMIXTURE-defined clusters truly separated from one another?
+* Which population pairs show the strongest genetic differentiation?
+
+### Conceptual example
+
+Imagine two baskets filled with red and blue beads, where each bead colour represents a genetic variant.
+
+**Population 1**
+
+* 50% red beads
+* 50% blue beads
+
+**Population 2**
+
+* 52% red beads
+* 48% blue beads
+
+The two populations are very similar, therefore FST would be low.
+
+Now imagine:
+
+**Population 1**
+
+* 95% red beads
+* 5% blue beads
+
+**Population 2**
+
+* 5% red beads
+* 95% blue beads
+
+The two populations are very different, therefore FST would be high.
+
+### General interpretation of FST values
+
+| **FST value** | **Interpretation**          |
+| ------------- | --------------------------- |
+| 0             | No differentiation          |
+| 0 - 0.05      | Low differentiation         |
+| 0.05 - 0.15   | Moderate differentiation    |
+| 0.15 - 0.25   | Strong differentiation      |
+| > 0.25        | Very strong differentiation |
+
+> NOTE: These thresholds are only general guidelines. The biological interpretation depends on the species and dataset being analysed.
+
+### Why perform FST after ADMIXTURE?
+
+ADMIXTURE estimates ancestry proportions and helps identify genetic clusters.
+
+FST complements ADMIXTURE by quantifying how different those clusters are from each other.
+
+A useful way to remember this is:
+
+* ADMIXTURE tells us **who belongs to which ancestry group**
+* FST tells us **how different those ancestry groups are from each other**
+
+Together, these analyses provide a more complete picture of population structure.
+
+### Defining populations for FST analysis
+
+Before calculating FST, we must decide which populations we want to compare.
+
+There is no single correct strategy. The choice depends on the biological question being asked.
+
+Possible approaches include:
+
+**ADMIXTURE-defined groups**
+
+* Compare individuals assigned to different ancestry clusters.
+* Useful for testing whether inferred clusters are genetically differentiated.
+
+**Cultivated vs wild populations**
+
+* Compare cultivated grapevines against wild grapevines.
+* Useful for investigating the effects of domestication.
+
+**Geographic groups**
+
+* Compare samples originating from different countries or regions.
+* Useful for studying geographic population structure.
+
+**Metadata-based groups**
+
+* Compare samples based on phenotypes or other metadata categories.
+
+### How should groups be selected?
+
+When defining populations for FST analysis:
+
+* Use PCA and ADMIXTURE results as guidance.
+* Choose groups that answer a clear biological question.
+* Avoid very small groups whenever possible.
+* Consider excluding highly admixed individuals.
+* Verify that sample names match those present in the VCF file.
+
+### Input files
+
+To calculate FST, we need:
+
+* A filtered VCF file containing SNPs.
+* A text file containing sample IDs for population 1.
+* A text file containing sample IDs for population 2.
+
+Each population file should contain one sample identifier per line.
+
+Example:
 
 ```
-/mnt/proj/vine/user_projects/shengchang/soft
+Arm1
+Arm2
+Arm3
+Arm4
 ```
 
-The tree should be constructed using 100 bootstrap replicates. Suppose we have m sequences, each consisting of n nucleotides (or codons or amino acids). A phylogenetic tree can be built from these sequences using a chosen tree-building method.  
-To assess how reliable the structure of the tree, bootstrapping technique is applied.  
+### Windowed FST
 
-Here’s how it works:  
+FST can be calculated for individual SNPs or for genomic windows.
 
-- From each original sequence, n positions are randomly selected with replacement (meaning the same position can be picked more than once).
-- This creates a new set of sequences — they have the same length as the originals but contain a shuffled combination of the original sites.
-- A new phylogenetic tree is built using this resampled dataset and the same tree-building method as before.
-- The topology (structure) of this new tree is then compared to the original tree.
-- Each internal branch of the original tree (which separates groups of sequences) is evaluated. If that branch is not present in the new tree, it gets a score of 0. If it matches, it gets a score of 1.
+In this project, we will calculate **windowed FST**, which averages FST values across genomic regions.
 
-This process — resampling the sites, rebuilding the tree, and scoring — is repeated hundreds of times (often 100–1000).  
-For each internal branch, wpercentage of trees in which it received a score of 1 is calculated. This percentage is called the bootstrap value. As a general guideline, if a branch has a bootstrap value of **95% or higher**, it is considered reliable, and the tree structure at that point is regarded as statistically supported.  
+Windowed FST reduces noise and makes it easier to identify genomic regions with elevated differentiation between populations.
 
-Visualization of custructed tree can be performed using [iTOL](http://itol.embl.de/). It is general advice to introduce color palette for each region, e.g. Armenian samples of different clusters should be of the red shades and so on. Later this palette should be applied for both ADMIXTURE ploting and Phylogenetic tree construction.  
+The output can later be visualised using heatmaps and genome-wide plots.
 
-Path to the tool:
+### Questions to consider
 
-```
-/mnt/proj/omicss25/soft/snphylo/
-```
+Before running the analysis:
 
-What you should do:
-- go to your personal directory and created snphylo_results folder and log folder inside the snphylo_log. Copy the folder with tool into snphylo_results directory
-  ```
-  cp -a /mnt/proj/omicss25/soft/snphylo/ your_directory/snphylo_results
-  ```
-- open file snphylo.sh. In the SBATCH section change paths for log files
-```
-#SBATCH -o your_directory/snphylo_results/log/snphylo.out
-#SBATCH -e your_directory/snphylo_results/log/snphylo.err
-```
-- set the directory snphylo_results as your working directory and launch snphylo.sh file from there
+* Which populations will you compare?
+* Why did you choose these groups?
+* Do you expect high or low differentiation?
+* Does your expectation agree with the PCA and ADMIXTURE results?
+
+After running the analysis:
+
+* What is the average FST between the populations?
+* Which genomic regions show elevated differentiation?
+* Do the results support your biological hypothesis?
+* How do the results compare with the ADMIXTURE clustering patterns?
+
+### Summary
+
+* PCA reveals clustering patterns.
+* ADMIXTURE estimates ancestry proportions.
+* FST quantifies genetic differentiation between populations.
+
+Together, these analyses help us understand both the structure of grapevine populations and the degree of genetic separation between them.
+
+
+
+
