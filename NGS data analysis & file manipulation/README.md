@@ -14,7 +14,7 @@
   **LECTURERS**:  Davit Tarverdyan, Anahit Yeghiazaryan
   
   **SCHEDULE**:  
-      - Practice: 2PM-3PM, July 23rd, 2026    
+      - Lecture & Practice: 2PM-5PM, July 23rd, 2026    
       
   **SUBTOPICS**:   
     - Introduction to File Types in Bioinformatics  
