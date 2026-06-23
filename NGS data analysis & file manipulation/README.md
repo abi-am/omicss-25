@@ -51,7 +51,7 @@
       - Practice: 2-4PM, July 27th, 2026
       
   **SUBTOPOICS**:   
-    - Alignment Algorithm
+    - Alignment Algorithm  
     - File Formats in Alignment (SAM/BAM files)  
     - Alignment Tools (BWA, BT2, SAMTOOLS)  
       
