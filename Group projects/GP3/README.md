@@ -228,7 +228,7 @@ For the visualizaton, group samples by their countries of origin. Then in each c
 
 
 
-   ## FST (Fixation Index)
+   ## Population Differentiation Analysis(FST)
 
 After identifying population structure with PCA and ADMIXTURE, we can ask another important question:
 
