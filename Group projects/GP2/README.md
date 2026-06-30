@@ -134,11 +134,11 @@ Project presentation by students.
 
 One of the datasets for this project comes from [this paper](https://doi.org/10.1016/j.xcrm.2023.101281). We will use cfDNA data from 10 samples (5 colorectal cancer (CRC) patients and 5 healthy donors) to perform raw NGS data processing steps including quality control, trimming and alignment.   
 
-Raw FASTQ files with sequencing reads are located here: `/mnt/nas0/proj/omicss/gp2/ds-23_gastrointestinal/common/fq_renamed`  
+Raw FASTQ files with sequencing reads are located here: `/mnt/nas1/proj/omicss26/gp2/ds-23_gastrointestinal/common/fq_renamed`  
 Sample metadata table is located [here](https://docs.google.com/spreadsheets/d/1USKgJ9OnbJ2-ICiB7btrKTYcY18Twn-FVCnDWzCoq_8/edit?gid=0#gid=0)   
 
 ### Initial quality check
-Use `/mnt/nas0/proj/omicss/gp2/ds-23_gastrointestinal/common` as the working directory.
+Use `/mnt/nas1/proj/omicss26/gp2/ds-23_gastrointestinal/common` as the working directory.
 
 Create script		`src/fastqc.sh` to run FASTQC on files in `fq_renamed` directory storing outputs in `fastqc` directory.  
 Create script `src/multiqc.sh` to run MULTIQC on files in `fastqc` directory storing outputs in `multiqc` directory.  
@@ -181,7 +181,7 @@ Check if any quality issues persist to perform trimming again if needed.
 
 ## 8/6/2026 - 4PM-5PM and 8/7/2026 - 4PM-5PM
 ### TRV analysis on pre-generated table: within dataset comparisons 
-Use the file `/mnt/nas0/proj/omicss/gp2/trv_analysis/csv/trv_abs.csv` for TRV counts and `/mnt/nas0/proj/omicss/gp2/trv_analysis/csv/trv_compositional.csv` for TRV percentages across samples derived from multiple datasets. Both files include sample metadata in the first 8 columns: `origin`, `timepoint`, `tissue-type`, `gender`, `age`, `patient_name`, `state`, and `full_name`. The remaining columns correspond to TRVs. Each row represents one sample, uniquely identified by the `full_name` column.  
+Use the file `/mnt/nas1/proj/omicss26/gp2/trv_analysis/csv/trv_abs.csv` for TRV counts and `/mnt/nas1/proj/omicss26/gp2/trv_analysis/csv/trv_compositional.csv` for TRV percentages across samples derived from multiple datasets. Both files include sample metadata in the first 8 columns: `origin`, `timepoint`, `tissue-type`, `gender`, `age`, `patient_name`, `state`, and `full_name`. The remaining columns correspond to TRVs. Each row represents one sample, uniquely identified by the `full_name` column.  
 
 #### Filter TRVs  
 Use these files to obtain a filtered list of TRVs with the following filtering criteria:  
@@ -259,6 +259,7 @@ __Note__ you need to prepare the output for PSF. In order to do that you need to
   * [Cytoscape installation tutorial](https://www.youtube.com/watch?v=YH-XXHhrv58)  
   * [Cytoscape tutorial for networks](https://cytoscape.org/cytoscape-tutorials/presentations/network-analysis-ebi-2021.html#/)  
     This tutotial will guide you through basic usage of cytoscape, network visualization and a hands-on experience. Just follow the arrows.  
+  * After installing Cytoscape, install the **PSFC** and **TMM** apps from the Cytoscape App Store: open `Apps -> App Store -> Show App Store`, search for "PSFC" and "TMM", and click Download for each. Then open `Apps -> App Store -> Install Apps From File`. ([Telomere Maintenance Pathway Activity Analysis Enables Tissue- and Gene-Level Inferences (Nersisyan et al., 2021)](https://doi.org/10.3389/fgene.2021.662464))  
 - Pathway Signal Flow (PSF) basic usage  
   * [PSFC user manual](https://big.sci.am/apps/psfc/PSFC_User_Manual_1.1.3.pdf)  
 - PSF for Telomere Maintenance Mechanism (TMM) pathways basic usage 
