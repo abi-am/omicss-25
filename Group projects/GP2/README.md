@@ -181,7 +181,7 @@ Check if any quality issues persist to perform trimming again if needed.
 
 ## 8/6/2026 - 4PM-5PM and 8/7/2026 - 4PM-5PM
 ### TRV analysis on pre-generated table: within dataset comparisons 
-Use the file `/mnt/nas1/proj/omicss26/gp2/trv_analysis/csv/trv_abs.csv` for TRV counts and `/mnt/nas1/proj/omicss26/gp2/trv_analysis/csv/trv_compositional.csv` for TRV percentages across samples derived from multiple datasets. Both files include sample metadata in the first 8 columns: `origin`, `timepoint`, `tissue-type`, `gender`, `age`, `patient_name`, `state`, and `full_name`. The remaining columns correspond to TRVs. Each row represents one sample, uniquely identified by the `full_name` column.  
+Use the file `/mnt/nas1/proj/omicss26/gp2/trv_analysis/csv/trv_abs.csv` for TRV counts and `/mnt/nas1/proj/omicss26/gp2/trv_analysis/csv/trv_compositional.csv` for TRV percentages across samples derived from multiple datasets. Both files start with sample metadata in the first 8 columns: `origin`, `timepoint`, `tissue-type`, `gender`, `age`, `patient_name`, `state`, and `full_name`, followed by 5 Computel telomere length and coverage metric columns: `MTL`, `tel_coverage`, `base_coverage`, `Inward_FR`, and `Outward_FR`. All remaining columns correspond to TRVs. Each row represents one sample, uniquely identified by the `full_name` column. A third file `/mnt/nas1/proj/omicss26/gp2/trv_analysis/csv/trv_compositional_non_canonical.csv` is also available: it holds compositional percentages computed over non-canonical TRVs only, with the canonical `TTAGGG` column dropped.  
 
 #### Filter TRVs  
 Use these files to obtain a filtered list of TRVs with the following filtering criteria:  
