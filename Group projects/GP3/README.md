@@ -1,13 +1,13 @@
 # Contributors
-   Primary contributor: Nate Zadirako  
-   Contributing authors: Mariia Arakelian, Nane Pivazyan  
+   Primary contributor: Nane Pivazyan  
+   Contributing authors: Nate Zadirako, Lusine Gevorgyan 
   # Contents  
   * Overview
   * Background
   * Data preprocessing
   * Principal Component Analysis
   * ADMIXTURE
-  * Phylogenetic analysis
+ 
     
 ## Project Overview
 [This project](https://docs.google.com/presentation/d/1DHRvp5NNiV4ECnvonUFlFQRDzW8pGVzK/edit?usp=sharing&ouid=115394168503379180010&rtpof=true&sd=true) aims to explore the population structure of Caucasian varieties of grapevine using whole-genome sequencing data. The participants will become familiar with the VCF file format, the standard data preprocessing pipeline (variant calling, filtering) and the downstream population genomics analyses (ADMIXTURE, phylogenetic tree construction).  
@@ -226,5 +226,557 @@ For the visualizaton, group samples by their countries of origin. Then in each c
    - Cultivated, admixed, wild clusters distinction
    - Grouping samples in clusters by countries
    - Rscript in bash
+## Population Differentiation Analysis with FST
+
+After exploring the population structure of Caucasian grapevine accessions using PCA and ADMIXTURE, we now move one step further. ADMIXTURE helps us understand **how samples are grouped based on ancestry proportions**, but it does not directly tell us **how genetically different these groups are from each other**.
+
+For example, in the ADMIXTURE plot, we may see that some samples mostly belong to K1, others to K2, K3, and so on. However, the plot itself does not answer questions like:
+
+* Are K1 and K2 very similar or strongly differentiated?
+* Which ADMIXTURE groups are the most genetically distant from each other?
+* Which groups are genetically closer and may share more ancestry?
+* Do the relationships suggested by ADMIXTURE agree with a quantitative population-genetic statistic?
+* Which group comparisons should we investigate further using nucleotide diversity, π ratio, or selection scans?
+
+To answer these questions, we calculate **FST** between the ADMIXTURE-defined groups.
+
+---
+
+### What is FST?
+
+**FST** is a population-genetic statistic used to measure **genetic differentiation between populations**.
+
+In simple terms, FST asks:
+
+> How different are two populations in terms of allele frequencies?
+
+If two populations have very similar allele frequencies, their FST will be low.
+If two populations have very different allele frequencies, their FST will be higher.
+
+A simplified interpretation is:
+
+| FST value     | Interpretation                                  |
+| ------------- | ----------------------------------------------- |
+| Close to 0    | The two groups are genetically very similar     |
+| Intermediate  | The two groups show moderate differentiation    |
+| Higher values | The two groups are more strongly differentiated |
+
+FST does **not** directly tell us that one group is “better” or “older” than another. It simply measures how different two groups are genetically.
+
+---
+
+### Why do we calculate FST after ADMIXTURE?
+
+ADMIXTURE and FST answer related but different questions.
+
+**ADMIXTURE answers:**
+
+> What proportion of each sample’s genome comes from each inferred ancestry component?
+
+For example, a sample may be:
+
+```text
+90% K1, 5% K2, 5% K3
+```
+
+This tells us that the sample mostly belongs to the K1 ancestry component.
+
+**FST answers:**
+
+> How genetically differentiated are the groups from each other?
+
+For example, after assigning samples to ADMIXTURE groups, we can compare:
+
+```text
+K1 vs K2
+K1 vs K3
+K2 vs K3
+```
+
+and calculate a numerical FST value for each comparison.
+
+So the logic of this part is:
+
+```text
+ADMIXTURE defines groups
+        ↓
+FST compares those groups quantitatively
+        ↓
+Heatmap visualizes which groups are most different
+```
+
+This creates a bridge from visual population structure to quantitative population differentiation.
+
+---
+
+### How is FST computed?
+
+FST is calculated from allele frequency differences between populations.
+
+At each SNP, the method compares how allele frequencies vary:
+
+* within each population
+* between populations
+
+If two populations have similar allele frequencies at many SNPs, the average FST will be low.
+If they have different allele frequencies at many SNPs, the average FST will be higher.
+
+In this project, we use **VCFtools** to calculate Weir and Cockerham FST estimates between pairs of ADMIXTURE-defined groups.
+
+For example, if we compare K1 and K2, VCFtools uses:
+
+```text
+K1 sample list
+K2 sample list
+filtered VCF file
+```
+
+and outputs an FST value for each SNP, together with an overall mean and weighted FST estimate.
+
+---
+
+### Main biological question
+
+The main question of this analysis is:
+
+> Which ADMIXTURE-defined grapevine groups are most genetically differentiated from each other?
+
+More specifically, we ask:
+
+1. Which pair of ADMIXTURE groups has the highest FST?
+2. Which pair has the lowest FST?
+3. Do the FST results agree with the ADMIXTURE plot?
+4. Are some ADMIXTURE groups clearly more separated than others?
+5. Which group comparisons should be prioritized for later analyses such as nucleotide diversity π, π ratio, or selective sweep scans?
+
+---
+
+### Input files
+
+For this analysis, we use the filtered VCF file, the corresponding VCF index, the `.fam` file, and the ADMIXTURE `.Q` files.
+
+The project directory is:
+
+```bash
+/mnt/nas1/proj/omicss26/gp3
+```
+
+The filtered VCF file is:
+
+```bash
+/mnt/nas1/proj/omicss26/gp3/data/cauc_filtered.final.vcf.gz
+```
+
+The VCF index file is:
+
+```bash
+/mnt/nas1/proj/omicss26/gp3/data/cauc_filtered.final.vcf.gz.tbi
+```
+
+The `.fam` file is:
+
+```bash
+/mnt/nas1/proj/omicss26/gp3/data/cauc_filtered.final.fam
+```
+
+The ADMIXTURE `.Q` files are located in:
+
+```bash
+/mnt/nas1/proj/omicss26/gp3/admixture/script/
+```
+
+For example:
+
+```bash
+/mnt/nas1/proj/omicss26/gp3/admixture/script/cauc_filtered.final.3.Q
+```
+
+If ADMIXTURE has been run for K=5 or K=7, the corresponding files would be:
+
+```bash
+/mnt/nas1/proj/omicss26/gp3/admixture/script/cauc_filtered.final.5.Q
+/mnt/nas1/proj/omicss26/gp3/admixture/script/cauc_filtered.final.7.Q
+```
+
+Before starting, you can check which ADMIXTURE results are available:
+
+```bash
+ls /mnt/nas1/proj/omicss26/gp3/admixture/script/*.Q
+```
+
+---
+
+### Output folders
+
+The FST scripts are located in:
+
+```bash
+/mnt/nas1/proj/omicss26/gp3/fst/scripts/
+```
+
+For each selected K value, the scripts will automatically create a separate output folder.
+
+For example, if we choose:
+
+```bash
+K=3
+```
+
+then the outputs will be saved in:
+
+```bash
+/mnt/nas1/proj/omicss26/gp3/fst/K3/
+```
+
+This folder will contain:
+
+```text
+fst/K3/
+├── sample_lists/
+├── results/
+└── plots/
+```
+
+The `sample_lists` folder contains the ADMIXTURE group sample lists.
+
+The `results` folder contains the pairwise FST output files.
+
+The `plots` folder contains the final FST heatmap and matrix.
+
+This K-specific structure is useful because students may choose different ADMIXTURE K values. For example, one group may work with K=3, while another may work with K=5 or K=7. Their results will be kept separate.
+
+---
+
+### Step 1: Choose the ADMIXTURE K value
+
+First, choose the ADMIXTURE K value you want to analyze.
+
+For example:
+
+```bash
+K=3
+```
+
+If the corresponding `.Q` file exists, you can also choose:
+
+```bash
+K=5
+```
+
+or:
+
+```bash
+K=7
+```
+
+The selected K value determines which ADMIXTURE file will be used.
+
+For example, if:
+
+```bash
+K=3
+```
+
+the script uses:
+
+```bash
+admixture/script/cauc_filtered.final.3.Q
+```
+
+If:
+
+```bash
+K=7
+```
+
+the script uses:
+
+```bash
+admixture/script/cauc_filtered.final.7.Q
+```
+
+---
+
+### Step 2: Create sample lists from ADMIXTURE results
+
+VCFtools needs one sample list for each population being compared.
+
+ADMIXTURE outputs a `.Q` file, where:
+
+* each row is a sample
+* each column is an ancestry component
+* each value is the ancestry proportion of that sample from that component
+
+For example, for K=3:
+
+```text
+0.90  0.05  0.05
+0.10  0.80  0.10
+0.20  0.15  0.65
+```
+
+A sample is assigned to the ADMIXTURE group where it has the highest ancestry proportion.
+
+In this exercise, we use a threshold of:
+
+```text
+0.75
+```
+
+This means:
+
+* if a sample has at least 75% ancestry from one component, it is assigned to that K group
+* if no ancestry component is at least 75%, the sample is labeled as admixed
+
+For example:
+
+| Sample   |   K1 |   K2 |   K3 | Assigned group |
+| -------- | ---: | ---: | ---: | -------------- |
+| sample_1 | 0.90 | 0.05 | 0.05 | K1             |
+| sample_2 | 0.10 | 0.80 | 0.10 | K2             |
+| sample_3 | 0.40 | 0.35 | 0.25 | admixed        |
+
+To create sample lists, run:
+
+```bash
+cd /mnt/nas1/proj/omicss26/gp3
+
+bash fst/scripts/01_make_admixture_sample_lists.sh $K
+```
+
+For K=3, this creates files such as:
+
+```bash
+fst/K3/sample_lists/K1_samples.txt
+fst/K3/sample_lists/K2_samples.txt
+fst/K3/sample_lists/K3_samples.txt
+fst/K3/sample_lists/admixed_samples.txt
+fst/K3/sample_lists/sample_q_values_K3.tsv
+```
+
+The `K1_samples.txt`, `K2_samples.txt`, etc. files are used for FST calculation.
+The `admixed_samples.txt` file is created for reference, but admixed samples are not included in the main pairwise FST heatmap because they may blur the comparison between core ADMIXTURE groups.
+
+You can check the number of samples in each group using:
+
+```bash
+wc -l fst/K${K}/sample_lists/*_samples.txt
+```
+
+---
+
+### Step 3: Calculate pairwise FST
+
+There are two options for calculating FST.
+
+---
+
+#### Option A: Compare all ADMIXTURE groups
+
+To calculate FST for all pairs of ADMIXTURE groups, run:
+
+```bash
+bash fst/scripts/02_run_fst.sh $K all
+```
+
+For example, if:
+
+```bash
+K=3
+```
+
+this calculates:
+
+```text
+K1 vs K2
+K1 vs K3
+K2 vs K3
+```
+
+If:
+
+```bash
+K=7
+```
+
+this calculates all pairwise comparisons between K1–K7:
+
+```text
+K1 vs K2
+K1 vs K3
+K1 vs K4
+...
+K6 vs K7
+```
+
+For K=7, there are 21 pairwise comparisons.
+
+This option is useful when the goal is to create a full pairwise FST heatmap.
+
+---
+
+#### Option B: Compare only two selected groups
+
+If you want to focus on one specific comparison, you can choose two groups manually.
+
+For example:
+
+```bash
+bash fst/scripts/02_run_fst.sh $K K1 K2
+```
+
+or:
+
+```bash
+bash fst/scripts/02_run_fst.sh $K K1 K5
+```
+
+This option is useful when you already know which groups are biologically interesting and want to investigate only that pair.
+
+For example, if K1 represents a cultivated group and K5 represents a wild group, then:
+
+```bash
+bash fst/scripts/02_run_fst.sh $K K1 K5
+```
+
+would calculate FST only between those two groups.
+
+---
+
+### Step 4: Summarize pairwise FST values
+
+VCFtools produces one FST file for each pairwise comparison.
+
+For example:
+
+```bash
+fst/K3/results/K1_vs_K2.weir.fst
+fst/K3/results/K1_vs_K3.weir.fst
+fst/K3/results/K2_vs_K3.weir.fst
+```
+
+Each file contains SNP-level FST values.
+
+To create a summary table with the mean FST value for each comparison, run:
+
+```bash
+bash fst/scripts/03_summarize_pairwise_fst.sh $K
+```
+
+For K=3, this creates:
+
+```bash
+fst/K3/results/pairwise_fst_summary_K3.tsv
+```
+
+Example output:
+
+```text
+comparison    mean_fst
+K1_vs_K2      0.0448631
+K1_vs_K3      0.0522745
+K2_vs_K3      0.0558792
+```
+
+Negative FST values can occur because of statistical estimation noise. In the summary script, negative FST values are set to 0 before calculating the mean.
+
+---
+
+### Step 5: Plot the pairwise FST heatmap
+
+After summarizing the FST values, create the heatmap:
+
+```bash
+Rscript fst/scripts/04_plot_pairwise_fst_heatmap.R $K
+```
+
+The heatmap is saved as a PDF because PDF output works reliably on the server.
+
+For K=3, the output files are:
+
+```bash
+fst/K3/plots/pairwise_fst_heatmap_K3.pdf
+fst/K3/plots/pairwise_fst_matrix_K3.csv
+```
+
+The `.pdf` file is the heatmap.
+The `.csv` file is the numerical FST matrix used to create the heatmap.
+
+---
+
+### Full workflow
+
+The full workflow is:
+
+```bash
+cd /mnt/nas1/proj/omicss26/gp3
+
+# Choose the ADMIXTURE K value you want to analyze.
+K=3
+
+# Step 1: Create sample lists from the ADMIXTURE Q file.
+bash fst/scripts/01_make_admixture_sample_lists.sh $K
+
+# Step 2A: Calculate FST for all ADMIXTURE group pairs.
+bash fst/scripts/02_run_fst.sh $K all
+
+# Step 2B: Alternatively, calculate FST for only one selected pair.
+# bash fst/scripts/02_run_fst.sh $K K1 K2
+
+# Step 3: Summarize pairwise FST values.
+bash fst/scripts/03_summarize_pairwise_fst.sh $K
+
+# Step 4: Plot the pairwise FST heatmap.
+Rscript fst/scripts/04_plot_pairwise_fst_heatmap.R $K
+```
+
+---
+
+### How to interpret the heatmap
+
+The heatmap shows the mean FST value between each pair of ADMIXTURE groups.
+
+Each row and column represents an ADMIXTURE group.
+
+Each cell represents the mean FST between two groups.
+
+For example, if the heatmap contains:
+
+```text
+K1 vs K2 = 0.045
+K1 vs K3 = 0.052
+K2 vs K3 = 0.056
+```
+
+then K2 and K3 are the most differentiated pair among these three groups, while K1 and K2 are the least differentiated pair.
+
+When interpreting the heatmap, ask:
+
+1. Which pair has the highest FST?
+2. Which pair has the lowest FST?
+3. Do these results match the ADMIXTURE plot?
+4. Do closely related-looking groups in ADMIXTURE also show low FST?
+5. Do clearly separated groups in ADMIXTURE show higher FST?
+6. Which pair should be selected for deeper analysis using nucleotide diversity π or selection scans?
+
+---
+
+### Important notes
+
+The FST heatmap summarizes average differentiation across the SNPs included in the filtered VCF. It is useful for identifying interesting group comparisons, but it does not show where in the genome the differentiation is located.
+
+A high mean FST between two groups means that the groups are genetically differentiated overall. However, it does not by itself prove selection. Differentiation can be caused by several evolutionary processes, including:
+
+* genetic drift
+* population structure
+* reduced gene flow
+* demographic history
+* domestication
+* selection
+
+Therefore, FST should be interpreted together with ADMIXTURE, PCA, metadata, nucleotide diversity π, and later selection-scan results.
+
+The next step after the pairwise FST heatmap is to investigate selected comparisons in more detail using genome-wide windowed statistics such as nucleotide diversity π, π ratio, and selection scans.
+
 
  
