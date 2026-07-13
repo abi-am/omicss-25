@@ -39,7 +39,7 @@ To install these packages, start R and enter:
 
 ---
 Go to https://github.com/abi-am/omicss26/ and download the repository as a ZIP file using the following steps:
-<img width="1066" height="664" alt="image" src="https://github.com/user-attachments/assets/b6a3a3a7-e417-40a7-82b1-66b60b33c2a7" />
+![](figures/omicss26.png)<!-- -->
 
 ---
 Navigate to omicss26/Functional genomics/Transcriptomics/Practice
