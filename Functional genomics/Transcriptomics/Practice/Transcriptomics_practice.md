@@ -1,4 +1,4 @@
-OMICSS25:Practice of the Transcriptomics Course
+OMICSS26:Practice of the Transcriptomics Course
 ================
 
 # Welcome to the Practice of the Transcriptomics Course
