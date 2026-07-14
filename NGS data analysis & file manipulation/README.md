@@ -9,12 +9,12 @@
   4. Annotation & Genomic Regions, VCF, IGV  [NZ, MN]
 
   ## NGS data analysis & file manipulation  
-  ### **TOPIC 1**: FASTA/FASTQ file formats & prractice on Linux   
+  ### **TOPIC 1**: FASTA/FASTQ file formats & practice on Linux   
   
   **LECTURERS**:  Davit Tarverdyan, Anahit Yeghiazaryan
   
   **SCHEDULE**:  
-      - Lecture & Practice: 2PM-5PM, July 23rd, 2026    
+      - Lecture & Practice: 2PM-3PM, July 23rd, 2026    
       
   **SUBTOPICS**:   
     - Introduction to File Types in Bioinformatics  
