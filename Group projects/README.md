@@ -1,7 +1,7 @@
-## GP1: Identification of Bacterial Biomarkers for Disease Classification
- - Mentors: Davit Hakobyan, Nelli Vardazaryan, Razmik Sargsyan, Lusine Adunts
+## GP1: Identification of Bacterial Biomarkers for Biological Sex Classification
+ - Mentors: Davit Hakobyan, Nelli Vardazaryan, Razmik Sargsyan
  - Students (will be added)
- - Short description: This project aims to identify bacterial biomarkers with disease classification potential using microbial abundance data from WGS/Shotgun metagenomics data. Students will apply tools like ANCOM-BC2 and machine learning models, and may also be involved in preprocessing raw sequencing data to generate OTU tables.
+ - Short description: This project aims to classify biological sex (female/male) using microbial abundance data derived from whole-genome shotgun (WGS) sequencing of saliva samples from a healthy patient cohort. Students will independently download, preprocess, quality check (QC), and run taxonomic profiling (Kraken2/Bracken) on 5 publicly available datasets, before applying differential abundance analysis (ANCOM-BC2) and machine learning/ANN models to identify sex-associated bacterial biomarkers and build classification models.
  
 ## GP2: Discovery of Telomeric Biomarkers for Cancer Detection in Cell-Free DNA
  - Mentors: Tatevik Jalatyan,	Anahit Yeghiazaryan, Davit Tareverdyan, Mher Kurghinyan
