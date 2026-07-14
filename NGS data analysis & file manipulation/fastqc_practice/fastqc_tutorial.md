@@ -8,10 +8,10 @@ mkdir fastq_samples
 mkdir fastqc_reports
 ```
 
-Now, copy the sample files from ```/mnt/proj/omicss25/ngs_data_analysis/fastqc_practice/data``` to ```fastq_samples``` folder on server  
+Now, copy the sample files from ```/mnt/nas1/proj/omicss26/ngs_data_analysis/fastqc_practice/data``` to ```fastq_samples``` folder on server  
 
 ```bash
-cp /mnt/proj/omicss25/ngs_data_analysis/fastqc_practice/data/* fastq_samples
+cp /mnt/nas1/proj/omicss26/ngs_data_analysis/fastqc_practice/data/* fastq_samples
 ```
 First input specified _where from_ to copy and the second input specifies _where to_   
 ```*``` - specifies to copy all the files in the given directory
