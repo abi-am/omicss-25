@@ -20,7 +20,7 @@
     - Introduction to File Types in Bioinformatics  
     - Basic File Manipulations on Linux  
       
-  **_MATERIALS_**: [SLIDES](https://docs.google.com/presentation/d/147S8KHfASleNNnflGcAHNm_17RivY0Ik3SBDx_QqfxA/edit?usp=sharing), [TUTORIAL](https://github.com/abi-am/omicss26/blob/main/NGS%20data%20analysis%20%26%20file%20manipulation/fasta_practice/fasta_tutorial.md), check [```fasta_practice```](https://github.com/abi-am/omicss26/tree/main/NGS%20data%20analysis%20%26%20file%20manipulation/fasta_practice) folder
+  **_MATERIALS_**: [SLIDES](https://docs.google.com/presentation/d/147S8KHfASleNNnflGcAHNm_17RivY0Ik3SBDx_QqfxA/edit?usp=drive_link), [TUTORIAL](https://github.com/abi-am/omicss26/blob/main/NGS%20data%20analysis%20%26%20file%20manipulation/fasta_practice/fasta_tutorial.md), check [```fasta_practice```](https://github.com/abi-am/omicss26/tree/main/NGS%20data%20analysis%20%26%20file%20manipulation/fasta_practice) folder
 
 ----- 
 
@@ -37,7 +37,7 @@
     - Running FASTQC/MULTIQC  
     - Adapter Trimming  
       
-  **_MATERIALS_**: [SLIDES](https://docs.google.com/presentation/d/17kIqHhE1-EcamWTcxxPEj-M4FjJvLYy7nw7EVw7beiY/edit?usp=sharing), [TUTORIAL](https://github.com/abi-am/omicss26/blob/main/NGS%20data%20analysis%20%26%20file%20manipulation/fastqc_practice/fastqc_tutorial.md), check [```fastqc_practice```](https://github.com/abi-am/omicss26/tree/main/NGS%20data%20analysis%20%26%20file%20manipulation/fastqc_practice) folder     
+  **_MATERIALS_**: [SLIDES](https://docs.google.com/presentation/d/17kIqHhE1-EcamWTcxxPEj-M4FjJvLYy7nw7EVw7beiY/edit?usp=drive_link), [TUTORIAL](https://github.com/abi-am/omicss26/blob/main/NGS%20data%20analysis%20%26%20file%20manipulation/fastqc_practice/fastqc_tutorial.md), check [```fastqc_practice```](https://github.com/abi-am/omicss26/tree/main/NGS%20data%20analysis%20%26%20file%20manipulation/fastqc_practice) folder     
 
 ----- 
 
@@ -68,6 +68,6 @@
        - Lecture & Practice: 11AM-1PM, July 30th, 2026  
        - Lecture & (Self)Practice: 11AM-1PM, July 31st, 2026  
           
-  **_MATERIALS_**: [SLIDES](https://docs.google.com/presentation/d/1oNrTYNsbymxngAjDxGQ88RQnLGIPsYIBCuIccDrLDN4/edit?usp=sharing), [TUTORIAL](https://github.com/abi-am/omicss26/blob/main/NGS%20data%20analysis%20%26%20file%20manipulation/alignment_practice/samtools_tutorial.md), check [```annotation```](https://github.com/abi-am/omicss26/tree/main/NGS%20data%20analysis%20%26%20file%20manipulation/annotation) folder     
+  **_MATERIALS_**: [SLIDES](https://docs.google.com/presentation/d/1oNrTYNsbymxngAjDxGQ88RQnLGIPsYIBCuIccDrLDN4/edit?usp=drive_link), [TUTORIAL](https://github.com/abi-am/omicss26/blob/main/NGS%20data%20analysis%20%26%20file%20manipulation/alignment_practice/samtools_tutorial.md), check [```annotation```](https://github.com/abi-am/omicss26/tree/main/NGS%20data%20analysis%20%26%20file%20manipulation/annotation) folder     
   
 ----- 
