@@ -20,7 +20,7 @@
     - Introduction to File Types in Bioinformatics  
     - Basic File Manipulations on Linux  
       
-  **_MATERIALS_**: [SLIDES](https://docs.google.com/presentation/d/147S8KHfASleNNnflGcAHNm_17RivY0Ik3SBDx_QqfxA/edit?usp=sharing), [TUTORIAL](https://github.com/abi-am/omicss-26/blob/main/NGS%20data%20analysis%20%26%20file%20manipulation/fasta_practice/fasta_tutorial.md), check [```fasta_practice```](https://github.com/abi-am/omicss-26/tree/main/NGS%20data%20analysis%20%26%20file%20manipulation/fasta_practice) folder
+  **_MATERIALS_**: [SLIDES](https://docs.google.com/presentation/d/147S8KHfASleNNnflGcAHNm_17RivY0Ik3SBDx_QqfxA/edit?usp=sharing), [TUTORIAL](https://github.com/abi-am/Omicss-26/blob/main/NGS%20data%20analysis%20%26%20file%20manipulation/fasta_practice/fasta_tutorial.md), check [```fasta_practice```](https://github.com/abi-am/Omicss-26/tree/main/NGS%20data%20analysis%20%26%20file%20manipulation/fasta_practice) folder
 
 ----- 
 
