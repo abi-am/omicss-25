@@ -25,14 +25,16 @@ While solutions are available if you get stuck, we encourage you to try on your 
 Count how many reads in the BAM file are mapped to the reference genome. This gives you a quick overview of how many reads were successfully aligned.
 
 <details>
-  <summary>Help, I'm lost / Check solution</summary>
-    
-    Command:
-    ```samtools view -c -F 4 sample.bam```
-    
-    Explanation:
-    The `-F 4` flag excludes unmapped reads, and `-c` counts the remaining ones.
-    
+<summary>Help, I'm lost / Check solution</summary>
+
+Command:
+
+```bash
+samtools view -c -F 4 sample.bam
+```
+
+Explanation:
+The `-F 4` flag excludes unmapped reads, and `-c` counts the remaining ones.  
 </details>
 
 ---
