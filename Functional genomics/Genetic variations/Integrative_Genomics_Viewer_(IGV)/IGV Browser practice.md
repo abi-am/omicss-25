@@ -19,7 +19,7 @@ The list of files to download:
 
 path to the directory with files:
 ```
-/mnt/proj/omicss25/ngs_data_analysis/variant_calling/data/vcf/
+/mnt/nas1/proj/omicss26/ngs_data_analysis/variant_calling/data/vcf/
 ```
 
 Note that one sample was obtained from a healthy individual, while the other was collected from a person diagnosed with Familial Mediterranean Fever (FMF).  Do not forget that .bam anc .vcg files require index files in the same directory. For bam files it is recommended to name your index file like .bam.bai, in that way it is guaranteed that IGV browser would open your file correctly.    
