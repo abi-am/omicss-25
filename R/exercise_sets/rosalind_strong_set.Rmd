@@ -1,0 +1,347 @@
+---
+title: "Rosalind Strong Set — Bioinformatics Problems in R"
+author: "ABI Omics"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    number_sections: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
+```
+
+# Overview
+
+This set covers classical Rosalind DNA/RNA string problems. Work through them in order;
+later problems reuse ideas from earlier ones.
+
+**Strongly recommended problems**
+
+| ID | Title |
+|----|-------|
+| DNA | Counting DNA Nucleotides |
+| RNA | Transcribing DNA into RNA |
+| REVC | Complementing a Strand of DNA |
+| HAMM | Counting Point Mutations |
+| GC | Computing GC Content |
+| SUBS | Finding a Motif in DNA |
+| CONS | Consensus and Profile |
+| PROT | Translating RNA into Protein |
+
+**Bonus (apply-family deep dive)**
+
+| ID | Title |
+|----|-------|
+| SPLC | RNA Splicing |
+
+> **Hint on style.** In several of these problems your first instinct may be a `for` loop.
+> Before you reach for one, ask whether `sapply`, `lapply`, `vapply`, `mapply`, or
+> `apply` can express the same idea more cleanly. The apply family is one of the
+> clearest practical differences between R and Python — and it *is* useful here.
+
+Helper ideas you may want (you do not have to use these names):
+
+```{r helpers-sketch}
+# Split a DNA/RNA string into a character vector of bases
+chars <- function(s) strsplit(s, "")[[1]]
+
+# Very small FASTA parser: returns a named character vector of sequences
+# (concatenates multi-line sequence blocks)
+parse_fasta <- function(text) {
+  lines <- strsplit(text, "\n")[[1]]
+  lines <- lines[nzchar(lines)]
+  ids <- character()
+  seqs <- character()
+  current_id <- NULL
+  current_seq <- character()
+  flush <- function() {
+    if (!is.null(current_id)) {
+      ids <<- c(ids, current_id)
+      seqs <<- c(seqs, paste(current_seq, collapse = ""))
+    }
+  }
+  for (line in lines) {
+    if (startsWith(line, ">")) {
+      flush()
+      current_id <- sub("^>", "", line)
+      current_seq <- character()
+    } else {
+      current_seq <- c(current_seq, line)
+    }
+  }
+  flush()
+  setNames(seqs, ids)
+}
+```
+
+For each problem: read the sample dataset, write your solution in the code chunk,
+then check against the sample output. When you are ready, grab a dataset from
+[Rosalind](https://rosalind.info) and submit.
+
+---
+
+# DNA — Counting DNA Nucleotides
+
+**Problem.** Given a DNA string $s$ of length at most 1000 nt, return four integers
+counting the respective number of times that the symbols **A**, **C**, **G**, and **T**
+occur in $s$.
+
+**Sample dataset**
+
+```{r dna-data}
+dna <- "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC"
+```
+
+**Sample output:** `20 12 17 21`
+
+```{r dna-solution}
+# Your solution here.
+# Prefer something apply-/vapply-shaped over an explicit for loop counting each base.
+```
+
+---
+
+# RNA — Transcribing DNA into RNA
+
+**Problem.** Given a DNA string $t$ corresponding to a coding strand, return its
+transcribed RNA string $u$ (replace every **T** with **U**).
+
+**Sample dataset**
+
+```{r rna-data}
+dna <- "GATGGAACTTGACTACGTAAATT"
+```
+
+**Sample output:** `GAUGGAACUUGACUACGUAAAUU`
+
+```{r rna-solution}
+# Your solution here.
+```
+
+---
+
+# REVC — Complementing a Strand of DNA
+
+**Problem.** Given a DNA string, return its reverse complement.
+Complement: A↔T, C↔G. Then reverse the resulting string.
+
+**Sample dataset**
+
+```{r revc-data}
+dna <- "AAAACCCGGT"
+```
+
+**Sample output:** `ACCGGGTTTT`
+
+```{r revc-solution}
+# Your solution here.
+# One clean route: chars -> complement map -> reverse -> paste.
+```
+
+---
+
+# HAMM — Counting Point Mutations
+
+**Problem.** Given two DNA strings $s$ and $t$ of equal length, return the Hamming
+distance $d_H(s, t)$ (number of differing positions).
+
+**Sample dataset**
+
+```{r hamm-data}
+s <- "GAGCCTACTAACGGGAT"
+t <- "CATCGTAATGACGGCCT"
+```
+
+**Sample output:** `7`
+
+```{r hamm-solution}
+# Your solution here.
+# Vectorized comparison (or mapply) beats a for loop that walks both strings.
+```
+
+---
+
+# GC — Computing GC Content
+
+**Problem.** Given a multi-FASTA of DNA strings, return the ID of the string with
+the highest GC-content, followed by its GC-content as a percentage.
+
+GC-content of a string is $100 \times \frac{\#(G) + \#(C)}{\text{length}}$.
+
+**Sample dataset**
+
+```{r gc-data}
+gc_fasta <- ">Rosalind_6404
+CCTGCGGAAGATCGGCACTAGAATAGCCAGAACCGTTTCTCTGAGGCTTCCGGCCTTCCC
+TCCCACTAATAATTCTGAGG
+>Rosalind_5959
+CCATCGGTAGCGCATCCTTAGTCCAATTAAGTCCCTATCCAGGCGACGAAAGTTACAAG
+>Rosalind_0808
+CCACCCTCGTGGTATGGCTAGGCATTCAGGAACCGGAGAACGCTTCAGACCAGCCCGGAC
+TGGGAACCTGCGGGCAGTAGGTGGAAT"
+```
+
+**Sample output**
+
+```
+Rosalind_0808
+60.919540
+```
+
+(Any precision comparable to this is fine for practice; Rosalind accepts rounding error.)
+
+```{r gc-solution}
+# Your solution here.
+# Natural apply pattern: parse FASTA -> sapply each sequence for GC% -> which.max.
+```
+
+---
+
+# SUBS — Finding a Motif in DNA
+
+**Problem.** Given two DNA strings $s$ and $t$ (with $t$ a motif of $s$), return all
+starting locations of $t$ in $s$. Locations use **1-based** indexing.
+
+**Sample dataset**
+
+```{r subs-data}
+s <- "GATATATGCATATACTT"
+t <- "ATAT"
+```
+
+**Sample output:** `2 4 10`
+
+```{r subs-solution}
+# Your solution here.
+# Sliding window: sapply over start positions, keep those where the substring matches.
+```
+
+---
+
+# CONS — Consensus and Profile
+
+**Problem.** Given a collection of DNA strings of equal length in FASTA format,
+return:
+
+1. A consensus string (most frequent base at each position; ties may be broken any way)
+2. The profile matrix (counts of A, C, G, T at each position), labeled rows
+
+**Sample dataset**
+
+```{r cons-data}
+cons_fasta <- ">Rosalind_1
+ATCCAGCT
+>Rosalind_2
+GGGCAACT
+>Rosalind_3
+ATGGATCT
+>Rosalind_4
+AAGCAACC
+>Rosalind_5
+TTGGAACT
+>Rosalind_6
+ATGCCATT
+>Rosalind_7
+ATGGCACT"
+```
+
+**Sample output** (one valid consensus; profile is unique)
+
+```
+ATGCAACT
+A: 5 1 0 0 5 5 0 0
+C: 0 0 1 4 2 0 6 1
+G: 1 1 6 3 0 1 0 0
+T: 1 5 0 0 0 1 1 6
+```
+
+```{r cons-solution}
+# Your solution here.
+# Think in matrices: split each sequence into chars, rbind into a matrix,
+# then apply(..., 2, ...) down each column for the profile / consensus.
+```
+
+---
+
+# PROT — Translating RNA into Protein
+
+**Problem.** Given an RNA string corresponding to a protein-coding ORF (length
+divisible by 3), translate it into its protein string using the standard genetic
+code. Stop when you hit a stop codon; do **not** include the stop symbol.
+
+**Sample dataset**
+
+```{r prot-data}
+rna <- "AUGGCCAUGGCGCCCAGAACUGAGAUCAAUAGUACCCGUAUUAACGGGUGA"
+```
+
+**Sample output:** `MAMAPRTEINSTRING`
+
+Codon table (RNA → amino acid; `*` = stop):
+
+```{r codon-table}
+codon_table <- c(
+  UUU="F", UUC="F", UUA="L", UUG="L",
+  UCU="S", UCC="S", UCA="S", UCG="S",
+  UAU="Y", UAC="Y", UAA="*", UAG="*",
+  UGU="C", UGC="C", UGA="*", UGG="W",
+  CUU="L", CUC="L", CUA="L", CUG="L",
+  CCU="P", CCC="P", CCA="P", CCG="P",
+  CAU="H", CAC="H", CAA="Q", CAG="Q",
+  CGU="R", CGC="R", CGA="R", CGG="R",
+  AUU="I", AUC="I", AUA="I", AUG="M",
+  ACU="T", ACC="T", ACA="T", ACG="T",
+  AAU="N", AAC="N", AAA="K", AAG="K",
+  AGU="S", AGC="S", AGA="R", AGG="R",
+  GUU="V", GUC="V", GUA="V", GUG="V",
+  GCU="A", GCC="A", GCA="A", GCG="A",
+  GAU="D", GAC="D", GAA="E", GAG="E",
+  GGU="G", GGC="G", GGA="G", GGG="G"
+)
+```
+
+```{r prot-solution}
+# Your solution here.
+# Slice the RNA into triplets, then sapply / vapply each codon through codon_table.
+```
+
+---
+
+# Bonus: SPLC — RNA Splicing
+
+**Problem.** Given a DNA string $s$ (coding strand) and a collection of substrings
+of $s$ serving as **introns**, remove all introns from $s$, transcribe the remaining
+exons to RNA, and translate to protein (as in PROT).
+
+**Sample dataset**
+
+```{r splc-data}
+splc_fasta <- ">Rosalind_10
+ATGGTCTACATAGCTGACAAACAGCACGTAGCAATCGGTCGAATCTCGAGAGGCATATGGTCACATGATCGGTCGAGCGTGTTTCAAAGTTTGCGCCTAG
+>Rosalind_12
+ATCGGTCGAA
+>Rosalind_15
+ATCGGTCGAGCGTGT"
+```
+
+**Sample output:** `MVYIADKQHVASREAYGHMFKVCA`
+
+```{r splc-solution}
+# Your solution here.
+# Chain earlier pieces: remove introns (lapply/sapply), DNA→RNA, then PROT translation.
+# This is a good place to reuse functions you already wrote above.
+```
+
+---
+
+# Optional stretch
+
+Once the sample datasets pass:
+
+1. Download a Rosalind dataset for each problem and run your functions on it.
+2. Refactor shared helpers (`chars`, `parse_fasta`, `translate_rna`, `gc_content`) into
+   one place at the top of the document and reuse them.
+3. For DNA / GC / CONS / PROT / HAMM / SPLC specifically, try rewriting any leftover
+   `for` loops with apply-family calls and compare readability.

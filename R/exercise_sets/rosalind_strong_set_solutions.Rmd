@@ -1,0 +1,340 @@
+---
+title: "Rosalind Strong Set — Solutions"
+author: "ABI Omics"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    number_sections: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = TRUE)
+```
+
+# Overview
+
+Worked solutions for the Rosalind strong set. Several problems below lean on the
+**apply family** (`sapply`, `vapply`, `lapply`, `mapply`, `apply`) instead of
+explicit `for` loops — especially **DNA**, **HAMM**, **GC**, **CONS**, **PROT**,
+and **SPLC**.
+
+```{r helpers}
+chars <- function(s) strsplit(s, "")[[1]]
+
+# Small FASTA parser -> named character vector of sequences
+parse_fasta <- function(text) {
+  lines <- strsplit(text, "\n", fixed = TRUE)[[1]]
+  lines <- lines[nzchar(trimws(lines))]
+  header_idx <- which(startsWith(lines, ">"))
+  ids <- sub("^>", "", lines[header_idx])
+  # Build end index of each sequence block, then sapply to concatenate lines
+  ends <- c(header_idx[-1] - 1L, length(lines))
+  seqs <- sapply(seq_along(header_idx), function(i) {
+    paste(lines[(header_idx[i] + 1L):ends[i]], collapse = "")
+  })
+  setNames(seqs, ids)
+}
+
+gc_content <- function(seq) {
+  bases <- chars(seq)
+  100 * mean(bases %in% c("G", "C"))
+}
+```
+
+---
+
+# DNA — Counting DNA Nucleotides
+
+Count each base with `sapply` over `c("A","C","G","T")` instead of four separate
+counters or a `for` loop.
+
+```{r dna}
+dna <- "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC"
+
+count_nucleotides <- function(dna) {
+  bases <- chars(dna)
+  counts <- sapply(c("A", "C", "G", "T"), function(b) sum(bases == b))
+  # Rosalind wants space-separated A C G T
+  paste(counts, collapse = " ")
+}
+
+count_nucleotides(dna)
+# Expected: 20 12 17 21
+```
+
+(`table(factor(bases, levels = c("A","C","G","T")))` is also fine — same idea,
+no loop.)
+
+---
+
+# RNA — Transcribing DNA into RNA
+
+```{r rna}
+dna <- "GATGGAACTTGACTACGTAAATT"
+
+transcribe <- function(dna) gsub("T", "U", dna, fixed = TRUE)
+
+transcribe(dna)
+# Expected: GAUGGAACUUGACUACGUAAAUU
+```
+
+---
+
+# REVC — Complementing a Strand of DNA
+
+Map each base with a named vector, then reverse. `sapply`/`chars` keeps the
+logic readable; `chartr` is a short alternative.
+
+```{r revc}
+dna <- "AAAACCCGGT"
+
+rev_complement <- function(dna) {
+  complement <- c(A = "T", T = "A", C = "G", G = "C")
+  paste(rev(complement[chars(dna)]), collapse = "")
+}
+
+# Equivalent one-liner style:
+# rev_complement <- function(dna) paste(rev(chars(chartr("ACGT", "TGCA", dna))), collapse = "")
+
+rev_complement(dna)
+# Expected: ACCGGGTTTT
+```
+
+---
+
+# HAMM — Counting Point Mutations
+
+Split both strings and compare vectors elementwise — no index-walking loop.
+`sum(x != y)` is the natural R idiom; `mapply` makes the per-position idea
+explicit if you want that shape.
+
+```{r hamm}
+s <- "GAGCCTACTAACGGGAT"
+t <- "CATCGTAATGACGGCCT"
+
+hamming <- function(s, t) {
+  sum(chars(s) != chars(t))
+}
+
+# Explicit apply-family twin (same result):
+# hamming <- function(s, t) sum(mapply(`!=`, chars(s), chars(t)))
+
+hamming(s, t)
+# Expected: 7
+```
+
+---
+
+# GC — Computing GC Content
+
+Parse FASTA once, then `sapply` a GC% function over every sequence and pick
+`which.max`. That replace-a-loop pattern is the whole point of the apply family.
+
+```{r gc}
+gc_fasta <- ">Rosalind_6404
+CCTGCGGAAGATCGGCACTAGAATAGCCAGAACCGTTTCTCTGAGGCTTCCGGCCTTCCC
+TCCCACTAATAATTCTGAGG
+>Rosalind_5959
+CCATCGGTAGCGCATCCTTAGTCCAATTAAGTCCCTATCCAGGCGACGAAAGTTACAAG
+>Rosalind_0808
+CCACCCTCGTGGTATGGCTAGGCATTCAGGAACCGGAGAACGCTTCAGACCAGCCCGGAC
+TGGGAACCTGCGGGCAGTAGGTGGAAT"
+
+find_max_gc <- function(fasta_text) {
+  seqs <- parse_fasta(fasta_text)
+  gc_vals <- sapply(seqs, gc_content)
+  winner <- names(which.max(gc_vals))
+  cat(winner, "\n", sprintf("%.6f", gc_vals[winner]), sep = "")
+  invisible(gc_vals)
+}
+
+find_max_gc(gc_fasta)
+# Expected:
+# Rosalind_0808
+# 60.919540
+```
+
+---
+
+# SUBS — Finding a Motif in DNA
+
+Slide a window with `sapply` over candidate start positions; keep the hits
+(1-based for Rosalind).
+
+```{r subs}
+s <- "GATATATGCATATACTT"
+t <- "ATAT"
+
+find_motif <- function(s, t) {
+  n <- nchar(s) - nchar(t) + 1L
+  hits <- which(sapply(seq_len(n), function(i) substr(s, i, i + nchar(t) - 1L) == t))
+  paste(hits, collapse = " ")
+}
+
+find_motif(s, t)
+# Expected: 2 4 10
+```
+
+(`gregexpr(t, s, fixed = TRUE)` also works; the `sapply` version makes the
+sliding-window idea obvious.)
+
+---
+
+# CONS — Consensus and Profile
+
+Build an $n \times L$ character matrix (`rbind` of split sequences), then
+`apply(..., 2, ...)` down each **column** (position) to count bases and pick
+the consensus letter. This is the textbook use of `apply` on a matrix.
+
+```{r cons}
+cons_fasta <- ">Rosalind_1
+ATCCAGCT
+>Rosalind_2
+GGGCAACT
+>Rosalind_3
+ATGGATCT
+>Rosalind_4
+AAGCAACC
+>Rosalind_5
+TTGGAACT
+>Rosalind_6
+ATGCCATT
+>Rosalind_7
+ATGGCACT"
+
+consensus_and_profile <- function(fasta_text) {
+  seqs <- parse_fasta(fasta_text)
+  mat <- do.call(rbind, lapply(seqs, chars))  # rows = sequences, cols = positions
+
+  bases <- c("A", "C", "G", "T")
+  # profile: each column -> counts in A/C/G/T order
+  profile <- apply(mat, 2, function(col) {
+    sapply(bases, function(b) sum(col == b))
+  })
+  rownames(profile) <- bases
+
+  # consensus: most common base per column (ties -> first max, which is fine)
+  consensus <- paste(apply(profile, 2, function(col) names(which.max(col))), collapse = "")
+
+  cat(consensus, "\n", sep = "")
+  for (b in bases) {
+    cat(b, ": ", paste(profile[b, ], collapse = " "), "\n", sep = "")
+  }
+  invisible(list(consensus = consensus, profile = profile))
+}
+
+consensus_and_profile(cons_fasta)
+# Expected consensus: ATGCAACT
+# Profile:
+# A: 5 1 0 0 5 5 0 0
+# C: 0 0 1 4 2 0 6 1
+# G: 1 1 6 3 0 1 0 0
+# T: 1 5 0 0 0 1 1 6
+```
+
+---
+
+# PROT — Translating RNA into Protein
+
+Chop the RNA into length-3 codons with `substring` + `sapply`, look each up in
+the codon table, then stop at the first `*`.
+
+```{r prot}
+rna <- "AUGGCCAUGGCGCCCAGAACUGAGAUCAAUAGUACCCGUAUUAACGGGUGA"
+
+codon_table <- c(
+  UUU="F", UUC="F", UUA="L", UUG="L",
+  UCU="S", UCC="S", UCA="S", UCG="S",
+  UAU="Y", UAC="Y", UAA="*", UAG="*",
+  UGU="C", UGC="C", UGA="*", UGG="W",
+  CUU="L", CUC="L", CUA="L", CUG="L",
+  CCU="P", CCC="P", CCA="P", CCG="P",
+  CAU="H", CAC="H", CAA="Q", CAG="Q",
+  CGU="R", CGC="R", CGA="R", CGG="R",
+  AUU="I", AUC="I", AUA="I", AUG="M",
+  ACU="T", ACC="T", ACA="T", ACG="T",
+  AAU="N", AAC="N", AAA="K", AAG="K",
+  AGU="S", AGC="S", AGA="R", AGG="R",
+  GUU="V", GUC="V", GUA="V", GUG="V",
+  GCU="A", GCC="A", GCA="A", GCG="A",
+  GAU="D", GAC="D", GAA="E", GAG="E",
+  GGU="G", GGC="G", GGA="G", GGG="G"
+)
+
+translate_rna <- function(rna, codon_table) {
+  n_codons <- nchar(rna) / 3
+  starts <- seq(1, by = 3, length.out = n_codons)
+  codons <- substring(rna, starts, starts + 2L)
+  aas <- codon_table[codons]
+  # Drop from the first stop codon onward
+  stop_at <- match("*", aas)
+  if (!is.na(stop_at)) aas <- aas[seq_len(stop_at - 1L)]
+  paste(aas, collapse = "")
+}
+
+translate_rna(rna, codon_table)
+# Expected: MAMAPRTEINSTRING
+```
+
+---
+
+# Bonus: SPLC — RNA Splicing
+
+Reuse earlier pieces. Remove each intron with `Reduce`/`lapply`, then
+DNA → RNA → `translate_rna`. The apply family shows up in intron removal and in
+translation.
+
+```{r splc}
+splc_fasta <- ">Rosalind_10
+ATGGTCTACATAGCTGACAAACAGCACGTAGCAATCGGTCGAATCTCGAGAGGCATATGGTCACATGATCGGTCGAGCGTGTTTCAAAGTTTGCGCCTAG
+>Rosalind_12
+ATCGGTCGAA
+>Rosalind_15
+ATCGGTCGAGCGTGT"
+
+splice_and_translate <- function(fasta_text, codon_table) {
+  seqs <- parse_fasta(fasta_text)
+  dna <- seqs[[1]]
+  introns <- seqs[-1]
+
+  # Peel off every intron (order does not matter for non-overlapping Rosalind cases)
+  exons_dna <- Reduce(function(seq, intron) gsub(intron, "", seq, fixed = TRUE),
+                      introns,
+                      init = dna)
+
+  rna <- transcribe(exons_dna)
+  translate_rna(rna, codon_table)
+}
+
+splice_and_translate(splc_fasta, codon_table)
+# Expected: MVYIADKQHVASREAYGHMFKVCA
+```
+
+If you prefer an explicit `sapply`/`lapply` shape for intron removal:
+
+```{r splc-alt, eval=FALSE}
+# Same idea, step-by-step with lapply:
+remove_introns <- function(dna, introns) {
+  Reduce(function(seq, intron) gsub(intron, "", seq, fixed = TRUE),
+         as.list(introns),
+         init = dna)
+}
+```
+
+---
+
+# Apply-family cheat sheet (for this set)
+
+| Problem | Loop you might have written | Apply-shaped stand-in |
+|---------|-----------------------------|------------------------|
+| DNA | `for (b in bases) if (b=="A") a <- a+1 ...` | `sapply(c("A","C","G","T"), ...)` |
+| HAMM | `for (i in seq_along(s)) if (s[i]!=t[i]) ...` | `sum(chars(s) != chars(t))` / `mapply` |
+| GC | loop over FASTA records accumulating max | `sapply(seqs, gc_content)` then `which.max` |
+| SUBS | loop start positions | `sapply(seq_len(n), ...)` + `which` |
+| CONS | loop positions, then bases | `apply(mat, 2, ...)` profile; `lapply` to build matrix |
+| PROT | loop `i in seq(1, n, by=3)` | `substring` starts + vectorized `codon_table[...]` |
+| SPLC | loop removing each intron | `Reduce` over intron list, then reuse PROT |
+
+RNA and REVC are short enough that a for-loop vs apply distinction barely matters;
+the table above is where the apply habit pays off.
