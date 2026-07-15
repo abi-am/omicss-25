@@ -41,7 +41,7 @@ The data for this project comes from [this publication](https://www.science.org/
 You can familiarise yourself with the samples, their regions of origin, genetic background and phenotypes by studying the metadata table here:   
 
 ```
-/mnt/proj/omicss25/gp3/metadata/cauc_arm_grape.metadata.tsv
+/mnt/nas1/proj/omicss26/gp3/data/metadata/cauc_grape_metadata.csv
 ```
 
 | **Field**                      | **Description**                                                                                                                               |
