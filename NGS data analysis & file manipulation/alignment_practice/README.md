@@ -72,7 +72,7 @@ The reference we're using is **hg38.fa** – the primary reference genome sequen
 ```
 # path to the reference
 
-mnt/nas0/proj/omicss26/ngs_data_analysis/alignment_samtools/ref_genome/hg38.fa
+/mnt/nas1/proj/omicss26ngs_data_analysis/alignment_samtools/ref_genome/hg38.fa
 ```
 
 The script can be run through the task manager called `slurm` that allocates resources and maintains your jobs while you're away from the terminal.  
