@@ -1,6 +1,6 @@
 # Contributors
    Primary contributor: Nate Zadirako  
-   Contributing authors: Mariia Arakelian, Nane Pivazyan  
+   Contributing authors: Nane Pivazyan, Lusine Gevorgyan
   # Contents  
   * Overview
   * Background
