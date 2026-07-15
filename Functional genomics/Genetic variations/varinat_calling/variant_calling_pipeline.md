@@ -8,8 +8,8 @@ We will demonstrate the full pipeline using one sample as an example. You are ex
 
 ## Input Data
 
-You are given **paired-end FASTQ files** for two samples, the files are located in the following folder on the server:
-**/mnt/nas1/proj/omicss26/ngs_data_analysis/fastqc_practice/data**
+You are given **paired-end FASTQ files** for two samples, the files are located in the folloing folder on the server:
+**/mnt/nas1/proj/omicss26/ngs_data_analysis/alignment_samtools/data**
 
 - `wes46_chr21_chr16_R1.fastq`, `wes46_chr21_chr16_R2.fastq` — *Sample 1*
 - `wes78_chr21_chr16_R1.fastq`, `wes78_chr21_chr16_R2.fastq` — *Sample 2*
@@ -58,6 +58,8 @@ You will go through the following steps for **each sample**:
 6. Jointly genotype both samples  
 7. Filter variants (SNPs and INDELs)
 
+The filtered variants are then annotated in the [next tutorial](./variant_calling_annotation.md).
+
 Below is the **example pipeline using `{sample}` as a placeholder** for your sample name (e.g., `wes46` or `wes78`). Replace `{sample}` with the actual name as needed.
 
 ---
@@ -69,7 +71,7 @@ Below is the **example pipeline using `{sample}` as a placeholder** for your sam
 Align paired-end reads using BWA-MEM with read group information (`@RG`), and sort the output BAM with `samtools`.
 
 ```bash
-data_dir='/mnt/nas1/proj/omicss26/ngs_data_analysis/fastqc_practice/data' 
+data_dir='/mnt/nas1/proj/omicss26/ngs_data_analysis/alignment_samtools/data' 
 ref='/mnt/nas1/proj/omicss26/ngs_data_analysis/alignment_samtools/ref_genome/hg38.fa'
 
 bwa mem -t 4 -R "@RG\tID:${sample}\tLB:${sample}\tSM:${sample}\tPL:ILLUMINA" \
@@ -107,7 +109,7 @@ ${gatk_bin} MarkDuplicates \
 ### Step 4: Variant Calling (HaplotypeCaller in GVCF mode)
 Generate a GVCF file for each sample using HaplotypeCaller. This mode enables joint genotyping in the next steps.
 
-⚠️ **NOTE:** Step 4 and 5 commands may take quite a long time to run.  
+⚠️ **NOTE:** Step 4 and 5 command may take quite a long time to run.  
 You can start it to make sure your code works correctly, but you don't need to let it finish.  
 The final output files are already available at:  
 `/mnt/nas1/proj/omicss26/ngs_data_analysis/variant_calling/data/gvcf and /vcf`  
@@ -125,6 +127,8 @@ ${gatk_bin} --java-options "-Xmx16g" HaplotypeCaller \
 
 ### Step 5: Combine GVCFs
 Once you have GVCF files for both samples, combine them into a single file for joint genotyping:
+
+
 
 ``` bash
 ${gatk_bin} CombineGVCFs \
@@ -208,24 +212,17 @@ ${gatk_bin} VariantFiltration \
 
 ```
 
+---
+
+## Next: Variant annotation
+
+Our variants are now called and filtered — but a VCF still only tells us *where* they are, not what they *do*, and we have not yet answered the question this tutorial opened with: which of the two samples carries the FMF mutation?
+
+That is the subject of the next tutorial, [**variant_calling_annotation.md**](./variant_calling_annotation.md), which picks up exactly where this one stops — from `filtered_snps.vcf` and `filtered_indels.vcf`.
+
 #### End of Pipeline ####
 
-After identifying and filtering variants using the Genome Analysis Toolkit (GATK) pipeline, the next step is to interpret their potential biological significance. For this, we use **ANNOVAR**, a widely used tool for functional annotation of genetic variants.
 
-We use ANNOVAR together with several annotation databases:
 
-* refGene → identifies the gene and functional region (e.g. exonic, intronic)
-* gnomAD → provides population allele frequencies
-* ClinVar → links variants to known clinical significance
 
-Run `annotate_variants.sh` script provided with the variant calling pipeline and examine the annotated VCF.
-
-> Note: we should have annovar somewhere, but I can't find it. Will consult tomorrow. When I have it, I'll try it myself & adjust the code. -N
-
-Recall that the goal of the practice is to identify which sample carries the FMF-related mutation. The FMF (Familial Mediterranean Fever) gene, officially called the MEFV gene, provides instructions for making an immune system protein called pyrin. Mutations in this gene disrupt the body's ability to regulate inflammation, leading to recurrent fevers and severe abdominal, chest, and joint pain. Let's take a look.
-
-```bash
-grep "MEFV" cohort.hg38_multianno.vcf > MEFV.vcf
-```
-Do you see any variants present in one sample but not the other? How would you know which variant is the one?
 
