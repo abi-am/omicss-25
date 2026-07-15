@@ -5,8 +5,7 @@ In this set of exercises, you will use **PLINK** to filter and explore genetic v
 ## 📂 VCF Files Used in These Exercises
 
 The VCF files used in these exercises are located on the server at:
- > `/mnt/proj/omicss25/ngs_data_analysis/variant_calling/data/vcf`
-
+ > `/mnt/nas1/proj/omicss26/ngs_data_analysis/variant_calling/data/vcf`
 
 - `filtered_snps.vcf` — contains only SNP (single nucleotide polymorphism) variants  
 - `filtered_indels.vcf` — contains only indel (insertion and deletion) variants  
@@ -32,28 +31,41 @@ PLINK stores genetic data in a compact binary format composed of three files:
 Together, these files enable fast and scalable analysis of genome-wide variation data.
 
 
-
 ---
 
 ## 🔹 Exercise 1: Convert VCF to PLINK Format
 
 **Description:**  
-Convert the SNP VCF file into PLINK binary format (`.bed`, `.bim`, `.fam`). This step is essential for most downstream analysis in PLINK.
+Convert the SNP VCF file into PLINK binary format (`.bed`, `.bim`, `.fam`). This step is essential for most downstream analyses using PLINK.
 
-<!--
-Command:
+<details>
+<summary>Help, I'm lost / Check solution</summary>
+
+```bash
 plink --vcf filtered_snps.vcf --make-bed --out snps
+```
 
-Explanation:
-This command reads `filtered_snps.vcf` (with 2 samples) and writes the corresponding PLINK binary files to `snps.bed/.bim/.fam`.
--->
+**Explanation:**  
+This command reads the `filtered_snps.vcf` file (containing two samples) and converts it into PLINK binary format, producing the output files `snps.bed`, `snps.bim`, and `snps.fam`.
 
+</details>
 ---
 
 ## 🔹 Exercise 2: Count Total SNPs in the Dataset
 
 **Description:**  
 Determine how many SNPs are present in the dataset before any filtering. This gives a baseline for comparison in later filtering steps.
+
+<details>
+<summary>Help, I'm lost / Check solution</summary>
+
+```bash
+
+```
+
+Explanation:
+
+</details>
 
 <!--
 Command:
@@ -70,6 +82,17 @@ The `--freq` command computes allele frequencies and creates a `.frq` file where
 **Description:**  
 Filter the SNP dataset to retain only variants with minor allele frequency (MAF) greater than 0.05. This removes rare variants that may not be informative.
 
+<details>
+<summary>Help, I'm lost / Check solution</summary>
+
+```bash
+
+```
+
+Explanation:
+
+</details>
+
 <!--
 Command:
 plink --bfile snps --maf 0.05 --make-bed --out snps_maf05
@@ -84,6 +107,17 @@ This filters variants from the 2-sample SNP dataset based on a MAF threshold of 
 
 **Description:**  
 Compare the number of SNPs before and after MAF filtering to determine how many were excluded. This helps quantify the effect of the filter.
+
+<details>
+<summary>Help, I'm lost / Check solution</summary>
+
+```bash
+
+```
+
+Explanation:
+
+</details>
 
 <!--
 Command:
@@ -102,6 +136,17 @@ plink --bfile snps_maf05 --freq --out after_maf
 **Description:**  
 Exclude SNPs with missing genotype data in more than 5% of samples. Although the dataset has only 2 samples, this introduces you to quality filtering by missingness.
 
+<details>
+<summary>Help, I'm lost / Check solution</summary>
+
+```bash
+
+```
+
+Explanation:
+
+</details>
+
 <!--
 Command:
 plink --bfile snps --geno 0.05 --make-bed --out snps_geno05
@@ -118,6 +163,17 @@ The `--geno 0.05` flag filters out SNPs missing in more than 5% of samples (i.e.
 **Description:**  
 Subset the dataset to include only SNPs located on chromosome 21. This is useful for region-specific analyses.
 
+<details>
+<summary>Help, I'm lost / Check solution</summary>
+
+```bash
+
+```
+
+Explanation:
+
+</details>
+
 <!--
 Command:
 plink --bfile snps --chr 21 --make-bed --out snps_chr21
@@ -132,6 +188,17 @@ The `--chr 21` flag retains only chromosome 21 SNPs from the dataset.
 
 **Description:**  
 Merge the SNP and indel datasets into a single dataset for joint analysis. This simulates working with mixed variant types.
+
+<details>
+<summary>Help, I'm lost / Check solution</summary>
+
+```bash
+
+```
+
+Explanation:
+
+</details>
 
 <!--
 Command:
@@ -149,6 +216,17 @@ plink --bfile snps --bmerge indels.bed indels.bim indels.fam --make-bed --out me
 **Description:**  
 Compute allele frequencies for each variant in the merged SNP + indel dataset. This gives insight into variant distribution across the two samples.
 
+<details>
+<summary>Help, I'm lost / Check solution</summary>
+
+```bash
+
+```
+
+Explanation:
+
+</details>
+
 <!--
 Command:
 plink --bfile merged_variants --freq --out merged_freq
@@ -164,6 +242,17 @@ This computes MAF for each variant in the merged dataset containing both SNPs an
 **Description:**  
 Find all variants where both samples have different genotypes, i.e., maximum heterozygosity. This is a way to identify informative variants in small datasets.
 
+<details>
+<summary>Help, I'm lost / Check solution</summary>
+
+```bash
+
+```
+
+Explanation:
+
+</details>
+
 <!--
 Command:
 awk '$5 == 0.5' merged_freq.frq > maf_eq_05.txt
@@ -174,6 +263,17 @@ awk '$5 == 0.5' merged_freq.frq > maf_eq_05.txt
 
 **Description:**  
 Filter out SNPs in strong linkage disequilibrium (LD) using PLINK's default pruning parameters. This helps retain a set of independent variants for unbiased downstream analyses like PCA or clustering.
+
+<details>
+<summary>Help, I'm lost / Check solution</summary>
+
+```bash
+
+```
+
+Explanation:
+
+</details>
 
 
 <!--
