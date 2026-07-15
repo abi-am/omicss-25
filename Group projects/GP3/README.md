@@ -11,7 +11,7 @@
 
     
 ## Project Overview
-[This project](https://docs.google.com/presentation/d/1CmQuFbCy7I7oiA7GijIu8XGbgM3nY-9d/edit?usp=sharing&ouid=114647853941338313365&rtpof=true&sd=true) aims to explore the population structure of Caucasian varieties of grapevine using whole-genome sequencing data. The participants will become familiar with the VCF file format, the standard data preprocessing pipeline (variant calling, filtering) and the downstream population genomics analyses (ADMIXTURE, phylogenetic tree construction).  
+[This project](https://docs.google.com/presentation/d/1CmQuFbCy7I7oiA7GijIu8XGbgM3nY-9d/edit?usp=sharing&ouid=106664732077456500866&rtpof=true&sd=true) aims to explore the population structure of Caucasian varieties of grapevine using whole-genome sequencing data. The participants will become familiar with the VCF file format, the standard data preprocessing pipeline (variant calling, filtering) and the downstream population genomics analyses (ADMIXTURE, phylogenetic tree construction).  
 
 ## Background
 Now that whole-genome sequencing (WGS) is relatively cheap and accessible, it has become possible to collect WGS data from hundreds or even thousands of individuals. This enables us to explore large-scale patterns of genetic variation across entire populations.   
