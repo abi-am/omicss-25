@@ -21,7 +21,7 @@ Your data is stored in the following directory:
 ```
 # path to fastq files
 
-cd /mnt/nas0/proj/omicss26/ngs_data_analysis/alignment_samtools/data
+cd /mnt/nas1/proj/omicss26/ngs_data_analysis/alignment_samtools/data
 ```
 
 Navigate to the directory where you intend to work and use the path above to access your samples.   
