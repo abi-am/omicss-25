@@ -17,7 +17,7 @@
 
 We will give a lecture covering the basics of differential gene expression analysis, the DeSeq2 package, and their application to solving problems in big data biology.
 
-➡️ **[Link to the presentation](https://drive.google.com/drive/folders/10B1CGyXhY3QwAMNoUMlcj52Aj0UxxQVm?usp=sharing)**
+➡️ **[Link to the presentation](https://drive.google.com/drive/folders/1oHVplIk0PudCHFpUtN3MNAfbAO2GOn_c?usp=sharing)**
 
 ---
 
