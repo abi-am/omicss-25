@@ -23,33 +23,39 @@ Together, these formats enable accurate annotation, sharing, and analysis of gen
 
  **Now let's try to solve some practical exercises**
  All the files for the practice are located in the following directory:
-```
-/mnt/proj/omicss25/ngs_data_analysis/annotation_practice/data/
+```bash
+/mnt/nas1/proj/omicss26/ngs_data_analysis/annotation_practice/data/
 ```
 Before starting the exercises, you can play a little with those files, see how they are structured, and what each column means.
 
 ### Exercise 1
 Extract only "exon" regions from the .gtf file and save them in a separate .gtf file. How many exons are there?
 
-<!--
-Command:
+<details>
+<summary>Help, I'm lost / Check solution</summary>
+
+```bash
 zcat gencode.v38.annotation.gtf.gz | grep -w "exon" > exons.gtf
 wc -l exons.gtf
+```
 
-Answer:
-2853214 .
+Answer: 2853214
 
 Explanation:
 This command first unzips the .gz file, then searches lines that have the word "exon" in them and stores them in the separate .gtf file. In the end, it just counts the number of lines, as each line is one region (in this case one exon).
--->
+
+</details>
 
 ---
 ### Exercise 2
 What kind of genetic regions do you have in the .gff3 file? Optionally, also find out how many from each.
 
-<!--
-Command:
+<details>
+<summary>Help, I'm lost / Check solution</summary>
+
+```bash
 zcat gencode.v38.annotation.gff3.gz| grep -v "#" | cut -f3 | sort | uniq -c
+```
 
 Answer:
 - 825914 CDS
@@ -64,22 +70,26 @@ Answer:
 
 Explanation:
 This command first unzips the .gz file. Then we get rid of lines that start with "#" as those are metadata headers and we don't need them in this task. Then we cut only the 3rd column, as it stores names of the genomic regions, sort them, and keep unique ones. The command uniq -c not only prints out unique genomic regions but also counts how many from each we have. Sorting is essential here because the uniq -c command can work only on consecutive duplicate lines. Sorting ensures that all different genetic regions are grouped together.
--->
+
+</details>
 
 ---
 ### Exercise 3
 Find a gene with ID=ENSG00000210196.2 in the .gff3 file. On what chromosome is it located?
 
-<!--
-Command:
-zcat gencode.v38.annotation.gff3.gz | grep "ID=ENSG00000210196.2" | cut -f1
+<details>
+<summary>Help, I'm lost / Check solution</summary>
 
-Answer:
-- chrM (mitochondrial chromosome)
+```bash
+zcat gencode.v38.annotation.gff3.gz | grep "ID=ENSG00000210196.2" | cut -f1
+```
+
+Answer: chrM (mitochondrial chromosome)
 
 Explanation:
 This command first unzips the .gz file. Then it searches and keeps the line that has "ID=ENSG00000210196.2" in it. In the end, it prints just the 1st column, as it contains chromosome information.
--->
+
+</details>
 
 ---
 ### Exercise 4
@@ -89,62 +99,73 @@ For this exercise, you are going to work with a .gtf file. First, take exons and
 
 >NOTE: Running bedtools intersect might take a couple of minutes.
 
-<!--
-Command:
+<details>
+<summary>Help, I'm lost / Check solution</summary>
+
+```bash
 zcat gencode.v38.annotation.gtf.gz | grep -w "gene" > genes.gtf
 zcat gencode.v38.annotation.gtf.gz | grep -w "exon" > genes.gtf
 bedtools sort -i genes.gtf > genes.sorted.gtf  
 bedtools sort -i =exons.gtf > exons.sorted.gtf
 bedtools intersect -a exons.sorted.gtf -b genes.sorted.gtf > overlaps.gtf
-
+```
 
 Explanation:
 These commands extract gene and exon entries from a GTF file, sort them, and then find where exons overlap with genes. First, gene and exon lines are saved into separate files, then both files are sorted using bedtools sort. Finally, bedtools intersect finds overlapping regions between exons and genes. This helps identify which exons are located within genes.
 
--->
+</details>
 
 ---
 ### Exercise 5
 See how many genomic regions are located on the forward and how many on the reverse strand in the .bed file.
 
-<!--
-Command:
+<details>
+<summary>Help, I'm lost / Check solution</summary>
+
+```bash
 zcat hg38.knownGene.bed.gz | grep "+" | wc -l
 zcat hg38.knownGene.bed.gz | grep "-" | wc -l
+```
 
-Answer:
-- forward - 206825; reverse - 205219
+Answer: forward - 206825; reverse - 205219
 
 Explanation:
 This command first unzips the .gz file. Then it searches and keeps the lines that have "+" in them and counts how many are there. The same is done with "-".
--->
+
+</details>
 
 ---
 ### Exercise 6
 How many unique chromosomes do you have in the .bed file?
 
-<!--
-Command:
-zcat hg38.knownGene.bed.gz | cut -f1 | sort | uniq | wc -l
+<details>
+<summary>Help, I'm lost / Check solution</summary>
 
-Answer:
-- 528
+```bash
+zcat hg38.knownGene.bed.gz | cut -f1 | sort | uniq | wc -l
+```
+
+Answer: 528
 
 Explanation:
 This command first uncompresses the .gz file. Then it extracts the first column (which usually contains chromosome names), sorts them, removes duplicates, and then counts how many unique entries there are.
--->
+
+</details>
 
 ---
 ### Exercise 7
 Find on what strand the genomic region with name "ENST00000615165.1" in the .bed file is located.
 
-<!--
-Command:
-zcat hg38.knownGene.bed.gz | grep "ENST00000615165.1" | cut -f6
+<details>
+<summary>Help, I'm lost / Check solution</summary>
 
-Answer:
-- reverse (-)
+```bash
+zcat hg38.knownGene.bed.gz | grep "ENST00000615165.1" | cut -f6
+```
+
+Answer: reverse (-)
 
 Explanation:
 This command first uncompresses the .gz file. Then it searches for the line that contains the given genomic region name. In the end, it keeps only the 6th column, as it contains information about which strand the genomic region is located on.
--->
+
+</details>
