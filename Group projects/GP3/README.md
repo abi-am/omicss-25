@@ -63,8 +63,7 @@ The data is provided to you as VCF files. These files were created from sequenci
 
 ```
 # path to the data
-
-/mnt/proj/omicss25/gp3/data
+/mnt/nas1/proj/omicss26/gp3/data/vcf
 ```
 
 Learn more about the VCF file format and what each field represents [here](https://samtools.github.io/hts-specs/VCFv4.2.pdf).  
