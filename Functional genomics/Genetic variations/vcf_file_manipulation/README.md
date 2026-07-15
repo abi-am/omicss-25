@@ -49,114 +49,88 @@ plink --vcf filtered_snps.vcf --make-bed --out snps
 This command reads the `filtered_snps.vcf` file (containing two samples) and converts it into PLINK binary format, producing the output files `snps.bed`, `snps.bim`, and `snps.fam`.
 
 </details>
+
 ---
 
 ## 🔹 Exercise 2: Count Total SNPs in the Dataset
 
 **Description:**  
-Determine how many SNPs are present in the dataset before any filtering. This gives a baseline for comparison in later filtering steps.
+Determine how many SNPs are present in the dataset before any filtering. This provides a baseline for comparison with later filtering steps.
 
 <details>
 <summary>Help, I'm lost / Check solution</summary>
 
 ```bash
-
+plink --bfile snps --freq --out snp_counts
 ```
 
-Explanation:
+**Explanation:**  
+The `--freq` command calculates allele frequencies and creates a `.frq` file. The number of lines in this file (excluding the header) corresponds to the number of SNPs in the dataset.
 
 </details>
-
-<!--
-Command:
-plink --bfile snps --freq --out snp_counts
-
-Explanation:
-The `--freq` command computes allele frequencies and creates a `.frq` file where the total number of lines (minus the header) gives the number of SNPs.
--->
 
 ---
 
 ## 🔹 Exercise 3: Filter SNPs with Minor Allele Frequency (MAF) > 0.05
 
 **Description:**  
-Filter the SNP dataset to retain only variants with minor allele frequency (MAF) greater than 0.05. This removes rare variants that may not be informative.
+Filter the SNP dataset to retain only variants with a minor allele frequency (MAF) greater than 0.05. This removes rare variants that may not be informative for downstream analyses.
 
 <details>
 <summary>Help, I'm lost / Check solution</summary>
 
 ```bash
-
+plink --bfile snps --maf 0.05 --make-bed --out snps_maf05
 ```
 
-Explanation:
+**Explanation:**  
+This filters variants from the two-sample SNP dataset using a MAF threshold of 0.05 and outputs a new binary PLINK dataset.
 
 </details>
-
-<!--
-Command:
-plink --bfile snps --maf 0.05 --make-bed --out snps_maf05
-
-Explanation:
-This filters variants from the 2-sample SNP dataset based on a MAF threshold of 0.05 and outputs a new binary PLINK set.
--->
 
 ---
 
 ## 🔹 Exercise 4: How Many SNPs Were Filtered Out by MAF?
 
 **Description:**  
-Compare the number of SNPs before and after MAF filtering to determine how many were excluded. This helps quantify the effect of the filter.
+Compare the number of SNPs before and after MAF filtering to determine how many variants were excluded. This helps quantify the effect of the filter.
 
 <details>
 <summary>Help, I'm lost / Check solution</summary>
 
 ```bash
+# Before filtering
+plink --bfile snps --freq --out before_maf
 
+# After filtering
+plink --bfile snps_maf05 --freq --out after_maf
 ```
 
-Explanation:
+**Explanation:**  
+Compare the number of variants in `before_maf.frq` and `after_maf.frq` (excluding the header line). The difference represents the number of SNPs removed by the MAF filter.
 
 </details>
-
-<!--
-Command:
-# Before
-plink --bfile snps --freq --out before_maf
-# After
-plink --bfile snps_maf05 --freq --out after_maf
-
-# Then compare number of lines in before_maf.frq vs after_maf.frq (subtracting header)
--->
 
 ---
 
 ## 🔹 Exercise 5: Filter SNPs with Missing Rate < 5%
 
 **Description:**  
-Exclude SNPs with missing genotype data in more than 5% of samples. Although the dataset has only 2 samples, this introduces you to quality filtering by missingness.
+Exclude SNPs with missing genotype data in more than 5% of samples. Although this dataset contains only two samples, this introduces quality filtering based on genotype missingness.
 
 <details>
 <summary>Help, I'm lost / Check solution</summary>
 
 ```bash
-
+plink --bfile snps --geno 0.05 --make-bed --out snps_geno05
 ```
 
-Explanation:
+**Explanation:**  
+The `--geno 0.05` flag filters out SNPs missing in more than 5% of samples. In a two-sample dataset, this means SNPs with more than one missing genotype call are removed.
 
 </details>
 
-<!--
-Command:
-plink --bfile snps --geno 0.05 --make-bed --out snps_geno05
-
-Explanation:
-The `--geno 0.05` flag filters out SNPs missing in more than 5% of samples (i.e., >1 call in a 2-sample dataset).
--->
-
 ---
-
 
 ## 🔹 Exercise 6: Extract SNPs from Chromosome 21
 
@@ -167,20 +141,13 @@ Subset the dataset to include only SNPs located on chromosome 21. This is useful
 <summary>Help, I'm lost / Check solution</summary>
 
 ```bash
-
+plink --bfile snps --chr 21 --make-bed --out snps_chr21
 ```
 
-Explanation:
+**Explanation:**  
+The `--chr 21` flag retains only variants located on chromosome 21 and creates a new binary PLINK dataset.
 
 </details>
-
-<!--
-Command:
-plink --bfile snps --chr 21 --make-bed --out snps_chr21
-
-Explanation:
-The `--chr 21` flag retains only chromosome 21 SNPs from the dataset.
--->
 
 ---
 
@@ -193,94 +160,73 @@ Merge the SNP and indel datasets into a single dataset for joint analysis. This 
 <summary>Help, I'm lost / Check solution</summary>
 
 ```bash
-
-```
-
-Explanation:
-
-</details>
-
-<!--
-Command:
-# Convert indels
+# Convert indels to PLINK format
 plink --vcf filtered_indels.vcf --make-bed --out indels
 
-# Merge
+# Merge SNPs and indels
 plink --bfile snps --bmerge indels.bed indels.bim indels.fam --make-bed --out merged_variants
--->
+```
+
+**Explanation:**  
+The first command converts the indel VCF file into PLINK binary format. The second command merges the SNP and indel datasets into a single PLINK dataset for joint analysis.
+
+</details>
 
 ---
 
 ## 🔹 Exercise 8: Generate Allele Frequency Table for Merged Data
 
 **Description:**  
-Compute allele frequencies for each variant in the merged SNP + indel dataset. This gives insight into variant distribution across the two samples.
+Calculate allele frequencies for each variant in the merged SNP + indel dataset. This provides insight into variant distribution across the two samples.
 
 <details>
 <summary>Help, I'm lost / Check solution</summary>
 
 ```bash
-
+plink --bfile merged_variants --freq --out merged_freq
 ```
 
-Explanation:
+**Explanation:**  
+This calculates allele frequencies for each variant in the merged dataset containing both SNPs and indels from two samples.
 
 </details>
-
-<!--
-Command:
-plink --bfile merged_variants --freq --out merged_freq
-
-Explanation:
-This computes MAF for each variant in the merged dataset containing both SNPs and indels from 2 samples.
--->
 
 ---
 
 ## 🔹 Exercise 9: List All Variants with MAF = 0.5
 
 **Description:**  
-Find all variants where both samples have different genotypes, i.e., maximum heterozygosity. This is a way to identify informative variants in small datasets.
+Identify variants where both samples have different genotypes, resulting in the maximum possible heterozygosity for a two-sample dataset. These variants are informative for distinguishing between samples.
 
 <details>
 <summary>Help, I'm lost / Check solution</summary>
 
 ```bash
-
+awk '$5 == 0.5' merged_freq.frq > maf_eq_05.txt
 ```
 
-Explanation:
+**Explanation:**  
+This command searches the PLINK frequency file and extracts variants with a minor allele frequency (MAF) of exactly 0.5.
 
 </details>
 
-<!--
-Command:
-awk '$5 == 0.5' merged_freq.frq > maf_eq_05.txt
--->
 ---
 
 ## 🔹 Exercise 10: Perform Linkage Disequilibrium (LD) Pruning
 
 **Description:**  
-Filter out SNPs in strong linkage disequilibrium (LD) using PLINK's default pruning parameters. This helps retain a set of independent variants for unbiased downstream analyses like PCA or clustering.
+Filter out SNPs in strong linkage disequilibrium (LD) using PLINK's default pruning parameters. This helps retain a set of independent variants for unbiased downstream analyses such as PCA or clustering.
 
 <details>
 <summary>Help, I'm lost / Check solution</summary>
 
 ```bash
+plink --bfile snps --indep-pairwise 50 5 0.2 --out snps_pruned
 
+plink --bfile snps --extract snps_pruned.prune.in --make-bed --out snps_ld_filtered
 ```
 
-Explanation:
+**Explanation:**  
+The first command identifies SNPs in approximate linkage equilibrium using a sliding window of 50 SNPs, a step size of 5 SNPs, and an r² threshold of 0.2. The second command extracts the retained variants to create an LD-filtered dataset.
 
 </details>
-
-
-<!--
-Command:
-plink --bfile snps --indep-pairwise 50 5 0.2 --out snps_pruned
-plink --bfile snps --extract snps_pruned.prune.in --make-bed --out snps_ld_filtered
-
-Explanation:
-The first command identifies SNPs in approximate linkage equilibrium using a sliding window (50 SNPs, step size 5, r² threshold 0.2). The second command extracts only the pruned variants to create an LD-filtered dataset.
--->
