@@ -40,7 +40,7 @@ This 3-day R programming language session is aimed at introducing R syntax, pack
 | 19:10–20:00 | **Thinking in R: Vectorization and Data Manipulation Workshop** |
 
 
-### Day1
+### Day2
 | Time        | Activity                                                        |
 | ----------- | --------------------------------------------------------------- |
 | 18:00–18:15 | Review and questions from Day 1                                 |
@@ -49,7 +49,7 @@ This 3-day R programming language session is aimed at introducing R syntax, pack
 | 19:20–19:40 | Introduction to Bioconductor and the R bioinformatics ecosystem |
 | 19:40–20:00 | Installing and exploring key bioinformatics packages            |
 
-### Day1
+### Day3
 | Time        | Activity                                                |
 | ----------- | ------------------------------------------------------- |
 | 18:00–18:10 | Review of previous sessions                             |
