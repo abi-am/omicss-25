@@ -11,7 +11,7 @@
 
     
 ## Project Overview
-[This project](https://docs.google.com/presentation/d/1CmQuFbCy7I7oiA7GijIu8XGbgM3nY-9d/edit?usp=sharing&ouid=106664732077456500866&rtpof=true&sd=true) aims to explore the population structure of Caucasian varieties of grapevine using whole-genome sequencing data. The participants will become familiar with the VCF file format, the standard data preprocessing pipeline (variant calling, filtering) and the downstream population genomics analyses (ADMIXTURE, phylogenetic tree construction).  
+[This project](https://docs.google.com/presentation/d/1CmQuFbCy7I7oiA7GijIu8XGbgM3nY-9d/edit?usp=sharing&ouid=106664732077456500866&rtpof=true&sd=true) aims to explore the population structure of Caucasian varieties of grapevine using whole-genome sequencing data. The participants will become familiar with the VCF file format, the standard data preprocessing pipeline (variant calling, filtering) and the downstream population genomics analyses (ADMIXTURE, population differentiation analysis).  
 
 ## Background
 Now that whole-genome sequencing (WGS) is relatively cheap and accessible, it has become possible to collect WGS data from hundreds or even thousands of individuals. This enables us to explore large-scale patterns of genetic variation across entire populations.   
@@ -24,15 +24,15 @@ Now that whole-genome sequencing (WGS) is relatively cheap and accessible, it ha
 
 In practical terms, we might want to understand where a given sample came from, how it relates to others, or whether distinct groups of individuals share common ancestry. 
 
-In this project, we will apply these concepts to real WGS data and perform two downsteam analyses: **ADMIXTURE** and **phylogenetic tree construction**.  
+In this project, we will apply these concepts to real WGS data and perform two downsteam analyses: **ADMIXTURE** and **Population Differentiation Analysis using FST**.  
 
 **ADMIXTURE** is a model-based clustering method that estimates the proportion of ancestry each individual inherits from a predefined number of ancestral populations. It is used to detect population structure and infer historical admixture events. For our grapevine dataset, ADMIXTURE will help us understand whether different varieties share ancestry and to what extent they may represent mixtures of multiple ancestral gene pools.  
 
-**Phylogenetic tree construction**, on the other hand, focuses on the evolutionary relationships between individuals or groups. By building a tree, we can visualize how closely related different grapevine samples are and potentially infer patterns of divergence and descent. This can reveal clades of related varieties and provide a complementary view to the ADMIXTURE results.  
+**Population differentiation analysis**, on the other hand, focuses on measuring how genetically different the ADMIXTURE-defined groups are from each other. After ADMIXTURE identifies population structure, pairwise **FST** is used to quantify differentiation between groups. Low FST values suggest genetic similarity or shared ancestry, while higher FST values suggest stronger separation, possibly due to geography, domestication history, or reduced gene flow. This provides a complementary view to ADMIXTURE by showing how strongly the inferred groups differ from one another.  
 
 Together, these two analyses give us a nice interpretable overview of both shared ancestry and evolutionary relationships in our dataset.  
 
-> You might be curious what other people are doing with this kind of data and tools! [This review](https://academic.oup.com/gbe/article/15/4/evad054/7092825) describes the application of admixture to human populations, and [this report](https://www.journalofinfection.com/article/S0163-4453(20)30159-6/fulltext) describes shows how phylogenetic analysis can be used to track the infection source of a COVID-19 patient.  
+> You might be curious what other people are doing with this kind of data and tools! [This review](https://academic.oup.com/gbe/article/15/4/evad054/7092825) describes the application of ADMIXTURE and related population-genomic methods to human populations. For a grapevine-specific example, [this study](https://www.pnas.org/doi/10.1073/pnas.1009363108) uses genome-wide SNP data to study grapevine population structure and domestication history. Another useful example is [this Armenian grapevine population genomics study](https://pmc.ncbi.nlm.nih.gov/articles/PMC12998295/), where genome-wide **FST** and nucleotide diversity ratio were used to identify candidate regions of differentiation between wild and cultivated grapevines. 
 
 ### Data
 
