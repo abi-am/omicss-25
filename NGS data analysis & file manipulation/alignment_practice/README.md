@@ -21,7 +21,7 @@ Your data is stored in the following directory:
 ```
 # path to fastq files
 
-cd /mnt/proj/omicss25/ngs_data_analysis/fastqc_practice/data
+cd /mnt/nas1/proj/omicss26/ngs_data_analysis/fastqc_practice/data
 ```
 
 Navigate to the directory where you intend to work and use the path above to access your samples.   
@@ -72,7 +72,7 @@ The reference we're using is **hg38.fa** – the primary reference genome sequen
 ```
 # path to the reference
 
-/mnt/proj/omicss25/ngs_data_analysis/alignment_samtools/ref_genome/hg38.fa
+/mnt/nas1/proj/omicss26/ngs_data_analysis/alignment_samtools/ref_genome/hg38.fa
 ```
 
 The script can be run through the task manager called `slurm` that allocates resources and maintains your jobs while you're away from the terminal.  
@@ -91,16 +91,81 @@ bwa mem -t 4 -R "@RG\tID:${sample}\tLB:${sample}\tSM:${sample}\tPL:ILLUMINA" \
   
 > Remind yourself what [read groups](https://gatk.broadinstitute.org/hc/en-us/articles/360035890671-Read-groups) stand for.
 
-Add the  slurm batch parameters on top of your script, make the script executable and run:  
+### RUNNING YOUR SCRIPT WITH SLURM
 
+So far we have only a command. Let us assemble it into an actual script and hand it over to slurm. Save the following as `alignment.sh`:
+
+```bash
+#!/bin/bash
+#SBATCH --job-name=alignment
+#SBATCH --cpus-per-task=4
+#SBATCH --mem=8gb
+#SBATCH --output=log/alignment_%j.out
+#SBATCH --error=log/alignment_%j.err
+
+
+# the sample name is taken from the command line, e.g. sbatch alignment.sh wes46
+sample=$1
+
+data_dir='/mnt/nas1/proj/omicss26/ngs_data_analysis/fastqc_practice/data'
+ref='/mnt/nas1/proj/omicss26/ngs_data_analysis/alignment_samtools/ref_genome/hg38.fa'
+
+READ1="${data_dir}/${sample}_chr21_chr16_R1.fastq"
+READ2="${data_dir}/${sample}_chr21_chr16_R2.fastq"
+
+mkdir -p bam
+
+bwa mem -t "${SLURM_CPUS_PER_TASK}" \
+  -R "@RG\tID:${sample}\tLB:${sample}\tSM:${sample}\tPL:ILLUMINA" \
+  "${ref}" "${READ1}" "${READ2}" | \
+  samtools view -b - > "bam/${sample}.bam"
 ```
-chmod +x alignment.sh
-sbatch alignment.sh (+ any parameters your script takes off the command line, eg a sample list)
+
+Everything after the `#!/bin/bash` which starts with `#SBATCH` is the **slurm header**. To bash these are just comments — it is slurm that reads the `#SBATCH` lines, before your job ever starts, to decide what resources to give it:
+
+| Line | What it asks for |
+|---|---|
+| `--job-name=alignment` | the name your job will appear under in the queue |
+| `--cpus-per-task=4` | 4 CPU cores |
+| `--mem=8gb` | 8 GB of memory |
+| `--output=log/alignment_%j.out` | a file for everything the script prints; `%j` is replaced by the job ID |
+| `--error=log/alignment_%j.err` | a file for the error messages |
+
+⚠️ **Ask for exactly what you use.** Notice that we request `--cpus-per-task=4`, but then pass `-t "${SLURM_CPUS_PER_TASK}"` to bwa instead of writing `4` a second time. Slurm sets that variable for us, so the request and the actual usage can never drift apart. This matters: if you ask slurm for 4 cores and then tell bwa `-t 16`, you will still only be given 4, and your job will spend its time competing with itself.
+
+⚠️ **Create the log folder before you submit.** Slurm will not create `log/` for you, and a job that cannot open its own output file fails immediately — without being able to write anywhere to say why. This is a classic way to lose an afternoon:
+
+```bash
+mkdir -p log
 ```
+
+Now submit one job per sample:
+
+```bash
+sbatch alignment.sh wes46
+sbatch alignment.sh wes78
+```
+
+Each `sbatch` prints a job ID and returns straight away — the job itself runs elsewhere, which is the whole point: you can close your terminal and go home. To see what your jobs are doing:
+
+```bash
+squeue -u $USER
+```
+
+> Note that `sbatch` reads the script itself, so unlike a script you run directly, `alignment.sh` does not need to be executable.
+
+Once your job disappears from `squeue` it has finished — but that only means it *stopped*, not that it *worked*. Always check:
+
+```bash
+cat log/alignment_<jobid>.err    # did it complain about anything?
+ls -lh bam/                      # did the BAM files appear, and are they a sensible size?
+```
+
+> An empty `.err` file and a BAM of a few MB is what success looks like here. A BAM of 0 bytes means the pipe produced nothing — read the `.err` file.
 
 ### SAMTOOLS COMMANDS
 
-We now have the files describing our alignments to the reference.     
+We now have the files describing our alignments to the reference.   
 
 First, let us sort our BAM file. Sorting is necessary to arrange reads by genomic position, which is required before indexing or viewing by region.   
 
@@ -117,7 +182,7 @@ We can also index the files. Indexing allows tools to rapidly access specific re
 samtools index sample.sorted.bam
 ```
 
-Indexes are binary files, so we can't peek inside. We can, however, inspect a BAM file by converting it into SAM, which is a plain text format that we can view directly. Let's convert one of the BAM files and take a look at the first 50 lines.  
+Indexes are binary files, so we can't peek inside.We can, however, inspect a BAM file by converting it into SAM, which is a plain text format that we can view directly. Let's convert one of the BAM files and take a look at the first 50 lines.  
 
 ```
 # -h option tells samtools to include a header
