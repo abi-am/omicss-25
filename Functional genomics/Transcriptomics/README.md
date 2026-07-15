@@ -8,8 +8,7 @@
 | 🧰Practice  | ~120m  |
 | Overall  | ~240m (4h)  |
 
-  # TODO
-    Primary contributor assigns tasks to contributing authors with deadlines
+
 
 # Welcome to the Transcriptomics Course (omicss26)
 
