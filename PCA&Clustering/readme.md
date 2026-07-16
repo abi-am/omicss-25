@@ -18,8 +18,7 @@ Whether you're a beginner or brushing up your skills, this session will equip yo
 
 Let's get started!
 # Contributors
-    Primary contributor: [DAVIT TARVERDYAN]
-    Contributing authors: [LUIZA STEPANYAN]   
+    DAVIT TARVERDYAN, DAVIT HAKOBYAN 
 # Content  
 **1. [PCA](./1.PCA) - 60 min**
   
