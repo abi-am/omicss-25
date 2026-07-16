@@ -1,11 +1,11 @@
-# PCA Module – Omics 25 Summer School
+# PCA Module – Omics 26 Summer School
 Welcome to the PCA (Principal Component Analysis) module of the Omics 25 Summer School! In this section, we will explore how PCA helps us make sense of complex omics datasets by reducing dimensionality and uncovering hidden patterns.
 
 ## How to Proceed
 To get the most out of this module, please follow the steps below in order:
 
 ### 1. Watch the Introductory Presentation
-Start by watching the presentation provided in this folder (`PCA_presentation.pdf`). It will give you a strong intuitive understanding of PCA — what it is, why it's useful in bioinformatics, and how it transforms high-dimensional data into something more interpretable.
+Start by watching the presentation provided in this folder (`[PCA_presentation.pdf](https://github.com/abi-am/omicss26/blob/main/PCA%26Clustering/1.PCA/PCA_presentation.pdf)`). It will give you a strong intuitive understanding of PCA — what it is, why it's useful in bioinformatics, and how it transforms high-dimensional data into something more interpretable.
 
 ### 2. Dive Deeper with Additional Videos
 After the presentation, deepen your understanding by watching the supplementary videos. These videos cover key aspects of PCA, including:
@@ -19,7 +19,7 @@ You’ll find the links and descriptions here:
 * [An interesting PCA example](https://www.youtube.com/watch?v=FD4DeN81ODY) - 5 min watch
   
 ### 3. Try It Yourself: Hands-on Notebook
-Next, download the following files included in this folder: `PCA.ipynb`, `pca_utils.py`, `toy_example.csv`. 
+Next, download the following files included in this folder: `[PCA.ipynb](https://github.com/abi-am/omicss26/blob/main/PCA%26Clustering/1.PCA/PCA.ipynb)`, `[pca_utils.py](https://github.com/abi-am/omicss26/blob/main/PCA%26Clustering/1.PCA/pca_utils.py)`, `[toy_dataset.csv](https://github.com/abi-am/omicss26/blob/main/PCA%26Clustering/1.PCA/toy_dataset.csv)`. 
 Make sure all of these files are saved in the same directory on your local machine. The notebook relies on these resources being in the same folder to function properly. 
 
 **Note: You don’t need to worry about the contents of pca_utils.py — it’s a utility script that supports some of the code in the notebook behind the scenes.**
