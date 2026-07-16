@@ -1,6 +1,6 @@
-# Welcome to Omics 25 Summer School – PCA and Clustering Section
+# Welcome to Omicss 26 Summer School – PCA and Clustering Section
 
-We are delighted to welcome you to the PCA and Clustering section of the Omics 25 Summer School. Over the next two hours, you will dive into two essential data analysis techniques widely used in bioinformatics: Principal Component Analysis (PCA) and Clustering.
+We are delighted to welcome you to the PCA and Clustering section of the Omicss 26 Summer School. Over the next two hours, you will dive into two essential data analysis techniques widely used in bioinformatics: Principal Component Analysis (PCA) and Clustering.
 
 ## Why PCA and Clustering Matter in Bioinformatics
 
