@@ -300,6 +300,17 @@ codon_table <- c(
   GAU="D", GAC="D", GAA="E", GAG="E",
   GGU="G", GGC="G", GGA="G", GGG="G"
 )
+
+translate_rna <- function(mRNA, RNA_prot_table=codon_table) {
+        n_codons <- length(mRNA) / 3
+        starts <- seq(1, by = 3, length.out = n_codons)
+        codons <- substring(rna, starts, starts + 2L)
+        aas <- codon_table[codons]
+        # Drop from the first stop codon onward
+        stop_at <- match("*", aas)
+        if (!is.na(stop_at)) aas <- aas[seq_len(stop_at - 1L)]
+        paste(aas, collapse = "")
+}
 ```
 
 ```{r prot-solution}
