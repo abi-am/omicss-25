@@ -149,7 +149,7 @@ For any scripts engaging the ADMIXTURE tool, refer to the path here:
 
   ## Step 1 - FILTERING
   
-   *You will be given annotated row vcff file*
+   *You will be given annotated row vcf file*
 
    - For the filtering, we need to filter vcf file and output vfiltered data into plink binary format files.
 
@@ -164,7 +164,7 @@ There are 3 type of files that together make plink finary format files.
 - **.fam** – stores information about the individuals in the dataset.
 
    
-**Now, we can proceed with Filtering using [PLINK](https://www.cog-genomics.org/plink/1.9/filter) tool**.
+**Now, we can proceed with Filtering using [PLINK](https://www.cog-genomics.org/plink/1.9/filter) tool. Read this to get familiar with how do we use it**.
 
 ```
 /mnt/proj/vine/user_projects/shengchang/soft/plink/plink
