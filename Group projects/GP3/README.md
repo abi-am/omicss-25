@@ -140,18 +140,40 @@ For any scripts engaging the ADMIXTURE tool, refer to the path here:
 ```
 /mnt/proj/omicss25/soft/admixture_linux-1.3.0/admixture
 ```
-  ## Step 1 (Filtering)
+
+> NOTE: all the relavant scripts will be provided to you in the following directory
+> ```
+> /mnt/nas1/proj/omicss26/admixture/scripts
+> ```
+> Try to wirte scripts yourselves before refering to the provided scripts. In case of using already given scripts carefully go over them, check the input and output directories and variables. 
+
+  ## Step 1 - FILTERING
   
-   As an input we need to give filtered plink binary format files (.bed, .bim. fam). Filtering should include the following steps:
+   *You will be given annotated row cf file*
 
-   - **Anotation** - samples should have individual, unique ID's. So if the VCF file that we need to analyze is not annotated, firstly we need to annotate it using bcftools. 
+   - The first step would be filter out samples that we are interested (take them from metadata). Do this using bcftools, you will end up with the vcf file that contains only the samples that we need.
+     
+   - Then, we continue with more precise filtering and create PLINK binary format files.
 
-**Then we can proceed with Filtering using [PLINK](https://www.cog-genomics.org/plink/1.9/filter) tool**.
+Let's get familiar with plink binary format files at first. 
+
+PLINK binary format files are a set of files used to store genetic data in a compact and efficient way. They contain information about the DNA variants, the individuals in the study, and the genotype of each individual at each variant. This format makes genetic analyses much faster and requires less storage space than text files. Note, that admixture analysis requires plink binary format files as an input.
+
+There are 3 type of files that together make plink finary format files. 
+
+- **.bed** – stores the genotype data (the genetic information).
+- **.bim** – stores information about each genetic variant, such as its chromosome and position.
+- **.fam** – stores information about the individuals in the dataset.
+
+   
+**Now, we can proceed with Filtering using [PLINK](https://www.cog-genomics.org/plink/1.9/filter) tool**.
 
 ```
 /mnt/proj/vine/user_projects/shengchang/soft/plink/plink
 ```
-   - take only 1-19 autosomal chromosomes
+For the filtering part, from vcf file you need to extract`
+
+   - only 1-19 autosomal chromosomes
    - **Biallelic SNPs** - we keep the SNPs that are either reference or alternative variant.
     
    - **Minor allele frequency (MAF)** - we will remove the rarest SNPs by keeping only those that are encountered with the frequency of >0.5%. MAF is the frequency of the second most common allele in the population. Extremely low MAF might be pointing to genotyping effors. More common SNPs are considered more reliable and are more likely to be true features of our populations.
@@ -166,7 +188,12 @@ As an output we will have plink finary format files (/.bed, /.bim, /.fam).
 
 - **/.fam — Sample information file** : Contains family and individual IDs, paternal/maternal IDs, sex, and phenotype for each sample (one line per individual).
 
- ## Step 2 (ADMIXTURE analysis)
+> Note: the filtering script is the following. Carefully go over it before running.
+> ```
+> /mnt/nas1/proj/omicss26/gp3/admixture/script/filtering.sh
+> ```
+
+ ## Step 2 - ADMIXTURE analysys
  
 Now that we have filtered plink binary format files, we can proceed with the ADMIXTURE analysis. The documentation can be found [here](https://speciationgenomics.github.io/ADMIXTURE/). To get familiar to how the algorithm of the admixture works refer to this [slide](https://docs.google.com/presentation/d/17UleVOYSMbGvSviu_jEw6VkmNgJNbKmJxHD5nz11Css/edit?usp=sharing)
 
