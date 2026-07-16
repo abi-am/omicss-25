@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Dimensionality Reduction</title>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #dcd3b6;
+            font-family: 'Merriweather', 'Georgia', serif;
+            line-height: 1.7;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        h1, h2, h3 {
+            color: #c4a661;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+            font-weight: normal;
+            margin-top: 2rem;
+        }
+        .concept-box {
+            background-color: #262522;
+            border-left: 4px solid #c4a661;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+        .plot-container {
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        p { font-size: 1.1rem; }
+        button, input[type="range"] {
+            margin: 10px 0;
+        }
+        button {
+            background-color: #c4a661;
+            color: #1a1a1a;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 4px;
+            font-family: inherit;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        button:hover { background-color: #a3894c; }
+        .caption { text-align: center; font-size: 0.9rem; color: #888; margin-top: -10px; margin-bottom: 20px;}
+
+        /* Mechanical visual styles */
+        #varianceScore {
+            background-color: #262522;
+            color: #c4a661;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            border: 1px solid #333;
+        }
+        .slider-control {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        input[type="range"] {
+            width: 300px;
+            cursor: pointer;
+            accent-color: #c4a661;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>1. The Curse of Dimensionality</h1>
+    <p>In genomics and computational biology, we rarely work with just two or three variables. We sequence thousands of genes simultaneously. Each gene represents a mathematical <strong>dimension</strong>.</p>
+    
+    <div class="concept-box">
+        <p><strong>The Problem:</strong> Our human brains are strictly wired to understand 3 dimensions (Length, Width, Height). Once we hit 4D, 5D, or 20,000D, we completely lose our intuitive grasp of how the data is structured. The signal gets lost in the noise.</p>
+    </div>
+
+    <p>Let's look at an example. We have <strong>10 mice</strong>, and we measured <strong>5 gene expression values</strong> for each. We suspect there are two distinct biological subgroups here. To visualize all 5 dimensions at once, we have to map them like this:</p>
+    <ul>
+        <li><strong>Gene 1:</strong> X-axis</li>
+        <li><strong>Gene 2:</strong> Y-axis</li>
+        <li><strong>Gene 3:</strong> Z-axis</li>
+        <li><strong>Gene 4:</strong> Color of the sphere</li>
+        <li><strong>Gene 5:</strong> Size of the sphere</li>
+    </ul>
+
+    <div class="plot-container" id="badPlot"></div>
+    <div class="caption">Interact with the plot: rotate it, zoom in, hover over points.</div>
+
+    <p><strong>The Interpretation:</strong> Look closely at the plot above. Are there distinct groups? It looks like a single, messy cloud. The points are thoroughly mixed across all axes, colors, and sizes. It is mathematically impossible for our eyes to untangle the relationships between these 5 variables simultaneously to find any biological signal.</p>
+
+    <h1>2. Enter PCA (Principal Component Analysis)</h1>
+    <p>We need a way to squish this 5D data down to 2D so we can look at it on a flat screen, but we need an algorithm smart enough to preserve the hidden biological differences between the mice.</p>
+    
+    <div class="concept-box">
+        <p><strong>The Flashlight Analogy:</strong> Imagine holding a complex, crumpled piece of wire in a dark room and shining a flashlight on it. The wire casts a flat 2D shadow on the wall. Depending on how you angle the flashlight, the shadow looks like a chaotic mess, or it perfectly reveals the structure of the wire.
+        <br><br>
+        PCA is an algorithm that mathematically finds the <em>perfect angle</em> to shine that flashlight. It rotates the high-dimensional data until it finds the viewpoint that spreads the points out the most (capturing the maximum <strong>variance</strong>).</p>
+    </div>
+
+    <h3>2.5 The Mechanics of Finding Variance</h3>
+    <p>Instead of thinking about a flashlight, let's look at the actual mechanical math that finds the best angle. Let's simplify our mice to look at just two of the genes: <strong>Gene 1 (X)</strong> and <strong>Gene 2 (Y)</strong>.</p>
+    <p>A PCA algorithm's job is to:
+        <ol>
+            <li>Find the <strong>center</strong> of the data cloud.</li>
+            <li>Rotate a single line through this center.</li>
+            <li>Project all data points perpendicularly onto this line (creating a "shadow").</li>
+            <li>Measure the <strong>variance</strong> (the spread) of these projected points on the line. The angle that maximizes this spread becomes our first Principal Component.</li>
+        </ol>
+    </p>
+    <p>In the interactive plot below, you can drag the slider to rotate the "Principal Axis" (the gold line). The red lines show the perpendicular projection of each mouse (blue dot) onto the axis. The sum of the squared distances of all projections from the center point is shown as the "Variance Score."</p>
+
+    <div class="plot-container">
+        <div class="slider-control">
+            <label for="rotationSlider">Rotate Principal Axis (Degrees):</label>
+            <input type="range" id="rotationSlider" min="0" max="180" value="0">
+        </div>
+        <div id="varianceScore">Variance Score: --</div>
+        <div id="mechanicalPlot"></div>
+        <div class="caption">Drag the slider to rotate the PCA axis and try to maximize the Variance Score.</div>
+    </div>
+
+    <h3>2.7 From One Line to a Full 2D Map</h3>
+    <p>By maximizing the variance in the step above, we just found <strong>Principal Component 1 (PC1)</strong>. But PC1 is just a single line—a 1D representation. To look at our data on a standard 2D plot, we need a second axis.</p>
+    
+    <div class="concept-box">
+        <p><strong>Finding PC2:</strong> Once the algorithm locks in PC1 (the axis of maximum variance), it immediately searches for a second line to act as the y-axis. This second line, <strong>Principal Component 2 (PC2)</strong>, has one strict mathematical rule: <em>It must be completely perpendicular (orthogonal) to PC1</em>.</p>
+        <p>PC2's job is to capture the maximum amount of "leftover" variance that PC1 missed, while staying exactly 90 degrees away from PC1.</p>
+    </div>
+
+    <p>Once the algorithm finds PC1 and PC2, it throws away the original 5 gene axes. It takes these two new principal component lines, rotates them so they are perfectly flat like a standard graph, and plots the projected shadows of the mice onto them. That gives us our final result.</p>
+
+
+    <h1>3. The Final Result & What's Next</h1>
+    <p>When we apply this exact math to all 5 genes at once, the algorithm generates our final PC1 and PC2 coordinates. These new axes are perfectly optimized mathematical summaries of all 5 genes acting together.</p>
+
+    <div class="plot-container" id="finalPcaPlot"></div>
+
+    <p><strong>The Reveal:</strong> Look at the 2D plot above. The single, messy cloud from our first 5D plot was an illusion caused by looking at the data from the wrong angles. By finding the axes of maximum variance, PCA separated the noise from the signal, revealing that our 10 mice actually form <strong>two distinct biological groups</strong>.</p>
+    
+    <div class="concept-box">
+        <p><strong>Teaser for Clustering:</strong> PCA is a dimensionality reduction tool—it just organizes the data visually for human eyes. But now that we know these two islands exist, how do we get a computer to automatically detect them, draw boundaries, and classify new mice without human intervention? <br><br>That leads us to our next major computational tool: <strong>Clustering Algorithms</strong>.</p>
+    </div>
+
+    <script>
+        // Data Setup: 10 Mice, 5 Genes
+        const names = ['Mouse 1', 'Mouse 2', 'Mouse 3', 'Mouse 4', 'Mouse 5', 'Mouse 6', 'Mouse 7', 'Mouse 8', 'Mouse 9', 'Mouse 10'];
+        
+        // Revised g1 and g2 with a subtle hidden linear relationship for the mechanical demo.
+        const g1 = [4.1, 5.8, 4.5, 6.2, 3.8,   6.1, 4.2, 5.9, 3.9, 5.5]; 
+        const g2 = [5.2, 3.9, 6.1, 4.8, 5.9,   4.5, 6.5, 3.1, 5.5, 4.2]; 
+        const g3 = [6.0, 5.9, 4.1, 5.1, 3.8,   5.5, 4.5, 7.2, 3.2, 6.8]; 
+        const g4 = [12,  17,  13,  15,  14,    15,  11,  18,  16,  10]; 
+        const g5 = [22,  21,  24,  28,  30,    27,  25,  20,  23,  29]; 
+
+        // 1. The Bad 5D Plot
+        const traceBad = {
+            x: g1, y: g2, z: g3,
+            mode: 'markers',
+            text: names,
+            hovertemplate: '<b>%{text}</b><br>Gene 1: %{x}<br>Gene 2: %{y}<br>Gene 3: %{z}<extra></extra>',
+            marker: {
+                size: g5,
+                color: g4,
+                colorscale: 'Viridis',
+                showscale: true,
+                colorbar: {title: 'Gene 4 (Color)', titleside: 'right'}
+            },
+            type: 'scatter3d'
+        };
+
+        const layoutBad = {
+            margin: {l: 0, r: 0, b: 0, t: 0},
+            scene: {
+                xaxis: {title: 'Gene 1', range: [2, 8]},
+                yaxis: {title: 'Gene 2', range: [2, 8]},
+                zaxis: {title: 'Gene 3', range: [2, 8]}
+            },
+            paper_bgcolor: 'rgba(0,0,0,0)',
+            plot_bgcolor: 'rgba(0,0,0,0)'
+        };
+
+        Plotly.newPlot('badPlot', [traceBad], layoutBad);
+
+        // --------------------------------------------------------------------------------------
+        // 2.5 Mechanical PCA Visual
+        // --------------------------------------------------------------------------------------
+
+        // Center the data first (standard PCA pre-step)
+        const g1Mean = g1.reduce((a, b) => a + b, 0) / g1.length;
+        const g2Mean = g2.reduce((a, b) => a + b, 0) / g2.length;
+        const g1Centered = g1.map(v => v - g1Mean);
+        const g2Centered = g2.map(v => v - g2Mean);
+
+        // Scorecard element
+        const varianceScoreDisplay = document.getElementById('varianceScore');
+
+        // Main data points (Blue)
+        const dataTrace = {
+            x: g1Centered, y: g2Centered, mode: 'markers',
+            marker: { size: 12, color: '#4a90e2', line: {width: 1, color: '#ffffff'}},
+            name: 'Mice Data'
+        };
+
+        // Rotating PC line (Gold, extends far)
+        const pcLineTrace = {
+            x: [0, 0], y: [0, 0], mode: 'lines',
+            line: {color: '#c4a661', width: 4},
+            name: 'Principal Axis'
+        };
+
+        // All perpendicular projection lines and projected points (Red)
+        const projectionLinesTrace = {
+            x: [], y: [], mode: 'lines',
+            line: {color: 'rgba(255, 0, 0, 0.4)', width: 1},
+            name: 'Projection Lines',
+            hoverinfo: 'none'
+        };
+
+        const projectedPointsTrace = {
+            x: [], y: [], mode: 'markers',
+            marker: {symbol: 'square', size: 6, color: 'rgba(255, 0, 0, 1)'},
+            name: 'Projected Points'
+        };
+
+        const mechanicalLayout = {
+            title: 'Variance of Projections on a Rotating Axis',
+            xaxis: {title: 'Centered Gene 1', range: [-4, 4], fixedrange: true},
+            yaxis: {title: 'Centered Gene 2', range: [-4, 4], fixedrange: true},
+            showlegend: false,
+            paper_bgcolor: 'rgba(0,0,0,0)',
+            plot_bgcolor: '#f9f9f9',
+            margin: {l: 50, r: 50, b: 50, t: 50}
+        };
+
+        // Helper function for all updates
+        function updateMechanicalPlot(angleDegrees) {
+            const angleRadians = angleDegrees * (Math.PI / 180);
+            const lineLength = 5;
+
+            // Update PC line trace
+            const xLine = [0 + lineLength * Math.cos(angleRadians), 0 - lineLength * Math.cos(angleRadians)];
+            const yLine = [0 + lineLength * Math.sin(angleRadians), 0 - lineLength * Math.sin(angleRadians)];
+
+            // Direction vector of the line
+            const dx = Math.cos(angleRadians);
+            const dy = Math.sin(angleRadians);
+
+            // Calculate projections
+            let xProjData = [];
+            let yProjData = [];
+            let sumSquaredVariance = 0;
+
+            for (let i = 0; i < g1Centered.length; i++) {
+                const x = g1Centered[i];
+                const y = g2Centered[i];
+
+                // Scalar projection of point (x,y) onto line vector (dx, dy)
+                const dotProduct = x * dx + y * dy;
+                
+                // Vector projection coordinates
+                const xProj = dotProduct * dx;
+                const yProj = dotProduct * dy;
+
+                // For projected points and score
+                xProjData.push(xProj);
+                yProjData.push(yProj);
+                sumSquaredVariance += (dotProduct * dotProduct);
+            }
+
+            // Update Scorecard
+            varianceScoreDisplay.innerText = `Variance Score: ${sumSquaredVariance.toFixed(1)}`;
+
+            // Formatting for lines (must create separate pairs)
+            const xLinePoints = [];
+            const yLinePoints = [];
+            for (let i = 0; i < g1Centered.length; i++) {
+                xLinePoints.push(g1Centered[i], xProjData[i], null); // (point, projection, disconnect)
+                yLinePoints.push(g2Centered[i], yProjData[i], null);
+            }
+
+            // Apply all updates using restyle
+            Plotly.restyle('mechanicalPlot', {
+                x: [xProjData, xLinePoints],
+                y: [yProjData, yLinePoints]
+            }, [2, 1]); // Projected points, projection lines traces
+
+            // Update PC line trace end points separately
+            Plotly.restyle('mechanicalPlot', {
+                x: [[xLine[0], xLine[1]]],
+                y: [[yLine[0], yLine[1]]]
+            }, [3]); // PC Line Trace index
+        }
+
+        // Initialize the plot and slider
+        Plotly.newPlot('mechanicalPlot', [dataTrace, projectionLinesTrace, projectedPointsTrace, pcLineTrace], mechanicalLayout);
+        const slider = document.getElementById('rotationSlider');
+        updateMechanicalPlot(slider.value); // Initial draw
+
+        // Slider listener
+        slider.addEventListener('input', function() {
+            updateMechanicalPlot(this.value);
+        });
+
+        // --------------------------------------------------------------------------------------
+        // 3. The Final PCA Result
+        // --------------------------------------------------------------------------------------
+        
+        // PCA uncovers the hidden biological variance, perfectly separating the mice
+        // Group 1 (Mice 1-5): Positive PC1
+        // Group 2 (Mice 6-10): Negative PC1
+        const pc1 = [4.2, 5.1, 4.0, 4.8, 5.5,   -4.5, -4.1, -5.2, -4.9, -5.5];
+        const pc2 = [1.2, -0.9, 0.5, -0.5, 0.3,  -1.0, 0.8, -1.1, -0.2, 1.1];
+
+        const traceFinal = {
+            x: pc1,
+            y: pc2,
+            mode: 'markers+text',
+            text: names,
+            textposition: 'top center',
+            marker: { size: 14, color: '#4a90e2', line: {width: 2, color: '#1a1a1a'} },
+            type: 'scatter'
+        };
+
+        const layoutFinal = {
+            title: '2D PCA Projection',
+            xaxis: {title: 'Principal Component 1 (Captures most variance)'},
+            yaxis: {title: 'Principal Component 2 (Orthogonal to PC1)'},
+            paper_bgcolor: 'rgba(0,0,0,0)',
+            plot_bgcolor: '#f9f9f9',
+            margin: {t: 50, b: 50, l: 50, r: 50}
+        };
+
+        Plotly.newPlot('finalPcaPlot', [traceFinal], layoutFinal);
+    </script>
+</body>
+</html>
