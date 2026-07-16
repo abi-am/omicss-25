@@ -1,0 +1,1 @@
+{"frames":[],"message":"Error: unexpected string constant in:\n\"  # Peel off every intron (order does not matter for non-overlapping Rosalind cases)\n  exons_dna <- Reduce(function(seq, intron) gsub(intron, \"\"\n"}

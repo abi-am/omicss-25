@@ -1,0 +1,12 @@
+"0","splice_and_translate <- function(fasta_text, codon_table) {
+  seqs <- parse_fasta(fasta_text)
+  dna <- seqs[[1]]
+  introns <- seqs[-1]
+
+  # Peel off every intron (order does not matter for non-overlapping Rosalind cases)
+  exons_dna <- Reduce(function(seq, intron) gsub(intron, """", seq, fixed = TRUE),
+"
+"2","Error: unexpected string constant in:
+""  # Peel off every intron (order does not matter for non-overlapping Rosalind cases)
+  exons_dna <- Reduce(function(seq, intron) gsub(intron, """"
+"
