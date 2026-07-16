@@ -16,11 +16,11 @@ From microbiomes to meaningful insights.
 
 ## 📅 Schedule & Topics
 
-### 📍 August 13, 2025
+### 📍 August 8, 2026
 
-#### ⏰ 3:00 PM – 4:00 PM  
+#### ⏰ 11:00 AM – 12:00 PM  
 **Topic:** *Introduction to the Microbiome*  
-**Presenter:** Raz Sargsyan  
+**Presenter:** Razmik Sargsyan  
 **[Slide](https://docs.google.com/presentation/d/1O5pF04_NXHzg43szyuDRQDQN3wNtxTd8S7KzPI5LVxk/edit?slide=id.g36d751b716b_0_0#slide=id.g36d751b716b_0_0)** 
 
 **Objective:**  
@@ -28,9 +28,9 @@ To explore the microbiome field, introduce key concepts, and discuss current adv
 
 ---
 
-#### ⏰ 4:00 PM – 5:00 PM  
+#### ⏰ 12:00 PM – 13:00 PM  
 **Topic:** *Amplicon Sequencing and Data Analysis*  
-**Presenter:** Nelli Vardazaryan  
+**Presenter:** Razmik Sargsyan  
 **[Slide](https://drive.google.com/file/d/1iLqlFPbrRsCrsxBonCqvsR5B_yuzh52x/view?usp=drive_link)** 
 
 
@@ -39,9 +39,8 @@ To introduce amplicon sequencing and demonstrate how to analyze sequencing data 
 
 ---
 
-### 📍 August 14, 2025
 
-#### ⏰ 3:00 PM – 4:00 PM  
+#### ⏰ 2:00 PM – 4:00 PM  
 **Topic:** *[Metagenomic Sequencing and Data Analysis] 
 **Presenter:** Lilit Nersisyan  
 **[Slide](https://docs.google.com/presentation/d/1UwyAmpB3IiGmRQ3oXhwfzZUkz5LukizG/edit?slide=id.p1#slide=id.p1)** 
