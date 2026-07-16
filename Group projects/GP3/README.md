@@ -168,7 +168,7 @@ As an output we will have plink finary format files (/.bed, /.bim, /.fam).
 
  ## Step 2 (ADMIXTURE analysis)
  
-Now that we have filtered plink binary format files, we can proceed with the ADMIXTURE analysis. The documentation can be found [here](https://speciationgenomics.github.io/ADMIXTURE/).
+Now that we have filtered plink binary format files, we can proceed with the ADMIXTURE analysis. The documentation can be found [here](https://speciationgenomics.github.io/ADMIXTURE/). To get familiar to how the algorithm of the admixture works refer to this [slide](https://docs.google.com/presentation/d/17UleVOYSMbGvSviu_jEw6VkmNgJNbKmJxHD5nz11Css/edit?usp=sharing)
 
 We do the ADMIXTURE by **K-fold cross validation**. K-fold cross-validation is used to estimate how well the model fits the data for a given number of ancestral populations (K). Here is how it works
 
@@ -194,7 +194,7 @@ As an output of the ADMIXTURE we will get 3 types of files (/.log, /.Q, /.P).
 
 Now we can proceed with the visualization in R.  
 
-As the aim of this project is to understand population genetics of grapevine, we are going to analyze Q matrices. For that, we need to visualize them by constructiog  a barplot. In Q matrix is row is an indivisual each column is an estimated population. The valuse of the matrix represents the proportion of one population. We need to represent this by barplot, where each bar is an individual, colored by the ancestral population proportions.  
+As the aim of this project is to understand population genetics of grapevine, we are going to analyze Q matrices. For that, we need to visualize them by constructiog  a barplot. In Q matrix each row is an indivisual sample, each column is an estimated population. The valuse of the matrix represents the proportion of one population. We need to represent this by barplot, where each bar is an individual, colored by the ancestral population proportions.  
 
 > NOTE: Make a .txt file with sample names, that are ordered in the same way as in Q matrices, to use them in the graphs. You can take them from /.fam file. 
 
