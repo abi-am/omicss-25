@@ -149,7 +149,7 @@ For any scripts engaging the ADMIXTURE tool, refer to the path here:
 
   ## Step 1 - FILTERING
   
-   *You will be given annotated row vcff file*
+   *You will be given annotated row vcf file*
 
    - For the filtering, we need to filter vcf file and output vfiltered data into plink binary format files.
 
@@ -164,7 +164,7 @@ There are 3 type of files that together make plink finary format files.
 - **.fam** – stores information about the individuals in the dataset.
 
    
-**Now, we can proceed with Filtering using [PLINK](https://www.cog-genomics.org/plink/1.9/filter) tool**.
+**Now, we can proceed with Filtering using [PLINK](https://www.cog-genomics.org/plink/1.9/filter) tool. Read this to get familiar with how do we use it**.
 
 ```
 /mnt/proj/vine/user_projects/shengchang/soft/plink/plink
@@ -209,13 +209,13 @@ ADMIXTURE is usually run for some range of Ks, typically from K=2, to K = 10. Th
 
  > NOTE: ADMIXTURE involves randomization (in cross-validation), so to ensure results are reproducible, you can set a random seed with the *--seed* option:
 
-## STEP 3 (Visualization and interpretation) 
+## STEP 3 - Visualization and interpretation 
 
 As an output of the ADMIXTURE we will get 3 types of files (/.log, /.Q, /.P).  
 
 - **/.log** file contains run infromation and cv errors.
 - **/.Q** contains a matrix that contains information about ancestry proportions. Each row here is a sample (individual) and each column coressponts to one of the K ancestral populations (K=1, K=2....). Values of the matrix tell what proportion of the certain sample's ancestry comes from the population of coressponing column. 
-- **/.P** file contains a matrix that contains information about allele frequencies. Each row eas a SNP, each column is ancestral population. It tells us what each ancestral population looks like genetically.
+- **/.P** file contains a matrix that contains information about allele frequencies. Each row is a SNP, each column is ancestral population. It tells us what each ancestral population looks like genetically. For our analysis we won't need those. 
 
 Now we can proceed with the visualization in R.  
 

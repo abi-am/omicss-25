@@ -1,6 +1,6 @@
-# Clustering Module – Omics 25 Summer School
+# Clustering Module – Omics 26 Summer School
 
-Welcome to the **Clustering** module of the Omics 25 Summer School! Following the PCA section, we now shift our focus to discovering structure in data through unsupervised learning techniques.
+Welcome to the **Clustering** module of the Omics 26 Summer School! Following the PCA section, we now shift our focus to discovering structure in data through unsupervised learning techniques.
 
 Clustering plays a vital role in bioinformatics — from identifying gene expression patterns and sample subtypes, to classifying cells in single-cell datasets. Understanding how to group similar data points can help generate meaningful biological insights from high-dimensional data.
 
@@ -9,7 +9,7 @@ Clustering plays a vital role in bioinformatics — from identifying gene expres
 To make the most out of this module, please follow the steps below:
 
 ### 1. Watch the Introductory Presentation
-Begin by watching the **Clustering presentation** (`clustering_presentation.pdf`) provided in this folder. It introduces the key ideas behind clustering.
+Begin by watching the **Clustering presentation** ([clustering_presentation.pdf](https://github.com/abi-am/omicss26/blob/main/PCA%26Clustering/2.Clustering/clustering_presentation.pdf)) provided in this folder. It introduces the key ideas behind clustering.
 
 ### 2. Explore Additional Learning Materials
 Once you've seen the presentation, continue your learning with the **supplementary video list**.
@@ -34,7 +34,7 @@ Now it's time to apply what you've learned! Download the following files from th
 
 Now it's time to put your knowledge into action. In this step, you'll work through a set of **structured exercises** designed to deepen your intuition and practical understanding of clustering.
 
-Download the file `clustering_exercises.pdf`  from this folder. Make sure all related resources (if any) are in the **same directory** to ensure everything runs smoothly.
+Download the file [clustering_exercises.pdf](https://github.com/abi-am/omicss26/blob/main/PCA%26Clustering/2.Clustering/clustering_exercises.pdf)  from this folder. Make sure all related resources (if any) are in the **same directory** to ensure everything runs smoothly.
 
 These exercises cover:
 - **Manual simulation of K-Means:** Perform one iteration using 2D points and calculate distances and new centroids.

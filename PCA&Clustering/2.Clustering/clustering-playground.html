@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Discovery: Clustering Algorithms</title>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <style>
+        /* Consistent dark, elegant styling */
+        body {
+            background-color: #1a1a1a;
+            color: #dcd3b6;
+            font-family: 'Merriweather', 'Georgia', serif;
+            line-height: 1.7;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        h1, h2, h3 {
+            color: #c4a661;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+            font-weight: normal;
+            margin-top: 2rem;
+        }
+        .concept-box {
+            background-color: #262522;
+            border-left: 4px solid #c4a661;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+        .plot-container {
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        p { font-size: 1.1rem; }
+        button {
+            background-color: #c4a661;
+            color: #1a1a1a;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 4px;
+            font-family: inherit;
+            font-weight: bold;
+            margin: 10px 5px 10px 0;
+            transition: background-color 0.3s;
+        }
+        button:hover { background-color: #a3894c; }
+        button:disabled { background-color: #555; cursor: not-allowed; color: #888; }
+        .caption { text-align: center; font-size: 0.9rem; color: #888; margin-top: -10px; margin-bottom: 20px;}
+        
+        .status-panel {
+            background-color: #262522;
+            color: #c4a661;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            border: 1px solid #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>1. From Visualization to Automation</h1>
+    <p>In our last lesson, PCA mathematically unraveled our messy 5D gene expression data. It gave us a clean 2D map where our 10 mice naturally separated into two distinct islands.</p>
+    
+    <div class="concept-box">
+        <p><strong>The New Problem:</strong> Our human eyes can instantly see the two groups. But a computer doesn't have eyes. If we have 10,000 samples instead of 10, we cannot group them by hand. We need an algorithm to automatically define these groups, draw boundaries around them, and assign labels.</p>
+    </div>
+
+    <p>This is where <strong>Clustering Algorithms</strong> come in. They are unsupervised machine learning tools designed to find natural groupings in data without being told what those groups are in advance.</p>
+
+    <h1>2. Enter K-Means Clustering</h1>
+    <p>The most famous clustering algorithm is <strong>K-Means</strong>. It relies on a beautifully simple, mechanical two-step process.</p>
+    
+    <p>To use it, we only have to tell the computer one thing: <em>How many groups (K) do we want to find?</em> Because we visually saw two islands in our PCA plot, we will set <strong>K = 2</strong>.</p>
+
+    <div class="concept-box">
+        <p><strong>The Mechanics of K-Means:</strong>
+        <br><br>
+        <strong>Step 0: Initialization.</strong> The algorithm randomly drops 2 "anchors" (called <strong>Centroids</strong>) onto our map.
+        <br><strong>Step 1: Assignment.</strong> Every mouse looks at the centroids and joins the team of whichever centroid is mathematically closest to it.
+        <br><strong>Step 2: Update.</strong> The centroids look at their new teams, calculate the exact geographic center (the mean) of their team members, and physically move to that new center.
+        <br><br>
+        <em>It repeats Step 1 and Step 2 over and over until the centroids stop moving.</em></p>
+    </div>
+
+    <h3>2.5 See K-Means in Action</h3>
+    <p>Below is our finalized PCA map of the 10 mice. Currently, all mice are gray because the computer doesn't know which group they belong to. The computer has randomly dropped two Centroids (the large stars) onto the map.</p>
+    
+    <p>Click the buttons below to manually drive the K-Means algorithm forward one step at a time.</p>
+
+    <div class="plot-container">
+        <div class="status-panel" id="algorithmStatus">Status: Waiting to start...</div>
+        <div>
+            <button id="stepBtn">Run Step 1: Assign Points</button>
+            <button id="resetBtn">Reset Algorithm</button>
+        </div>
+        <div id="kmeansPlot"></div>
+        <div class="caption">Watch how the centroids "hunt" for the center of gravity of the two clusters.</div>
+    </div>
+
+    <h1>3. The Final Result</h1>
+    <p>Once the centroids stop moving, the algorithm has <strong>converged</strong>. The computer has successfully replicated what our eyes did naturally: it has defined two distinct biological subgroups purely based on the mathematical distances between their gene expressions.</p>
+
+    <div class="concept-box">
+        <p><strong>Why this matters:</strong> You can now feed a completely unknown, unlabelled "Mouse 11" into this model. The computer will plot it, measure its distance to the two final Centroids, and instantly diagnose which biological subgroup it belongs to. You have just built a fundamental machine learning classification pipeline.</p>
+    </div>
+
+    <script>
+        // Data Setup: The final PC1 and PC2 coordinates from our PCA lesson
+        const names = ['Mouse 1', 'Mouse 2', 'Mouse 3', 'Mouse 4', 'Mouse 5', 'Mouse 6', 'Mouse 7', 'Mouse 8', 'Mouse 9', 'Mouse 10'];
+        const pc1 = [4.2, 5.1, 4.0, 4.8, 5.5,   -4.5, -4.1, -5.2, -4.9, -5.5];
+        const pc2 = [1.2, -0.9, 0.5, -0.5, 0.3,  -1.0, 0.8, -1.1, -0.2, 1.1];
+
+        // K-Means State Variables
+        let state = 0; // 0: Init, 1: Assign, 2: Move, 3: Converged
+        
+        // Start centroids in deliberately poor, random-looking locations
+        let c1 = {x: 0, y: 2.5}; 
+        let c2 = {x: 0, y: -2.5};
+        
+        let assignments = new Array(10).fill(0); // 0: unassigned, 1: group 1, 2: group 2
+
+        // Base Plotly Traces
+        const miceTrace = {
+            x: pc1,
+            y: pc2,
+            mode: 'markers+text',
+            text: names,
+            textposition: 'top center',
+            marker: { 
+                size: 14, 
+                // Start gray, will update to colors
+                color: '#aaaaaa', 
+                line: {width: 2, color: '#1a1a1a'} 
+            },
+            name: 'Mice',
+            hoverinfo: 'text'
+        };
+
+        const centroidTrace = {
+            x: [c1.x, c2.x],
+            y: [c1.y, c2.y],
+            mode: 'markers',
+            marker: {
+                symbol: 'star',
+                size: 24,
+                color: ['#ff4b4b', '#4b4bff'], // Red and Blue
+                line: {width: 2, color: '#ffffff'}
+            },
+            name: 'Centroids',
+            hoverinfo: 'name'
+        };
+
+        const layout = {
+            title: 'K-Means Clustering on PCA Data',
+            xaxis: {title: 'Principal Component 1', range: [-7, 7]},
+            yaxis: {title: 'Principal Component 2', range: [-4, 4]},
+            paper_bgcolor: 'rgba(0,0,0,0)',
+            plot_bgcolor: '#f9f9f9',
+            margin: {t: 50, b: 50, l: 50, r: 50},
+            showlegend: false
+        };
+
+        Plotly.newPlot('kmeansPlot', [miceTrace, centroidTrace], layout);
+
+        // UI Elements
+        const stepBtn = document.getElementById('stepBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        const statusPanel = document.getElementById('algorithmStatus');
+
+        // Math Helper: Calculate distance between two points
+        function getDistance(x1, y1, x2, y2) {
+            return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+        }
+
+        // Logic Step 1: Assign points to nearest centroid
+        function assignPoints() {
+            let changed = false;
+            let colors = [];
+
+            for (let i = 0; i < pc1.length; i++) {
+                let dist1 = getDistance(pc1[i], pc2[i], c1.x, c1.y);
+                let dist2 = getDistance(pc1[i], pc2[i], c2.x, c2.y);
+                
+                let newAssignment = dist1 < dist2 ? 1 : 2;
+                if (assignments[i] !== newAssignment) {
+                    changed = true;
+                    assignments[i] = newAssignment;
+                }
+                
+                // Color mapping: 1 -> light red, 2 -> light blue
+                colors.push(assignments[i] === 1 ? '#ff9999' : '#9999ff');
+            }
+
+            // Update Plotly trace
+            Plotly.restyle('kmeansPlot', {'marker.color': [colors]}, [0]);
+            return changed; // Returns false if no points changed teams (Convergence)
+        }
+
+        // Logic Step 2: Move centroids to the mean of their teams
+        function moveCentroids() {
+            let c1Count = 0, c2Count = 0;
+            let c1SumX = 0, c1SumY = 0, c2SumX = 0, c2SumY = 0;
+
+            for (let i = 0; i < pc1.length; i++) {
+                if (assignments[i] === 1) {
+                    c1SumX += pc1[i];
+                    c1SumY += pc2[i];
+                    c1Count++;
+                } else if (assignments[i] === 2) {
+                    c2SumX += pc1[i];
+                    c2SumY += pc2[i];
+                    c2Count++;
+                }
+            }
+
+            // Calculate new means
+            let newC1x = c1Count > 0 ? c1SumX / c1Count : c1.x;
+            let newC1y = c1Count > 0 ? c1SumY / c1Count : c1.y;
+            let newC2x = c2Count > 0 ? c2SumX / c2Count : c2.x;
+            let newC2y = c2Count > 0 ? c2SumY / c2Count : c2.y;
+
+            // Animate centroid movement
+            Plotly.animate('kmeansPlot', {
+                data: [{x: [newC1x, newC2x], y: [newC1y, newC2y]}],
+                traces: [1]
+            }, {
+                transition: {duration: 1000, easing: 'cubic-in-out'},
+                frame: {duration: 1000}
+            });
+
+            // Update internal state
+            c1.x = newC1x; c1.y = newC1y;
+            c2.x = newC2x; c2.y = newC2y;
+        }
+
+        // Button Click Handler
+        stepBtn.addEventListener('click', () => {
+            if (state === 0 || state === 2) {
+                // Time to Assign
+                let pointsChanged = assignPoints();
+                if (!pointsChanged && state === 2) {
+                    // If we assigned, but nobody changed teams after a move, we are done!
+                    statusPanel.innerText = "Status: Algorithm Converged! Groups found.";
+                    stepBtn.disabled = true;
+                    stepBtn.innerText = "Clustering Complete";
+                    state = 3;
+                } else {
+                    statusPanel.innerText = "Status: Step 1 Complete. Points assigned to nearest Centroid.";
+                    stepBtn.innerText = "Run Step 2: Move Centroids";
+                    state = 1;
+                }
+            } else if (state === 1) {
+                // Time to Move
+                moveCentroids();
+                statusPanel.innerText = "Status: Step 2 Complete. Centroids moved to center of their teams.";
+                stepBtn.innerText = "Run Step 1: Re-Assign Points";
+                state = 2;
+            }
+        });
+
+        // Reset Handler
+        resetBtn.addEventListener('click', () => {
+            state = 0;
+            c1 = {x: 0, y: 2.5}; 
+            c2 = {x: 0, y: -2.5};
+            assignments.fill(0);
+            
+            let grayColors = new Array(10).fill('#aaaaaa');
+            
+            // Reset points
+            Plotly.restyle('kmeansPlot', {'marker.color': [grayColors]}, [0]);
+            
+            // Reset centroids instantly
+            Plotly.animate('kmeansPlot', {
+                data: [{x: [c1.x, c2.x], y: [c1.y, c2.y]}],
+                traces: [1]
+            }, {
+                transition: {duration: 0},
+                frame: {duration: 0}
+            });
+
+            statusPanel.innerText = "Status: Waiting to start...";
+            stepBtn.disabled = false;
+            stepBtn.innerText = "Run Step 1: Assign Points";
+        });
+
+    </script>
+</body>
+</html>
