@@ -1,5 +1,5 @@
 # PCA Module – Omics 26 Summer School
-Welcome to the PCA (Principal Component Analysis) module of the Omics 25 Summer School! In this section, we will explore how PCA helps us make sense of complex omics datasets by reducing dimensionality and uncovering hidden patterns.
+Welcome to the PCA (Principal Component Analysis) module of the Omics 26 Summer School! In this section, we will explore how PCA helps us make sense of complex omics datasets by reducing dimensionality and uncovering hidden patterns.
 
 ## How to Proceed
 To get the most out of this module, please follow the steps below in order:
