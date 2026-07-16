@@ -149,11 +149,9 @@ For any scripts engaging the ADMIXTURE tool, refer to the path here:
 
   ## Step 1 - FILTERING
   
-   *You will be given annotated row cf file*
+   *You will be given annotated row vcff file*
 
-   - The first step would be filter out samples that we are interested (take them from metadata). Do this using bcftools, you will end up with the vcf file that contains only the samples that we need.
-     
-   - Then, we continue with more precise filtering and create PLINK binary format files.
+   - For the filtering, we need to filter vcf file and output vfiltered data into plink binary format files.
 
 Let's get familiar with plink binary format files at first. 
 
