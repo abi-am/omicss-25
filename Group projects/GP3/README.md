@@ -215,7 +215,7 @@ As an output of the ADMIXTURE we will get 3 types of files (/.log, /.Q, /.P).
 
 - **/.log** file contains run infromation and cv errors.
 - **/.Q** contains a matrix that contains information about ancestry proportions. Each row here is a sample (individual) and each column coressponts to one of the K ancestral populations (K=1, K=2....). Values of the matrix tell what proportion of the certain sample's ancestry comes from the population of coressponing column. 
-- **/.P** file contains a matrix that contains information about allele frequencies. Each row eas a SNP, each column is ancestral population. It tells us what each ancestral population looks like genetically. For our analysis we won't need those. 
+- **/.P** file contains a matrix that contains information about allele frequencies. Each row is a SNP, each column is ancestral population. It tells us what each ancestral population looks like genetically. For our analysis we won't need those. 
 
 Now we can proceed with the visualization in R.  
 
