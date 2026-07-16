@@ -42,9 +42,9 @@ To introduce amplicon sequencing and demonstrate how to analyze sequencing data 
 ### 📍 August 14, 2025
 
 #### ⏰ 3:00 PM – 4:00 PM  
-**Topic:** *[Metagenomic Sequencing and Data Analysis](https://docs.google.com/presentation/d/1VVVUJF-MHUnwJs6QUgIrOI6gI5qSQfd5l3i2ynaeTBs/edit?slide=id.p10#slide=id.p10)*  
+**Topic:** *[Metagenomic Sequencing and Data Analysis] 
 **Presenter:** Lilit Nersisyan  
-**[Slide](https://docs.google.com/presentation/d/1VVVUJF-MHUnwJs6QUgIrOI6gI5qSQfd5l3i2ynaeTBs/edit?usp=share_link)** 
+**[Slide](https://docs.google.com/presentation/d/1UwyAmpB3IiGmRQ3oXhwfzZUkz5LukizG/edit?slide=id.p1#slide=id.p1)** 
 
 
 **Objective:**  
