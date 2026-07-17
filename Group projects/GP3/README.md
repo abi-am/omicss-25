@@ -138,7 +138,7 @@ This command will output `.eigenval` (eigenvalues, variance explained by each PC
 
 For any scripts engaging the ADMIXTURE tool, refer to the path here:
 ```
-/mnt/proj/omicss25/soft/admixture_linux-1.3.0/admixture
+/mnt/nas1/proj/omicss26/soft/admixture_linux-1.3.0/admixture
 ```
 
 > NOTE: all the relavant scripts will be provided to you in the following directory
