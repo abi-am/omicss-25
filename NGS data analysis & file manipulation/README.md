@@ -1,21 +1,20 @@
 # Contributors
     Primary contributor: Anahit Yeghiazaryan
-    Contributing authors: Lilit Nersisyan, Davit Tarverdyan, Mher Kurghinyan, Tatev Jalatyan, Nate Zadirako, Siras Hakobyan
+    Contributing authors: Davit Tarverdyan, Nate Zadirako, Lilit Nersisyan, Maria Nikoghosyan
   
 # Contents 
-  1. FASTA/FASTQ file formats  
-  2. Quality Control (FASTQC, MULTIQC) & Interpretation  
-  3. Alignment & Samtools  
-  4. Annotation & Genomic Regions  
+  1. FASTA/FASTQ file formats [AY, DT]
+  2. Quality Control (FASTQC, MULTIQC) & Interpretation [AY, DT]
+  3. Alignment & Samtools [NZ, LN]
+  4. Annotation & Genomic Regions, VCF, IGV  [NZ, MN]
 
   ## NGS data analysis & file manipulation  
-  ### **TOPIC 1**: FASTA/FASTQ file formats & manipulation on Linux   
+  ### **TOPIC 1**: FASTA/FASTQ file formats & prractice on Linux   
   
-  **LECTURERS**:  Davit Tarverdyan, Tatevik Jalatyan  
+  **LECTURERS**:  Davit Tarverdyan, Anahit Yeghiazaryan
   
   **SCHEDULE**:  
-      - Practice: 11AM-12PM, August 8th, 2025    
-      - Office Hours: 12PM-1PM,  August 8th, 2025  
+      - Lecture & Practice: 2PM-5PM, July 23rd, 2026    
       
   **SUBTOPICS**:   
     - Introduction to File Types in Bioinformatics  
@@ -27,11 +26,11 @@
 
 ### **TOPIC 2**: Quality Control (FASTQC, MULTIQC) & Interpretation  
   
-  **LECTURERS**: Lilit Nersisyan, Mher Kurghinyan, Anahit Yeghiazaryan  
+  **LECTURERS**: Davit Tarverdyan, Anahit Yeghiazaryan
   
   **SCHEDULE**:  
-      - Lecture: 2-3PM, August 8th, 2025  
-      - Practice: 3-5PM, August 8th, 2025  
+      - Lecture: 3-4PM, July 23rd, 2026  
+      - Practice: 4PM-5PM, July 23rd, 2026  
       
   **SUBTOPICS**:   
     - FASTQC Reports & Interpretation  
@@ -44,14 +43,15 @@
 
 ### **TOPIC 3**: Alignment & Samtools  
   
-  **LECTURERS**: Lilit Nersisyan, Nate Zadirako  
+  **LECTURERS**: Nate Zadirako, Lilit Nersisyan  
   
   **SCHEDULE**:    
-      - Lecture: 11AM – 12PM, August 11th, 2025  
-      - Practice: 12-1PM, August 11th, 2025  
-      - Practice: 2-4PM, August 11th, 2025  
+      - Lecture: 11AM–1PM, July 24th, 2026
+      - Lecture & Practice: 2-4PM, July 24th, 2026 
+      - Practice: 2-4PM, July 27th, 2026
       
   **SUBTOPOICS**:   
+    - Alignment Algorithm  
     - File Formats in Alignment (SAM/BAM files)  
     - Alignment Tools (BWA, BT2, SAMTOOLS)  
       
@@ -59,17 +59,15 @@
   
 ----- 
 
-### **TOPIC 4**: Annotation & Genomic Regions  
+### **TOPIC 4**: Annotation & Genomic Regions, VCF, IGV  
   
-  **LECTURERS**: Maria Nikoghosyan  
+  **LECTURERS**: Maria Nikoghosyan, Nate Zadirako  
   
   **SCHEDULE**:  
-      - Lecture: 11PM-12PM, August 12th, 2025  
-      - Office Hours: 2-3PM, August 12th, 2025   
-      
-  **SUBTOPICS**:   
-
-      
+       - Practice: 2AM-4PM, July 28th, 2026  
+       - Lecture & Practice: 11AM-1PM, July 30th, 2026  
+       - Lecture & (Self)Practice: 11AM-1PM, July 31st, 2026  
+          
   **_MATERIALS_**: [SLIDES](https://docs.google.com/presentation/d/1oNrTYNsbymxngAjDxGQ88RQnLGIPsYIBCuIccDrLDN4/edit?usp=sharing), [TUTORIAL](https://github.com/abi-am/omicss-25/blob/main/NGS%20data%20analysis%20%26%20file%20manipulation/annotation/samtools_tutorial.md), check [```annotation```](https://github.com/abi-am/omicss-25/tree/main/NGS%20data%20analysis%20%26%20file%20manipulation/annotation) folder     
   
 ----- 

@@ -7,8 +7,8 @@ By analyzing gene expression at the single-cell level, we aim to identify key ce
 
  ### Contributors
 ```
-Project lead: Arpine Grigoryan
-Contributors: Melina Tamazyan, Sveta Mnatsakanyan, Luiza Stepanyan
+Project lead: Maria Nikoghosyan
+Contributors: Melina Tamazyan, Ekaterina Kostiuk
 ```
   ___
   
@@ -17,6 +17,7 @@ Contributors: Melina Tamazyan, Sveta Mnatsakanyan, Luiza Stepanyan
 [About lung cancer](https://my.clevelandclinic.org/health/diseases/4375-lung-cancer) \
 [Cancer microenvironment](https://pmc.ncbi.nlm.nih.gov/articles/PMC8194051/) \
 [Paper including discussion about current understanding of lung cancer](https://pmc.ncbi.nlm.nih.gov/articles/PMC11116453/?utm_source=chatgpt.com)
+[Mechanisms of lung cancer metastasis](https://doi.org/10.1016/j.biopha.2021.112035)
 
 ___
 
@@ -24,39 +25,171 @@ ___
 [Publication](https://www.nature.com/articles/s41467-020-16164-1) \
 Path on the server
 ```
-comp1:/mnt/proj/omicss25/gp4/data
+comp1:/mnt/nas0/proj/omicss26/gp4/data
 ```
 
-### Processing, Dimensionality Reduction, Clustering
-We will follow
-[Seurat Tutorial 1](https://satijalab.org/seurat/articles/pbmc3k_tutorial.html) 
-to 
+### Analysis Pipeline
+
+We will follow [Seurat Tutorial 1](https://satijalab.org/seurat/articles/pbmc3k_tutorial.html) to:
 - Create a Seurat object
 - Do quality control
 - Filter cells
 - Perform dimensionality reduction ([PCA](https://builtin.com/data-science/step-step-explanation-principal-component-analysis), [UMAP](https://youtu.be/eN0wFzBA4Sc?si=_8XakIY9aeJzdntp))
 - Perform cell clustering
-  
+
 In the abovementioned tutorial, you will find a brief description of these steps.
 
-BUT for data processing, we will follow
-[Seurat Tutorial 2](https://satijalab.org/seurat/articles/sctransform_vignette.html)
-as we are going to use SCTransform()
+There is several normalisation methods try different versions and choose one.For example [Seurat Tutorial 2](https://satijalab.org/seurat/articles/sctransform_vignette.html) `SCTransform()`
 
-### Cell Type Identification
-There are a lot of methods and tools for cell type identification. In our analysis
-we will have multi-step cell type identification. 
-* Construct a celltype-marker based on the literature ([Human Protein Atlas](https://www.proteinatlas.org) or papers)
-* Compare outputs from multiple tools ([Seurat Label Transfer](https://satijalab.org/seurat/articles/integration_mapping.html),
-[sc-type](https://www.nature.com/articles/s41467-022-28803-w), [scSorter](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02281-7))
-* Validate cell types based on cluster marker genes
+For cell type annotation via label transfer, we will follow [Seurat Label Transfer Tutorial](https://satijalab.org/seurat/articles/integration_mapping.html) using `FindTransferAnchors()` and `TransferData()`
 
-### Differential Gene Expression 
-[Reminder on differential gene expression](https://www.cd-genomics.com/resource-differential-gene-expression-analysis.html) \
-For identifying differentially expressed genes, we will use the FindMarkers() function implemented in Seurat 
+---
 
-### Gene Set Enrichment
-[GO Enrichment](https://yulab-smu.top/biomedical-knowledge-mining-book/clusterprofiler-go.html), [fGSEA](https://biostatsquid.com/fgsea-tutorial-gsea/)
+#### Phase 1: Rigorous Quality Control (QC)
 
-### Hypothesis testing
-Statistical testing between various clinical groups (age, gender, cancer progression stage, etc.)
+**What to analyze:** Raw gene-expression matrices from heterogeneous clinical samples.
+
+**How to do it:**
+- Calculate QC metrics using `PercentageFeatureSet(object, pattern = "^MT-")`
+- Apply adaptive thresholds to exclude low-quality droplets (potential cell fragments) and cells with high mitochondrial content (damaged/dying cells)
+- Run log-normalization (`NormalizeData`) and find highly variable features (`FindVariableFeatures`) to prepare for dimensionality reduction
+**Target Deliverables:**
+  - Plots: Pre- and post-filtering *Violin Plots* showing the distribution of total RNA counts (nCount_RNA), detected genes (nFeature_RNA), and mitochondrial gene percentage (percent.mt); *Scatter Plot* correlating nCount_RNA vs. percent.mt to visualize filtering thresholds. *Variable Features Plot* highlighting the top highly variable genes (HVGs).
+
+- (Optional): Auxillary tables reporting initial cell counts, filtered cell counts, and the number of cells discarded per sample, and the used filtering metrics.
+---
+
+#### Phase 2: Global Lineage Mapping
+
+**What to analyze:** Major structural and immunological compartments of the tissue.
+
+**How to do it:**
+- Perform PCA (`RunPCA`) and build a shared nearest neighbor graph (`FindNeighbors`, `FindClusters`) at a conservative resolution (e.g., 0.3)
+- Visualize the global layout using UMAP embeddings (`RunUMAP`)
+- Validate broad identities via canonical markers:
+
+| Compartment | Markers |
+|-------------|---------|
+| Epithelial | `EPCAM` |
+| T / NK cells | `CD3D`, `NCAM1` |
+| Myeloid | `CD14`, `LYZ` |
+| B cells | `MS4A1` |
+| Endothelial / Stromal | `VWF`, `COL1A1` |
+
+**Target Deliverables:**
+
+- Plots: *Elbow Plot* justifying the PC cutoff; *UMAP Plot* colored by seurat_cluster; *Expression Feature Plots* for canonical lineage markers location visualisation. 
+
+---
+
+#### Phase 3: Map TME Atlas via Seurat Label Transfer
+
+**What to analyze:** High-resolution classification of the Tumor Microenvironment.
+
+**Literature:**
+[Reference paper for label transfer](https://doi.org/10.1038/s41591-023-02327-2)
+
+**How to do it:**
+- Subset the non-epithelial compartments (immune and stromal cells)
+- Load a public, annotated Lung TME reference atlas (e.g., from the paper or HLCA)
+- Find integration transfer anchors between the student query dataset and the reference using `FindTransferAnchors()`
+- Predict high-resolution immune cell types (e.g., Alveolar Macrophages vs. Monocyte-derived Macrophages, CD8+ Exhausted T-cells vs. Naive T-cells) using `TransferData()`
+
+**Target Deliverables:**
+
+- Plots: TME-Specific *UMAP Plot* colored by the newly transferred cell types.
+
+---
+
+#### Phase 4: Epithelial Clustering & Functional Naming
+
+**What to analyze:** Malignant heterogeneity and functional state transitions within the epithelial compartment.
+
+**Steps:**
+
+1. **Subset** — isolate the epithelial compartment from the fully-labeled object (`broad_celltype == "Epi"`); re-run normalization and HVG selection on the subset alone so clustering is driven only by epithelial variation
+
+2. **Normal vs Malignant classification** — score every cell with canonical signatures via `AddModuleScore()` and classify by comparing the highest normal-signature score vs the highest malignant-signature score:
+
+   | Class | Signature | Key genes |
+   |-------|-----------|-----------|
+   | Normal AT2 | Alveolar Type II | `SFTPC`, `SFTPB`, `NAPSA` |
+   | Normal AT1 | Alveolar Type I | `AGER`, `PDPN`, `CAV1` |
+   | Normal Club | Secretory airway | `SCGB1A1`, `SCGB3A1` |
+   | Normal Ciliated | Motile cilia | `FOXJ1`, `DNAI1` |
+   | Malignant Squamous | SCC program | `S100A2`, `KRT17`, `TP63` |
+   | Malignant Adeno | LUAD program | `IGFBP3`, `MUC5AC`, `AGR2` |
+   | Malignant Prolif | Cycling tumor | `MKI67`, `TOP2A`, `CDK1` |
+
+3. **Clustering with optimized parameters** — run PCA (30 PCs), auto-select dims from the elbow plot (last PC adding > 0.5 % variance), sweep resolutions 0.3 / 0.5 / 0.8 on the same UMAP embedding, and work with the resolution that produces biologically interpretable partitions
+
+4. **Top genes** — `FindAllMarkers()` (positive only, `min.pct = 0.2`, `logfc.threshold = 0.4`); visualize top 3 per cluster as a DotPlot and top 5 as a heatmap
+
+5. **GO enrichment** — run `enrichGO` (Biological Process, BH-adjusted *p* < 0.05) on the top 150 marker genes per cluster using `clusterProfiler`; save the full table and render dot-plots per cluster
+
+6. **Naming** — assign each cluster a biologically interpretable label by comparing average cluster expression against the canonical signatures (AT2 / AT1 / Club / Ciliated / Malignant-Sq / Malignant-Adeno / Malignant-Prolif / Hypoxic / EMT); produce a final annotated UMAP with named clusters
+
+**Target Deliverables:**
+
+- Plots: *Module Score Plots* showing the separation of Normal (AT2, AT1, Club, Ciliated) vs. Malignant (Squamous, Adeno, Prolif) signature scores; Marker Gene *DotPlot* displaying the top 3 specific marker genes per epithelial cluster; Expression *Heatmap* displaying the top 5 DEGs per cluster; GO Enrichment *DotPlots* showing the top 10 significantly enriched terms per cluster.
+
+- Tables: DEG Table containing log-fold changes, p-values, and percentage detection metrics, GO Enrichment Results Table containing pathways, gene ratios, and BH-adjusted p-values. Both best saved as .csv files.
+---
+
+#### Phase 5: Condition Shift Analysis
+
+**What to analyze:** The architectural remodeling of both tumor and immune landscapes across the 7 specific microenvironments provided in the study metadata.
+
+**How to do it:**
+
+Group the clustered data by the 7 clinical origin states:
+
+| Label | Description |
+|-------|-------------|
+| `nLung` | Normal lung tissue |
+| `nLN` | Normal lymph node tissue |
+| `tLung` | Primary lung tumor tissue |
+| `tL/B` | Combined primary lung/bronchus samples |
+| `mLN` | Lymph node metastasis |
+| `mBrain` | Brain metastasis |
+| `PE` | Pleural effusion fluid |
+
+Generate fractional stacked bar charts showing how cell type proportions shift across these environments (e.g., the expansion of malignant cells and monocyte-derived macrophages in `mBrain` and `mLN` vs. `nLung`).
+
+---
+
+#### Phase 6: Expanding Differential Expression Analysis
+
+**What to analyze:** The within-microenvironment shift in expression across conditions provided in the study metadata.
+
+**Literature:** 
+[Avoiding pseudoreplication bias in single-cell studies via pseudobulk approach](https://doi.org/10.1038/s41467-021-21038-1)
+
+[Lung cancer in never smokers and smokers](https://doi.org/10.1016/j.ccm.2006.11.002)
+
+**How to do it:**
+Group the cell counts/normalized expression matrix per sample level, creating sample-level expression matrix. 
+Attach sample-level metadata from the study (e.g. Sex, Cancer Stage, Smoking Status, Tissue Origin (already mentioned)). 
+
+Example aggregated metadata: 
+| Pseudo-bulk Sample ID | Source Single-Cell Barcodes (Count) | Clinical Origin (`Origin_State`) | Smoking Status (`Smoking`) | Cancer Stage (`Stage`) | Sex (`Sex`) | Total Aggregated Counts |
+| :--- | :---: | :--- | :--- | :--- | :---: | :---: |
+| **SP01_Macro** | 1,420 | `tLung`  | Current Smoker | Stage IIIA | M | 4,210,500 |
+| **SP02_Macro** | 890 | `tLung` | Never Smoked | Stage IB | F | 2,650,000 |
+| **SP03_Macro** | 1,105 | `mBrain` | Current Smoker | Stage IV | M | 3,110,200 |
+
+Pose biological questions, based on the knowledge of cancer dynamics that you have acquired and think of the best way to ask them. Identify the desired contrasts and experiment with different design formulas for DESeq. 
+
+Example question and design formula:
+**Biological Question:** *How does a history of smoking alter the inflammatory and immunosuppressive landscape of macrophages within the primary tumor microenvironment (`tLung`)?*
+* **Target Contrast:** `Current Smoker` vs. `Never Smoked` restricted strictly to Macrophages harvested from `tLung`.
+* **DESeq2 Design Formula:** 
+  `design = ~ Sex + Stage + Smoking`
+Identify top DEGs and run `enrichGO` (Biological Process, BH-adjusted *p* < 0.05) on the top differentially expressed genes. Explain the obtained results.
+
+**Target Deliverables:**
+- Plots: Sample *PCA Plot* for Pseudo-bulk QC, PCA of the aggregated sample-level expression matrices to evaluate if samples grouping are driven primarily by clinical origin or by patient batch; *Volcano Plots* visualizing statistical significance -log(p_adj) against magnitude of change log_2(FC) for chosen contrasts;GO Enrichment DotPlots / Bar Charts: Illustrating the activated or suppressed biological pathways (e.g., upregulation of EMT or angiogenic pathways in brain metastases).
+
+- Tables: *DESeq2 results table* (.csv) for each tested contrast, including baseMean, log2FoldChange, lfcSE, pvalue, and padj (ordered by adjusted p-value). (Important!) *A pseudo-bulk metadata mapping*: maps single-cell aggregations to their respective sample IDs, and clinical metadata traits. *Functional Enrichment Table*: Complete clusterProfiler output containing exact BH-adjusted p-values, gene counts, and specific altered genes matching each term.
+
+
