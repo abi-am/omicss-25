@@ -167,7 +167,7 @@ There are 3 type of files that together make plink finary format files.
 **Now, we can proceed with Filtering using [PLINK](https://www.cog-genomics.org/plink/1.9/filter) tool. Read this to get familiar with how do we use it**.
 
 ```
-/mnt/proj/vine/user_projects/shengchang/soft/plink/plink
+/mnt/software/linux/bin/plink
 ```
 For the filtering part, from vcf file you need to extract`
 
