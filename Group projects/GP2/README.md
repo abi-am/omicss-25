@@ -214,7 +214,7 @@ Log to:			`log/align.log`
 Store output to directory:	`bam`  
 
 #### Reference genome index for alignment  
-You'll need a reference genome index to align your reads in FASTQ files. Use prebuilt index for telomere-to-telomere assembly version of human genome (T2T-CHM13v2.0) located here: `/mnt/db/genomes/homo_sapiens/T2T-CHM13v2.0/bwa_mem_0.7.17-r1188/GCF_009914755.1_T2T-CHM13v2.0_genomic.fna`. 
+You'll need a reference genome index to align your reads in FASTQ files. Use prebuilt index for telomere-to-telomere assembly version of human genome (T2T-CHM13v2.0) located here: `/mnt/nas1/db/genomes/homo_sapiens/T2T-CHM13v2.0/bwa_mem_0.7.17-r1188/GCF_009914755.1_T2T-CHM13v2.0_genomic.fna`. 
 
 #### Process the alignment output SAM file  
 Include these steps in `src/align.sh` script to obtain a final sorted, deduplicated BAM file using the specified [samtools](http://www.htslib.org/doc/samtools.html) command for each step:  
