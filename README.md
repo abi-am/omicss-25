@@ -1,4 +1,4 @@
-# OMICSS-25
+# OMICSS-26
 Training materials for OMICSS-25 Bioinformatics Summer School
 
 # Topics
