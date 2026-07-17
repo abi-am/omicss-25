@@ -4,10 +4,9 @@ Welcome to the sessions on **Next-Generation Sequencing Technologies** and **Lon
 
 ## Schedule
 
-| Date (2025) | Time         | Topic                           |
+| Date (2026) | Time         | Topic                           |
 |-------------|--------------|----------------------------------|
-| 29.07.2025  | 11:00–12:00  | Next-Generation Sequencing Technologies |
-| 29.07.2025  | 12:00–13:00  | Long Read Sequencing            |
+| 21.07.2026  | 11:00–13:00  | Next-Generation Sequencing Technologies |
 
 ## About the Topics
 

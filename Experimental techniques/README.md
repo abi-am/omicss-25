@@ -6,12 +6,12 @@ Welcome, students, to the **OMICSS‑25 Summer School** experimental technique's
 
 ## Session Schedule
 
-| Date (2025)   | Time          | Topic                                   | Folder                                                              |
+| Date (20260,)   | Time          | Topic                                   | Folder                                                              |
 | ------------- | ------------- | --------------------------------------- | ------------------------------------------------------------------- |
-| **29 July**   | 11:00 – 12:00 | Next‑Generation Sequencing Technologies | [`Sequencing/`](./Sequencing/)                                      |
+| **21 July**   | 11:00 – 12:00 | Next‑Generation Sequencing Technologies | [`Sequencing/`](./Sequencing/)                                      |
 |               | 12:00 – 13:00 | Long‑Read Sequencing                    | [`Sequencing/`](./Sequencing/)                                      |
-| **31 July**   | 16:00 – 17:00 | DNA Extraction                          | [`DNA Extraction/`](./DNA%20extraction/)                              |
-| **01 August** | 14:00 – 15:00 | PCR & Gel Electrophoresis               | [`PCR,Electrophoresis/`](./PCR%2C%20Electrophoresis/)  |
+| **29 July**   | 11:00 – 12:00 | DNA Extraction                          | [`DNA Extraction/`](./DNA%20extraction/)                              |
+|               | 12:00 – 13:00 | PCR & Gel Electrophoresis               | [`PCR,Electrophoresis/`](./PCR%2C%20Electrophoresis/)  |
 
 ---
 
@@ -33,5 +33,5 @@ Welcome, students, to the **OMICSS‑25 Summer School** experimental technique's
 * Nelli Vardazaryan - Contributing author
 * Lilit Nersisyan - Contributing author
 * Maria Nikoghosyan - Contributing author
-* Meghrig Hekimian - Contributing author
+* Rozi Mkrtchyan - Contributing author
 * HGI
