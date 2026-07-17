@@ -30,8 +30,8 @@ Raw FASTQ (SRA/ENA)
 
 ## Contents
 
-### `datasets/`
-_Placeholder — create one subfolder per dataset, e.g. `dataset_01/`, `dataset_02/`, ..._
+### Dataset folders
+Create / use one subfolder per dataset (e.g. `S025/`, `D001/`, `S014/`, ...).
 
 Each dataset subfolder should contain:
 - `accession_info.txt` — SRA/ENA accession IDs and sample metadata
@@ -60,13 +60,15 @@ _Placeholder — the final merged Bracken abundance table(s) used for downstream
 
 | # | Dataset Name | Source (SRA/ENA) | Accession | Sex Labels? | Assigned To | Status |
 |---|-------------|-----------------|-----------|-------------|-------------|--------|
-| 1 | TBD | TBD | TBD | TBD | TBD | ⬜ Not started |
-| 2 | TBD | TBD | TBD | TBD | TBD | ⬜ Not started |
-| 3 | TBD | TBD | TBD | TBD | TBD | ⬜ Not started |
-| 4 | TBD | TBD | TBD | TBD | TBD | ⬜ Not started |
-| 5 | TBD | TBD | TBD | TBD | TBD | ⬜ Not started |
+| 1 | S025 | ENA / NCBI | [PRJEB60621](https://www.ncbi.nlm.nih.gov/bioproject/PRJEB60621) | Yes | TBD | ✅ Approved — ⬜ Not started |
+| 2 | D001 | NCBI SRA | [PRJNA1057503](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1057503) | Yes | TBD | ✅ Approved — ⬜ Not started |
+| 3 | S014 | NCBI SRA | [PRJNA832909](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA832909) | Yes | TBD | ✅ Approved — ⬜ Not started |
+| 4 | TBD | TBD | TBD | TBD | TBD | ⬜ Pending approval |
+| 5 | TBD | TBD | TBD | TBD | TBD | ⬜ Pending approval |
+
+See also [`Datasets.xlsx`](Datasets.xlsx) for candidate cohort summaries (healthy sample counts, F:M ratios, size estimates).
 
 ## Reference Materials
-- Kraken2/Bracken Slides: [link](https://docs.google.com/presentation/d/1VVVUJF-MHUnwJs6QUgIrOI6gI5qSQfd5l3i2ynaeTBs/edit?usp=sharing)
-- Hands-on Exercises: [link](https://docs.google.com/document/d/1lt99SpV4PNsKcypB8sQjApN3YFj6s2o3CpQMoS0dNHY/edit?usp=drive_link)
+- Kraken2 / Bracken guide: [Google Doc](https://docs.google.com/document/d/1lzb_2Edl6AKSLbmNPpS5DOgQIEoxsRFL/edit)
+- Hands-on practice exercises (in-session, then applied to assigned datasets over the weekend): [Practice folder](https://drive.google.com/drive/folders/1WQBS9mqfdEpRzpkya0jTgdMs1GkOtrLK?usp=sharing)
 - Tutorial (from last year): [`../Kraken_Bracken_tutorial/`](../Kraken_Bracken_tutorial/)

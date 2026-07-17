@@ -27,6 +27,7 @@ Suggested files to create:
 | Intro to Microbiome & Term Glossary | [Google Doc](https://docs.google.com/document/d/1ZtNl5lPHTRIUPUAoNY7RFSjA7JTCTko8gS1dTk8QU1Y/edit?usp=sharing) |
 | Microbiota in health and diseases (Nature) | [Link](https://www.nature.com/articles/s41392-022-00974-4) |
 | Oral Microbiome Review (MDPI) | [Link](https://www.mdpi.com/2076-2607/12/9/1797) — [Reader Guide](https://docs.google.com/document/d/1Dg6fC8XLRIjB1AudXjKiA4XBKfHIKkNdXDpN230H6j0/edit?usp=drive_link) |
+| Sex differences in the oral microbiome (iScience) | [DOI](https://doi.org/10.1016/j.isci.2022.105839) |
 | Diagnostic potential of microbiome therapeutics | [Link](https://www.degruyterbrill.com/document/doi/10.1515/dx-2022-0052/html) — [Reader Guide](https://docs.google.com/document/d/1zmJZv0iitOCD3cP-Apra3lrzDZ40_-DBjetkIfzWw7o/edit?usp=drive_link) |
 | Illuminating the oral microbiome (FEMS) | [Link](https://academic.oup.com/femsre/article/47/5/fuad051/7259894) |
 | ANCOMBC2 Guide | [RPubs](https://rpubs.com/mrgambero/lesson_20_ancom) |

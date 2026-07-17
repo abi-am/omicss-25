@@ -1,5 +1,5 @@
 # GP1 Team Tracker
-**Project:** Machine Learning-Based Identification of Bacterial Biomarkers for Gender Classification  
+**Project:** Machine Learning-Based Identification of Bacterial Biomarkers for Biological Sex Classification  
 **Mentor:** Davit Hakobyan  
 **Last updated:** _[fill in date]_
 
@@ -21,9 +21,9 @@
 
 | # | Dataset Name / Description | Source | Accession | # Samples | Sex Labels? | Assigned To |
 |---|---------------------------|--------|-----------|-----------|-------------|-------------|
-| 1 | TBD | TBD | TBD | TBD | TBD | TBD |
-| 2 | TBD | TBD | TBD | TBD | TBD | TBD |
-| 3 | TBD | TBD | TBD | TBD | TBD | TBD |
+| 1 | S025 — healthy saliva WGS | ENA / NCBI | PRJEB60621 | 100 (50:50) | Yes | TBD |
+| 2 | D001 — healthy saliva (multi-site cohort) | NCBI SRA | PRJNA1057503 | 64 (36:28) | Yes | TBD |
+| 3 | S014 — stimulated mouthwash controls | NCBI SRA | PRJNA832909 | 234 (105:129) | Yes | TBD |
 | 4 | TBD | TBD | TBD | TBD | TBD | TBD |
 | 5 | TBD | TBD | TBD | TBD | TBD | TBD |
 
@@ -64,9 +64,9 @@ _To be filled during Phase 1 Sessions 2 & 3 (24/07 and 27/07/2026)_
 
 | Task | Dataset | Assigned To | Download | QC (pre) | Trim | QC (post) | Kraken2 | Bracken | Status |
 |------|---------|-------------|----------|----------|------|-----------|---------|---------|--------|
-| Dataset 1 | TBD | TBD | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| Dataset 2 | TBD | TBD | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| Dataset 3 | TBD | TBD | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| Dataset 1 | S025 | TBD | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| Dataset 2 | D001 | TBD | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| Dataset 3 | S014 | TBD | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | Dataset 4 | TBD | TBD | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | Dataset 5 | TBD | TBD | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | Merge all 5 Bracken tables | — | TBD | — | — | — | — | — | — | ⬜ |

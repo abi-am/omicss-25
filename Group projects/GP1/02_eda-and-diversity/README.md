@@ -39,5 +39,7 @@ _Placeholder — add all output plots here (PNG/PDF)_
 _Placeholder — add knitted R Markdown HTML/PDF reports here_
 
 ## Reference Materials
-- Intro to phyloseq: [Slides](https://docs.google.com/presentation/d/1bDjOMx3mNIyG0O46FVl31WkVAiybSSEp-FFuMLnD2vs/edit?usp=sharing) | [Exercises](https://drive.google.com/file/d/1JtJ09bz3chn3D9QUjLXnD7gTWxS0NhoQ/view?usp=drive_link)
-- EDA & Diversity with phyloseq: [Slides](https://docs.google.com/presentation/d/19Z14W7211RZr7DdL1cOx1DAVndnoPNalzU3JaY0aJPo/edit?usp=sharing) | [Exercises](https://drive.google.com/file/d/1dmxDjnTsMQHhnY6zijUFHbV2k7GnMism/view?usp=drive_link)
+Practice materials for in-session exercises (then applied to project data over the weekend): [Practice folder](https://drive.google.com/drive/folders/1WQBS9mqfdEpRzpkya0jTgdMs1GkOtrLK?usp=sharing)
+
+- Intro to phyloseq: [Slides](https://docs.google.com/presentation/d/10qHR00zO1d7nvvyZQ-w6jYAGz6wt9XPu/edit?usp=sharing&ouid=103773938036529959456&rtpof=true&sd=true) | [Exercises](https://drive.google.com/drive/folders/1WQBS9mqfdEpRzpkya0jTgdMs1GkOtrLK?usp=sharing)
+- Microbial EDA and Diversity Analysis: [Slides](https://docs.google.com/presentation/d/1gS4rng_J9hBSfEwUe5LTIPt7hUSnX3uc/edit?usp=sharing&ouid=103773938036529959456&rtpof=true&sd=true) | [Exercises](https://drive.google.com/drive/folders/1WQBS9mqfdEpRzpkya0jTgdMs1GkOtrLK?usp=sharing)
