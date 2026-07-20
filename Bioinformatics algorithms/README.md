@@ -1,76 +1,36 @@
-  # Contributors
-    Primary contributor: Lusine Adunts
-    Contributing authors: Tatev Jalatyan, Davit Hakobyan 
-    
-  Shared folder: [Google Drive](https://drive.google.com/drive/u/4/folders/1DK8PhIzSHEpXcoZzDfy6Ec2mNR4Zb07p)
+# Contributors
+    Primary contributor: Lilit Nersisyan
 
+Slides: [Alignment Algorithms](https://docs.google.com/presentation/d/1IrP1jassw3BEltLmHbtc97drI0smJ0hU/edit?slide=id.p23#slide=id.p23)
+## What's covered
 
-  # Contents
-  This module introduces core algorithms and techniques in bioinformatics. The topics are structured over five days of instruction, combining theory with practice:
+- **The problem** — alignment means finding where each of billions of ~100 bp
+  reads came from on a ~3 Gb reference genome.
+- **The naive approach** — slide-and-compare pattern matching, and why counting
+  the work (`O(L × m)` per read) shows it never finishes at genome scale.
+- **Why alignment is hard**
+  1. *Too many comparisons* — billions of reads against billions of positions.
+  2. *Matches are inexact* — sequencing errors and real variants create
+     substitutions, insertions, and deletions, so "found it / didn't" is the
+     wrong question.
+- **Skipping smartly** — Boyer–Moore's bad-character and good-suffix rules as a
+  first taste of "avoid needless work."
+- **Scoring inexact matches** — dynamic programming on a grid (edit distance),
+  Needleman–Wunsch vs. Smith–Waterman.
+- **How modern tools work** — seed-and-extend: cheap pattern matching narrows
+  millions of positions to a few, expensive DP runs only there.
+- **Indexing** — building an index once (like a sorted dictionary) so seed
+  lookups no longer depend on genome size; the Burrows–Wheeler transform (BWT)
+  and FM-index behind Bowtie.
+- **Quality-aware scoring** — using Phred base qualities to weight mismatches.
+- **In practice** — `bowtie2-build` to index the reference once, then `bowtie2`
+  to align reads against it.
+- **State of the art** — BWA-MEM2 & Bowtie2 (short reads), minimap2 (long
+  reads), and hardware acceleration (DRAGEN FPGA, NVIDIA Parabricks GPU).
 
-  ### Day 1: Sequence Comparison  
-  - Exact matching algorithms  
-  - Sequence alignment: concepts and types  
-  - Global alignment using the Needleman-Wunsch algorithm (Dynamic Programming)
+## Go deeper
 
-  ### Day 2: Local and Semi-Global Alignment  
-  - Local alignment using the Smith-Waterman algorithm  
-  - Semi-global alignment with a focus on read alignment scenarios
-
-  ### Day 3: Seeds and Indexing  
-  - Introduction to seed-based matching  
-  - Indexing techniques (e.g., suffix arrays, hash tables) used before alignment
-
-  ### Day 4: Genome Assembly  
-  - Concepts and challenges in genome assembly  
-  - Overlap-layout-consensus and de Bruijn graph-based methods
-
-  ### Day 5: Phylogenetic Trees  
-  - Principles of phylogenetic tree construction  
-  - UPGMA method for building evolutionary trees
-
-  # TODO
-
-  ### Lusine Adunts
-  - [x] Day 1 slides
-  - [x] Day 2 slides
-  - [x] Day 3 slides
-  - [x] Day 4 slides
-  - [x] Day 5 slides
-  - [x] Final touch
-
-  ### Tatev Jalatyan
-  - [x] Day 1 practice problems
-    - Implement pattern matching using the naive approach
-    - Implement pattern matching using the Boyer–Moore algorithm
-    - Create conceptual questions to differentiate types of sequence alignment
-    - Design a step-by-step global alignment task using Needleman–Wunsch, including:
-      - Initialization
-      - Matrix filling
-      - Traceback
-  - [x] Day 3 practice problems
-     - Implement seed extraction from reads and genome (e.g., non-overlapping and overlapping k-mers)
-     - Design a filtering rule that selects only seed hits that are near each other
-     - Build a prefix tree (trie) from a list of k-mers
-     - Query the trie for a prefix of length ≤ k
-     - (Bonus) Put all together:
-       - Extract k-mers from the read
-       - Build an index (trie) from a genome fragment
-       - Find seed hits by querying the index
-       - Select nearby seed matches
-       - Do full alignment on the selected region(s)
-       - Choose the best alignment
-  - [x] Day 5 practice problems
-    - Make conceptual questions on phylogenetic tree construction, usage, etc.
-
-  ### Davit Hakobyan
-  - [x] Day 2 practice problems
-    - Implement local alignment using the Smith-Waterman algorithm
-    - Implement semi-global alignment for read alignment
-    - Create questions to:
-      - Compare global, local, and semi-global alignment algorithms including key differences in initialization, matrix filling, and traceback
-      - Evaluate how different substitution matrices (e.g., PAM, BLOSUM) affect alignment scoring and interpretation
-  - [x] Day 4 practice problems
-    - Assemble the genome through overlap graph
-    - Assemble the genome through de Bruijn graph
-    - Conceptual questions on assembly, the two main approaches, challenges
+- **Practice:** [Rosalind](https://rosalind.info) — code pattern matching, edit
+  distance, and DP yourself.
+- **Watch:** Ben Langmead, *Algorithms for DNA Sequencing* (YouTube / Coursera).
+- **Read:** Langmead et al., *Bowtie*, Genome Biology 2009.
