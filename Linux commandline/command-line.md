@@ -1,10 +1,5 @@
 ## Command Line: Introduction
 
-Once you're logged into the server, it's a great time to start practicing basic command-line usage.
-
-In the command line environment your surroundings are files and directories (what people like to call 'folders').
-You can move in the file system (the wholeness of files and directories) and you can run commands.
-
 ## Anatomy of a command
 
 Commands are programs that get options and arguments. It is easier to see the anatomy of a linux command on examples
@@ -25,31 +20,40 @@ Without the `-a` flag, the `ls` program would list only normal files in mydir di
 
 In this case we can tell that `ls -a mydir/` means “list ALL FILES in mydir (the target specified by the normal arguement), even hidden files (the altered behavior specified by the option).”
 
-**Arguments of options** 
-
-Although it’s not shown here, options can also take their own arguments. In that case, the argument goes directly after the option and you have to read the man page to find out whether the argument is for the option or to the program itself.
-
-## The algebra of a command :)
-
-There is no limit on the number of flags and arguments you can pass to a program, although the program might set its own limits.
-
-> Example 2: ls -la --human-readable mydir
-
-As before, this will split on whitespace and call the `ls` command, this time with three arguments: **-la , --human-readable and mydir**. In this section, we’re going to focus on the first two, because they represent a couple different ways to use switches.
-
 Instead of specifying multiple flags each with their own dash, you can use one dash for every option. This means that `ls -la` is exactly the same as `ls -l -a`. Also, the order doesn’t matter. `ls -al` is exactly the same as `ls -la`.
 
-## Paths and Navigation
+## How to understand what a command does
 
-In linux (which we use on our HPC) directories have **paths**. A path of a directory or a file is the hierarchical route of directories you must traverse through the file system to reach it. A typical example:
+every time you see a command, e.g. `ls, rm, mkdir` and you want to see what is it and what you can do with it - you can read the manual.
+
+In unix, every command has a manual with it, which is revealed with the command `man`, short for manual. Not Y chromosome.
 
 ```
-path of some genome program - /home/username/workspace/genome_analysis
-path of omicss26 directory - /mnt/nas1/proj/omicss26
+man <command>
 ```
 
-Using paths you can navigate through the file system and do many-many operations with the files
-Here are reference commands for doing what you need:  
+you can read the description, check out the flags, the arguments and compose a command that does exatly what and exactly how you want.
+For instance we take the command `rm` - remove. 
+
+When we want to remove a directory by using `rm dirname/` it will give us an error like this:
+
+```
+rm: cannot remove 'dirname/': Is a directory
+```
+
+We can assume that the rm command has a flag for making it work for directories. So we check the manual with `man rm`.
+
+there we can find this flag for recursive deletion
+
+```
+    -r, -R, --recursive
+            remove directories  and  their  contents  recur‐
+            sively
+```
+
+and by adding it - `rm -r dirname/`  - we can delete the directory.
+
+Manuals are very helpful. Alternatively you can google examples and see what works. 
 
 ## Files and navigation 
 
