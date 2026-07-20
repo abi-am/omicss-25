@@ -1,4 +1,4 @@
-# OMICSS‑25 — Experimental Techniques
+# OMICSS‑26 — Experimental Techniques
 
 Welcome, students, to the **OMICSS‑25 Summer School** experimental technique's master repository. Here you’ll find slide decks and self‑assessment quizzes for each hands‑on session in our molecular‑biology toolkit.
 
@@ -6,10 +6,9 @@ Welcome, students, to the **OMICSS‑25 Summer School** experimental technique's
 
 ## Session Schedule
 
-| Date (20260,)   | Time          | Topic                                   | Folder                                                              |
+| Date (20260)   | Time          | Topic                                   | Folder                                                              |
 | ------------- | ------------- | --------------------------------------- | ------------------------------------------------------------------- |
-| **21 July**   | 11:00 – 12:00 | Next‑Generation Sequencing Technologies | [`Sequencing/`](./Sequencing/)                                      |
-|               | 12:00 – 13:00 | Long‑Read Sequencing                    | [`Sequencing/`](./Sequencing/)                                      |
+| **21 July**   | 11:00 – 13:00 | Next‑Generation Sequencing Technologies | [`Sequencing/`](./Sequencing/)                                      |                                   |
 | **29 July**   | 11:00 – 12:00 | DNA Extraction                          | [`DNA Extraction/`](./DNA%20extraction/)                              |
 |               | 12:00 – 13:00 | PCR & Gel Electrophoresis               | [`PCR,Electrophoresis/`](./PCR%2C%20Electrophoresis/)  |
 
