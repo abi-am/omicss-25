@@ -26,13 +26,17 @@ Navigate to the directory where you intend to work and use the path above to acc
 
 ### ALIGNMENT TO A REFERENCE
 
-Before we get to the alignment, we might need to perform **adapter trimming**.
+Before we get to the alignment, we should do some quality control. Take a look at `fastqc` reports for your samples. What do you see?
+
+> NOTE: if you don't have the reports, think back to the previous practice and produce them :)
+
+Normally, we would perform **adapter trimming** at this stage.
 
 During sequencing, adapters (sequences—short artificial sequences used in library preparation) can sometimes be read into the output FASTQ files. These non-biological sequences can interfere with downstream analysis like alignment and variant calling, so we must remove them.  
 
-Their presence is typically indicated by the FASTQC report. The reports are available for your perusal in the same folder as the data.
+Their presence is typically indicated by the FASTQC report.
 
-We will use the command line tool [cutadapt](https://cutadapt.readthedocs.io/en/stable/guide.html) for this.
+We can use the command line tool [cutadapt](https://cutadapt.readthedocs.io/en/stable/guide.html) for this.
 
 > NOTE: when performing the same operation on multiple samples, you can loop over them in your script.
 
@@ -46,6 +50,21 @@ cutadapt \
   -p sample_trimmed_R2.fastq.gz \
 sample_R1.fastq.gz sample_R2.fastq.gz
 ```
+Do your samples have adaptors that need to be trimmed?
+
+You may also encounter a sample where the end or the beginning of each read has poorer quality compared to the rest, and you might want to trim by position to only keep the high-quality parts. Use your judgement to decide how much to remove.
+
+```
+# N is the number of bases to remove
+
+cutadapt \
+    -u N -U N \
+    -o sample_trimmed_R1.fastq.gz \
+    -p sample_trimmed_R2.fastq.gz \
+sample_R1.fastq.gz sample_R2.fastq.gz
+```
+
+Decide which command suits your needs, input your sample names and parameters (adaptors, trimming positions), and trim. 
  
 ### ALIGNMENT TO A REFERENCE
 
@@ -180,7 +199,7 @@ We can also index the files. Indexing allows tools to rapidly access specific re
 samtools index sample.sorted.bam
 ```
 
-Indexes are binary files, so we can't peek inside.We can, however, inspect a BAM file by converting it into SAM, which is a plain text format that we can view directly. Let's convert one of the BAM files and take a look at the first 50 lines.  
+Indexes are binary files, so we can't peek inside. We can, however, inspect a BAM file by converting it into SAM, which is a plain text format that we can view directly. Let's convert one of the BAM files and take a look at the first 50 lines.  
 
 ```
 # -h option tells samtools to include a header
