@@ -13,8 +13,6 @@ We will now practice using bwa-mem and samtools on a toy dataset composed of 2 h
 `wes78_chr21_chr16_R1.fastq`, `wes78_chr21_chr16_R2.fastq` — Sample 2  
 
 > NOTE: human genomes are huge! The haploid genome is 3.3 Gb in length. Since processing something so large would take too much time, we selected and kept two smaller chromosomes, 16 and 21.
->  
-> Is there anything special about chr16?
 
 Your data is stored in the following directory:  
 
