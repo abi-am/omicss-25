@@ -191,7 +191,7 @@ cd bam
 samtools sort sample.bam -o sample.sorted.bam
 ```
 
-We can also index the files. Indexing allows tools to rapidly access specific regions (e.g. chr16:10000-20000) without reading the entire file. It creates an additional smaller file that acts like a lookup table to retrieve parts without reading through the entire thing (files storing genonic data are very large!).  
+We can also index the files. Indexing allows tools to rapidly access specific regions (e.g. chr16:10000-20000) without reading the entire file. It creates an additional smaller file that acts like a lookup table to retrieve parts without reading through the entire thing (files storing genomic data are very large!).  
 
 > Note: different tools require different indexes and may have their own indexing commands, such as `bwa index` for the reference sequence and `tabix` for VCF files.   
 
@@ -207,11 +207,13 @@ Indexes are binary files, so we can't peek inside. We can, however, inspect a BA
 samtools view -h sample.sorted.bam > sample.sam
 head -n 50 sample.sam
 ```
+
 You will see the SAM file header, which includes the fields @HD (tells you the SAM format version and how the sorting was performed) and @SQ (sequence dictionary) which defines the reference sequences used. These lines come from your reference FASTA and tell you the names and length or your standard chromosomes, as well as the unplaced and alternative regions. Find out more about them in this [description](https://gatk.broadinstitute.org/hc/en-us/articles/360035890951-Human-genome-reference-builds-GRCh38-or-hg38-b37-hg19) of our reference assembly.  
 
 > Try `tail` or `more` to see the actual assembly. We have quite a few header rows!
 
 You can also view the alignments directly in the terminal, either the whole file (not recommended for large datasets) or for a specific genomic region. You can check the chromosome lengths first to gauge the possible range.
+
 ```
 # check chromosome lengths (second field in the output)
 samtools idxstats sample.sorted.bam
@@ -240,6 +242,7 @@ Another thing we might want to know about our alignment is the sequencing depth 
 ```
 samtools depth sample.sorted.bam > sample.depth.txt
 ```
+
 This command outputs a text file with 3 columns: chromosome, position and depth, which tells you how many reads cover this position. Positions with 0 coverage are excluded, but you can include the `-a` parameter to force them to appear. From here, you might calculate the average depth or plot genome-wide coverage.  
 
 You can use this file to check which chromosomes (or other reference sequences) actually have coverage recorded in the depth file, and how many positions are recorded for each.  
